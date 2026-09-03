@@ -37,7 +37,7 @@
   const $ = (id) => document.getElementById(id);
   const els = {
     canvas: $('canvas'), hint: $('hint'), busy: $('busy'), busyText: $('busyText'),
-    file: $('file'), fileLabel: $('fileLabel'), changePhoto: $('changePhoto'),
+    file: $('file'), fileLabel: $('fileLabel'),
     faces: $('faces'), faceList: $('faceList'),
     legend: $('legend'),
     zoom: $('zoom'), rotate: $('rotate'), recenter: $('recenter'), straighten: $('straighten'), reset: $('reset'),
@@ -325,7 +325,6 @@
 
   // ---------------------------------------------------------------- photo intake
   els.file.addEventListener('change', () => { if (els.file.files[0]) loadPhoto(els.file.files[0]); els.file.value = ''; });
-  els.changePhoto.addEventListener('click', () => els.file.click());
   document.addEventListener('dragover', (e) => { e.preventDefault(); document.body.classList.add('dragging'); });
   document.addEventListener('dragleave', (e) => { if (!e.relatedTarget) document.body.classList.remove('dragging'); });
   document.addEventListener('drop', (e) => {
@@ -367,7 +366,7 @@
     state.src = c; state.w = c.width; state.h = c.height;
     state.faces = []; state.faceIdx = -1;
     els.canvas.classList.remove('empty');
-    els.changePhoto.hidden = false; els.fileLabel.textContent = 'Choose another photo';
+    els.fileLabel.textContent = 'Choose another photo';
     els.faces.hidden = true;
     fitCenter(); requestDraw();
 
