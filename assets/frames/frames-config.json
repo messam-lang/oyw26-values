@@ -1,0 +1,53 @@
+{
+  "community": {
+    "frameIcon": "assets/icons/community-frame.svg",
+    "bbox": [
+      187.1,
+      108.0,
+      340.9,
+      261.8
+    ],
+    "legendIcon": "assets/icons/community.svg"
+  },
+  "friendship": {
+    "frameIcon": "assets/icons/friendship-frame.svg",
+    "bbox": [
+      184.9,
+      131.7,
+      339.0,
+      285.3
+    ],
+    "legendIcon": "assets/icons/friendship.svg"
+  },
+  "knowledge": {
+    "frameIcon": "assets/icons/knowledge-frame.svg",
+    "bbox": [
+      150.0,
+      108.0,
+      351.0,
+      309.0
+    ],
+    "legendIcon": "assets/icons/knowledge.svg"
+  },
+  "progress": {
+    "frameIcon": "assets/icons/progress-frame.svg",
+    "bbox": [
+      227.1,
+      131.5,
+      348.9,
+      285.5
+    ],
+    "legendIcon": "assets/icons/progress.svg"
+  },
+  "action": {
+    "frameIcon": "assets/icons/action-frame.svg",
+    "bbox": [
+      184.9,
+      131.4,
+      339.1,
+      285.6
+    ],
+    "placeholder": true,
+    "legendIcon": "assets/icons/action.svg"
+  }
+}

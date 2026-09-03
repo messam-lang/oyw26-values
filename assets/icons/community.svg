@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="153.85" height="153.85" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 153.85 153.85">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient-4);
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient-3);
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="3053.91" y1="8002.13" x2="3130.83" y2="8002.13" gradientTransform="translate(-7729.6158 -3356.3403) rotate(-45)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#033528"/>
+      <stop offset="1" stop-color="#61fc52"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="4892.2" y1="12207.69" x2="4969.12" y2="12207.69" gradientTransform="translate(-12080.1782 -5030.2515) rotate(-45)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="-814.49" y1="-6809.82" x2="-727.91" y2="-6809.82" gradientTransform="translate(-5248.0598 -4228.63) rotate(135)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#033528"/>
+      <stop offset=".86" stop-color="#61fc52"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="1024.59" y1="-5974.61" x2="1101.51" y2="-5974.61" gradientTransform="translate(-3434.5367 -4937.9128) rotate(135)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#033528"/>
+      <stop offset=".17" stop-color="#1a6732"/>
+      <stop offset=".38" stop-color="#339c3d"/>
+      <stop offset=".57" stop-color="#47c546"/>
+      <stop offset=".75" stop-color="#55e34c"/>
+      <stop offset=".89" stop-color="#5df550"/>
+      <stop offset="1" stop-color="#61fc52"/>
+    </linearGradient>
+  </defs>
+  <g>
+    <g>
+      <rect class="cls-4" x="100.55" y="75.83" width="29.67" height="79.12" transform="translate(-47.79 115.38) rotate(-45)"/>
+      <rect class="cls-1" x="-1.1" y="100.55" width="79.12" height="29.67" transform="translate(-70.32 60.99) rotate(-45)"/>
+      <rect class="cls-3" x="75.83" y="23.63" width="79.12" height="29.67" transform="translate(6.6 92.85) rotate(-45)"/>
+      <rect class="cls-2" x="23.63" y="-1.1" width="29.67" height="79.12" transform="translate(-15.93 38.46) rotate(-45)"/>
+    </g>
+  </g>
+</svg>

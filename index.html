@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pick your value · Advancing Energy Tech · #OYW26</title>
+  <meta name="description" content="Create your Schneider Electric × One Young World #OYW26 profile picture. Pick the value you stand for, add your photo, share it.">
+  <meta name="theme-color" content="#0a2f24">
+  <meta property="og:title" content="Pick your value · #OYW26">
+  <meta property="og:description" content="Advancing Energy Tech · Powered By Each Other. Make your Schneider Electric × One Young World profile picture.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/se-mark.svg" type="image/svg+xml">
+  <link rel="preload" as="image" href="assets/frames/frame-bg-lossless.webp" type="image/webp">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <video class="bg-video" id="bgVideo" autoplay muted loop playsinline preload="metadata" poster="assets/bg-poster.jpg" aria-hidden="true" tabindex="-1">
+    <source src="assets/bg-motion.mp4" type="video/mp4">
+  </video>
+  <div class="bg-shade" aria-hidden="true"></div>
+  <img class="deco deco-tr" src="assets/pattern-1.svg" alt="" aria-hidden="true">
+  <img class="deco deco-bl" src="assets/pattern-1.svg" alt="" aria-hidden="true">
+
+  <header class="top">
+    <div class="brand">
+      <img class="se-mark" src="assets/se-mark.svg" alt="">
+      <span>Schneider Electric <em>×</em> One Young World</span>
+    </div>
+    <div class="event">Cape Town · 3–6 November 2026 · <b>#OYW26</b></div>
+  </header>
+
+  <main class="app">
+
+    <section class="stage" aria-label="Preview">
+      <div class="stage-inner">
+        <canvas id="canvas" width="1080" height="1080" tabindex="0"
+          aria-label="Profile picture preview. Drag to move. Pinch or scroll to zoom. Arrow keys nudge."></canvas>
+        <div class="stage-hint" id="hint" hidden>Drag to move · Pinch or scroll to zoom</div>
+        <div class="busy" id="busy" hidden>
+          <div class="spinner" aria-hidden="true"></div>
+          <span id="busyText">Finding your face…</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="intro">
+        <h1>Advancing Energy Tech</h1>
+        <p class="tag">Powered <i>By</i> Each Other.</p>
+        <p class="lead">Pick the value you stand for and get your #OYW26 profile picture in seconds.</p>
+      </div>
+
+      <ol class="steps">
+
+        <li class="step" id="step-photo">
+          <h2><span class="num">1</span> Your photo</h2>
+          <div class="row">
+            <label class="btn primary file" for="file">
+              <input type="file" id="file" accept="image/*">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h3l2-3h6l2 3h3v12H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+              <span id="fileLabel">Choose a photo</span>
+            </label>
+            <button class="btn ghost" id="changePhoto" type="button" hidden>Change photo</button>
+          </div>
+          <p class="fine">Your photo stays on your device. Nothing is uploaded.</p>
+          <div id="faces" class="faces" hidden>
+            <span>We found more than one face. Who is this for?</span>
+            <div class="face-list" id="faceList" role="radiogroup" aria-label="Choose a face"></div>
+          </div>
+        </li>
+
+        <li class="step" id="step-value">
+          <h2><span class="num">2</span> Pick your value</h2>
+          <div class="legend" id="legend" role="radiogroup" aria-label="Values"></div>
+        </li>
+
+        <li class="step" id="step-adjust">
+          <h2><span class="num">3</span> Fine-tune</h2>
+          <div class="controls">
+            <label class="slider">
+              <span>Zoom</span>
+              <input type="range" id="zoom" min="0" max="1000" value="0" step="1" aria-label="Zoom">
+            </label>
+            <label class="slider">
+              <span>Rotate</span>
+              <input type="range" id="rotate" min="-45" max="45" value="0" step="0.5" aria-label="Rotate">
+            </label>
+            <div class="row wrap">
+              <button class="btn ghost small" id="recenter" type="button">Re-centre on face</button>
+              <button class="btn ghost small" id="straighten" type="button">Straighten</button>
+              <button class="btn ghost small" id="reset" type="button">Reset</button>
+            </div>
+          </div>
+        </li>
+
+        <li class="step" id="step-save">
+          <h2><span class="num">4</span> Save &amp; share</h2>
+          <div class="row wrap">
+            <button class="btn primary" id="save" type="button" disabled>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 19h14" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span id="saveLabel">Save picture</span>
+            </button>
+            <button class="btn ghost" id="story" type="button" disabled>Story version</button>
+          </div>
+          <p class="fine" id="saveHint">Add a photo and pick a value to unlock.</p>
+        </li>
+
+      </ol>
+
+      <footer class="foot">
+        <span>#AdvancingEnergyTech</span><span>#OYW26</span>
+      </footer>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>
