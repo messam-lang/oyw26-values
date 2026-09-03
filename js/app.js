@@ -14,17 +14,18 @@
   const MAX_SRC_SIDE = 2200;     // photo is downscaled to this before compositing (memory-safe on phones)
   const DETECT_SIDE = 640;       // detection input long side
 
+  // Order follows "The Journey" in the client's iconography doc (Welcome is the opening-ceremony mark, not a personal value).
   const VALUES = [
-    { id: 'action',     name: 'Action',     tagline: 'Turning ideas into impact.' },
     { id: 'community',  name: 'Community',  tagline: 'Stronger together.' },
     { id: 'friendship', name: 'Friendship', tagline: 'Bonds that power change.' },
     { id: 'knowledge',  name: 'Knowledge',  tagline: 'Learning that lights the way.' },
+    { id: 'action',     name: 'Action',     tagline: 'Turning ideas into impact.' },
     { id: 'progress',   name: 'Progress',   tagline: 'Every step forward counts.' },
   ];
 
   const COPY = {
     shareTitle: 'My #OYW26 value',
-    shareText: 'Advancing Energy Tech · Powered By Each Other. #OYW26 #AdvancingEnergyTech',
+    shareText: (v) => `Powered By Each Other. For me, it's ${v}. #OYW26 #AdvancingEnergyTech`,
     eventTitle: 'Advancing Energy Tech',
     eventSub: 'Powered By Each Other.',
     eventWhere: 'Cape Town · 3–6 November 2026',
@@ -346,8 +347,8 @@
     let img;
     const url = URL.createObjectURL(file);
     try {
+      // note: no img.decode() here - it can stall in hidden/background tabs; drawImage decodes synchronously anyway
       img = await loadImage(url);
-      if (img.decode) { try { await img.decode(); } catch (_) { /* drawn anyway */ } }
     } catch (err) {
       setBusy(null); URL.revokeObjectURL(url);
       toast('That image could not be opened. Try a JPG or PNG.'); return;
@@ -495,7 +496,8 @@
   async function shareOrDownload(blob, name) {
     const file = new File([blob], name, { type: 'image/png' });
     if (navigator.canShare && navigator.canShare({ files: [file] })) {
-      try { await navigator.share({ files: [file], title: COPY.shareTitle, text: COPY.shareText }); return 'shared'; }
+      const v = VALUES.find((x) => x.id === state.valueId);
+      try { await navigator.share({ files: [file], title: COPY.shareTitle, text: COPY.shareText(v ? v.name : 'about people') }); return 'shared'; }
       catch (e) { if (e && e.name === 'AbortError') return 'cancelled'; }
     }
     const url = URL.createObjectURL(blob);
@@ -613,8 +615,9 @@
     }));
     try { assets.pattern = await loadImage('assets/pattern-1.svg'); } catch (_) {}
     requestDraw();
-    // dev/test hook: ?photo=<same-origin path> loads a photo without the file picker
+    // dev/test hook: ?photo=<same-origin path> loads a photo without the file picker; ?debug exposes internals
     const q = new URLSearchParams(location.search);
+    if (q.has('debug')) window.__oyw = { state, assets, draw, renderSquare, renderStory, detectFaces, fitToFace, fitCenter, selectValue, loadPhoto };
     const testPhoto = q.get('photo');
     if (testPhoto && !/^(https?:)?\/\//i.test(testPhoto)) {
       try {
@@ -622,7 +625,6 @@
         await loadPhoto(new File([b], testPhoto.split('/').pop(), { type: b.type || 'image/jpeg' }));
       } catch (e) { console.warn('test photo failed', e); }
     }
-    if (q.has('debug')) window.__oyw = { state, assets, renderSquare, renderStory, detectFaces, fitToFace, selectValue, loadPhoto };
   }
   boot();
 })();

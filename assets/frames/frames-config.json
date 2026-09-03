@@ -7,6 +7,7 @@
       340.9,
       261.8
     ],
+    "source": "Community.svg",
     "legendIcon": "assets/icons/community.svg"
   },
   "friendship": {
@@ -17,6 +18,7 @@
       339.0,
       285.3
     ],
+    "source": "Friendship.svg",
     "legendIcon": "assets/icons/friendship.svg"
   },
   "knowledge": {
@@ -27,7 +29,20 @@
       351.0,
       309.0
     ],
+    "source": "Knowledge.svg",
     "legendIcon": "assets/icons/knowledge.svg"
+  },
+  "action": {
+    "frameIcon": "assets/icons/action-frame.svg",
+    "bbox": [
+      185.1,
+      131.6,
+      338.9,
+      285.4
+    ],
+    "placeholder": true,
+    "source": "3.svg (placeholder: Action.svg missing or empty)",
+    "legendIcon": "assets/icons/action.svg"
   },
   "progress": {
     "frameIcon": "assets/icons/progress-frame.svg",
@@ -37,17 +52,7 @@
       348.9,
       285.5
     ],
+    "source": "Progress.svg",
     "legendIcon": "assets/icons/progress.svg"
-  },
-  "action": {
-    "frameIcon": "assets/icons/action-frame.svg",
-    "bbox": [
-      184.9,
-      131.4,
-      339.1,
-      285.6
-    ],
-    "placeholder": true,
-    "legendIcon": "assets/icons/action.svg"
   }
 }
