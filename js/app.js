@@ -533,9 +533,10 @@
     glow.addColorStop(0, 'rgba(61,205,88,0.55)'); glow.addColorStop(1, 'rgba(61,205,88,0)');
     g.fillStyle = glow; g.fillRect(0, 0, W, H);
     if (assets.pattern) {
-      g.save(); g.globalAlpha = 0.28;
-      const pw = W * 1.2, ph = pw * (assets.pattern.naturalHeight / assets.pattern.naturalWidth);
-      g.drawImage(assets.pattern, (W - pw) / 2, H - ph + 40, pw, ph);
+      // brand stripes hugging the bottom edge, kept clear of the event copy
+      g.save(); g.globalAlpha = 0.22;
+      const pw = W * 1.25, ph = pw * (assets.pattern.naturalHeight / assets.pattern.naturalWidth);
+      g.drawImage(assets.pattern, (W - pw) / 2, H - ph * 0.42, pw, ph);
       g.restore();
     }
     // partners line
