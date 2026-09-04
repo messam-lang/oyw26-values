@@ -22,7 +22,7 @@
       one:   { x: 544, y: 114, w: 40 },
     },
     b: {
-      label: 'Mint', bg: '#e7ffd9',
+      label: 'Mint', bg: '#e7ffd9', contentFollowsOverlay: true,   // name, details and logos fade out while the pattern washes over, back in as it clears
       name:  { x: 300, y: 74,   size: 28, weight: 600, color: '#57b959', align: 'center', maxW: 420 },
       title: { x: 300, y: 88.5, size: 15, weight: 500, color: '#57b959', align: 'center', maxW: 420 },
       email: { x: 60,  y: 134,  size: 16, weight: 400, color: '#57b959', align: 'left',   maxW: 345 },
@@ -54,18 +54,22 @@
   }
   async function loadSprites(key) {
     if (assets.sprites[key]) return assets.sprites[key];
-    const manifest = await fetch(`assets/signature/${key}/manifest.json`).then((r) => r.json());
+    const manifest = await fetch(`assets/signature/${key}/manifest.json`, { cache: 'no-cache' }).then((r) => r.json());
+    const v = manifest.built ? `?v=${manifest.built}` : '';
     const strips = await Promise.all(Array.from({ length: manifest.strips }, (_, i) =>
-      loadImage(`assets/signature/${key}/strip-${String(i).padStart(2, '0')}.${manifest.ext || 'png'}`)));
+      loadImage(`assets/signature/${key}/strip-${String(i).padStart(2, '0')}.${manifest.ext || 'png'}${v}`)));
     assets.sprites[key] = { manifest, strips };
     return assets.sprites[key];
   }
 
   // ---------------------------------------------------------------- drawing
+  // The designer's type is set tighter than browser Poppins: measured against the reference frames,
+  // matching widths need the size at 96% and the glyphs condensed to 95%.
+  const SIZE_K = 0.96, X_K = 0.95;
   function fitFont(g, text, spec) {
-    let size = spec.size;
+    let size = spec.size * SIZE_K;
     g.font = `${spec.weight} ${size}px Poppins, system-ui, sans-serif`;
-    const w = g.measureText(text).width;
+    const w = g.measureText(text).width * X_K;
     if (w > spec.maxW) { size = Math.max(8, size * spec.maxW / w); g.font = `${spec.weight} ${size}px Poppins, system-ui, sans-serif`; }
     return size;
   }
@@ -74,13 +78,17 @@
     fitFont(g, text, spec);
     g.textAlign = spec.align; g.textBaseline = 'alphabetic';
     g.fillStyle = spec.color;
-    g.globalAlpha = placeholder ? 0.45 : 1;
-    g.fillText(text, spec.x, spec.y);
-    g.globalAlpha = 1;
+    const outer = g.globalAlpha;
+    g.globalAlpha = outer * (placeholder ? 0.45 : 1);
+    g.save();
+    g.translate(spec.x, spec.y);
+    g.scale(X_K, 1);
+    g.fillText(text, 0, 0);
+    g.restore();
+    g.globalAlpha = outer;
   }
-  function drawBase(g, design, fields, usePlaceholders) {
+  function drawContent(g, design, fields, usePlaceholders) {
     const d = DESIGNS[design];
-    g.fillStyle = d.bg; g.fillRect(0, 0, W, H);
     for (const k of ['name', 'title', 'email', 'phone']) {
       const v = (fields[k] || '').trim();
       if (v) drawText(g, v, d[k], false);
@@ -98,11 +106,27 @@
     const row = i % manifest.framesPerStrip;
     if (strip) g.drawImage(strip, 0, row * H, W, H, 0, 0, W, H);
   }
+  // opacity of the text and logos for a given animation frame (1 = fully visible)
+  function contentAlpha(design, sprite, frame) {
+    const d = DESIGNS[design];
+    if (!d.contentFollowsOverlay || !sprite || !sprite.manifest.coverage) return 1;
+    const cov = sprite.manifest.coverage;
+    const c = cov[((frame % cov.length) + cov.length) % cov.length] || 0;
+    return Math.pow(1 - c, 0.8);           // fades slightly faster than the pattern, as in the designer's comp
+  }
   function drawFrame(g, scale, frame, usePlaceholders) {
+    const d = DESIGNS[state.design];
+    const sprite = assets.sprites[state.design];
     g.setTransform(scale, 0, 0, scale, 0, 0);
     g.imageSmoothingEnabled = true; g.imageSmoothingQuality = 'high';
-    drawBase(g, state.design, state.fields, usePlaceholders);
-    drawOverlay(g, assets.sprites[state.design], frame);
+    g.fillStyle = d.bg; g.fillRect(0, 0, W, H);
+    const a = contentAlpha(state.design, sprite, frame);
+    if (a > 0.002) {
+      g.save(); g.globalAlpha = a;
+      drawContent(g, state.design, state.fields, usePlaceholders);
+      g.restore();
+    }
+    drawOverlay(g, sprite, frame);
   }
 
   // ---------------------------------------------------------------- preview loop

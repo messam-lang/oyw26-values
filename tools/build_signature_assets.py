@@ -14,6 +14,7 @@ Outputs (assets/signature/):
   a/manifest.json, b/manifest.json  frame count, fps, strip layout
   se-wordmark-dark.png, se-wordmark-green.png, oyw-one.png   logos downscaled for the web
 
+Colour is un-premultiplied (AE exports matted/premultiplied alpha; canvas drawImage expects straight alpha).
 The animation is resampled to FPS and, for option B, re-cut so frame 0 is the clean (pattern-free) state:
 mail clients that do not animate GIFs (Outlook desktop) show the first frame only.
 """
@@ -38,12 +39,24 @@ OPTIONS = {
     "a": ("option-a-alpha.mov", 24, 0, 12),   # stripes never return to frame 0 exactly -> 1 s crossfade closes the loop
     "b": ("option-b-alpha.mov", 60, 76, 0),   # source already loops; re-cut so frame 0 is the clean state
 }
-STRIP_FORMAT = ("webp", {"quality": 92, "alpha_quality": 100, "method": 6})
+STRIP_FORMAT = ("webp", {"quality": 92, "alpha_quality": 100, "method": 4})
 LOGOS = {
     "se-wordmark-dark.png": 1200,
     "se-wordmark-green.png": 1200,
     "oyw-one.png": 700,
 }
+
+
+def unpremultiply(im):
+    """AE writes ProRes 4444 with premultiplied colour; browsers expect straight alpha. Divide RGB by alpha."""
+    import numpy as np
+    arr = np.asarray(im.convert("RGBA")).astype(np.float32)
+    a = arr[:, :, 3:4]
+    rgb = arr[:, :, :3]
+    scale = np.where(a > 0, 255.0 / np.maximum(a, 1.0), 1.0)
+    rgb = np.clip(rgb * scale, 0, 255)
+    out = np.concatenate([rgb, a], axis=2).astype(np.uint8)
+    return Image.fromarray(out, "RGBA")
 
 
 def extract_frames(movie, tmp):
@@ -69,7 +82,7 @@ def build_option(key, movie, src_fps, start, xfade):
         seam = sum(abs(x - y) for x, y in zip(a.getdata(), b.getdata())) / (150 * 38)
         imgs = []
         for fi in picked:
-            fr = Image.open(frames[fi]).convert("RGBA")
+            fr = unpremultiply(Image.open(frames[fi]))
             if fr.size != (W, H):
                 fr = fr.resize((W, H), Image.LANCZOS)
             imgs.append(fr)
@@ -90,7 +103,13 @@ def build_option(key, movie, src_fps, start, xfade):
             strip.save(os.path.join(out_dir, "strip-%02d.%s" % (strips, ext)), **save_kw)
             strips += 1
         picked = imgs
+        from PIL import ImageStat
+        cov = [ImageStat.Stat(im.getchannel("A")).mean[0] for im in imgs]
+        cmax = max(cov) or 1.0
+        coverage = [round(c / cmax, 3) for c in cov]
+        import time
         manifest = {"width": W, "height": H, "fps": FPS, "frames": len(picked), "framesPerStrip": FRAMES_PER_STRIP,
+                    "coverage": coverage, "built": int(time.time()),
                     "strips": strips, "ext": ext, "crossfadeFrames": xfade, "sourceFrames": n, "sourceFps": src_fps, "loopStartSourceFrame": start,
                     "seamMeanAlphaDiff": round(seam, 2)}
         with open(os.path.join(out_dir, "manifest.json"), "w") as f:
