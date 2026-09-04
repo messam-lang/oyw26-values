@@ -208,8 +208,10 @@
       ang: Math.atan2(b.y - a.y, b.x - a.x),
     };
   }
+  // opening the file picker needs a completed click/tap (user activation), not pointerdown
+  els.canvas.addEventListener('click', () => { if (!state.src) els.file.click(); });
   els.canvas.addEventListener('pointerdown', (e) => {
-    if (!state.src) { els.file.click(); return; }
+    if (!state.src) return;
     e.preventDefault();
     els.canvas.setPointerCapture(e.pointerId);
     pointers.set(e.pointerId, framePoint(e));
@@ -253,7 +255,7 @@
   }, { passive: false });
   els.canvas.addEventListener('dblclick', () => { if (state.auto) { Object.assign(state, state.auto); syncSliders(); requestDraw(); } });
   els.canvas.addEventListener('keydown', (e) => {
-    if (!state.src) return;
+    if (!state.src) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); els.file.click(); } return; }
     const step = e.shiftKey ? 20 : 5;
     const map = { ArrowLeft: [-step, 0], ArrowRight: [step, 0], ArrowUp: [0, -step], ArrowDown: [0, step] };
     if (map[e.key]) { state.tx += map[e.key][0]; state.ty += map[e.key][1]; e.preventDefault(); requestDraw(); }
