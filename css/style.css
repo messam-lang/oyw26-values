@@ -257,7 +257,14 @@ body.dragging .stage-inner { outline: 3px dashed var(--bright); }
 .hero h1 { margin: 6px 0 0; font-size: clamp(28px, 4.2vw, 40px); line-height: 1.1; font-weight: 700; letter-spacing: -0.01em; }
 .hero .tag { margin: 4px 0 8px; font-size: clamp(16px, 2.2vw, 20px); font-weight: 600; color: var(--mint); }
 .hero .tag i { font-style: italic; font-weight: 500; }
-.hero .lead { margin: 0; color: rgba(231, 255, 217, 0.82); max-width: 62ch; }
+.hero .kicker { margin: 4px 0 0; font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--bright); }
+.hero h1 { display: flex; align-items: center; flex-wrap: wrap; gap: 0.3em; }
+.oyw-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 1.25em; padding: 0 0.42em; border-radius: 999px; background: #fff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); vertical-align: middle;
+}
+.oyw-badge img { height: 0.82em; width: auto; display: block; }
 
 .tabs {
   display: flex; gap: 6px; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch;
@@ -273,6 +280,29 @@ body.dragging .stage-inner { outline: 3px dashed var(--bright); }
 .tabs [role="tab"]:hover { background: rgba(231, 255, 217, 0.10); }
 .tabs [role="tab"][aria-selected="true"] { background: var(--bright); color: var(--deep); border-color: var(--bright); }
 .tabs [role="tab"]:focus-visible { outline: 3px solid rgba(94, 255, 89, 0.55); outline-offset: 2px; }
+.tab-num {
+  display: inline-grid; place-items: center; width: 20px; height: 20px; margin-right: 8px; border-radius: 50%;
+  background: rgba(231, 255, 217, 0.16); color: var(--mint); font-size: 11.5px; font-weight: 700;
+}
+.tabs [role="tab"][aria-selected="true"] .tab-num { background: rgba(10, 47, 36, 0.18); color: var(--deep); }
+.tab-arrow { flex: none; align-self: center; width: 18px; height: 2px; background: rgba(231, 255, 217, 0.35); position: relative; }
+.tab-arrow::after {
+  content: ""; position: absolute; right: -1px; top: -4px; width: 8px; height: 8px;
+  border-top: 2px solid rgba(231, 255, 217, 0.5); border-right: 2px solid rgba(231, 255, 217, 0.5); transform: rotate(45deg);
+}
+/* process chevrons between numbered step cards (visual only; every step stays usable in any order) */
+.steps { gap: 26px; }
+.step { position: relative; }
+.step + .step::before {
+  content: ""; position: absolute; left: 50%; top: -19px; width: 12px; height: 12px; margin-left: -8px;
+  border-right: 2.5px solid var(--bright); border-bottom: 2.5px solid var(--bright); transform: rotate(45deg); opacity: 0.85;
+}
+.next {
+  display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; padding: 10px 16px; border-radius: 999px;
+  color: var(--mint); font-weight: 600; text-decoration: none; border: 1px solid var(--line-strong); background: rgba(231, 255, 217, 0.04);
+}
+.next:hover { background: rgba(231, 255, 217, 0.10); }
+.next span { color: var(--bright); }
 
 .tool.single { grid-template-columns: minmax(0, 1fr); max-width: 760px; }
 .centre { text-align: center; }
@@ -323,23 +353,25 @@ body.dragging .stage-inner { outline: 3px dashed var(--bright); }
 /* ---------- linkedin banner ---------- */
 .banner-stage { display: grid; gap: 8px; align-content: start; }
 @media (min-width: 900px) { .banner-stage { position: sticky; top: 24px; } }
-.li-mock {
-  position: relative; border-radius: 12px 12px 0 0; overflow: visible;
-  background: #fff; box-shadow: var(--shadow); padding-bottom: 22%;
-}
-.li-mock img { display: block; width: 100%; height: auto; border-radius: 12px 12px 0 0; }
+.li-mock { border-radius: 12px; overflow: hidden; background: #fff; box-shadow: var(--shadow); color: #1f1f1f; font-family: var(--font); }
+.li-cover { position: relative; }
+.li-cover img { display: block; width: 100%; height: auto; }
 .li-avatar {
-  position: absolute; left: 3%; top: 63%; width: 19%; aspect-ratio: 1; border-radius: 50%;
-  background: #e9ecef center / cover no-repeat; border: 3px solid #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  position: absolute; left: 4%; bottom: 0; transform: translateY(50%); width: 25%; max-width: 152px; aspect-ratio: 1; border-radius: 50%;
+  background: #e9ecef center / cover no-repeat; border: 4px solid #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.2); z-index: 1;
 }
 .li-avatar:not(.has-photo)::after {
   content: ""; position: absolute; inset: 0; border-radius: 50%;
   background: radial-gradient(circle at 50% 38%, #b9c0c6 0 22%, transparent 23%), radial-gradient(ellipse at 50% 95%, #b9c0c6 0 42%, transparent 43%);
 }
-.li-mock::after {
-  content: "Your name · Job title · Schneider Electric"; position: absolute; left: 25%; bottom: 6%;
-  font-size: clamp(10px, 1.6vw, 14px); color: #6b7280; font-weight: 500;
-}
+.li-body { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding: calc(12.5% + 10px) 4% 16px; }
+.li-name { font-size: clamp(16px, 2.4vw, 22px); font-weight: 600; line-height: 1.2; color: #000; }
+.li-headline { font-size: clamp(12px, 1.7vw, 15px); margin-top: 4px; color: #1f1f1f; }
+.li-meta { font-size: clamp(11px, 1.5vw, 13px); margin-top: 6px; color: #666; }
+.li-meta span { color: #0a66c2; font-weight: 600; }
+.li-links { margin-top: 4px; }
+.li-company { display: flex; align-items: center; gap: 8px; flex: none; font-size: clamp(11px, 1.5vw, 13px); font-weight: 600; color: #1f1f1f; }
+.li-company img { width: clamp(44px, 7vw, 64px); height: auto; padding: 4px; border: 1px solid #e6e6e6; border-radius: 4px; }
 .banner-grid { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
 .banner-pick {
   display: grid; gap: 6px; padding: 6px 6px 8px; border-radius: 12px; text-align: left; cursor: pointer;
@@ -366,5 +398,6 @@ body.dragging .stage-inner { outline: 3px dashed var(--bright); }
 /* small screens: show all four tabs in two rows instead of a hidden horizontal scroll */
 @media (max-width: 640px) {
   .tabs { flex-wrap: wrap; overflow: visible; }
-  .tabs [role="tab"] { flex: 1 1 45%; text-align: center; }
+  .tabs [role="tab"] { flex: 1 1 45%; justify-content: center; display: inline-flex; align-items: center; }
+  .tab-arrow { display: none; }
 }

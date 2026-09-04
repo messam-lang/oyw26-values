@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>#OYW26 Toolkit · Advancing Energy Tech</title>
+  <title>Advancing to OYW · Employee toolkit</title>
   <meta name="description" content="Schneider Electric × One Young World 2026 employee toolkit: value profile frame, animated email signature, LinkedIn banners and ready-to-post captions.">
   <meta name="theme-color" content="#0a2f24">
-  <meta property="og:title" content="#OYW26 Toolkit · Powered By Each Other">
+  <meta property="og:title" content="Advancing to OYW · Employee toolkit">
   <meta property="og:description" content="Pick your value, frame your photo, build your email signature, grab a LinkedIn banner and a caption.">
   <meta property="og:type" content="website">
   <link rel="icon" href="assets/se-mark.svg" type="image/svg+xml">
   <link rel="preload" as="image" href="assets/frames/frame-bg-lossless.webp" type="image/webp">
-  <link rel="stylesheet" href="css/style.css?v=20260904h">
+  <link rel="stylesheet" href="css/style.css?v=20260904i">
 </head>
 <body>
 
@@ -31,16 +31,19 @@
   </header>
 
   <section class="hero">
-    <h1>Advancing Energy Tech</h1>
+    <h1>Advancing to <span class="oyw-badge"><img src="assets/signature/oyw-one.png" alt="One Young World"></span></h1>
     <p class="tag">Powered <i>By</i> Each Other.</p>
-    <p class="lead">Your #OYW26 toolkit. Frame your photo with the value you stand for, build your email signature, pick a LinkedIn banner and grab a caption.</p>
+    <p class="kicker">Employee toolkit</p>
   </section>
 
   <nav class="tabs" role="tablist" aria-label="Toolkit">
-    <button role="tab" id="tab-frame" data-tab="frame" aria-selected="true" aria-controls="tool-frame">Profile frame</button>
-    <button role="tab" id="tab-signature" data-tab="signature" aria-selected="false" aria-controls="tool-signature" tabindex="-1">Email signature</button>
-    <button role="tab" id="tab-banner" data-tab="banner" aria-selected="false" aria-controls="tool-banner" tabindex="-1">LinkedIn banner</button>
-    <button role="tab" id="tab-captions" data-tab="captions" aria-selected="false" aria-controls="tool-captions" tabindex="-1">Captions</button>
+    <button role="tab" id="tab-frame" data-tab="frame" aria-selected="true" aria-controls="tool-frame"><span class="tab-num">1</span>Profile frame</button>
+    <span class="tab-arrow" aria-hidden="true"></span>
+    <button role="tab" id="tab-signature" data-tab="signature" aria-selected="false" aria-controls="tool-signature" tabindex="-1"><span class="tab-num">2</span>Email signature</button>
+    <span class="tab-arrow" aria-hidden="true"></span>
+    <button role="tab" id="tab-banner" data-tab="banner" aria-selected="false" aria-controls="tool-banner" tabindex="-1"><span class="tab-num">3</span>LinkedIn banner</button>
+    <span class="tab-arrow" aria-hidden="true"></span>
+    <button role="tab" id="tab-captions" data-tab="captions" aria-selected="false" aria-controls="tool-captions" tabindex="-1"><span class="tab-num">4</span>Captions</button>
   </nav>
 
   <!-- ============================================================ 1. profile frame -->
@@ -114,6 +117,7 @@
         </li>
 
       </ol>
+      <a class="next" href="#signature">Next: Email signature <span aria-hidden="true">→</span></a>
     </section>
   </main>
 
@@ -209,6 +213,7 @@ Schneider Electric</pre>
         </li>
 
       </ol>
+      <a class="next" href="#banner">Next: LinkedIn banner <span aria-hidden="true">→</span></a>
     </section>
   </section>
 
@@ -217,10 +222,21 @@ Schneider Electric</pre>
 
     <section class="banner-stage" aria-label="Banner preview">
       <div class="li-mock">
-        <img id="bannerImg" src="assets/banners/banner-1.jpg" alt="Selected LinkedIn banner" width="1584" height="396">
-        <div class="li-avatar" id="liAvatar" aria-hidden="true"></div>
+        <div class="li-cover">
+          <img id="bannerImg" src="assets/banners/banner-1.jpg" alt="Selected LinkedIn banner" width="1584" height="396">
+          <div class="li-avatar" id="liAvatar" aria-hidden="true"></div>
+        </div>
+        <div class="li-body">
+          <div class="li-text">
+            <div class="li-name" id="liName">Your name</div>
+            <div class="li-headline" id="liHeadline">Your job title at Schneider Electric</div>
+            <div class="li-meta">Your location · <span>Contact info</span></div>
+            <div class="li-meta li-links"><span>500+ connections</span></div>
+          </div>
+          <div class="li-company"><img src="assets/signature/se-wordmark-dark.png" alt="" width="1200" height="358"><span>Schneider Electric</span></div>
+        </div>
       </div>
-      <p class="fine centre">Roughly where LinkedIn places your profile photo. Make your framed picture first and it shows up here.</p>
+      <p class="fine centre">A preview of your LinkedIn profile. Your framed picture and the name and title from the signature step show up here.</p>
     </section>
 
     <section class="panel">
@@ -237,6 +253,7 @@ Schneider Electric</pre>
           <p class="fine">On LinkedIn: open your profile → pencil icon on the banner → <b>Upload photo</b> → choose the file → <b>Apply</b>.</p>
         </li>
       </ol>
+      <a class="next" href="#captions">Next: Captions <span aria-hidden="true">→</span></a>
     </section>
   </section>
 
@@ -254,8 +271,8 @@ Schneider Electric</pre>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-  <script src="js/app.js?v=20260904h" defer></script>
-  <script src="js/signature.js?v=20260904h" defer></script>
-  <script src="js/toolkit.js?v=20260904h" defer></script>
+  <script src="js/app.js?v=20260904i" defer></script>
+  <script src="js/signature.js?v=20260904i" defer></script>
+  <script src="js/toolkit.js?v=20260904i" defer></script>
 </body>
 </html>

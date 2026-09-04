@@ -136,7 +136,7 @@
   let raf = 0, t0 = 0;
   function tick(now) {
     raf = 0;
-    if (els.panel.hidden || document.hidden) return;   // resume on tab show / visibility
+    if (els.panel.hidden) return;   // restarted on tab show; a hidden page just pauses requestAnimationFrame
     const sprite = assets.sprites[state.design];
     const fps = sprite ? sprite.manifest.fps : 12;
     if (!t0) t0 = now;
@@ -147,6 +147,8 @@
   function startLoop() { if (!raf) raf = requestAnimationFrame(tick); }
   document.addEventListener('oyw:tab', (e) => { if (e.detail === 'signature') { init(); startLoop(); } });
   document.addEventListener('visibilitychange', () => { if (!document.hidden) startLoop(); });
+  window.addEventListener('pageshow', startLoop);
+  window.addEventListener('focus', startLoop);
 
   // ---------------------------------------------------------------- inputs
   function readFields() {

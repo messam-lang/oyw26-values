@@ -136,7 +136,20 @@
     avatar.style.backgroundImage = url ? `url(${url})` : '';
     avatar.classList.toggle('has-photo', !!url);
   }
-  document.addEventListener('oyw:tab', (e) => { if (e.detail === 'banner') refreshAvatar(); });
+  // name and headline come from the signature step, the way LinkedIn shows them under the banner
+  const liName = $('liName'), liHeadline = $('liHeadline');
+  const sigName = $('sigName'), sigTitle = $('sigTitle');
+  function refreshProfileText() {
+    if (!liName) return;
+    const n = (sigName && sigName.value.trim()) || '';
+    const t = (sigTitle && sigTitle.value.trim()) || '';
+    liName.textContent = n || 'Your name';
+    liHeadline.textContent = (t ? t : 'Your job title') + ' at Schneider Electric';
+  }
+  if (sigName) sigName.addEventListener('input', refreshProfileText);
+  if (sigTitle) sigTitle.addEventListener('input', refreshProfileText);
+  document.addEventListener('oyw:tab', (e) => { if (e.detail === 'banner') { refreshAvatar(); refreshProfileText(); } });
+  refreshProfileText();
 
   // ---------------------------------------------------------------- boot
   buildCaptions();
