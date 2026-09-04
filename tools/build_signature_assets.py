@@ -31,13 +31,14 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "source", "signature")
 OUT = os.path.join(ROOT, "assets", "signature")
 W, H = 600, 150
-FPS = 12
+FPS = 10                 # GIF frame rate; keeps the email signature under ~600 KB
 FRAMES_PER_STRIP = 8
 
 OPTIONS = {
-    # option: (alpha movie, source fps, first "clean" source frame to start the loop on, crossfade frames at the seam)
-    "a": ("option-a-alpha.mov", 24, 0, 12),   # stripes never return to frame 0 exactly -> 1 s crossfade closes the loop
-    "b": ("option-b-alpha.mov", 60, 76, 0),   # source already loops; re-cut so frame 0 is the clean state
+    # option: (alpha movie, source fps, first "clean" source frame to start the loop on,
+    #          crossfade frames at the seam, loop length in seconds or None for the whole source)
+    "a": ("option-a-alpha.mov", 24, 0, 8, 4.5),   # stripes never return to frame 0 -> 4.5 s cut + 0.8 s crossfade closes the loop
+    "b": ("option-b-alpha.mov", 60, 76, 0, None), # source already loops; re-cut so frame 0 is the clean state
 }
 STRIP_FORMAT = ("webp", {"quality": 92, "alpha_quality": 100, "method": 4})
 LOGOS = {
@@ -65,7 +66,7 @@ def extract_frames(movie, tmp):
     return sorted(os.path.join(tmp, f) for f in os.listdir(tmp) if f.endswith(".png"))
 
 
-def build_option(key, movie, src_fps, start, xfade):
+def build_option(key, movie, src_fps, start, xfade, loop_seconds):
     out_dir = os.path.join(OUT, key)
     if os.path.isdir(out_dir):
         shutil.rmtree(out_dir)
@@ -86,6 +87,8 @@ def build_option(key, movie, src_fps, start, xfade):
             if fr.size != (W, H):
                 fr = fr.resize((W, H), Image.LANCZOS)
             imgs.append(fr)
+        if loop_seconds:
+            imgs = imgs[:int(round(loop_seconds * FPS)) + xfade]
         if xfade:
             # blend the last `xfade` frames towards the first `xfade`, then drop the first ones: seamless loop
             n2 = len(imgs)
@@ -139,8 +142,8 @@ def build_logos():
 def main():
     os.makedirs(OUT, exist_ok=True)
     build_logos()
-    for key, (movie, fps, start, xfade) in OPTIONS.items():
-        build_option(key, movie, fps, start, xfade)
+    for key, (movie, fps, start, xfade, loop_seconds) in OPTIONS.items():
+        build_option(key, movie, fps, start, xfade, loop_seconds)
 
 
 if __name__ == "__main__":

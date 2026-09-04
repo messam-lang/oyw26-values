@@ -87,13 +87,15 @@
     g.restore();
     g.globalAlpha = outer;
   }
-  function drawContent(g, design, fields, usePlaceholders) {
+  function drawContent(g, design, fields, usePlaceholders, alpha) {
     const d = DESIGNS[design];
     for (const k of ['name', 'title', 'email', 'phone']) {
       const v = (fields[k] || '').trim();
+      g.globalAlpha = (k === 'name' || k === 'title') ? alpha.name : alpha.rest;
       if (v) drawText(g, v, d[k], false);
       else if (usePlaceholders) drawText(g, PLACEHOLDER[k], d[k], true);
     }
+    g.globalAlpha = alpha.rest;
     if (assets.se) { const h = d.se.w * assets.se.naturalHeight / assets.se.naturalWidth; g.drawImage(assets.se, d.se.x, d.se.y, d.se.w, h); }
     if (d.divider) { g.fillStyle = d.divider.color; g.fillRect(d.divider.x - 0.5, d.divider.y0, 1, d.divider.y1 - d.divider.y0); }
     if (assets.one) { const h = d.one.w * assets.one.naturalHeight / assets.one.naturalWidth; g.drawImage(assets.one, d.one.x, d.one.y, d.one.w, h); }
@@ -109,10 +111,11 @@
   // opacity of the text and logos for a given animation frame (1 = fully visible)
   function contentAlpha(design, sprite, frame) {
     const d = DESIGNS[design];
-    if (!d.contentFollowsOverlay || !sprite || !sprite.manifest.coverage) return 1;
+    if (!d.contentFollowsOverlay || !sprite || !sprite.manifest.coverage) return { name: 1, rest: 1 };
     const cov = sprite.manifest.coverage;
     const c = cov[((frame % cov.length) + cov.length) % cov.length] || 0;
-    return Math.pow(1 - c, 0.8);           // fades slightly faster than the pattern, as in the designer's comp
+    // in the comp the name lingers slightly while details and logos clear first
+    return { name: Math.pow(1 - c, 0.7), rest: Math.pow(1 - c, 1.6) };
   }
   function drawFrame(g, scale, frame, usePlaceholders) {
     const d = DESIGNS[state.design];
@@ -121,9 +124,9 @@
     g.imageSmoothingEnabled = true; g.imageSmoothingQuality = 'high';
     g.fillStyle = d.bg; g.fillRect(0, 0, W, H);
     const a = contentAlpha(state.design, sprite, frame);
-    if (a > 0.002) {
-      g.save(); g.globalAlpha = a;
-      drawContent(g, state.design, state.fields, usePlaceholders);
+    if (a.name > 0.002 || a.rest > 0.002) {
+      g.save();
+      drawContent(g, state.design, state.fields, usePlaceholders, a);
       g.restore();
     }
     drawOverlay(g, sprite, frame);
@@ -182,7 +185,7 @@
   }
   async function renderGif(onProgress) {
     await init();
-    const { GIFEncoder, quantize, applyPalette } = await import('./vendor/gifenc.esm.js');   // resolved against the page URL (classic script)
+    const { GIFEncoder, quantize, applyPalette } = await import(new URL('vendor/gifenc.esm.js', document.baseURI).href);   // absolute: import() in a classic script resolves against the script URL in some browsers
     const sprite = assets.sprites[state.design];
     const frames = sprite.manifest.frames, fps = sprite.manifest.fps;
     const c = document.createElement('canvas'); c.width = W; c.height = H;
