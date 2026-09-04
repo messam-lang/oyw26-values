@@ -362,3 +362,9 @@ body.dragging .stage-inner { outline: 3px dashed var(--bright); }
 }
 .caption textarea:focus { outline: none; border-color: var(--bright); box-shadow: 0 0 0 3px rgba(94, 255, 89, 0.25); }
 .caption .fine { margin: 0; }
+
+/* small screens: show all four tabs in two rows instead of a hidden horizontal scroll */
+@media (max-width: 640px) {
+  .tabs { flex-wrap: wrap; overflow: visible; }
+  .tabs [role="tab"] { flex: 1 1 45%; text-align: center; }
+}
