@@ -72,13 +72,15 @@ button, input, label { font: inherit; }
 
 /* ---------- layout ---------- */
 .app {
-  display: grid; gap: 18px;
-  grid-template-columns: minmax(0, 1fr);
+  display: block;
   padding: 10px 16px 40px; max-width: 1180px; margin: 0 auto;
 }
+.app > .panel { margin-top: 18px; }
 .stage, .panel { min-width: 0; }
 @media (min-width: 900px) {
-  .app { grid-template-columns: minmax(360px, 520px) minmax(0, 1fr); align-items: start; gap: 32px; padding-top: 24px; }
+  .app { display: grid; grid-template-columns: minmax(360px, 520px) minmax(0, 1fr); align-items: stretch; gap: 32px; padding-top: 24px; }
+  .app > .panel { margin-top: 0; }
+  .sticky-box { position: sticky; top: 24px; }
 }
 
 /* ---------- stage ---------- */
@@ -99,8 +101,8 @@ button, input, label { font: inherit; }
   outline: 1px solid var(--line);
 }
 @media (min-width: 900px) {
-  .stage { position: sticky; top: 24px; padding: 0; background: none; }
-  .stage-inner { width: 100%; }
+  .stage { position: static; padding: 0; background: none; }
+  .stage-inner { width: 100%; position: sticky; top: 24px; }
 }
 #canvas {
   display: block; width: 100%; height: 100%;
@@ -259,12 +261,8 @@ body.dragging .stage-inner { outline: 3px dashed var(--bright); }
 .hero .tag i { font-style: italic; font-weight: 500; }
 .hero .kicker { margin: 4px 0 0; font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--bright); }
 .hero h1 { display: flex; align-items: center; flex-wrap: wrap; gap: 0.3em; }
-.oyw-badge {
-  display: inline-flex; align-items: center; justify-content: center;
-  height: 1.25em; padding: 0 0.42em; border-radius: 999px; background: #fff;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); vertical-align: middle;
-}
-.oyw-badge img { height: 0.82em; width: auto; display: block; }
+.oyw-badge { display: inline-flex; align-items: center; vertical-align: middle; }
+.oyw-badge img { height: 1.05em; width: auto; display: block; filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.35)); }
 
 .tabs {
   display: flex; gap: 6px; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch;
@@ -316,7 +314,7 @@ body.dragging .stage-inner { outline: 3px dashed var(--bright); }
   width: min(100%, 600px); margin: 0 auto; aspect-ratio: 4 / 1;
 }
 .sig-preview canvas { display: block; width: 100%; height: 100%; }
-@media (min-width: 900px) { .sig-stage { position: sticky; top: 24px; } }
+@media (min-width: 900px) { .sig-stage { position: static; } }
 .sig-options { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
 .sig-option {
   display: grid; gap: 8px; padding: 8px 8px 10px; border-radius: 14px; text-align: left; cursor: pointer;
@@ -352,7 +350,7 @@ body.dragging .stage-inner { outline: 3px dashed var(--bright); }
 
 /* ---------- linkedin banner ---------- */
 .banner-stage { display: grid; gap: 8px; align-content: start; }
-@media (min-width: 900px) { .banner-stage { position: sticky; top: 24px; } }
+@media (min-width: 900px) { .banner-stage { position: static; } }
 .li-mock { border-radius: 12px; overflow: hidden; background: #fff; box-shadow: var(--shadow); color: #1f1f1f; font-family: var(--font); }
 .li-cover { position: relative; }
 .li-cover img { display: block; width: 100%; height: auto; }
