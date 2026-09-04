@@ -1,0 +1,14 @@
+{
+  "width": 600,
+  "height": 150,
+  "fps": 12,
+  "frames": 78,
+  "framesPerStrip": 8,
+  "strips": 10,
+  "ext": "webp",
+  "crossfadeFrames": 0,
+  "sourceFrames": 392,
+  "sourceFps": 60,
+  "loopStartSourceFrame": 76,
+  "seamMeanAlphaDiff": 0.0
+}

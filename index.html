@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Pick your value · Advancing Energy Tech · #OYW26</title>
-  <meta name="description" content="Create your Schneider Electric × One Young World #OYW26 profile picture. Pick the value you stand for, add your photo, share it.">
+  <title>#OYW26 Toolkit · Advancing Energy Tech</title>
+  <meta name="description" content="Schneider Electric × One Young World 2026 employee toolkit: value profile frame, animated email signature, LinkedIn banners and ready-to-post captions.">
   <meta name="theme-color" content="#0a2f24">
-  <meta property="og:title" content="Pick your value · #OYW26">
-  <meta property="og:description" content="Advancing Energy Tech · Powered By Each Other. Make your Schneider Electric × One Young World profile picture.">
+  <meta property="og:title" content="#OYW26 Toolkit · Powered By Each Other">
+  <meta property="og:description" content="Pick your value, frame your photo, build your email signature, grab a LinkedIn banner and a caption.">
   <meta property="og:type" content="website">
   <link rel="icon" href="assets/se-mark.svg" type="image/svg+xml">
   <link rel="preload" as="image" href="assets/frames/frame-bg-lossless.webp" type="image/webp">
@@ -30,7 +30,21 @@
     <div class="event">Cape Town · 3–6 November 2026 · <b>#OYW26</b></div>
   </header>
 
-  <main class="app">
+  <section class="hero">
+    <h1>Advancing Energy Tech</h1>
+    <p class="tag">Powered <i>By</i> Each Other.</p>
+    <p class="lead">Your #OYW26 toolkit. Frame your photo with the value you stand for, build your email signature, pick a LinkedIn banner and grab a caption.</p>
+  </section>
+
+  <nav class="tabs" role="tablist" aria-label="Toolkit">
+    <button role="tab" id="tab-frame" data-tab="frame" aria-selected="true" aria-controls="tool-frame">Profile frame</button>
+    <button role="tab" id="tab-signature" data-tab="signature" aria-selected="false" aria-controls="tool-signature" tabindex="-1">Email signature</button>
+    <button role="tab" id="tab-banner" data-tab="banner" aria-selected="false" aria-controls="tool-banner" tabindex="-1">LinkedIn banner</button>
+    <button role="tab" id="tab-captions" data-tab="captions" aria-selected="false" aria-controls="tool-captions" tabindex="-1">Captions</button>
+  </nav>
+
+  <!-- ============================================================ 1. profile frame -->
+  <main class="app tool" id="tool-frame" role="tabpanel" aria-labelledby="tab-frame">
 
     <section class="stage" aria-label="Preview">
       <div class="stage-inner">
@@ -45,12 +59,6 @@
     </section>
 
     <section class="panel">
-      <div class="intro">
-        <h1>Advancing Energy Tech</h1>
-        <p class="tag">Powered <i>By</i> Each Other.</p>
-        <p class="lead">Pick the value you stand for and get your #OYW26 profile picture in seconds.</p>
-      </div>
-
       <ol class="steps">
 
         <li class="step" id="step-photo">
@@ -106,15 +114,148 @@
         </li>
 
       </ol>
-
-      <footer class="foot">
-        <span>#AdvancingEnergyTech</span><span>#OYW26</span>
-      </footer>
     </section>
   </main>
+
+  <!-- ============================================================ 2. email signature -->
+  <section class="app tool" id="tool-signature" role="tabpanel" aria-labelledby="tab-signature" hidden>
+
+    <section class="sig-stage" aria-label="Signature preview">
+      <div class="sig-preview">
+        <canvas id="sigCanvas" width="1200" height="300" aria-label="Email signature preview, animated"></canvas>
+      </div>
+      <p class="fine centre">600 × 150 · this is how it will loop in your email</p>
+    </section>
+
+    <section class="panel">
+      <ol class="steps">
+
+        <li class="step">
+          <h2><span class="num">1</span> Pick a style</h2>
+          <div class="sig-options" role="radiogroup" aria-label="Signature style">
+            <button class="sig-option" type="button" role="radio" data-sig="a" aria-checked="true">
+              <img src="assets/signature/preview-a.png" alt="" width="600" height="150"><span>White · moving stripes</span>
+            </button>
+            <button class="sig-option" type="button" role="radio" data-sig="b" aria-checked="false">
+              <img src="assets/signature/preview-b.png" alt="" width="600" height="150"><span>Mint · pattern reveal</span>
+            </button>
+          </div>
+        </li>
+
+        <li class="step">
+          <h2><span class="num">2</span> Your details</h2>
+          <div class="fields">
+            <label><span>Full name</span><input id="sigName" type="text" maxlength="48" placeholder="John Smith" autocomplete="name"></label>
+            <label><span>Job title</span><input id="sigTitle" type="text" maxlength="60" placeholder="Marketing &amp; Communications" autocomplete="organization-title"></label>
+            <label><span>Email</span><input id="sigEmail" type="email" maxlength="60" placeholder="john.smith@se.com" autocomplete="email" inputmode="email"></label>
+            <label><span>Phone</span><input id="sigPhone" type="tel" maxlength="24" placeholder="+20 1234 56 789" autocomplete="tel" inputmode="tel"></label>
+          </div>
+          <p class="fine">Stays on your device. Long names shrink to fit automatically.</p>
+        </li>
+
+        <li class="step">
+          <h2><span class="num">3</span> Download</h2>
+          <div class="row wrap">
+            <button class="btn primary" id="sigGif" type="button" disabled>Download animated GIF</button>
+            <button class="btn ghost" id="sigPng" type="button" disabled>Static PNG</button>
+          </div>
+          <p class="fine" id="sigHint">Type at least your name to unlock the downloads.</p>
+        </li>
+
+        <li class="step">
+          <h2><span class="num">4</span> Add it to your email</h2>
+          <div class="howto">
+            <details>
+              <summary>Gmail</summary>
+              <ol>
+                <li>Settings (gear) → <b>See all settings</b> → scroll to <b>Signature</b>.</li>
+                <li><b>Create new</b>, name it, then click the <b>Insert image</b> icon in the editor.</li>
+                <li><b>Upload</b> tab → choose the GIF you downloaded → <b>Select</b>.</li>
+                <li>Scroll down and <b>Save changes</b>.</li>
+              </ol>
+            </details>
+            <details>
+              <summary>Outlook on the web and new Outlook</summary>
+              <ol>
+                <li>Settings (gear) → <b>Accounts</b> → <b>Signatures</b>.</li>
+                <li>Create or edit a signature, then click the <b>Insert pictures inline</b> icon.</li>
+                <li>Choose the GIF → <b>Save</b>.</li>
+              </ol>
+            </details>
+            <details>
+              <summary>Outlook for Windows (classic)</summary>
+              <ol>
+                <li><b>File</b> → <b>Options</b> → <b>Mail</b> → <b>Signatures…</b></li>
+                <li><b>New</b>, then use the <b>Insert Picture</b> icon to add the GIF.</li>
+                <li>Classic Outlook does not animate GIFs. Recipients on other clients still see the animation.</li>
+              </ol>
+            </details>
+            <details>
+              <summary>Apple Mail</summary>
+              <ol>
+                <li><b>Mail</b> → <b>Settings</b> → <b>Signatures</b> → <b>+</b>.</li>
+                <li>Drag the GIF from Finder into the signature box.</li>
+                <li>Untick <b>Always match my default message font</b> if the text looks odd.</li>
+              </ol>
+            </details>
+          </div>
+          <div class="sig-text">
+            <p class="fine">Optional text to paste under the image:</p>
+            <pre id="sigText">POWERED BY EACH OTHER
+One Young World 2026 | Cape Town
+Schneider Electric</pre>
+            <button class="btn ghost small" id="sigCopyText" type="button">Copy text</button>
+          </div>
+        </li>
+
+      </ol>
+    </section>
+  </section>
+
+  <!-- ============================================================ 3. linkedin banner -->
+  <section class="app tool" id="tool-banner" role="tabpanel" aria-labelledby="tab-banner" hidden>
+
+    <section class="banner-stage" aria-label="Banner preview">
+      <div class="li-mock">
+        <img id="bannerImg" src="assets/banners/banner-1.jpg" alt="Selected LinkedIn banner" width="1584" height="396">
+        <div class="li-avatar" id="liAvatar" aria-hidden="true"></div>
+      </div>
+      <p class="fine centre">Roughly where LinkedIn places your profile photo. Make your framed picture first and it shows up here.</p>
+    </section>
+
+    <section class="panel">
+      <ol class="steps">
+        <li class="step">
+          <h2><span class="num">1</span> Pick a banner</h2>
+          <div class="banner-grid" id="bannerGrid" role="radiogroup" aria-label="Banners"></div>
+        </li>
+        <li class="step">
+          <h2><span class="num">2</span> Download and upload</h2>
+          <div class="row wrap">
+            <a class="btn primary" id="bannerDownload" href="assets/banners/banner-1.jpg" download="OYW26-LinkedIn-banner-1.jpg">Download 1584 × 396</a>
+          </div>
+          <p class="fine">On LinkedIn: open your profile → pencil icon on the banner → <b>Upload photo</b> → choose the file → <b>Apply</b>.</p>
+        </li>
+      </ol>
+    </section>
+  </section>
+
+  <!-- ============================================================ 4. captions -->
+  <section class="app tool single" id="tool-captions" role="tabpanel" aria-labelledby="tab-captions" hidden>
+    <section class="panel">
+      <p class="lead">Three ready-to-post LinkedIn captions. Edit anything, then copy.</p>
+      <div class="captions" id="captionList"></div>
+    </section>
+  </section>
+
+  <footer class="foot">
+    <span>#AdvancingEnergyTech</span><span>#OYW26</span>
+  </footer>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   <script src="js/app.js" defer></script>
+  <script src="js/signature.js" defer></script>
+  <script src="js/toolkit.js" defer></script>
 </body>
 </html>

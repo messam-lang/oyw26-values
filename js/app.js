@@ -314,6 +314,7 @@
     for (const b of els.legend.children) b.setAttribute('aria-checked', String(b.dataset.id === id));
     updateExportState();
     requestDraw();
+    document.dispatchEvent(new CustomEvent('oyw:value', { detail: VALUES.find((v) => v.id === id) || null }));
   }
   function updateExportState() {
     const ready = !!(state.src && state.valueId);
@@ -590,6 +591,12 @@
   }
   els.save.addEventListener('click', () => doExport('square'));
   els.story.addEventListener('click', () => doExport('story'));
+
+  // shared with the other toolkit tabs (captions, LinkedIn banner preview)
+  window.OYW = Object.assign(window.OYW || {}, {
+    getValue: () => VALUES.find((v) => v.id === state.valueId) || null,
+    getFrameDataURL: () => { if (!state.src) return null; draw(); return els.canvas.toDataURL('image/jpeg', 0.9); },
+  });
 
   // ---------------------------------------------------------------- boot
   async function boot() {
