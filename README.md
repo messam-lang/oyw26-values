@@ -35,8 +35,8 @@ No photo or detail ever leaves the device. No backend.
 - Override per visit with `?gate=live` or `?gate=test`.
 
 The email is hashed on the device (SHA-256 with the salt in `data/posts.json`) and compared with
-the hashed roster; it is never stored or sent. The choice is remembered in localStorage; *Change*
-next to "Viewing as" resets it.
+the hashed roster; it is never sent anywhere. The choice is remembered in localStorage (for
+Schneider emails, with the name and email, see below); *Change* in the welcome bar resets it.
 
 Audience rules: employees get the First-Year-Graduates set (5 posts, voices A–D); Explorers get
 their personal posts (EN, plus FR for the five French speakers); Enactus gets the Enactus set
@@ -51,18 +51,22 @@ mode the Posts tab shows an "Unlock everything for testing" toggle (per browser 
 server) the suggested voice is derived from the email hash, so it spreads evenly across people
 and stays stable for each person. Anyone can switch voice, globally or per post.
 
+## Name and signature pre-fill (Schneider emails)
+
+When a Schneider Electric email is entered at the gate, the name is read from it
+(`firstname.lastname@se.com` → "Firstname Lastname"; Explorers keep the spelling printed on their
+visuals, given name first). It is used to welcome the visitor ("Welcome, …" bar, toast, Posts
+heading) and to fill in the name and email fields of the Email signature tab, where both stay
+editable. Values typed by hand in the signature are never overwritten. The email and name are kept
+in localStorage on the device only; nothing is sent anywhere. Addresses without a clear
+first.last pattern get the generic welcome and only the email is filled in. The test-mode buttons
+have no email, so no name.
+
 ## Reminders (employees and Explorers)
 
-The Posts tab offers two ways to be told when a post opens:
-
-- **Calendar** (works today, no server): an `.ics` with one 09:00 event on the morning each
-  remaining post opens, each with a link back to the toolkit. Built in the browser.
-- **Email** (needs a five-minute deploy): `tools/reminders/Code.gs` is a Google Apps Script web
-  app. It stores opt-ins in a Google Sheet and, every morning at 07:00, emails everyone whose post
-  opens that day ("Your OYW26 post is open today", with the visual, the window and an *Open the
-  toolkit* button to the first tab). Unsubscribe link in every email. Deploy steps are at the top of
-  the file; the last step is pasting the web-app URL into `REMINDER_ENDPOINT` at the top of
-  `js/posts.js`. Until then the email box stays hidden.
+The Posts tab has an *Add posting days to my calendar* button: an `.ics` built in the browser with
+one 09:00 event on the morning each remaining post opens, each with a link back to the toolkit.
+No server. (An email-reminder backend was drafted and dropped on 4 Oct 2026.)
 
 ## Visual shell
 

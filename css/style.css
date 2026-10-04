@@ -308,19 +308,7 @@ body.dragging .stage-inner { outline: 3px dashed var(--bright); }
 /* ---------- reminders (Posts tab, employees and Explorers) ---------- */
 .reminders { margin-bottom: 18px; }
 .reminders .fine.top { margin: -4px 0 12px; }
-.reminder-row { display: grid; gap: 12px; }
-@media (min-width: 760px) { .reminder-row { grid-template-columns: 1fr 1fr; } }
-.reminder-box { border: 1px solid var(--line); border-radius: 12px; background: rgba(4, 38, 29, 0.45); padding: 12px 14px; display: grid; gap: 8px; align-content: start; }
-.reminder-box h3 { margin: 0; font-size: 14.5px; font-weight: 600; }
-.reminder-box .fine { margin: 0; }
-.reminder-box form { display: flex; gap: 8px; flex-wrap: wrap; }
-.reminder-box input {
-  flex: 1 1 200px; min-height: 42px; padding: 0 14px; border-radius: 999px; font-size: 14px; font-weight: 500;
-  border: 1px solid var(--line-strong); background: rgba(4, 38, 29, 0.6); color: var(--white);
-}
-.reminder-box input::placeholder { color: rgba(231, 255, 217, 0.4); font-weight: 400; }
-.reminder-box input:focus { outline: none; border-color: var(--bright); box-shadow: 0 0 0 3px rgba(94, 255, 89, 0.25); }
-.reminder-done { color: var(--bright); font-weight: 600; font-size: 13.5px; }
+.auto-note { color: var(--bright) !important; font-weight: 600; }
 
 /* ---------- email signature ---------- */
 .sig-stage { display: grid; gap: 8px; align-content: start; }

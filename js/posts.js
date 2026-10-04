@@ -5,19 +5,15 @@
 (() => {
   'use strict';
 
-  // Email reminders ("your post is open today") are sent by the Google Apps Script in tools/reminders/Code.gs.
-  // Paste its web-app URL here to switch the opt-in form on; empty = the form stays hidden (calendar reminders still work).
-  const REMINDER_ENDPOINT = '';
-
   const $ = (id) => document.getElementById(id);
   const OYW = (window.OYW = window.OYW || {});
-  const LS = { audience: 'oyw-audience', voice: 'oyw-voice', overrides: 'oyw-voice-overrides', lang: 'oyw-lang', reminded: 'oyw-reminder-email' };
+  const LS = { audience: 'oyw-audience', voice: 'oyw-voice', overrides: 'oyw-voice-overrides', lang: 'oyw-lang', sigAuto: 'oyw-sig-auto' };
   const MODE = OYW.mode || 'test';            // decided in toolkit.js (TEST_MODE flag, ?gate= override)
 
   const els = {
     gate: $('gate'), gateChoice: $('gateChoice'), gateForm: $('gateForm'), gateEmail: $('gateEmail'),
     gateLead: $('gateLead'), gateMode: $('gateMode'), gateError: $('gateError'),
-    who: $('who'), whoText: $('whoText'), whoChange: $('whoChange'), kicker: $('kicker'),
+    who: $('who'), whoLine: $('whoLine'), whoChange: $('whoChange'), kicker: $('kicker'),
     panel: $('postsPanel'), tabPosts: $('tab-posts'),
   };
   let DATA = null;
@@ -106,14 +102,59 @@
     els.gateError.hidden = true;
     OYW.setTabHidden && OYW.setTabHidden('signature', false);
   }
+  // Schneider emails are firstname.lastname@…: the name welcomes the visitor and fills in their email signature.
+  const capWord = (s) => s.split('-').map((t) => t.charAt(0).toUpperCase() + t.slice(1)).join('-');
+  function nameFrom(email, ex) {
+    const tokens = email.split('@')[0].replace(/\d+/g, '').split(/[._]+/).filter(Boolean);
+    if (ex) {
+      // Explorers: keep the spelling printed on their visuals, given name first (the email starts with the given name)
+      const parts = ex.name.split(/\s+/), norm = (s) => s.toLowerCase().replace(/[^a-z]/g, '');
+      const at = parts.findIndex((p) => norm(p) === norm(tokens[0] || ''));
+      if (at > 0) parts.unshift(parts.splice(at, 1)[0]);
+      return { first: parts[0], name: parts.join(' ') };
+    }
+    if (tokens.length < 2) return { first: '', name: '' };      // no clear first.last pattern: greet without a name
+    return { first: capWord(tokens[0]), name: tokens.map(capWord).join(' ') };
+  }
   async function classify(emailRaw) {
     const email = emailRaw.trim().toLowerCase();
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return null;
     const hash = await sha256(DATA.salt + ':' + email);
     const seed = parseInt(hash.slice(0, 8), 16);
     const explorer = DATA.explorers.find((x) => x.hash === hash);
-    if (explorer) return { kind: 'explorer', explorerId: explorer.id, seed };
-    return { kind: isSchneider(domainOf(email)) ? 'employee' : 'enactus', seed };
+    if (explorer) return Object.assign({ kind: 'explorer', explorerId: explorer.id, seed, email }, nameFrom(email, explorer));
+    if (isSchneider(domainOf(email))) return Object.assign({ kind: 'employee', seed, email }, nameFrom(email, null));
+    return { kind: 'enactus', seed };
+  }
+  // The gate's name and email go into the signature step, where they stay editable. Anything typed there by hand wins.
+  function prefillSignature(a) {
+    const nameEl = $('sigName'), emailEl = $('sigEmail'), note = $('sigAutoNote');
+    // no email (Enactus, or the test-mode buttons): no identity to fill in, leave the fields alone
+    if (!nameEl || !emailEl || a.kind === 'enactus' || !a.email) { if (note) note.hidden = true; return ''; }
+    const prev = load(LS.sigAuto) || {};
+    let changed = false;
+    // Same person coming back: only empty or previously auto-filled fields are touched, so anything they typed by hand
+    // is kept. A different Schneider email on the same device is a new person: every signature field starts fresh.
+    const newPerson = !!prev.email && prev.email !== a.email;
+    const put = (el, val, was) => {
+      const cur = el.value, auto = !!was && cur === was;
+      if ((newPerson || auto || !cur.trim()) && cur !== (val || '')) { el.value = val || ''; changed = true; }
+    };
+    put(nameEl, a.name, prev.name);
+    put(emailEl, a.email, prev.email);
+    if (newPerson) for (const id of ['sigTitle', 'sigPhone']) { const el = $(id); if (el && el.value) { el.value = ''; changed = true; } }
+    save(LS.sigAuto, { name: a.name || '', email: a.email });
+    if (changed) nameEl.dispatchEvent(new Event('input', { bubbles: true }));
+    // report what the fields actually hold now (hand-typed values may have been kept instead)
+    const nameOk = !!a.name && nameEl.value === a.name, emailOk = emailEl.value === a.email;
+    const filled = nameOk && emailOk ? 'name and email' : emailOk ? 'email' : nameOk ? 'name' : '';
+    if (note) {
+      note.hidden = !filled;
+      note.textContent = filled === 'name and email' ? 'Your name and email are filled in from the email you entered at the start. Edit anything.'
+        : filled === 'email' ? 'Your email is filled in from the one you entered at the start. Add your name, and edit anything.'
+        : 'Your name is filled in from the email you entered at the start. Edit anything.';
+    }
+    return filled;
   }
   els.gateForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -140,13 +181,18 @@
     audience = a; save(LS.audience, a);
     document.body.classList.remove('gated');
     els.gate.hidden = true; els.who.hidden = false;
-    els.whoText.textContent = a.kind === 'explorer' ? `${ex.name} · African Explorer` : a.kind === 'enactus' ? 'Enactus delegate' : 'Schneider Electric employee';
+    const first = a.kind === 'explorer' ? (a.first || ex.first) : (a.first || '');
+    const role = a.kind === 'explorer' ? 'African Explorer' : a.kind === 'enactus' ? 'Enactus delegate' : 'Schneider Electric employee';
+    const shown = a.kind === 'explorer' ? (a.name || ex.name) : (a.name || '');
+    els.whoLine.innerHTML = shown ? `Welcome, <b>${esc(shown)}</b> · ${role}` : `Viewing as <b>${role}</b>`;
+    const filled = prefillSignature(a);
     if (els.kicker) els.kicker.textContent = a.kind === 'enactus' ? 'Enactus toolkit' : 'Employee toolkit';
     if (OYW.setTabHidden) OYW.setTabHidden('signature', a.kind === 'enactus');
     if (els.tabPosts) els.tabPosts.lastChild.textContent = a.kind === 'explorer' ? 'Your posts' : a.kind === 'enactus' ? 'Enactus posts' : 'Posts';
     renderPosts();
     if (announce) {
-      toast(a.kind === 'explorer' ? `Welcome, ${ex.first}. Your posts are ready in the Posts tab.` : a.kind === 'enactus' ? 'Welcome. The Enactus posts are in the Posts tab.' : 'Welcome. Your posts are in the Posts tab.');
+      toast(a.kind === 'enactus' ? 'Welcome. The Enactus posts are in the Posts tab.'
+        : `Welcome${first ? ', ' + first : ''}. Your posts are in the Posts tab${filled ? `, and your ${filled} ${filled === 'name and email' ? 'are' : 'is'} already in the Email signature tab` : ''}.`, 4800);
       if (MODE !== 'live' && OYW.showTab) OYW.showTab('posts', true);   // live: stay on the first tab
     }
   }
@@ -170,7 +216,7 @@
     const isEnactus = set.key === 'enactus';
     const head = document.createElement('div');
     head.className = 'posts-head';
-    head.innerHTML = `<h2>${isEnactus ? 'Enactus posts' : 'Your LinkedIn posts'}</h2>
+    head.innerHTML = `<h2>${isEnactus ? 'Enactus posts' : audience.first ? `Hi ${esc(audience.first)}, here are your LinkedIn posts` : 'Your LinkedIn posts'}</h2>
       <p class="lead">${set.posts.length} posts between ${fmtDay(set.posts[0].windowStart)} and ${fmtDay(set.posts[set.posts.length - 1].windowEnd)}, in posting order. Each comes in four voices. ${isEnactus ? 'Captions are starting points: say it in your own words and language.' : 'Each post unlocks on its date and closes when its window ends, so the campaign lands in order. Edit the caption until it sounds like you.'}</p>`;
     els.panel.appendChild(head);
     addTestUnlock(head);
@@ -215,7 +261,7 @@
     if (lang === 'FR' && !hasFR) lang = 'EN';
     const head = document.createElement('div');
     head.className = 'posts-head';
-    head.innerHTML = `<h2>Hi ${esc(ex.first)}, here are your posts</h2>
+    head.innerHTML = `<h2>Hi ${esc(audience.first || ex.first)}, here are your posts</h2>
       <p class="lead">${ex.posts.length} posts between ${fmtDay(ex.posts[0].windowStart)} and ${fmtDay(ex.posts[ex.posts.length - 1].windowEnd)}, written in your voice as an African Explorer${ex.theme ? ' on the ' + esc(ex.theme) + ' theme' : ''}. Each post unlocks on its date and closes when its window ends. Edit anything before you post.</p>
       ${hasFR ? `<div class="lang" role="radiogroup" aria-label="Language"><span>Show</span>
         <button type="button" role="radio" data-lang="EN" aria-checked="${lang === 'EN'}">English</button>
@@ -224,7 +270,7 @@
     head.querySelectorAll('[data-lang]').forEach((b) => b.addEventListener('click', () => { save(LS.lang, b.dataset.lang); renderPosts(); }));
     els.panel.appendChild(head);
     addTestUnlock(head);
-    els.panel.appendChild(remindersCard(ex.posts, ex.id, lang));
+    els.panel.appendChild(remindersCard(ex.posts, ex.id));
 
     const list = document.createElement('section');
     list.className = 'post-list';
@@ -245,8 +291,7 @@
   }
 
   // ---------------------------------------------------------------- reminders
-  // Calendar: an .ics with one 09:00 event on the morning each post opens (no server, works in Outlook, Google, Apple).
-  // Email: opt-in form posting to the Apps Script endpoint (see tools/reminders/Code.gs); hidden until REMINDER_ENDPOINT is set.
+  // An .ics with one 09:00 event on the morning each post opens (no server; works in Outlook, Google and Apple Calendar).
   const siteUrl = () => location.origin + location.pathname;
   const icsText = (s) => String(s).replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\r?\n/g, '\\n');
   function icsFold(line) {
@@ -276,49 +321,14 @@
     setTimeout(() => URL.revokeObjectURL(url), 5000);
     toast(`${posts.length} reminders ready. Open the file to add them to your calendar.`);
   }
-  async function subscribeEmail(email, extra) {
-    const payload = Object.assign({ email: email.trim().toLowerCase() }, extra);
-    try {
-      // text/plain + no-cors: Apps Script accepts the POST without a preflight; the reply cannot be read, which is fine
-      await fetch(REMINDER_ENDPOINT, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) });
-      return true;
-    } catch (_) { return false; }
-  }
-  function remindersCard(posts, tag, lang) {
+  function remindersCard(posts, tag) {
     const box = document.createElement('section');
     box.className = 'reminders step';
     const upcoming = posts.filter((p) => today() <= p.windowEnd);
-    const emailOn = !!REMINDER_ENDPOINT;
-    const already = load(LS.reminded);
     box.innerHTML = `<h2><span class="num">!</span> Get a nudge when each post opens</h2>
-      <p class="fine top">Posts unlock on their own dates. Set a reminder now so you do not miss a window.</p>
-      <div class="reminder-row">
-        <div class="reminder-box">
-          <h3>Calendar</h3>
-          <p class="fine">One 09:00 reminder on the morning each post opens, with a link back here. Works with Outlook, Google and Apple Calendar.</p>
-          <div><button class="btn ghost small act-ics" type="button" ${upcoming.length ? '' : 'disabled'}>Add ${upcoming.length} posting day${upcoming.length === 1 ? '' : 's'} to my calendar</button></div>
-        </div>
-        ${emailOn ? `<div class="reminder-box">
-          <h3>Email</h3>
-          ${already ? `<p class="reminder-done">You're on the list (${esc(already)}). <button class="link act-change" type="button">Change</button></p>`
-            : `<p class="fine">An email the morning a post opens, with a link back here. One per post, unsubscribe link in each.</p>
-          <form class="act-email" novalidate><input type="email" inputmode="email" autocomplete="email" placeholder="your.name@se.com" required aria-label="Email for reminders"><button class="btn primary small" type="submit">Email me</button></form>`}
-        </div>` : ''}
-      </div>`;
+      <p class="fine top">Posts unlock on their own dates. Add them to your calendar so you do not miss a window: one 09:00 reminder on the morning each post opens, with a link back here. Works with Outlook, Google and Apple Calendar.</p>
+      <div><button class="btn ghost small act-ics" type="button" ${upcoming.length ? '' : 'disabled'}>Add ${upcoming.length} posting day${upcoming.length === 1 ? '' : 's'} to my calendar</button></div>`;
     box.querySelector('.act-ics').addEventListener('click', () => downloadIcs(upcoming, tag));
-    const form = box.querySelector('.act-email');
-    if (form) form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const input = form.querySelector('input'), email = input.value.trim();
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { input.focus(); toast('Please enter a valid email address.'); return; }
-      const btn = form.querySelector('button'); btn.disabled = true;
-      const ok = await subscribeEmail(email, { kind: audience.kind, explorerId: audience.explorerId || '', lang: lang || 'EN' });
-      btn.disabled = false;
-      if (ok) { save(LS.reminded, email); toast('Done. You will get an email the morning each post opens.'); renderPosts(); }
-      else toast('That did not go through. Please try again in a moment.');
-    });
-    const change = box.querySelector('.act-change');
-    if (change) change.addEventListener('click', () => { save(LS.reminded, null); renderPosts(); });
     return box;
   }
 

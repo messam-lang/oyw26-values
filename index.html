@@ -11,7 +11,7 @@
   <meta property="og:type" content="website">
   <link rel="icon" href="assets/se-mark.svg" type="image/svg+xml">
   <link rel="preload" as="image" href="assets/frames/frame-bg-lossless.webp" type="image/webp">
-  <link rel="stylesheet" href="css/style.css?v=20261004d">
+  <link rel="stylesheet" href="css/style.css?v=20261004e">
 </head>
 <body>
 
@@ -55,10 +55,10 @@
         </div>
         <p class="gate-error" id="gateError" hidden>That doesn't look like an email address.</p>
       </form>
-      <p class="fine">Checked on your device only. Your email is not stored and not sent anywhere.</p>
+      <p class="fine">Checked on your device only and never sent anywhere. A Schneider Electric email stays on this device, to greet you and fill in your email signature.</p>
     </div>
   </section>
-  <div class="who" id="who" hidden><span>Viewing as <b id="whoText"></b></span><button class="link" id="whoChange" type="button">Change</button></div>
+  <div class="who" id="who" hidden><span id="whoLine"></span><button class="link" id="whoChange" type="button">Change</button></div>
 
   <nav class="tabs" role="tablist" aria-label="Toolkit">
     <button role="tab" id="tab-frame" data-tab="frame" aria-selected="true" aria-controls="tool-frame"><span class="tab-num">1</span>Profile frame</button>
@@ -180,6 +180,7 @@
             <label><span>Email</span><input id="sigEmail" type="email" maxlength="60" placeholder="john.smith@se.com" autocomplete="email" inputmode="email"></label>
             <label><span>Phone</span><input id="sigPhone" type="tel" maxlength="24" placeholder="+20 1234 56 789" autocomplete="tel" inputmode="tel"></label>
           </div>
+          <p class="fine auto-note" id="sigAutoNote" hidden>Your name and email are filled in from the email you entered at the start. Edit anything.</p>
           <p class="fine">Stays on your device. Long names shrink to fit automatically.</p>
         </li>
 
@@ -297,9 +298,9 @@ Schneider Electric</pre>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-  <script src="js/app.js?v=20261004d" defer></script>
-  <script src="js/signature.js?v=20261004d" defer></script>
-  <script src="js/toolkit.js?v=20261004d" defer></script>
-  <script src="js/posts.js?v=20261004d" defer></script>
+  <script src="js/app.js?v=20261004e" defer></script>
+  <script src="js/signature.js?v=20261004e" defer></script>
+  <script src="js/toolkit.js?v=20261004e" defer></script>
+  <script src="js/posts.js?v=20261004e" defer></script>
 </body>
 </html>
