@@ -4,3 +4,6 @@ node_modules/
 test/
 source/signature/*.mov
 source/signature/*.png
+
+# mirrored Drive deliverables: manifest and captions carry work emails; data/posts.json is the built, hashed output
+source/posts/

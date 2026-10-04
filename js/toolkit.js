@@ -5,10 +5,14 @@
   const OYW = (window.OYW = window.OYW || {});
 
   // ---------------------------------------------------------------- tabs
-  const TABS = ['frame', 'signature', 'banner', 'captions'];
+  const TABS = ['frame', 'signature', 'banner', 'posts'];
+  const LABELS = { frame: 'Profile frame', signature: 'Email signature', banner: 'LinkedIn banner', posts: 'Posts' };
   const tabButtons = [...document.querySelectorAll('.tabs [data-tab]')];
+  const visibleTabs = () => tabButtons.filter((b) => !b.hidden);
   function showTab(id, push) {
     if (!TABS.includes(id)) id = 'frame';
+    const target = tabButtons.find((b) => b.dataset.tab === id);
+    if (target && target.hidden) id = 'frame';
     for (const b of tabButtons) {
       const on = b.dataset.tab === id;
       b.setAttribute('aria-selected', String(on));
@@ -28,78 +32,39 @@
       const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
       if (!d) return;
       e.preventDefault();
-      const n = tabButtons[(i + d + tabButtons.length) % tabButtons.length];
+      const vis = visibleTabs(), at = vis.indexOf(b);
+      const n = vis[(at + d + vis.length) % vis.length];
       n.focus(); showTab(n.dataset.tab, true);
     });
   });
   window.addEventListener('hashchange', () => showTab(location.hash.slice(1), false));
+  // a tab can be switched off for an audience (Enactus delegates get no email signature); numbers and Next links follow
+  function setTabHidden(id, hidden) {
+    const b = tabButtons.find((x) => x.dataset.tab === id);
+    if (!b || b.hidden === !!hidden) return;
+    b.hidden = !!hidden;
+    const arrow = b.previousElementSibling;
+    if (arrow && arrow.classList.contains('tab-arrow')) arrow.hidden = !!hidden;
+    renumber(); updateNextLinks();
+    if (hidden && b.getAttribute('aria-selected') === 'true') showTab('frame', true);
+  }
+  function renumber() {
+    visibleTabs().forEach((b, n) => { const el = b.querySelector('.tab-num'); if (el) el.textContent = n + 1; });
+  }
+  function updateNextLinks() {
+    const vis = visibleTabs().map((b) => b.dataset.tab);
+    for (const t of TABS) {
+      const panel = $('tool-' + t), a = panel && panel.querySelector('a.next');
+      if (!a) continue;
+      const at = vis.indexOf(t), next = at >= 0 && at < vis.length - 1 ? vis[at + 1] : null;
+      a.hidden = !next;
+      if (next) { a.href = '#' + next; a.innerHTML = `Next: ${LABELS[next]} <span aria-hidden="true">→</span>`; }
+    }
+  }
   OYW.showTab = showTab;
-
-  // ---------------------------------------------------------------- captions
-  const CAPTIONS = [
-    {
-      id: 'announcement', title: 'Announcement',
-      text: () => `The next generation of leaders is coming together to shape what's next.\n\nSchneider Electric is proud to be part of One Young World 2026 in Cape Town.\n\nPowered by Each Other.\n\n#OYW26 #AdvancingEnergyTech`,
-    },
-    {
-      id: 'pov', title: 'Personal point of view',
-      hint: 'The last line is yours to change. It starts with the value you picked in the frame tool.',
-      text: (value) => `I'm proud to be part of a community that believes progress happens when we work together.\n\nLooking forward to seeing ideas, perspectives and experiences come together at #OYW2026.\n\nPowered by Each Other.\n\nFor me, impact means: ${value ? value + '.' : '________'}\n\n#OYW26 #AdvancingEnergyTech`,
-    },
-    {
-      id: 'summit', title: 'During the summit',
-      text: () => `Ideas are moving. Conversations are happening. Progress is taking shape.\n\nProud to be part of One Young World 2026 in Cape Town, alongside young leaders shaping what's next.\n\nPowered by Each Other.\n\n#OYW26 #AdvancingEnergyTech`,
-    },
-  ];
-  const captionList = $('captionList');
-  const edited = new Set();
-  function currentValueName() {
-    const v = OYW.getValue && OYW.getValue();
-    return v ? v.name : '';
-  }
-  function autosize(t) { t.style.height = 'auto'; t.style.height = t.scrollHeight + 2 + 'px'; }
-  async function copyText(text, btn) {
-    let ok = false;
-    try { await navigator.clipboard.writeText(text); ok = true; }
-    catch (_) {
-      const ta = document.createElement('textarea');
-      ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
-      document.body.appendChild(ta); ta.select();
-      try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
-      ta.remove();
-    }
-    const old = btn.textContent;
-    btn.textContent = ok ? 'Copied' : 'Copy failed';
-    setTimeout(() => { btn.textContent = old; }, 1600);
-  }
-  function buildCaptions() {
-    if (!captionList) return;
-    captionList.innerHTML = '';
-    for (const c of CAPTIONS) {
-      const card = document.createElement('div');
-      card.className = 'caption';
-      card.innerHTML = `<div class="caption-head"><h3>${c.title}</h3><button class="btn ghost small" type="button">Copy</button></div>
-        ${c.hint ? `<p class="fine">${c.hint}</p>` : ''}
-        <textarea rows="6" spellcheck="false" aria-label="${c.title} caption"></textarea>`;
-      const ta = card.querySelector('textarea');
-      ta.value = c.text(currentValueName());
-      ta.dataset.id = c.id;
-      ta.addEventListener('input', () => { edited.add(c.id); autosize(ta); });
-      card.querySelector('button').addEventListener('click', (e) => copyText(ta.value, e.currentTarget));
-      captionList.appendChild(card);
-      autosize(ta);
-    }
-  }
-  function refreshCaptions() {
-    if (!captionList) return;
-    const name = currentValueName();
-    for (const ta of captionList.querySelectorAll('textarea')) {
-      const c = CAPTIONS.find((x) => x.id === ta.dataset.id);
-      if (c && !edited.has(c.id)) { ta.value = c.text(name); autosize(ta); }
-    }
-  }
-  document.addEventListener('oyw:value', refreshCaptions);
-  document.addEventListener('oyw:tab', (e) => { if (e.detail === 'captions') for (const ta of captionList.querySelectorAll('textarea')) autosize(ta); });
+  OYW.setTabHidden = setTabHidden;
+  OYW.updateNextLinks = updateNextLinks;
+  updateNextLinks();
 
   // ---------------------------------------------------------------- LinkedIn banners
   const BANNERS = [
@@ -152,7 +117,6 @@
   refreshProfileText();
 
   // ---------------------------------------------------------------- boot
-  buildCaptions();
   buildBanners();
   showTab(location.hash.slice(1) || 'frame', false);
 })();

@@ -1,0 +1,2091 @@
+{
+ "built": 1791117066,
+ "campaign": "Schneider Electric x One Young World 2026 — Powered by Each Other (#OYW26)",
+ "summit": "Cape Town, 3–6 Nov 2026",
+ "salt": "oyw26-powered-by-each-other",
+ "schneiderDomains": [
+  "se.com",
+  "schneider-electric.com"
+ ],
+ "sets": {
+  "enactus": {
+   "key": "enactus",
+   "archetypes": [
+    {
+     "key": "A",
+     "name": "The Builder",
+     "blurb": "You made something real with your team and want to see if it holds up."
+    },
+    {
+     "key": "B",
+     "name": "The Changemaker",
+     "blurb": "Your project started close to home, with one community and one problem."
+    },
+    {
+     "key": "C",
+     "name": "The Pitcher",
+     "blurb": "You are bringing an idea to pitch to a room that has heard it all."
+    },
+    {
+     "key": "D",
+     "name": "The First-Generation Delegate",
+     "blurb": "You are the first from your university or family in a room like this."
+    }
+   ],
+   "hashtags": [
+    "#PoweredByEachOther",
+    "#Enactus",
+    "#SchneiderElectric",
+    "#OYW26"
+   ],
+   "note": "Enactus students are partner-programme guests, not employees: visuals carry 'Powered by Each Other' (not 'Start Strong with Schneider Electric') and captions drop #StartStrongWithSchneiderElectric. Captions are starting points; students can edit freely in their own words and language.",
+   "posts": [
+    {
+     "id": "2026-10-06_Announcement",
+     "type": "Announcement",
+     "title": "Announcement",
+     "date": "2026-10-06",
+     "window": "6–10 Oct",
+     "windowStart": "2026-10-06",
+     "windowEnd": "2026-10-10",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World  @Enactus",
+     "note": "caption is a starting point — students edit freely in their own words and language.",
+     "variants": {
+      "A": {
+       "cards": [
+        {
+         "src": "assets/posts/Enactus/2026-10-06_Announcement/2026-10-06_Announcement_Enactus_A.jpg",
+         "thumb": "assets/posts/Enactus/2026-10-06_Announcement/2026-10-06_Announcement_Enactus_A.webp",
+         "name": "2026-10-06_Announcement_Enactus_A.jpg"
+        }
+       ],
+       "caption": "I'm going to Cape Town for One Young World 2026 to see if something I built in a classroom can survive contact with a real client.\n\nOur Enactus team started with one problem and a lot of late nights. Next month, I get to test it in a room full of people who build things for a living.\n\nThank you to Schneider Electric for backing young builders before they're even in the job.\n\nWhat would you ask a room of 190 countries?\n\n#PoweredByEachOther #Enactus #SchneiderElectric #OYW26"
+      },
+      "B": {
+       "cards": [
+        {
+         "src": "assets/posts/Enactus/2026-10-06_Announcement/2026-10-06_Announcement_Enactus_B.jpg",
+         "thumb": "assets/posts/Enactus/2026-10-06_Announcement/2026-10-06_Announcement_Enactus_B.webp",
+         "name": "2026-10-06_Announcement_Enactus_B.jpg"
+        }
+       ],
+       "caption": "I'm going to Cape Town for One Young World 2026 to find out if a small local project matters next to something built at Schneider's scale.\n\nOur Enactus project started close to home, with one community and one problem. I want to know how ideas that size grow, and whether they need to.\n\nGrateful to Schneider Electric for making the trip possible.\n\nDo small projects change big systems? Tell me what you think.\n\n#PoweredByEachOther #Enactus #SchneiderElectric #OYW26"
+      },
+      "C": {
+       "cards": [
+        {
+         "src": "assets/posts/Enactus/2026-10-06_Announcement/2026-10-06_Announcement_Enactus_C.jpg",
+         "thumb": "assets/posts/Enactus/2026-10-06_Announcement/2026-10-06_Announcement_Enactus_C.webp",
+         "name": "2026-10-06_Announcement_Enactus_C.jpg"
+        }
+       ],
+       "caption": "I'm going to Cape Town for One Young World 2026 to pitch my idea to a room that's heard a thousand pitches before.\n\nI've rehearsed it in front of my Enactus team more times than I can count. Now it's time to find out if it holds up.\n\nThank you to Schneider Electric for the chance to try.\n\nAny advice for pitching to people who've heard it all?\n\n#PoweredByEachOther #Enactus #SchneiderElectric #OYW26"
+      },
+      "D": {
+       "cards": [
+        {
+         "src": "assets/posts/Enactus/2026-10-06_Announcement/2026-10-06_Announcement_Enactus_D.jpg",
+         "thumb": "assets/posts/Enactus/2026-10-06_Announcement/2026-10-06_Announcement_Enactus_D.webp",
+         "name": "2026-10-06_Announcement_Enactus_D.jpg"
+        }
+       ],
+       "caption": "I'm going to Cape Town for One Young World 2026 to be the only person from my university in a room this big, and bring my whole Enactus team with me anyway.\n\nEvery idea I'm taking there was built with them, so in a way they're coming too.\n\nThank you to Schneider Electric for opening this door.\n\nWho would you bring with you into a room like that?\n\n#PoweredByEachOther #Enactus #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-10-13_Pass-the-Question",
+     "type": "Pass-the-Question",
+     "title": "Pass the Question",
+     "date": "2026-10-13",
+     "window": "13–17 Oct",
+     "windowStart": "2026-10-13",
+     "windowEnd": "2026-10-17",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World  @Enactus",
+     "note": "caption is a starting point — students edit freely in their own words and language.",
+     "variants": {
+      "A": {
+       "cards": [
+        {
+         "src": "assets/posts/Enactus/2026-10-13_Pass-the-Question/2026-10-13_Pass-the-Question_Enactus_A.jpg",
+         "thumb": "assets/posts/Enactus/2026-10-13_Pass-the-Question/2026-10-13_Pass-the-Question_Enactus_A.webp",
+         "name": "2026-10-13_Pass-the-Question_Enactus_A.jpg"
+        }
+       ],
+       "caption": "I'm opening the Pass the Question chain for One Young World 2026 with the question I'm carrying to Cape Town: can something I built in a classroom actually survive contact with a real client?\n\nI'm about to find out. I'll ask every engineer in that room how they found out themselves.\n\nWhat's your answer? Drop it below.\n\n#PoweredByEachOther #Enactus #SchneiderElectric #OYW26"
+      },
+      "B": {
+       "cards": [
+        {
+         "src": "assets/posts/Enactus/2026-10-13_Pass-the-Question/2026-10-13_Pass-the-Question_Enactus_B.jpg",
+         "thumb": "assets/posts/Enactus/2026-10-13_Pass-the-Question/2026-10-13_Pass-the-Question_Enactus_B.webp",
+         "name": "2026-10-13_Pass-the-Question_Enactus_B.jpg"
+        }
+       ],
+       "caption": "I'm opening the Pass the Question chain for One Young World 2026 with the question I'm carrying to Cape Town: does a small local project matter at all next to something built at Schneider's scale?\n\nI'm about to find out. I'll watch whether anyone in that room still remembers their first small idea.\n\nWhat was yours?\n\n#PoweredByEachOther #Enactus #SchneiderElectric #OYW26"
+      },
+      "C": {
+       "cards": [
+        {
+         "src": "assets/posts/Enactus/2026-10-13_Pass-the-Question/2026-10-13_Pass-the-Question_Enactus_C.jpg",
+         "thumb": "assets/posts/Enactus/2026-10-13_Pass-the-Question/2026-10-13_Pass-the-Question_Enactus_C.webp",
+         "name": "2026-10-13_Pass-the-Question_Enactus_C.jpg"
+        }
+       ],
+       "caption": "I'm opening the Pass the Question chain for One Young World 2026 with the question I'm carrying to Cape Town: how do you pitch an idea to someone who's heard a thousand pitches before?\n\nI'm about to find out. I'm pitching mine anyway, nerves and all.\n\nWhat's the best pitch advice you've ever had?\n\n#PoweredByEachOther #Enactus #SchneiderElectric #OYW26"
+      },
+      "D": {
+       "cards": [
+        {
+         "src": "assets/posts/Enactus/2026-10-13_Pass-the-Question/2026-10-13_Pass-the-Question_Enactus_D.jpg",
+         "thumb": "assets/posts/Enactus/2026-10-13_Pass-the-Question/2026-10-13_Pass-the-Question_Enactus_D.webp",
+         "name": "2026-10-13_Pass-the-Question_Enactus_D.jpg"
+        }
+       ],
+       "caption": "I'm opening the Pass the Question chain for One Young World 2026 with the question I'm carrying to Cape Town: what does it actually feel like to be the only person from your university in a room this big?\n\nI'm about to find out. I'm bringing my whole team with me, so at least I won't find out alone.\n\nHave you ever been the only one in the room?\n\n#PoweredByEachOther #Enactus #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-11-04_On-Site-Moment",
+     "type": "On-Site-Moment",
+     "title": "On-Site Moment",
+     "date": "2026-11-04",
+     "window": "3–6 Nov",
+     "windowStart": "2026-11-03",
+     "windowEnd": "2026-11-06",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World  @Enactus",
+     "note": "caption is a starting point — students edit freely in their own words and language.",
+     "variants": {
+      "A": {
+       "cards": [
+        {
+         "src": "assets/posts/Enactus/2026-11-04_On-Site-Moment/2026-11-04_On-Site-Moment_Enactus_A.jpg",
+         "thumb": "assets/posts/Enactus/2026-11-04_On-Site-Moment/2026-11-04_On-Site-Moment_Enactus_A.webp",
+         "name": "2026-11-04_On-Site-Moment_Enactus_A.jpg"
+        }
+       ],
+       "caption": "One moment at One Young World: the badge scanner beeped, and just like that I was in the same room as people running continental-scale grids.\n\nA few weeks ago this was a classroom project. Today it's a conversation in Cape Town.\n\nMore to share when I'm back home.\n\n#PoweredByEachOther #Enactus #SchneiderElectric #OYW26"
+      },
+      "B": {
+       "cards": [
+        {
+         "src": "assets/posts/Enactus/2026-11-04_On-Site-Moment/2026-11-04_On-Site-Moment_Enactus_B.jpg",
+         "thumb": "assets/posts/Enactus/2026-11-04_On-Site-Moment/2026-11-04_On-Site-Moment_Enactus_B.webp",
+         "name": "2026-11-04_On-Site-Moment_Enactus_B.jpg"
+        }
+       ],
+       "caption": "One moment at One Young World: someone twice my age asked me a follow-up question about my own project. I wasn't ready for that.\n\nIt's the best kind of surprise, being taken seriously before you feel ready.\n\nMore to share when I'm back home.\n\n#PoweredByEachOther #Enactus #SchneiderElectric #OYW26"
+      },
+      "C": {
+       "cards": [
+        {
+         "src": "assets/posts/Enactus/2026-11-04_On-Site-Moment/2026-11-04_On-Site-Moment_Enactus_C.jpg",
+         "thumb": "assets/posts/Enactus/2026-11-04_On-Site-Moment/2026-11-04_On-Site-Moment_Enactus_C.webp",
+         "name": "2026-11-04_On-Site-Moment_Enactus_C.jpg"
+        }
+       ],
+       "caption": "One moment at One Young World: I counted six languages at my lunch table before anyone switched to English for my benefit.\n\nThat's what 190 countries in one place feels like, up close.\n\nMore to share when I'm back home.\n\n#PoweredByEachOther #Enactus #SchneiderElectric #OYW26"
+      },
+      "D": {
+       "cards": [
+        {
+         "src": "assets/posts/Enactus/2026-11-04_On-Site-Moment/2026-11-04_On-Site-Moment_Enactus_D.jpg",
+         "thumb": "assets/posts/Enactus/2026-11-04_On-Site-Moment/2026-11-04_On-Site-Moment_Enactus_D.webp",
+         "name": "2026-11-04_On-Site-Moment_Enactus_D.jpg"
+        }
+       ],
+       "caption": "One moment at One Young World: I watched a delegate change her slide mid-sentence because someone in the crowd raised a hand first.\n\nLesson taken: the plan matters less than listening.\n\nMore to share when I'm back home.\n\n#PoweredByEachOther #Enactus #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-11-10_Reflection",
+     "type": "Reflection",
+     "title": "Reflection",
+     "date": "2026-11-10",
+     "window": "9–20 Nov",
+     "windowStart": "2026-11-09",
+     "windowEnd": "2026-11-20",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World  @Enactus",
+     "note": "caption is a starting point — students edit freely in their own words and language.",
+     "variants": {
+      "A": {
+       "cards": [
+        {
+         "src": "assets/posts/Enactus/2026-11-10_Reflection/2026-11-10_Reflection_Enactus_A.jpg",
+         "thumb": "assets/posts/Enactus/2026-11-10_Reflection/2026-11-10_Reflection_Enactus_A.webp",
+         "name": "2026-11-10_Reflection_Enactus_A.jpg"
+        }
+       ],
+       "caption": "I came in thinking the hard part was the pitch. I left knowing the hard part is doing it again on Monday, without an audience.\n\nThat's what I'm bringing home from One Young World in Cape Town, back to my Enactus team and our project.\n\nThank you to Schneider Electric for backing us. What's your Monday commitment?\n\n#PoweredByEachOther #Enactus #SchneiderElectric #OYW26"
+      },
+      "B": {
+       "cards": [
+        {
+         "src": "assets/posts/Enactus/2026-11-10_Reflection/2026-11-10_Reflection_Enactus_B.jpg",
+         "thumb": "assets/posts/Enactus/2026-11-10_Reflection/2026-11-10_Reflection_Enactus_B.webp",
+         "name": "2026-11-10_Reflection_Enactus_B.jpg"
+        }
+       ],
+       "caption": "One habit, starting now: ask the question in the room, not after it's over.\n\nThe best moments at One Young World came from people who spoke up. I'm bringing that back to my Enactus team.\n\nThank you to Schneider Electric for backing us. What question have you been saving for later?\n\n#PoweredByEachOther #Enactus #SchneiderElectric #OYW26"
+      },
+      "C": {
+       "cards": [
+        {
+         "src": "assets/posts/Enactus/2026-11-10_Reflection/2026-11-10_Reflection_Enactus_C.jpg",
+         "thumb": "assets/posts/Enactus/2026-11-10_Reflection/2026-11-10_Reflection_Enactus_C.webp",
+         "name": "2026-11-10_Reflection_Enactus_C.jpg"
+        }
+       ],
+       "caption": "I used to think \"professional\" meant polished. Now I think it means showing up prepared to be wrong in public.\n\nOne Young World in Cape Town changed how I see the next pitch, and the one after that.\n\nThank you to Schneider Electric for backing us. What did you have to unlearn?\n\n#PoweredByEachOther #Enactus #SchneiderElectric #OYW26"
+      },
+      "D": {
+       "cards": [
+        {
+         "src": "assets/posts/Enactus/2026-11-10_Reflection/2026-11-10_Reflection_Enactus_D.jpg",
+         "thumb": "assets/posts/Enactus/2026-11-10_Reflection/2026-11-10_Reflection_Enactus_D.webp",
+         "name": "2026-11-10_Reflection_Enactus_D.jpg"
+        }
+       ],
+       "caption": "The idea I came with is smaller than the one I'm leaving with, and that's the actual win.\n\nBack from One Young World in Cape Town, with a bigger idea and a team ready to build it.\n\nThank you to Schneider Electric for backing us. What's the biggest idea you've come home with?\n\n#PoweredByEachOther #Enactus #SchneiderElectric #OYW26"
+      }
+     }
+    }
+   ]
+  },
+  "graduates": {
+   "key": "graduates",
+   "archetypes": [
+    {
+     "key": "A",
+     "name": "The New Engineer",
+     "blurb": "First role after university, still learning how the work really gets done."
+    },
+    {
+     "key": "B",
+     "name": "The Remote / Field Hire",
+     "blurb": "You work on site or far from head office, closer to customers than to meetings."
+    },
+    {
+     "key": "C",
+     "name": "The Career-Switcher",
+     "blurb": "You came to Schneider from another path and see things differently."
+    },
+    {
+     "key": "D",
+     "name": "The Early Achiever",
+     "blurb": "You already lead something and want to measure it against the world."
+    }
+   ],
+   "hashtags": [],
+   "note": "",
+   "posts": [
+    {
+     "id": "2026-10-16_Pass-the-Question",
+     "type": "Pass-the-Question",
+     "title": "Pass the Question",
+     "date": "2026-10-16",
+     "window": "13–21 Oct",
+     "windowStart": "2026-10-13",
+     "windowEnd": "2026-10-21",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "note": "",
+     "variants": {
+      "A": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/First-Year-Graduates/2026-10-16_Pass-the-Question/2026-10-16_Pass-the-Question_First-Year-Graduates_A.jpg",
+         "thumb": "assets/posts/Schneider/First-Year-Graduates/2026-10-16_Pass-the-Question/2026-10-16_Pass-the-Question_First-Year-Graduates_A.webp",
+         "name": "2026-10-16_Pass-the-Question_First-Year-Graduates_A.jpg"
+        }
+       ],
+       "caption": "Before One Young World, I had a question in mind: how long until I stop double-checking everything before I send it to my manager?\n\nCape Town feels like a strange place to get that answer, but I'll take it. Delegates from 190 countries, and I'm guessing most of them remember their first year too.\n\nI'm joining the Pass the Question chain with our African Explorers. What would you tell first-year you?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "B": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/First-Year-Graduates/2026-10-16_Pass-the-Question/2026-10-16_Pass-the-Question_First-Year-Graduates_B.jpg",
+         "thumb": "assets/posts/Schneider/First-Year-Graduates/2026-10-16_Pass-the-Question/2026-10-16_Pass-the-Question_First-Year-Graduates_B.webp",
+         "name": "2026-10-16_Pass-the-Question_First-Year-Graduates_B.jpg"
+        }
+       ],
+       "caption": "The question I've carried through my first year: does anyone actually notice the work you do when you're not in the room?\n\nThis time I'm finally in the room, at One Young World in Cape Town, and I'm watching who notices.\n\nI'm joining the Pass the Question chain with our African Explorers. How do you make sure good work gets seen?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "C": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/First-Year-Graduates/2026-10-16_Pass-the-Question/2026-10-16_Pass-the-Question_First-Year-Graduates_C.jpg",
+         "thumb": "assets/posts/Schneider/First-Year-Graduates/2026-10-16_Pass-the-Question/2026-10-16_Pass-the-Question_First-Year-Graduates_C.webp",
+         "name": "2026-10-16_Pass-the-Question_First-Year-Graduates_C.jpg"
+        }
+       ],
+       "caption": "An honest question from my first year: was switching into this industry the right call, or did I just panic into a good-sounding job?\n\nAt One Young World, I'm asking people ten years ahead of me if they ever wondered the same thing. I have a feeling I'm not the only one.\n\nI'm joining the Pass the Question chain with our African Explorers. Did you ever doubt a career switch?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "D": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/First-Year-Graduates/2026-10-16_Pass-the-Question/2026-10-16_Pass-the-Question_First-Year-Graduates_D.jpg",
+         "thumb": "assets/posts/Schneider/First-Year-Graduates/2026-10-16_Pass-the-Question/2026-10-16_Pass-the-Question_First-Year-Graduates_D.webp",
+         "name": "2026-10-16_Pass-the-Question_First-Year-Graduates_D.jpg"
+        }
+       ],
+       "caption": "How do you tell the difference between being ready for more responsibility and just being impatient?\n\nI'm taking that question to One Young World, to learn from people who were exactly where I am, not that long ago.\n\nI'm joining the Pass the Question chain with our African Explorers. How did you know you were ready?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-10-20_Year-One-Letter",
+     "type": "Year-One-Letter",
+     "title": "Year-One Letter",
+     "date": "2026-10-20",
+     "window": "w/c 20 Oct",
+     "windowStart": "2026-10-20",
+     "windowEnd": "2026-10-24",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "note": "",
+     "variants": {
+      "A": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/First-Year-Graduates/2026-10-20_Year-One-Letter/2026-10-20_Year-One-Letter_First-Year-Graduates_A.jpg",
+         "thumb": "assets/posts/Schneider/First-Year-Graduates/2026-10-20_Year-One-Letter/2026-10-20_Year-One-Letter_First-Year-Graduates_A.webp",
+         "name": "2026-10-20_Year-One-Letter_First-Year-Graduates_A.jpg"
+        }
+       ],
+       "caption": "If I could send one letter back to my first day at Schneider Electric, it would say: stop rehearsing your questions in the elevator. Just ask them in the room.\n\nA year in, the best things I've learned came from questions I almost didn't ask.\n\nWhat would you tell your day-one self?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "B": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/First-Year-Graduates/2026-10-20_Year-One-Letter/2026-10-20_Year-One-Letter_First-Year-Graduates_B.jpg",
+         "thumb": "assets/posts/Schneider/First-Year-Graduates/2026-10-20_Year-One-Letter/2026-10-20_Year-One-Letter_First-Year-Graduates_B.webp",
+         "name": "2026-10-20_Year-One-Letter_First-Year-Graduates_B.jpg"
+        }
+       ],
+       "caption": "A letter to day-one me: the imposter feeling doesn't go away by month three. It just gets quieter.\n\nA year into my first role at Schneider Electric, I've stopped waiting for it to disappear and started working alongside it.\n\nWhat would you tell your day-one self?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "C": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/First-Year-Graduates/2026-10-20_Year-One-Letter/2026-10-20_Year-One-Letter_First-Year-Graduates_C.jpg",
+         "thumb": "assets/posts/Schneider/First-Year-Graduates/2026-10-20_Year-One-Letter/2026-10-20_Year-One-Letter_First-Year-Graduates_C.webp",
+         "name": "2026-10-20_Year-One-Letter_First-Year-Graduates_C.jpg"
+        }
+       ],
+       "caption": "A letter to day-one me: nobody expects you to know everything. They just want to know you'll ask.\n\nOne year into my first job at Schneider Electric, that's the advice I wish someone had given me on the first morning.\n\nWhat would you tell your day-one self?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "D": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/First-Year-Graduates/2026-10-20_Year-One-Letter/2026-10-20_Year-One-Letter_First-Year-Graduates_D.jpg",
+         "thumb": "assets/posts/Schneider/First-Year-Graduates/2026-10-20_Year-One-Letter/2026-10-20_Year-One-Letter_First-Year-Graduates_D.webp",
+         "name": "2026-10-20_Year-One-Letter_First-Year-Graduates_D.jpg"
+        }
+       ],
+       "caption": "A letter to day-one me: you're going to mess up a deliverable in your first quarter. It's fine. It's actually fine.\n\nA year in at Schneider Electric, I can say that mistake taught me more than any perfect week did.\n\nWhat would you tell your day-one self?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-11-03_First-Time-Moment",
+     "type": "First-Time-Moment",
+     "title": "First-Time Moment",
+     "date": "2026-11-03",
+     "window": "Summit week, 3–6 Nov",
+     "windowStart": "2026-11-03",
+     "windowEnd": "2026-11-06",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "note": "",
+     "variants": {
+      "A": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/First-Year-Graduates/2026-11-03_First-Time-Moment/2026-11-03_First-Time-Moment_First-Year-Graduates_A.jpg",
+         "thumb": "assets/posts/Schneider/First-Year-Graduates/2026-11-03_First-Time-Moment/2026-11-03_First-Time-Moment_First-Year-Graduates_A.webp",
+         "name": "2026-11-03_First-Time-Moment_First-Year-Graduates_A.jpg"
+        }
+       ],
+       "caption": "First global summit. First time realizing \"international team\" meant something bigger than my inbox.\n\nLive from One Young World in Cape Town, with delegates from 190 countries. Twelve months ago I was finishing university. This week, I'm here.\n\nMore to share when I'm back home.\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "B": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/First-Year-Graduates/2026-11-03_First-Time-Moment/2026-11-03_First-Time-Moment_First-Year-Graduates_B.jpg",
+         "thumb": "assets/posts/Schneider/First-Year-Graduates/2026-11-03_First-Time-Moment/2026-11-03_First-Time-Moment_First-Year-Graduates_B.webp",
+         "name": "2026-11-03_First-Time-Moment_First-Year-Graduates_B.jpg"
+        }
+       ],
+       "caption": "First time in a room with 190 countries, and the only thing louder than the languages was how much everyone had to say.\n\nLive from One Young World in Cape Town, a year into my first role at Schneider Electric.\n\nMore to share when I'm back home.\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "C": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/First-Year-Graduates/2026-11-03_First-Time-Moment/2026-11-03_First-Time-Moment_First-Year-Graduates_C.jpg",
+         "thumb": "assets/posts/Schneider/First-Year-Graduates/2026-11-03_First-Time-Moment/2026-11-03_First-Time-Moment_First-Year-Graduates_C.webp",
+         "name": "2026-11-03_First-Time-Moment_First-Year-Graduates_C.jpg"
+        }
+       ],
+       "caption": "I came in expecting to feel small. Instead, I finally understand the size of the thing I joined.\n\nLive from One Young World in Cape Town, one year into my career at Schneider Electric.\n\nMore to share when I'm back home.\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "D": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/First-Year-Graduates/2026-11-03_First-Time-Moment/2026-11-03_First-Time-Moment_First-Year-Graduates_D.jpg",
+         "thumb": "assets/posts/Schneider/First-Year-Graduates/2026-11-03_First-Time-Moment/2026-11-03_First-Time-Moment_First-Year-Graduates_D.webp",
+         "name": "2026-11-03_First-Time-Moment_First-Year-Graduates_D.jpg"
+        }
+       ],
+       "caption": "First time in a room this big, and the first time a stranger remembered my name an hour later.\n\nLive from One Young World in Cape Town. A year ago I was writing my thesis. This week, I'm here.\n\nMore to share when I'm back home.\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-11-05_Ask-the-Delegates",
+     "type": "Ask-the-Delegates",
+     "title": "Ask the Delegates",
+     "date": "2026-11-05",
+     "window": "Summit week, 3–6 Nov",
+     "windowStart": "2026-11-03",
+     "windowEnd": "2026-11-06",
+     "format": "carousel",
+     "tag": "@Schneider Electric  @One Young World",
+     "note": "",
+     "variants": {
+      "A": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/First-Year-Graduates/2026-11-05_Ask-the-Delegates/2026-11-05_Ask-the-Delegates_First-Year-Graduates_A_card1.jpg",
+         "thumb": "assets/posts/Schneider/First-Year-Graduates/2026-11-05_Ask-the-Delegates/2026-11-05_Ask-the-Delegates_First-Year-Graduates_A_card1.webp",
+         "name": "2026-11-05_Ask-the-Delegates_First-Year-Graduates_A_card1.jpg"
+        },
+        {
+         "src": "assets/posts/Schneider/First-Year-Graduates/2026-11-05_Ask-the-Delegates/2026-11-05_Ask-the-Delegates_First-Year-Graduates_A_card2.jpg",
+         "thumb": "assets/posts/Schneider/First-Year-Graduates/2026-11-05_Ask-the-Delegates/2026-11-05_Ask-the-Delegates_First-Year-Graduates_A_card2.webp",
+         "name": "2026-11-05_Ask-the-Delegates_First-Year-Graduates_A_card2.jpg"
+        }
+       ],
+       "caption": "I'm not in Cape Town, but my question is. I asked our delegates at One Young World: is it actually as overwhelming as it looks online?\n\nThe answer from Cape Town: more. In the best way. Bring comfortable shoes and a notes app.\n\nSwipe for the full exchange. What would you ask someone at the Summit?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "B": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/First-Year-Graduates/2026-11-05_Ask-the-Delegates/2026-11-05_Ask-the-Delegates_First-Year-Graduates_B_card1.jpg",
+         "thumb": "assets/posts/Schneider/First-Year-Graduates/2026-11-05_Ask-the-Delegates/2026-11-05_Ask-the-Delegates_First-Year-Graduates_B_card1.webp",
+         "name": "2026-11-05_Ask-the-Delegates_First-Year-Graduates_B_card1.jpg"
+        },
+        {
+         "src": "assets/posts/Schneider/First-Year-Graduates/2026-11-05_Ask-the-Delegates/2026-11-05_Ask-the-Delegates_First-Year-Graduates_B_card2.jpg",
+         "thumb": "assets/posts/Schneider/First-Year-Graduates/2026-11-05_Ask-the-Delegates/2026-11-05_Ask-the-Delegates_First-Year-Graduates_B_card2.webp",
+         "name": "2026-11-05_Ask-the-Delegates_First-Year-Graduates_B_card2.jpg"
+        }
+       ],
+       "caption": "I'm not in Cape Town, but my question is. I asked our delegates at One Young World: did you meet anyone from our old university team?\n\nThe answer from Cape Town: three people, actually. They found each other within the first hour.\n\nSwipe for the full exchange. What would you ask someone at the Summit?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "C": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/First-Year-Graduates/2026-11-05_Ask-the-Delegates/2026-11-05_Ask-the-Delegates_First-Year-Graduates_C_card1.jpg",
+         "thumb": "assets/posts/Schneider/First-Year-Graduates/2026-11-05_Ask-the-Delegates/2026-11-05_Ask-the-Delegates_First-Year-Graduates_C_card1.webp",
+         "name": "2026-11-05_Ask-the-Delegates_First-Year-Graduates_C_card1.jpg"
+        },
+        {
+         "src": "assets/posts/Schneider/First-Year-Graduates/2026-11-05_Ask-the-Delegates/2026-11-05_Ask-the-Delegates_First-Year-Graduates_C_card2.jpg",
+         "thumb": "assets/posts/Schneider/First-Year-Graduates/2026-11-05_Ask-the-Delegates/2026-11-05_Ask-the-Delegates_First-Year-Graduates_C_card2.webp",
+         "name": "2026-11-05_Ask-the-Delegates_First-Year-Graduates_C_card2.jpg"
+        }
+       ],
+       "caption": "I'm not in Cape Town, but my question is. I asked our delegates at One Young World: what's the one session you wish the whole team could see?\n\nThe answer from Cape Town: the hallway conversations between sessions. That's where the real stuff happens.\n\nSwipe for the full exchange. What would you ask someone at the Summit?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "D": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/First-Year-Graduates/2026-11-05_Ask-the-Delegates/2026-11-05_Ask-the-Delegates_First-Year-Graduates_D_card1.jpg",
+         "thumb": "assets/posts/Schneider/First-Year-Graduates/2026-11-05_Ask-the-Delegates/2026-11-05_Ask-the-Delegates_First-Year-Graduates_D_card1.webp",
+         "name": "2026-11-05_Ask-the-Delegates_First-Year-Graduates_D_card1.jpg"
+        },
+        {
+         "src": "assets/posts/Schneider/First-Year-Graduates/2026-11-05_Ask-the-Delegates/2026-11-05_Ask-the-Delegates_First-Year-Graduates_D_card2.jpg",
+         "thumb": "assets/posts/Schneider/First-Year-Graduates/2026-11-05_Ask-the-Delegates/2026-11-05_Ask-the-Delegates_First-Year-Graduates_D_card2.webp",
+         "name": "2026-11-05_Ask-the-Delegates_First-Year-Graduates_D_card2.jpg"
+        }
+       ],
+       "caption": "I'm not in Cape Town, but my question is. I asked our delegates at One Young World: be honest, are you nervous?\n\nThe answer from Cape Town: constantly. Also completely fine. Both are true at once.\n\nSwipe for the full exchange. What would you ask someone at the Summit?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-11-11_Reflection",
+     "type": "Reflection",
+     "title": "Reflection",
+     "date": "2026-11-11",
+     "window": "9–27 Nov",
+     "windowStart": "2026-11-09",
+     "windowEnd": "2026-11-27",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "note": "",
+     "variants": {
+      "A": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/First-Year-Graduates/2026-11-11_Reflection/2026-11-11_Reflection_First-Year-Graduates_A.jpg",
+         "thumb": "assets/posts/Schneider/First-Year-Graduates/2026-11-11_Reflection/2026-11-11_Reflection_First-Year-Graduates_A.webp",
+         "name": "2026-11-11_Reflection_First-Year-Graduates_A.jpg"
+        }
+       ],
+       "caption": "I used to think my role was to execute the plan. Now I think it's to ask better questions about the plan.\n\nThat's what I'm bringing home from One Young World in Cape Town, and into my second year at Schneider Electric.\n\nWhat's one thing you'd change about how you work, starting Monday?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "B": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/First-Year-Graduates/2026-11-11_Reflection/2026-11-11_Reflection_First-Year-Graduates_B.jpg",
+         "thumb": "assets/posts/Schneider/First-Year-Graduates/2026-11-11_Reflection/2026-11-11_Reflection_First-Year-Graduates_B.webp",
+         "name": "2026-11-11_Reflection_First-Year-Graduates_B.jpg"
+        }
+       ],
+       "caption": "The scene that did it: watching a senior engineer admit, in front of everyone, that she didn't know the answer either.\n\nOf everything at One Young World, that's the moment I'm bringing home. It made asking questions feel less like a weakness and more like the job.\n\nWhat's a moment that changed how you work?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "C": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/First-Year-Graduates/2026-11-11_Reflection/2026-11-11_Reflection_First-Year-Graduates_C.jpg",
+         "thumb": "assets/posts/Schneider/First-Year-Graduates/2026-11-11_Reflection/2026-11-11_Reflection_First-Year-Graduates_C.webp",
+         "name": "2026-11-11_Reflection_First-Year-Graduates_C.jpg"
+        }
+       ],
+       "caption": "I'm starting next week by asking my manager for one thing I never thought to ask for: more context, not more tasks.\n\nThat's my one commitment after One Young World in Cape Town.\n\nWhat's the one thing you'll ask for this week?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "D": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/First-Year-Graduates/2026-11-11_Reflection/2026-11-11_Reflection_First-Year-Graduates_D.jpg",
+         "thumb": "assets/posts/Schneider/First-Year-Graduates/2026-11-11_Reflection/2026-11-11_Reflection_First-Year-Graduates_D.webp",
+         "name": "2026-11-11_Reflection_First-Year-Graduates_D.jpg"
+        }
+       ],
+       "caption": "I came back smaller in the org chart and bigger in how much I think I can actually change in it.\n\nThat's my takeaway from One Young World in Cape Town, a year into my career at Schneider Electric.\n\nWhat would you change if you knew you could?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    }
+   ]
+  }
+ },
+ "explorers": [
+  {
+   "id": "bakayoko-guefa",
+   "name": "Bakayoko Guefa",
+   "first": "Guefa",
+   "hash": "000016191afe1e2e5aebd52378c607fce7352b9fe7d3660eed95b9b35e112f30",
+   "language": "FR",
+   "role": "Mobility Segment Lead & OM",
+   "country": "Ivory Coast",
+   "theme": "Intelligent Jobs",
+   "posts": [
+    {
+     "id": "2026-10-06_Im-Going",
+     "type": "Im-Going",
+     "title": "I'm Going",
+     "date": "2026-10-06",
+     "window": "6–10 Oct (2 Explorers a day)",
+     "windowStart": "2026-10-06",
+     "windowEnd": "2026-10-10",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Bakayoko-Guefa/2026-10-06_Im-Going/2026-10-06_Im-Going_Bakayoko-Guefa_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Bakayoko-Guefa/2026-10-06_Im-Going/2026-10-06_Im-Going_Bakayoko-Guefa_EN.webp",
+         "name": "2026-10-06_Im-Going_Bakayoko-Guefa_EN.jpg"
+        }
+       ],
+       "caption": "I'm heading to Cape Town for One Young World 2026 with one question.\n\nAs Mobility Segment Lead in Côte d'Ivoire, I spend my days on how African cities will move, and more and more of that runs on AI. The grid is getting smarter. The real question is who gets trained to run it.\n\nI'm going to listen, learn from delegates from 190 countries, and bring answers home to the people building it with me.\n\nWhat would you want me to ask in Cape Town?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "FR": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Bakayoko-Guefa/2026-10-06_Im-Going/2026-10-06_Im-Going_Bakayoko-Guefa_FR.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Bakayoko-Guefa/2026-10-06_Im-Going/2026-10-06_Im-Going_Bakayoko-Guefa_FR.webp",
+         "name": "2026-10-06_Im-Going_Bakayoko-Guefa_FR.jpg"
+        }
+       ],
+       "caption": "Je pars au Cap pour One Young World 2026 avec une question.\n\nEn tant que Mobility Segment Lead en Côte d'Ivoire, je travaille chaque jour sur la façon dont nos villes africaines vont se déplacer, et cela passe de plus en plus par l'IA. Le réseau devient plus intelligent. La vraie question : qui sera formé pour le piloter ?\n\nJe vais écouter, apprendre auprès de délégués venus de 190 pays, et ramener des réponses aux équipes qui le construisent avec moi.\n\nQuelle question voudriez-vous que je pose au Cap ?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-10-14_Pass-the-Question",
+     "type": "Pass-the-Question",
+     "title": "Pass the Question",
+     "date": "2026-10-14",
+     "window": "13–21 Oct",
+     "windowStart": "2026-10-13",
+     "windowEnd": "2026-10-21",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World  + the person named in the caption",
+     "chain": "question from Chain start (Intelligent Jobs) -> passes to LaFortune Ngakam",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Bakayoko-Guefa/2026-10-14_Pass-the-Question/2026-10-14_Pass-the-Question_Bakayoko-Guefa_card1_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Bakayoko-Guefa/2026-10-14_Pass-the-Question/2026-10-14_Pass-the-Question_Bakayoko-Guefa_card1_EN.webp",
+         "name": "2026-10-14_Pass-the-Question_Bakayoko-Guefa_card1_EN.jpg"
+        },
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Bakayoko-Guefa/2026-10-14_Pass-the-Question/2026-10-14_Pass-the-Question_Bakayoko-Guefa_card2_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Bakayoko-Guefa/2026-10-14_Pass-the-Question/2026-10-14_Pass-the-Question_Bakayoko-Guefa_card2_EN.webp",
+         "name": "2026-10-14_Pass-the-Question_Bakayoko-Guefa_card2_EN.jpg"
+        }
+       ],
+       "caption": "Pass the Question. The chain reached me with this one: how do you get a team to trust AI with real decisions, not just dashboards?\n\nMy answer: train people for the jobs AI creates, not just to supervise the ones it changes. Trust comes from understanding, and understanding comes from doing the work.\n\nBut that raised a new question, and I'm passing it to @LaFortune Ngakam: how do you build that trust before the tools even reach people?\n\nSwipe for the full exchange, and add your answer below.\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "FR": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Bakayoko-Guefa/2026-10-14_Pass-the-Question/2026-10-14_Pass-the-Question_Bakayoko-Guefa_card1_FR.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Bakayoko-Guefa/2026-10-14_Pass-the-Question/2026-10-14_Pass-the-Question_Bakayoko-Guefa_card1_FR.webp",
+         "name": "2026-10-14_Pass-the-Question_Bakayoko-Guefa_card1_FR.jpg"
+        },
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Bakayoko-Guefa/2026-10-14_Pass-the-Question/2026-10-14_Pass-the-Question_Bakayoko-Guefa_card2_FR.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Bakayoko-Guefa/2026-10-14_Pass-the-Question/2026-10-14_Pass-the-Question_Bakayoko-Guefa_card2_FR.webp",
+         "name": "2026-10-14_Pass-the-Question_Bakayoko-Guefa_card2_FR.jpg"
+        }
+       ],
+       "caption": "Pass the Question. La chaîne m'a transmis cette question : comment amener une équipe à faire confiance à l'IA pour de vraies décisions, pas seulement pour des tableaux de bord ?\n\nMa réponse : former les gens pour les emplois que l'IA crée, pas seulement pour superviser ceux qu'elle transforme. La confiance vient de la compréhension, et la compréhension vient de la pratique.\n\nMais une nouvelle question a émergé, et je la passe à @LaFortune Ngakam : comment construire cette confiance avant même que les outils n'arrivent jusqu'aux gens ?\n\nFaites défiler pour voir l'échange complet, et ajoutez votre réponse en commentaire.\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-10-22_My-Story",
+     "type": "My-Story",
+     "title": "My Story",
+     "date": "2026-10-22",
+     "window": "19–30 Oct",
+     "windowStart": "2026-10-19",
+     "windowEnd": "2026-10-30",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Bakayoko-Guefa/2026-10-22_My-Story/2026-10-22_My-Story_Bakayoko-Guefa_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Bakayoko-Guefa/2026-10-22_My-Story/2026-10-22_My-Story_Bakayoko-Guefa_EN.webp",
+         "name": "2026-10-22_My-Story_Bakayoko-Guefa_EN.jpg"
+        }
+       ],
+       "caption": "Last month a client asked me who would run the smart system I'd just sold them. I didn't have a good answer yet.\n\nThat moment has stayed with me. As Mobility Segment Lead in Côte d'Ivoire, I see new technology arrive faster than the skills to run it. The systems are ready. The question is whether the people are.\n\nSoon I'll be at One Young World in Cape Town, and that's the answer I'm going to look for.\n\nWho taught you the job you do today?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "FR": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Bakayoko-Guefa/2026-10-22_My-Story/2026-10-22_My-Story_Bakayoko-Guefa_FR.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Bakayoko-Guefa/2026-10-22_My-Story/2026-10-22_My-Story_Bakayoko-Guefa_FR.webp",
+         "name": "2026-10-22_My-Story_Bakayoko-Guefa_FR.jpg"
+        }
+       ],
+       "caption": "Le mois dernier, un client m'a demandé qui allait faire fonctionner le système intelligent que je venais de lui vendre. Je n'avais pas encore de bonne réponse.\n\nCe moment ne m'a pas quitté. En tant que Mobility Segment Lead en Côte d'Ivoire, je vois les nouvelles technologies arriver plus vite que les compétences pour les faire fonctionner. Les systèmes sont prêts. La question, c'est de savoir si les gens le sont.\n\nBientôt, je serai à One Young World au Cap, et c'est cette réponse que je vais chercher.\n\nQui vous a appris le métier que vous faites aujourd'hui ?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-11-03_Event-Post-During",
+     "type": "Event-Post-During",
+     "title": "Event Post",
+     "date": "2026-11-03",
+     "window": "Summit week, 3–6 Nov (one post)",
+     "windowStart": "2026-11-03",
+     "windowEnd": "2026-11-06",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Bakayoko-Guefa/2026-11-03_Event-Post-During/2026-11-03_Event-Post-During_Bakayoko-Guefa_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Bakayoko-Guefa/2026-11-03_Event-Post-During/2026-11-03_Event-Post-During_Bakayoko-Guefa_EN.webp",
+         "name": "2026-11-03_Event-Post-During_Bakayoko-Guefa_EN.jpg"
+        }
+       ],
+       "caption": "Live from One Young World in Cape Town.\n\nI'm walking every hallway looking for one answer: who gets trained to run what we're building? So far, the best conversations are happening between sessions, with people solving the same problem in very different places.\n\nMore to share when I'm back home.\n\nIf you could ask delegates from 190 countries one question, what would it be?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "FR": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Bakayoko-Guefa/2026-11-03_Event-Post-During/2026-11-03_Event-Post-During_Bakayoko-Guefa_FR.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Bakayoko-Guefa/2026-11-03_Event-Post-During/2026-11-03_Event-Post-During_Bakayoko-Guefa_FR.webp",
+         "name": "2026-11-03_Event-Post-During_Bakayoko-Guefa_FR.jpg"
+        }
+       ],
+       "caption": "En direct de One Young World, au Cap.\n\nJe parcours chaque couloir à la recherche d'une réponse : qui est formé pour faire fonctionner ce que nous construisons ? Pour l'instant, les meilleures conversations ont lieu entre les sessions, avec des personnes qui résolvent le même problème dans des contextes très différents.\n\nJ'en dirai plus à mon retour.\n\nSi vous pouviez poser une question à des délégués venus de 190 pays, laquelle serait-ce ?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-11-10_Bring-It-Home",
+     "type": "Bring-It-Home",
+     "title": "Bring It Home",
+     "date": "2026-11-10",
+     "window": "9–27 Nov",
+     "windowStart": "2026-11-09",
+     "windowEnd": "2026-11-27",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Bakayoko-Guefa/2026-11-10_Bring-It-Home/2026-11-10_Bring-It-Home_Bakayoko-Guefa_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Bakayoko-Guefa/2026-11-10_Bring-It-Home/2026-11-10_Bring-It-Home_Bakayoko-Guefa_EN.webp",
+         "name": "2026-11-10_Bring-It-Home_Bakayoko-Guefa_EN.jpg"
+        }
+       ],
+       "caption": "Back from One Young World in Cape Town, and I'm not coming home with a certificate. I'm coming home with a pilot.\n\nStarting in December, two junior engineers on our team will work hands-on with live AI tools. I went asking who gets trained to run the AI-powered grid we're building. Cape Town gave me my answer: we train them here, inside the work.\n\nThank you to every delegate who pushed my thinking this week.\n\nWhat's the first thing you'd teach a junior engineer about AI?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "FR": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Bakayoko-Guefa/2026-11-10_Bring-It-Home/2026-11-10_Bring-It-Home_Bakayoko-Guefa_FR.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Bakayoko-Guefa/2026-11-10_Bring-It-Home/2026-11-10_Bring-It-Home_Bakayoko-Guefa_FR.webp",
+         "name": "2026-11-10_Bring-It-Home_Bakayoko-Guefa_FR.jpg"
+        }
+       ],
+       "caption": "De retour de One Young World au Cap, et je ne reviens pas avec un certificat. Je reviens avec un projet pilote.\n\nDès décembre, deux jeunes ingénieurs de notre équipe travailleront sur des outils d'IA en conditions réelles. Je suis parti en demandant qui sera formé pour piloter le réseau alimenté par l'IA que nous construisons. Le Cap m'a donné ma réponse : on les forme ici, au cœur du travail.\n\nMerci à tous les délégués qui ont fait avancer ma réflexion cette semaine.\n\nQuelle est la première chose que vous apprendriez à un jeune ingénieur sur l'IA ?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "ndiaye-dielya",
+   "name": "Ndiaye Dielya",
+   "first": "Dielya",
+   "hash": "207d3a84ebd2b03743f3245216b1929f7b281b016151f531717c576c81e686ef",
+   "language": "FR",
+   "role": "Sales Distribution",
+   "country": "Senegal / Ivory Coast",
+   "theme": "Future of Africa",
+   "posts": [
+    {
+     "id": "2026-10-06_Im-Going",
+     "type": "Im-Going",
+     "title": "I'm Going",
+     "date": "2026-10-06",
+     "window": "6–10 Oct (2 Explorers a day)",
+     "windowStart": "2026-10-06",
+     "windowEnd": "2026-10-10",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Ndiaye-Dielya/2026-10-06_Im-Going/2026-10-06_Im-Going_Ndiaye-Dielya_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Ndiaye-Dielya/2026-10-06_Im-Going/2026-10-06_Im-Going_Ndiaye-Dielya_EN.webp",
+         "name": "2026-10-06_Im-Going_Ndiaye-Dielya_EN.jpg"
+        }
+       ],
+       "caption": "Next month I'm taking one question to One Young World in Cape Town.\n\nI work in sales distribution across Senegal and Côte d'Ivoire. My job is getting energy technology to the places that need it, not just the capitals. We talk about the African Century like it's guaranteed. I want to know what it means if the last mile still isn't solved.\n\nI'm going to listen, learn, and come back with ideas we can actually use.\n\nWhere does \"the last mile\" start for you?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "FR": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Ndiaye-Dielya/2026-10-06_Im-Going/2026-10-06_Im-Going_Ndiaye-Dielya_FR.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Ndiaye-Dielya/2026-10-06_Im-Going/2026-10-06_Im-Going_Ndiaye-Dielya_FR.webp",
+         "name": "2026-10-06_Im-Going_Ndiaye-Dielya_FR.jpg"
+        }
+       ],
+       "caption": "Le mois prochain, j'emporte une question à One Young World, au Cap.\n\nJe travaille dans la distribution au Sénégal et en Côte d'Ivoire. Mon rôle : faire arriver la technologie énergétique là où on en a besoin, pas seulement dans les capitales. On parle du Siècle Africain comme d'une évidence. Je veux comprendre ce qu'il signifie si le dernier kilomètre n'est toujours pas résolu.\n\nJe pars pour écouter, apprendre et revenir avec des idées concrètes.\n\nPour vous, où commence le « dernier kilomètre » ?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-10-14_Pass-the-Question",
+     "type": "Pass-the-Question",
+     "title": "Pass the Question",
+     "date": "2026-10-14",
+     "window": "13–21 Oct",
+     "windowStart": "2026-10-13",
+     "windowEnd": "2026-10-21",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World  + the person named in the caption",
+     "chain": "question from Chain start (Future of Africa) -> passes to Ibtissam Adaha",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Ndiaye-Dielya/2026-10-14_Pass-the-Question/2026-10-14_Pass-the-Question_Ndiaye-Dielya_card1_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Ndiaye-Dielya/2026-10-14_Pass-the-Question/2026-10-14_Pass-the-Question_Ndiaye-Dielya_card1_EN.webp",
+         "name": "2026-10-14_Pass-the-Question_Ndiaye-Dielya_card1_EN.jpg"
+        },
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Ndiaye-Dielya/2026-10-14_Pass-the-Question/2026-10-14_Pass-the-Question_Ndiaye-Dielya_card2_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Ndiaye-Dielya/2026-10-14_Pass-the-Question/2026-10-14_Pass-the-Question_Ndiaye-Dielya_card2_EN.webp",
+         "name": "2026-10-14_Pass-the-Question_Ndiaye-Dielya_card2_EN.jpg"
+        }
+       ],
+       "caption": "Pass the Question. The chain reached me with this one: what do you do when \"available in Africa\" really just means \"available in the capital\"?\n\nMy answer: price access for the last mile, not just the easiest one. Distribution isn't finished until it reaches the places furthest from the centre.\n\nBut a new question came up, and I'm passing it to @Ibtissam Adaha: who decides which projects even get built out that far?\n\nSwipe for the full exchange, and add your answer below.\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "FR": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Ndiaye-Dielya/2026-10-14_Pass-the-Question/2026-10-14_Pass-the-Question_Ndiaye-Dielya_card1_FR.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Ndiaye-Dielya/2026-10-14_Pass-the-Question/2026-10-14_Pass-the-Question_Ndiaye-Dielya_card1_FR.webp",
+         "name": "2026-10-14_Pass-the-Question_Ndiaye-Dielya_card1_FR.jpg"
+        },
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Ndiaye-Dielya/2026-10-14_Pass-the-Question/2026-10-14_Pass-the-Question_Ndiaye-Dielya_card2_FR.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Ndiaye-Dielya/2026-10-14_Pass-the-Question/2026-10-14_Pass-the-Question_Ndiaye-Dielya_card2_FR.webp",
+         "name": "2026-10-14_Pass-the-Question_Ndiaye-Dielya_card2_FR.jpg"
+        }
+       ],
+       "caption": "Pass the Question. La chaîne m'a transmis cette question : que faire quand « disponible en Afrique » signifie en réalité « disponible dans la capitale » ?\n\nMa réponse : tarifer l'accès pour le dernier kilomètre, pas seulement pour le plus facile. La distribution n'est pas terminée tant qu'elle n'atteint pas les endroits les plus éloignés du centre.\n\nMais une nouvelle question a émergé, et je la passe à @Ibtissam Adaha : qui décide quels projets sont construits jusque-là ?\n\nFaites défiler pour voir l'échange complet, et ajoutez votre réponse en commentaire.\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-10-22_My-Story",
+     "type": "My-Story",
+     "title": "My Story",
+     "date": "2026-10-22",
+     "window": "19–30 Oct",
+     "windowStart": "2026-10-19",
+     "windowEnd": "2026-10-30",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Ndiaye-Dielya/2026-10-22_My-Story/2026-10-22_My-Story_Ndiaye-Dielya_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Ndiaye-Dielya/2026-10-22_My-Story/2026-10-22_My-Story_Ndiaye-Dielya_EN.webp",
+         "name": "2026-10-22_My-Story_Ndiaye-Dielya_EN.jpg"
+        }
+       ],
+       "caption": "A distributor once told me our product \"existed\" in his country. It just wasn't anywhere he could actually reach it.\n\nWorking in sales distribution across Senegal and Côte d'Ivoire, I've learned that available on paper isn't the same as accessible. The last mile is where most of the real work happens.\n\nSoon I'll take that lesson to One Young World in Cape Town.\n\nWhat's \"available\" where you live but still out of reach?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "FR": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Ndiaye-Dielya/2026-10-22_My-Story/2026-10-22_My-Story_Ndiaye-Dielya_FR.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Ndiaye-Dielya/2026-10-22_My-Story/2026-10-22_My-Story_Ndiaye-Dielya_FR.webp",
+         "name": "2026-10-22_My-Story_Ndiaye-Dielya_FR.jpg"
+        }
+       ],
+       "caption": "Un distributeur m'a dit un jour que notre produit « existait » dans son pays. Il n'était simplement nulle part où il pouvait vraiment l'atteindre.\n\nEn travaillant dans la distribution au Sénégal et en Côte d'Ivoire, j'ai appris qu'être disponible sur le papier n'est pas la même chose qu'être accessible. C'est dans le dernier kilomètre que se fait l'essentiel du vrai travail.\n\nBientôt, j'emporterai cette leçon à One Young World, au Cap.\n\nQu'est-ce qui est « disponible » chez vous, mais reste hors de portée ?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-11-03_Event-Post-During",
+     "type": "Event-Post-During",
+     "title": "Event Post",
+     "date": "2026-11-03",
+     "window": "Summit week, 3–6 Nov (one post)",
+     "windowStart": "2026-11-03",
+     "windowEnd": "2026-11-06",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Ndiaye-Dielya/2026-11-03_Event-Post-During/2026-11-03_Event-Post-During_Ndiaye-Dielya_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Ndiaye-Dielya/2026-11-03_Event-Post-During/2026-11-03_Event-Post-During_Ndiaye-Dielya_EN.webp",
+         "name": "2026-11-03_Event-Post-During_Ndiaye-Dielya_EN.jpg"
+        }
+       ],
+       "caption": "Live from One Young World in Cape Town.\n\nI'm asking everyone here the same question: what does \"available\" cost once you leave the capital? Delegates from the other side of the continent are describing my exact challenge. The problems rhyme.\n\nMore to share when I'm back home.\n\nWhere you are, how far from the capital does \"available\" stop being true?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "FR": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Ndiaye-Dielya/2026-11-03_Event-Post-During/2026-11-03_Event-Post-During_Ndiaye-Dielya_FR.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Ndiaye-Dielya/2026-11-03_Event-Post-During/2026-11-03_Event-Post-During_Ndiaye-Dielya_FR.webp",
+         "name": "2026-11-03_Event-Post-During_Ndiaye-Dielya_FR.jpg"
+        }
+       ],
+       "caption": "En direct de One Young World, au Cap.\n\nJe pose la même question à tout le monde ici : combien coûte « disponible » une fois qu'on quitte la capitale ? Des délégués venus de l'autre bout du continent décrivent exactement mon défi. Les problèmes se ressemblent.\n\nJ'en dirai plus à mon retour.\n\nChez vous, à quelle distance de la capitale « disponible » cesse-t-il d'être vrai ?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-11-10_Bring-It-Home",
+     "type": "Bring-It-Home",
+     "title": "Bring It Home",
+     "date": "2026-11-10",
+     "window": "9–27 Nov",
+     "windowStart": "2026-11-09",
+     "windowEnd": "2026-11-27",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Ndiaye-Dielya/2026-11-10_Bring-It-Home/2026-11-10_Bring-It-Home_Ndiaye-Dielya_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Ndiaye-Dielya/2026-11-10_Bring-It-Home/2026-11-10_Bring-It-Home_Ndiaye-Dielya_EN.webp",
+         "name": "2026-11-10_Bring-It-Home_Ndiaye-Dielya_EN.jpg"
+        }
+       ],
+       "caption": "One Young World is over, but the work starts now.\n\nThis month I'm sharing three takeaways from Cape Town with my distribution partners, starting with the one that changed my thinking most: how we price access, not just product. I went to ask what the African Century means if the last mile still isn't solved. I came back convinced the answer starts with who can actually reach it.\n\nGrateful to everyone who shared their stories this week.\n\nWhat does \"access\" mean in your market?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "FR": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Ndiaye-Dielya/2026-11-10_Bring-It-Home/2026-11-10_Bring-It-Home_Ndiaye-Dielya_FR.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Ndiaye-Dielya/2026-11-10_Bring-It-Home/2026-11-10_Bring-It-Home_Ndiaye-Dielya_FR.webp",
+         "name": "2026-11-10_Bring-It-Home_Ndiaye-Dielya_FR.jpg"
+        }
+       ],
+       "caption": "One Young World est terminé, mais le travail commence maintenant.\n\nCe mois-ci, je partage trois enseignements du Cap avec mes partenaires distributeurs, en commençant par celui qui a le plus changé ma façon de voir : comment nous tarifons l'accès, pas seulement le produit. Je suis partie demander ce que signifie le Siècle Africain si le dernier kilomètre n'est toujours pas résolu. Je reviens convaincue que la réponse commence par qui peut réellement y accéder.\n\nMerci à toutes celles et ceux qui ont partagé leur expérience cette semaine.\n\nQue signifie « l'accès » dans votre marché ?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "ibtissam-adaha",
+   "name": "Ibtissam Adaha",
+   "first": "Ibtissam",
+   "hash": "f9ba5ac7f54292d488659ff0e2c3241e99a2c74f5a46d8ffd429c02b5a1a11bd",
+   "language": "FR",
+   "role": "Tendering Leader",
+   "country": "Morocco",
+   "theme": "Future of Africa",
+   "posts": [
+    {
+     "id": "2026-10-07_Im-Going",
+     "type": "Im-Going",
+     "title": "I'm Going",
+     "date": "2026-10-07",
+     "window": "6–10 Oct (2 Explorers a day)",
+     "windowStart": "2026-10-06",
+     "windowEnd": "2026-10-10",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Ibtissam-Adaha/2026-10-07_Im-Going/2026-10-07_Im-Going_Ibtissam-Adaha_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Ibtissam-Adaha/2026-10-07_Im-Going/2026-10-07_Im-Going_Ibtissam-Adaha_EN.webp",
+         "name": "2026-10-07_Im-Going_Ibtissam-Adaha_EN.jpg"
+        }
+       ],
+       "caption": "I'm going to Cape Town for One Young World 2026.\n\nAs a Tendering Leader in Morocco, I see how big infrastructure decisions get made, and what they end up rewarding. Tenders shape what gets built and who gets to build it. So my question for the Summit: what should the next generation of tenders actually reward?\n\nI'll be listening to delegates from around the world and bringing the best ideas back to my team.\n\nIf you could change one thing about how projects are awarded, what would it be?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "FR": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Ibtissam-Adaha/2026-10-07_Im-Going/2026-10-07_Im-Going_Ibtissam-Adaha_FR.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Ibtissam-Adaha/2026-10-07_Im-Going/2026-10-07_Im-Going_Ibtissam-Adaha_FR.webp",
+         "name": "2026-10-07_Im-Going_Ibtissam-Adaha_FR.jpg"
+        }
+       ],
+       "caption": "Je pars au Cap pour One Young World 2026.\n\nEn tant que Tendering Leader au Maroc, je vois comment se prennent les grandes décisions d'infrastructure, et ce qu'elles finissent par récompenser. Les appels d'offres façonnent ce qui se construit, et qui le construit. Ma question pour le Sommet : que devrait réellement récompenser la prochaine génération d'appels d'offres ?\n\nJe vais écouter des délégués du monde entier et ramener les meilleures idées à mon équipe.\n\nSi vous pouviez changer une seule chose dans l'attribution des projets, ce serait quoi ?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-10-15_Pass-the-Question",
+     "type": "Pass-the-Question",
+     "title": "Pass the Question",
+     "date": "2026-10-15",
+     "window": "13–21 Oct",
+     "windowStart": "2026-10-13",
+     "windowEnd": "2026-10-21",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World  + the person named in the caption",
+     "chain": "question from Ndiaye Dielya -> passes to Lina Djellouli",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Ibtissam-Adaha/2026-10-15_Pass-the-Question/2026-10-15_Pass-the-Question_Ibtissam-Adaha_card1_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Ibtissam-Adaha/2026-10-15_Pass-the-Question/2026-10-15_Pass-the-Question_Ibtissam-Adaha_card1_EN.webp",
+         "name": "2026-10-15_Pass-the-Question_Ibtissam-Adaha_card1_EN.jpg"
+        },
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Ibtissam-Adaha/2026-10-15_Pass-the-Question/2026-10-15_Pass-the-Question_Ibtissam-Adaha_card2_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Ibtissam-Adaha/2026-10-15_Pass-the-Question/2026-10-15_Pass-the-Question_Ibtissam-Adaha_card2_EN.webp",
+         "name": "2026-10-15_Pass-the-Question_Ibtissam-Adaha_card2_EN.jpg"
+        }
+       ],
+       "caption": "@Ndiaye Dielya passed me a question that sits right at the heart of my job: who decides which projects get built out to the places that need them most?\n\nMy answer: rewrite the tender criteria so local capability beats the lowest price. What we reward is what gets built.\n\nNow a new question for @Lina Djellouli: once the criteria are right, who actually does the unglamorous work of building it?\n\nSwipe for the full exchange, and add your answer below.\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "FR": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Ibtissam-Adaha/2026-10-15_Pass-the-Question/2026-10-15_Pass-the-Question_Ibtissam-Adaha_card1_FR.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Ibtissam-Adaha/2026-10-15_Pass-the-Question/2026-10-15_Pass-the-Question_Ibtissam-Adaha_card1_FR.webp",
+         "name": "2026-10-15_Pass-the-Question_Ibtissam-Adaha_card1_FR.jpg"
+        },
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Ibtissam-Adaha/2026-10-15_Pass-the-Question/2026-10-15_Pass-the-Question_Ibtissam-Adaha_card2_FR.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Ibtissam-Adaha/2026-10-15_Pass-the-Question/2026-10-15_Pass-the-Question_Ibtissam-Adaha_card2_FR.webp",
+         "name": "2026-10-15_Pass-the-Question_Ibtissam-Adaha_card2_FR.jpg"
+        }
+       ],
+       "caption": "@Ndiaye Dielya m'a transmis une question au cœur de mon métier : qui décide quels projets sont construits jusqu'aux endroits qui en ont le plus besoin ?\n\nMa réponse : réécrire les critères d'appel d'offres pour que la capacité locale l'emporte sur le prix le plus bas. Ce que l'on récompense, c'est ce qui se construit.\n\nUne nouvelle question pour @Lina Djellouli : une fois les critères corrigés, qui fait le travail peu glamour de construire réellement ?\n\nFaites défiler pour voir l'échange complet, et ajoutez votre réponse en commentaire.\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-10-23_My-Story",
+     "type": "My-Story",
+     "title": "My Story",
+     "date": "2026-10-23",
+     "window": "19–30 Oct",
+     "windowStart": "2026-10-19",
+     "windowEnd": "2026-10-30",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Ibtissam-Adaha/2026-10-23_My-Story/2026-10-23_My-Story_Ibtissam-Adaha_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Ibtissam-Adaha/2026-10-23_My-Story/2026-10-23_My-Story_Ibtissam-Adaha_EN.webp",
+         "name": "2026-10-23_My-Story_Ibtissam-Adaha_EN.jpg"
+        }
+       ],
+       "caption": "I once watched a stronger local bid lose to a cheaper one that never trained a single local hire.\n\nIt changed how I see my work as a Tendering Leader in Morocco. Tenders aren't just paperwork. They decide what gets built, and who gets the chance to build it.\n\nSoon I'll take that question to One Young World in Cape Town.\n\nWhat should a winning bid have to prove?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "FR": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Ibtissam-Adaha/2026-10-23_My-Story/2026-10-23_My-Story_Ibtissam-Adaha_FR.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Ibtissam-Adaha/2026-10-23_My-Story/2026-10-23_My-Story_Ibtissam-Adaha_FR.webp",
+         "name": "2026-10-23_My-Story_Ibtissam-Adaha_FR.jpg"
+        }
+       ],
+       "caption": "J'ai vu une offre locale plus solide perdre face à une offre moins chère qui n'a jamais formé un seul employé local.\n\nCela a changé ma façon de voir mon travail de Tendering Leader au Maroc. Les appels d'offres ne sont pas que de la paperasse. Ils décident de ce qui se construit, et de qui a la chance de le construire.\n\nBientôt, j'emporterai cette question à One Young World, au Cap.\n\nQue devrait prouver une offre gagnante ?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-11-03_Event-Post-During",
+     "type": "Event-Post-During",
+     "title": "Event Post",
+     "date": "2026-11-03",
+     "window": "Summit week, 3–6 Nov (one post)",
+     "windowStart": "2026-11-03",
+     "windowEnd": "2026-11-06",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Ibtissam-Adaha/2026-11-03_Event-Post-During/2026-11-03_Event-Post-During_Ibtissam-Adaha_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Ibtissam-Adaha/2026-11-03_Event-Post-During/2026-11-03_Event-Post-During_Ibtissam-Adaha_EN.webp",
+         "name": "2026-11-03_Event-Post-During_Ibtissam-Adaha_EN.jpg"
+        }
+       ],
+       "caption": "Live from One Young World in Cape Town.\n\nI'm comparing notes on tender criteria that finally reward the bid that builds people, not just projects. Hearing how other countries approach this is already giving me ideas for my own work.\n\nMore to share when I'm back home.\n\nHave you seen a project that built skills as well as infrastructure?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "FR": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Ibtissam-Adaha/2026-11-03_Event-Post-During/2026-11-03_Event-Post-During_Ibtissam-Adaha_FR.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Ibtissam-Adaha/2026-11-03_Event-Post-During/2026-11-03_Event-Post-During_Ibtissam-Adaha_FR.webp",
+         "name": "2026-11-03_Event-Post-During_Ibtissam-Adaha_FR.jpg"
+        }
+       ],
+       "caption": "En direct de One Young World, au Cap.\n\nJe compare des notes sur des critères d'appel d'offres qui récompensent enfin l'offre qui forme des gens, pas seulement des projets. Entendre comment d'autres pays abordent le sujet me donne déjà des idées pour mon propre travail.\n\nJ'en dirai plus à mon retour.\n\nAvez-vous déjà vu un projet qui a développé des compétences autant que des infrastructures ?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-11-11_Bring-It-Home",
+     "type": "Bring-It-Home",
+     "title": "Bring It Home",
+     "date": "2026-11-11",
+     "window": "9–27 Nov",
+     "windowStart": "2026-11-09",
+     "windowEnd": "2026-11-27",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Ibtissam-Adaha/2026-11-11_Bring-It-Home/2026-11-11_Bring-It-Home_Ibtissam-Adaha_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Ibtissam-Adaha/2026-11-11_Bring-It-Home/2026-11-11_Bring-It-Home_Ibtissam-Adaha_EN.webp",
+         "name": "2026-11-11_Bring-It-Home_Ibtissam-Adaha_EN.jpg"
+        }
+       ],
+       "caption": "Back from One Young World with one new filter for my work.\n\nI went to Cape Town asking what the next generation of tenders should actually reward. Now I'm reviewing our next three tender templates with a simple question: does this build local capability, or just deliver the project?\n\nHearing \"the African Century\" used as a target, not a slogan, changed how I see my part in it.\n\nWhat would you add to that filter?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "FR": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Ibtissam-Adaha/2026-11-11_Bring-It-Home/2026-11-11_Bring-It-Home_Ibtissam-Adaha_FR.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Ibtissam-Adaha/2026-11-11_Bring-It-Home/2026-11-11_Bring-It-Home_Ibtissam-Adaha_FR.webp",
+         "name": "2026-11-11_Bring-It-Home_Ibtissam-Adaha_FR.jpg"
+        }
+       ],
+       "caption": "De retour de One Young World avec un nouveau filtre pour mon travail.\n\nJe suis partie au Cap en demandant ce que la prochaine génération d'appels d'offres devrait réellement récompenser. Aujourd'hui, je révise nos trois prochains modèles d'appel d'offres avec une question simple : est-ce que cela développe la capacité locale, ou est-ce qu'on livre seulement le projet ?\n\nEntendre parler du Siècle Africain comme d'un objectif, et non d'un slogan, a changé ma façon de voir mon rôle.\n\nQu'ajouteriez-vous à ce filtre ?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "lafortune-ngakam",
+   "name": "LaFortune Ngakam",
+   "first": "Lafortune",
+   "hash": "f1d9e876a4dd4734acbb3dbfe0e38ac8f5828d63c14e529a5acfb1b264b7e36f",
+   "language": "FR",
+   "role": "Digital Services Offer Manager",
+   "country": "Cameroon / Morocco",
+   "theme": "Intelligent Jobs",
+   "posts": [
+    {
+     "id": "2026-10-07_Im-Going",
+     "type": "Im-Going",
+     "title": "I'm Going",
+     "date": "2026-10-07",
+     "window": "6–10 Oct (2 Explorers a day)",
+     "windowStart": "2026-10-06",
+     "windowEnd": "2026-10-10",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/LaFortune-Ngakam/2026-10-07_Im-Going/2026-10-07_Im-Going_LaFortune-Ngakam_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/LaFortune-Ngakam/2026-10-07_Im-Going/2026-10-07_Im-Going_LaFortune-Ngakam_EN.webp",
+         "name": "2026-10-07_Im-Going_LaFortune-Ngakam_EN.jpg"
+        }
+       ],
+       "caption": "One question is coming with me to One Young World in Cape Town: intelligent jobs sound great, but intelligent for who?\n\nI build digital services offers across Cameroon and Morocco, and I've built my own career across two countries. I've seen brilliant people held back not by talent, but by access to the right tools.\n\nI'm going to learn how others are closing that gap, and bring it home.\n\nWhat's one skill you wish you'd had access to earlier?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "FR": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/LaFortune-Ngakam/2026-10-07_Im-Going/2026-10-07_Im-Going_LaFortune-Ngakam_FR.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/LaFortune-Ngakam/2026-10-07_Im-Going/2026-10-07_Im-Going_LaFortune-Ngakam_FR.webp",
+         "name": "2026-10-07_Im-Going_LaFortune-Ngakam_FR.jpg"
+        }
+       ],
+       "caption": "Une question m'accompagne à One Young World, au Cap : les emplois intelligents, ça sonne bien, mais intelligents pour qui ?\n\nJe développe des offres de services digitaux entre le Cameroun et le Maroc, et j'ai construit ma propre carrière entre deux pays. J'ai vu des personnes brillantes freinées non par leur talent, mais par l'accès aux bons outils.\n\nJe vais apprendre comment d'autres comblent cet écart, et le ramener chez nous.\n\nQuelle compétence auriez-vous aimé pouvoir développer plus tôt ?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-10-15_Pass-the-Question",
+     "type": "Pass-the-Question",
+     "title": "Pass the Question",
+     "date": "2026-10-15",
+     "window": "13–21 Oct",
+     "windowStart": "2026-10-13",
+     "windowEnd": "2026-10-21",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World  + the person named in the caption",
+     "chain": "question from Bakayoko Guefa -> passes to Rezolia Muller-Potluri",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/LaFortune-Ngakam/2026-10-15_Pass-the-Question/2026-10-15_Pass-the-Question_LaFortune-Ngakam_card1_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/LaFortune-Ngakam/2026-10-15_Pass-the-Question/2026-10-15_Pass-the-Question_LaFortune-Ngakam_card1_EN.webp",
+         "name": "2026-10-15_Pass-the-Question_LaFortune-Ngakam_card1_EN.jpg"
+        },
+        {
+         "src": "assets/posts/Schneider/African-Explorers/LaFortune-Ngakam/2026-10-15_Pass-the-Question/2026-10-15_Pass-the-Question_LaFortune-Ngakam_card2_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/LaFortune-Ngakam/2026-10-15_Pass-the-Question/2026-10-15_Pass-the-Question_LaFortune-Ngakam_card2_EN.webp",
+         "name": "2026-10-15_Pass-the-Question_LaFortune-Ngakam_card2_EN.jpg"
+        }
+       ],
+       "caption": "@Bakayoko Guefa passed me his question: how do you build trust in AI before the tools even reach people?\n\nMy answer: open access before anyone has to ask for it. I've seen brilliant engineers wait months for hands-on time. Trust starts when the tools show up first.\n\nNow a new question, for @Rezolia Muller-Potluri: what about the roles that get automated before access ever arrives?\n\nSwipe for the full exchange, and add your answer below.\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "FR": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/LaFortune-Ngakam/2026-10-15_Pass-the-Question/2026-10-15_Pass-the-Question_LaFortune-Ngakam_card1_FR.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/LaFortune-Ngakam/2026-10-15_Pass-the-Question/2026-10-15_Pass-the-Question_LaFortune-Ngakam_card1_FR.webp",
+         "name": "2026-10-15_Pass-the-Question_LaFortune-Ngakam_card1_FR.jpg"
+        },
+        {
+         "src": "assets/posts/Schneider/African-Explorers/LaFortune-Ngakam/2026-10-15_Pass-the-Question/2026-10-15_Pass-the-Question_LaFortune-Ngakam_card2_FR.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/LaFortune-Ngakam/2026-10-15_Pass-the-Question/2026-10-15_Pass-the-Question_LaFortune-Ngakam_card2_FR.webp",
+         "name": "2026-10-15_Pass-the-Question_LaFortune-Ngakam_card2_FR.jpg"
+        }
+       ],
+       "caption": "@Bakayoko Guefa m'a transmis sa question : comment construire la confiance en l'IA avant même que les outils n'arrivent jusqu'aux gens ?\n\nMa réponse : ouvrir l'accès avant que quiconque ait à le demander. J'ai vu des ingénieurs brillants attendre des mois avant de pouvoir utiliser les outils. La confiance commence quand les outils arrivent en premier.\n\nUne nouvelle question, pour @Rezolia Muller-Potluri : que deviennent les postes automatisés avant même que cet accès n'arrive ?\n\nFaites défiler pour voir l'échange complet, et ajoutez votre réponse en commentaire.\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-10-23_My-Story",
+     "type": "My-Story",
+     "title": "My Story",
+     "date": "2026-10-23",
+     "window": "19–30 Oct",
+     "windowStart": "2026-10-19",
+     "windowEnd": "2026-10-30",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/LaFortune-Ngakam/2026-10-23_My-Story/2026-10-23_My-Story_LaFortune-Ngakam_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/LaFortune-Ngakam/2026-10-23_My-Story/2026-10-23_My-Story_LaFortune-Ngakam_EN.webp",
+         "name": "2026-10-23_My-Story_LaFortune-Ngakam_EN.jpg"
+        }
+       ],
+       "caption": "I once watched a brilliant engineer sit out an AI rollout because nobody thought to hand her the login.\n\nBuilding digital services offers across Cameroon and Morocco, I've learned that talent is rarely the problem. Access is. The right tools in the right hands, early enough, change everything.\n\nSoon I'll take that lesson to One Young World in Cape Town.\n\nWho handed you your first real opportunity?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "FR": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/LaFortune-Ngakam/2026-10-23_My-Story/2026-10-23_My-Story_LaFortune-Ngakam_FR.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/LaFortune-Ngakam/2026-10-23_My-Story/2026-10-23_My-Story_LaFortune-Ngakam_FR.webp",
+         "name": "2026-10-23_My-Story_LaFortune-Ngakam_FR.jpg"
+        }
+       ],
+       "caption": "J'ai vu une ingénieure brillante rester à l'écart d'un déploiement d'IA parce que personne n'avait pensé à lui donner les accès.\n\nEn développant des offres de services digitaux entre le Cameroun et le Maroc, j'ai appris que le talent est rarement le problème. L'accès, si. Les bons outils entre les bonnes mains, assez tôt, changent tout.\n\nBientôt, j'emporterai cette leçon à One Young World, au Cap.\n\nQui vous a donné votre première vraie opportunité ?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-11-03_Event-Post-During",
+     "type": "Event-Post-During",
+     "title": "Event Post",
+     "date": "2026-11-03",
+     "window": "Summit week, 3–6 Nov (one post)",
+     "windowStart": "2026-11-03",
+     "windowEnd": "2026-11-06",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/LaFortune-Ngakam/2026-11-03_Event-Post-During/2026-11-03_Event-Post-During_LaFortune-Ngakam_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/LaFortune-Ngakam/2026-11-03_Event-Post-During/2026-11-03_Event-Post-During_LaFortune-Ngakam_EN.webp",
+         "name": "2026-11-03_Event-Post-During_LaFortune-Ngakam_EN.jpg"
+        }
+       ],
+       "caption": "Live from One Young World in Cape Town.\n\nI'm asking every founder I meet the same question: who gets the login first, and who decides? The answers are more varied than I expected, and more honest.\n\nMore to share when I'm back home.\n\nIn your team, who decides who gets access to new tools?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "FR": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/LaFortune-Ngakam/2026-11-03_Event-Post-During/2026-11-03_Event-Post-During_LaFortune-Ngakam_FR.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/LaFortune-Ngakam/2026-11-03_Event-Post-During/2026-11-03_Event-Post-During_LaFortune-Ngakam_FR.webp",
+         "name": "2026-11-03_Event-Post-During_LaFortune-Ngakam_FR.jpg"
+        }
+       ],
+       "caption": "En direct de One Young World, au Cap.\n\nJe pose la même question à chaque fondateur que je rencontre : qui obtient l'accès en premier, et qui en décide ? Les réponses sont plus variées que je ne l'imaginais, et plus honnêtes.\n\nJ'en dirai plus à mon retour.\n\nDans votre équipe, qui décide de l'accès aux nouveaux outils ?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-11-11_Bring-It-Home",
+     "type": "Bring-It-Home",
+     "title": "Bring It Home",
+     "date": "2026-11-11",
+     "window": "9–27 Nov",
+     "windowStart": "2026-11-09",
+     "windowEnd": "2026-11-27",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/LaFortune-Ngakam/2026-11-11_Bring-It-Home/2026-11-11_Bring-It-Home_LaFortune-Ngakam_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/LaFortune-Ngakam/2026-11-11_Bring-It-Home/2026-11-11_Bring-It-Home_LaFortune-Ngakam_EN.webp",
+         "name": "2026-11-11_Bring-It-Home_LaFortune-Ngakam_EN.jpg"
+        }
+       ],
+       "caption": "I went to Cape Town asking: intelligent jobs, but intelligent for who? I'm coming back with three answers to test.\n\nNext quarter, we'll pilot three AI-readiness programmes with our team in Cameroon. The talent is already here. What's been missing is hands-on access to the tools, and that's what these pilots are built around.\n\nThank you to the founders and delegates at One Young World who shared what's working for them.\n\nWhich skill would you put first in an AI-readiness programme?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "FR": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/LaFortune-Ngakam/2026-11-11_Bring-It-Home/2026-11-11_Bring-It-Home_LaFortune-Ngakam_FR.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/LaFortune-Ngakam/2026-11-11_Bring-It-Home/2026-11-11_Bring-It-Home_LaFortune-Ngakam_FR.webp",
+         "name": "2026-11-11_Bring-It-Home_LaFortune-Ngakam_FR.jpg"
+        }
+       ],
+       "caption": "Je suis partie au Cap avec une question : des emplois intelligents, mais intelligents pour qui ? Je reviens avec trois réponses à tester.\n\nLe trimestre prochain, nous testerons trois programmes de préparation à l'IA avec notre équipe au Cameroun. Le talent est déjà là. Ce qui manquait, c'est l'accès concret aux outils, et c'est autour de cela que ces pilotes sont construits.\n\nMerci aux fondateurs et aux délégués de One Young World qui ont partagé ce qui fonctionne pour eux.\n\nQuelle compétence mettriez-vous en premier dans un programme de préparation à l'IA ?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "lina-djellouli",
+   "name": "Lina Djellouli",
+   "first": "Lina",
+   "hash": "98e8f8afe8855394e5bd7bfdbe595727c648e7b685bc2c14fe441a278469a89d",
+   "language": "FR",
+   "role": "Panel Builder Sales",
+   "country": "Algeria",
+   "theme": "Future of Africa",
+   "posts": [
+    {
+     "id": "2026-10-08_Im-Going",
+     "type": "Im-Going",
+     "title": "I'm Going",
+     "date": "2026-10-08",
+     "window": "6–10 Oct (2 Explorers a day)",
+     "windowStart": "2026-10-06",
+     "windowEnd": "2026-10-10",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Lina-Djellouli/2026-10-08_Im-Going/2026-10-08_Im-Going_Lina-Djellouli_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Lina-Djellouli/2026-10-08_Im-Going/2026-10-08_Im-Going_Lina-Djellouli_EN.webp",
+         "name": "2026-10-08_Im-Going_Lina-Djellouli_EN.jpg"
+        }
+       ],
+       "caption": "I'm going to Cape Town for One Young World 2026 to make a simple argument: the African Century starts in the panel room, not the boardroom.\n\nI work in Panel Builder Sales in Algeria, alongside the people who build the boards that keep the power on. Most people never think about that work until the lights go out. Yet every big ambition depends on it.\n\nI'm going to listen, learn, and make sure that work gets a seat at the table.\n\nWho are the unsung builders in your industry?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "FR": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Lina-Djellouli/2026-10-08_Im-Going/2026-10-08_Im-Going_Lina-Djellouli_FR.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Lina-Djellouli/2026-10-08_Im-Going/2026-10-08_Im-Going_Lina-Djellouli_FR.webp",
+         "name": "2026-10-08_Im-Going_Lina-Djellouli_FR.jpg"
+        }
+       ],
+       "caption": "Je pars au Cap pour One Young World 2026 pour défendre une idée simple : le Siècle Africain commence dans l'atelier tableautier, pas dans la salle de conseil.\n\nJe travaille dans la vente aux tableautiers en Algérie, aux côtés de celles et ceux qui fabriquent les tableaux électriques qui gardent la lumière allumée. On pense rarement à ce travail, jusqu'à la coupure. Pourtant, toutes les grandes ambitions en dépendent.\n\nJe vais écouter, apprendre, et faire en sorte que ce travail ait sa place à la table.\n\nQui sont les bâtisseurs de l'ombre dans votre secteur ?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-10-16_Pass-the-Question",
+     "type": "Pass-the-Question",
+     "title": "Pass the Question",
+     "date": "2026-10-16",
+     "window": "13–21 Oct",
+     "windowStart": "2026-10-13",
+     "windowEnd": "2026-10-21",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World  + the person named in the caption",
+     "chain": "question from Ibtissam Adaha -> passes to Makwana Kamogelo",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Lina-Djellouli/2026-10-16_Pass-the-Question/2026-10-16_Pass-the-Question_Lina-Djellouli_card1_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Lina-Djellouli/2026-10-16_Pass-the-Question/2026-10-16_Pass-the-Question_Lina-Djellouli_card1_EN.webp",
+         "name": "2026-10-16_Pass-the-Question_Lina-Djellouli_card1_EN.jpg"
+        },
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Lina-Djellouli/2026-10-16_Pass-the-Question/2026-10-16_Pass-the-Question_Lina-Djellouli_card2_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Lina-Djellouli/2026-10-16_Pass-the-Question/2026-10-16_Pass-the-Question_Lina-Djellouli_card2_EN.webp",
+         "name": "2026-10-16_Pass-the-Question_Lina-Djellouli_card2_EN.jpg"
+        }
+       ],
+       "caption": "@Ibtissam Adaha passed me a question I've waited a long time for someone to ask: once the criteria are right, who does the unglamorous work of actually building it?\n\nMy answer: the people behind the invisible work. Reliable power is the prerequisite everyone forgets to thank, and I'm proud to work alongside the people who deliver it.\n\nA new question for @Makwana Kamogelo: if reliability is the real prerequisite for the African Century, who has to prove it first?\n\nSwipe for the full exchange, and add your answer below.\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "FR": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Lina-Djellouli/2026-10-16_Pass-the-Question/2026-10-16_Pass-the-Question_Lina-Djellouli_card1_FR.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Lina-Djellouli/2026-10-16_Pass-the-Question/2026-10-16_Pass-the-Question_Lina-Djellouli_card1_FR.webp",
+         "name": "2026-10-16_Pass-the-Question_Lina-Djellouli_card1_FR.jpg"
+        },
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Lina-Djellouli/2026-10-16_Pass-the-Question/2026-10-16_Pass-the-Question_Lina-Djellouli_card2_FR.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Lina-Djellouli/2026-10-16_Pass-the-Question/2026-10-16_Pass-the-Question_Lina-Djellouli_card2_FR.webp",
+         "name": "2026-10-16_Pass-the-Question_Lina-Djellouli_card2_FR.jpg"
+        }
+       ],
+       "caption": "@Ibtissam Adaha m'a transmis une question que j'attendais depuis longtemps : une fois les critères corrigés, qui fait le travail peu glamour de construire réellement ?\n\nMa réponse : celles et ceux qui font le travail invisible. L'énergie fiable est le prérequis que tout le monde oublie de remercier, et je suis fière de travailler à leurs côtés.\n\nUne nouvelle question pour @Makwana Kamogelo : si la fiabilité est le vrai prérequis du Siècle Africain, qui doit le prouver en premier ?\n\nFaites défiler pour voir l'échange complet, et ajoutez votre réponse en commentaire.\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-10-26_My-Story",
+     "type": "My-Story",
+     "title": "My Story",
+     "date": "2026-10-26",
+     "window": "19–30 Oct",
+     "windowStart": "2026-10-19",
+     "windowEnd": "2026-10-30",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Lina-Djellouli/2026-10-26_My-Story/2026-10-26_My-Story_Lina-Djellouli_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Lina-Djellouli/2026-10-26_My-Story/2026-10-26_My-Story_Lina-Djellouli_EN.webp",
+         "name": "2026-10-26_My-Story_Lina-Djellouli_EN.jpg"
+        }
+       ],
+       "caption": "Nobody thanks the panel builder until the lights go out. I've made peace with the invisible part of this job.\n\nWorking in Panel Builder Sales in Algeria, I spend my days with the people who build the boards that keep power flowing. You only notice their work when it stops. I've learned to be proud of it anyway.\n\nSoon I'll take that pride to One Young World in Cape Town.\n\nWhose invisible work do you rely on every day?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "FR": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Lina-Djellouli/2026-10-26_My-Story/2026-10-26_My-Story_Lina-Djellouli_FR.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Lina-Djellouli/2026-10-26_My-Story/2026-10-26_My-Story_Lina-Djellouli_FR.webp",
+         "name": "2026-10-26_My-Story_Lina-Djellouli_FR.jpg"
+        }
+       ],
+       "caption": "Personne ne remercie le tableautier avant que les lumières ne s'éteignent. J'ai fait la paix avec la part invisible de ce métier.\n\nDans la vente aux tableautiers en Algérie, je passe mes journées avec celles et ceux qui fabriquent les tableaux électriques qui gardent le courant. On ne remarque leur travail que lorsqu'il s'arrête. J'ai appris à en être fière quand même.\n\nBientôt, j'emporterai cette fierté à One Young World, au Cap.\n\nDe quel travail invisible dépendez-vous chaque jour ?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-11-03_Event-Post-During",
+     "type": "Event-Post-During",
+     "title": "Event Post",
+     "date": "2026-11-03",
+     "window": "Summit week, 3–6 Nov (one post)",
+     "windowStart": "2026-11-03",
+     "windowEnd": "2026-11-06",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Lina-Djellouli/2026-11-03_Event-Post-During/2026-11-03_Event-Post-During_Lina-Djellouli_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Lina-Djellouli/2026-11-03_Event-Post-During/2026-11-03_Event-Post-During_Lina-Djellouli_EN.webp",
+         "name": "2026-11-03_Event-Post-During_Lina-Djellouli_EN.jpg"
+        }
+       ],
+       "caption": "Live from One Young World in Cape Town.\n\nI'm meeting the other invisible people of this industry here, and comparing notes on being proud of it anyway. It turns out the unglamorous work looks the same in every country, and so does the pride.\n\nMore to share when I'm back home.\n\nTag someone whose work keeps things running behind the scenes.\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "FR": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Lina-Djellouli/2026-11-03_Event-Post-During/2026-11-03_Event-Post-During_Lina-Djellouli_FR.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Lina-Djellouli/2026-11-03_Event-Post-During/2026-11-03_Event-Post-During_Lina-Djellouli_FR.webp",
+         "name": "2026-11-03_Event-Post-During_Lina-Djellouli_FR.jpg"
+        }
+       ],
+       "caption": "En direct de One Young World, au Cap.\n\nJe rencontre ici les autres personnes invisibles de cette industrie, et nous comparons nos façons d'en être fiers quand même. Le travail discret se ressemble dans tous les pays, et la fierté aussi.\n\nJ'en dirai plus à mon retour.\n\nIdentifiez quelqu'un dont le travail fait tourner les choses en coulisses.\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-11-12_Bring-It-Home",
+     "type": "Bring-It-Home",
+     "title": "Bring It Home",
+     "date": "2026-11-12",
+     "window": "9–27 Nov",
+     "windowStart": "2026-11-09",
+     "windowEnd": "2026-11-27",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Lina-Djellouli/2026-11-12_Bring-It-Home/2026-11-12_Bring-It-Home_Lina-Djellouli_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Lina-Djellouli/2026-11-12_Bring-It-Home/2026-11-12_Bring-It-Home_Lina-Djellouli_EN.webp",
+         "name": "2026-11-12_Bring-It-Home_Lina-Djellouli_EN.jpg"
+        }
+       ],
+       "caption": "Back from One Young World, and I'm changing the conversation I have with clients.\n\nNot \"buy our panels\", but what reliable power distribution unlocks for a community. In Cape Town, someone called reliable power the unglamorous prerequisite for every African Century goal. I've believed that for years. Now I want every conversation I have to start there.\n\nThank you to everyone who made this week count.\n\nWhat does reliable power unlock where you live?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      },
+      "FR": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Lina-Djellouli/2026-11-12_Bring-It-Home/2026-11-12_Bring-It-Home_Lina-Djellouli_FR.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Lina-Djellouli/2026-11-12_Bring-It-Home/2026-11-12_Bring-It-Home_Lina-Djellouli_FR.webp",
+         "name": "2026-11-12_Bring-It-Home_Lina-Djellouli_FR.jpg"
+        }
+       ],
+       "caption": "De retour de One Young World, je change la conversation que j'ai avec mes clients.\n\nPas seulement « achetez nos tableaux », mais ce qu'une distribution électrique fiable permet pour une communauté. Au Cap, quelqu'un a décrit l'électricité fiable comme la condition discrète de chaque ambition du Siècle Africain. J'en suis convaincue depuis des années. Désormais, je veux que chacune de mes conversations commence par là.\n\nMerci à toutes celles et ceux qui ont rendu cette semaine si riche.\n\nQu'est-ce qu'une électricité fiable change là où vous vivez ?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "makwana-kamogelo",
+   "name": "Makwana Kamogelo",
+   "first": "Kamogelo",
+   "hash": "0defb150cd3994d23e4a021a7a0cf3b3565bef6890846c7b4f1283018d2ade0d",
+   "language": "EN",
+   "role": "Power Product Offer Manager",
+   "country": "South Africa",
+   "theme": "Future of Africa",
+   "posts": [
+    {
+     "id": "2026-10-08_Im-Going",
+     "type": "Im-Going",
+     "title": "I'm Going",
+     "date": "2026-10-08",
+     "window": "6–10 Oct (2 Explorers a day)",
+     "windowStart": "2026-10-06",
+     "windowEnd": "2026-10-10",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Makwana-Kamogelo/2026-10-08_Im-Going/2026-10-08_Im-Going_Makwana-Kamogelo_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Makwana-Kamogelo/2026-10-08_Im-Going/2026-10-08_Im-Going_Makwana-Kamogelo_EN.webp",
+         "name": "2026-10-08_Im-Going_Makwana-Kamogelo_EN.jpg"
+        }
+       ],
+       "caption": "This year One Young World comes to Cape Town, and for me that makes it personal.\n\nAs a Power Product Offer Manager in South Africa, I'll be meeting delegates from across the continent and the world who are asking the same question we ask every day: what does reliable power mean for homes, businesses and communities? Hosting means answering for my own country's infrastructure, and learning from everyone who shows up.\n\nWelcome to South Africa. Let's make it count.\n\nComing to Cape Town? Let's connect.\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-10-19_Pass-the-Question",
+     "type": "Pass-the-Question",
+     "title": "Pass the Question",
+     "date": "2026-10-19",
+     "window": "13–21 Oct",
+     "windowStart": "2026-10-13",
+     "windowEnd": "2026-10-21",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World  + the person named in the caption",
+     "chain": "question from Lina Djellouli -> passes to Grace Olorunsola",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Makwana-Kamogelo/2026-10-19_Pass-the-Question/2026-10-19_Pass-the-Question_Makwana-Kamogelo_card1_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Makwana-Kamogelo/2026-10-19_Pass-the-Question/2026-10-19_Pass-the-Question_Makwana-Kamogelo_card1_EN.webp",
+         "name": "2026-10-19_Pass-the-Question_Makwana-Kamogelo_card1_EN.jpg"
+        },
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Makwana-Kamogelo/2026-10-19_Pass-the-Question/2026-10-19_Pass-the-Question_Makwana-Kamogelo_card2_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Makwana-Kamogelo/2026-10-19_Pass-the-Question/2026-10-19_Pass-the-Question_Makwana-Kamogelo_card2_EN.webp",
+         "name": "2026-10-19_Pass-the-Question_Makwana-Kamogelo_card2_EN.jpg"
+        }
+       ],
+       "caption": "@Lina Djellouli passed me a question that lands close to home: if reliability is the real prerequisite for the African Century, who has to prove it first?\n\nMy answer: let the host country be judged hardest. Our own grid has to earn the platform we're standing on this November.\n\nThat raised a new one for @Grace Olorunsola: proving it to other countries is one thing. What about proving it inside our own?\n\nSwipe for the full exchange, and add your answer below.\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-10-26_My-Story",
+     "type": "My-Story",
+     "title": "My Story",
+     "date": "2026-10-26",
+     "window": "19–30 Oct",
+     "windowStart": "2026-10-19",
+     "windowEnd": "2026-10-30",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Makwana-Kamogelo/2026-10-26_My-Story/2026-10-26_My-Story_Makwana-Kamogelo_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Makwana-Kamogelo/2026-10-26_My-Story/2026-10-26_My-Story_Makwana-Kamogelo_EN.webp",
+         "name": "2026-10-26_My-Story_Makwana-Kamogelo_EN.jpg"
+        }
+       ],
+       "caption": "Hosting this summit means our own grid gets compared to everyone else's, whether we're ready or not.\n\nAs a Power Product Offer Manager in South Africa, I welcome that. Comparison is how you learn, and delegates from across the continent will bring questions we don't always ask ourselves.\n\nSoon One Young World arrives in Cape Town. I'll be there, ready for the questions.\n\nWhat would you want to compare with South Africa?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-11-03_Event-Post-During",
+     "type": "Event-Post-During",
+     "title": "Event Post",
+     "date": "2026-11-03",
+     "window": "Summit week, 3–6 Nov (one post)",
+     "windowStart": "2026-11-03",
+     "windowEnd": "2026-11-06",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Makwana-Kamogelo/2026-11-03_Event-Post-During/2026-11-03_Event-Post-During_Makwana-Kamogelo_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Makwana-Kamogelo/2026-11-03_Event-Post-During/2026-11-03_Event-Post-During_Makwana-Kamogelo_EN.webp",
+         "name": "2026-11-03_Event-Post-During_Makwana-Kamogelo_EN.jpg"
+        }
+       ],
+       "caption": "Live from One Young World, here at home in Cape Town.\n\nI'm answering the comparison question in real time, one delegate's question about our power mix at a time. Every one of them is teaching me something about my own market.\n\nMore to share when I'm back home.\n\nWhat's the one question you'd ask a host country?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-11-12_Bring-It-Home",
+     "type": "Bring-It-Home",
+     "title": "Bring It Home",
+     "date": "2026-11-12",
+     "window": "9–27 Nov",
+     "windowStart": "2026-11-09",
+     "windowEnd": "2026-11-27",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Makwana-Kamogelo/2026-11-12_Bring-It-Home/2026-11-12_Bring-It-Home_Makwana-Kamogelo_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Makwana-Kamogelo/2026-11-12_Bring-It-Home/2026-11-12_Bring-It-Home_Makwana-Kamogelo_EN.webp",
+         "name": "2026-11-12_Bring-It-Home_Makwana-Kamogelo_EN.jpg"
+        }
+       ],
+       "caption": "Hosting One Young World meant a lot of delegates asking how our power products compare with theirs. Best kind of pressure.\n\nI'm turning every one of those comparison questions into a real gap analysis for our product team. The conversations this week were an honest benchmark from across the continent, and I don't want to waste a single one.\n\nThank you to everyone who came to Cape Town and asked the hard questions.\n\nWhat should we be learning from your market?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "grace-olorunsola",
+   "name": "Grace Olorunsola",
+   "first": "Grace",
+   "hash": "20fe34689cdcea1917b2d6a0316502627c186d7201c1d45de0930ee3c514bff9",
+   "language": "EN",
+   "role": "Home & Distribution Offer Manager",
+   "country": "Nigeria",
+   "theme": "Future of Africa",
+   "posts": [
+    {
+     "id": "2026-10-09_Im-Going",
+     "type": "Im-Going",
+     "title": "I'm Going",
+     "date": "2026-10-09",
+     "window": "6–10 Oct (2 Explorers a day)",
+     "windowStart": "2026-10-06",
+     "windowEnd": "2026-10-10",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Grace-Olorunsola/2026-10-09_Im-Going/2026-10-09_Im-Going_Grace-Olorunsola_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Grace-Olorunsola/2026-10-09_Im-Going/2026-10-09_Im-Going_Grace-Olorunsola_EN.webp",
+         "name": "2026-10-09_Im-Going_Grace-Olorunsola_EN.jpg"
+        }
+       ],
+       "caption": "I'm heading to One Young World in Cape Town with a question I care about: does the African Century reach people's homes, or just their cities' skylines?\n\nAs Home & Distribution Offer Manager in Nigeria, I think about energy at the scale of one household: the switch a family can actually reach. That's where progress becomes real.\n\nI'm going to listen, learn from delegates from 190 countries, and bring back ideas that start at home.\n\nWhat does progress look like in your home?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-10-20_Pass-the-Question",
+     "type": "Pass-the-Question",
+     "title": "Pass the Question",
+     "date": "2026-10-20",
+     "window": "13–21 Oct",
+     "windowStart": "2026-10-13",
+     "windowEnd": "2026-10-21",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World  + the person named in the caption",
+     "chain": "question from Makwana Kamogelo -> passes to First-year graduates",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Grace-Olorunsola/2026-10-20_Pass-the-Question/2026-10-20_Pass-the-Question_Grace-Olorunsola_card1_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Grace-Olorunsola/2026-10-20_Pass-the-Question/2026-10-20_Pass-the-Question_Grace-Olorunsola_card1_EN.webp",
+         "name": "2026-10-20_Pass-the-Question_Grace-Olorunsola_card1_EN.jpg"
+        },
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Grace-Olorunsola/2026-10-20_Pass-the-Question/2026-10-20_Pass-the-Question_Grace-Olorunsola_card2_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Grace-Olorunsola/2026-10-20_Pass-the-Question/2026-10-20_Pass-the-Question_Grace-Olorunsola_card2_EN.webp",
+         "name": "2026-10-20_Pass-the-Question_Grace-Olorunsola_card2_EN.jpg"
+        }
+       ],
+       "caption": "@Makwana Kamogelo passed me a question I care about: what does proving the African Century actually look like inside our own countries, not just to outsiders?\n\nMy answer: measure it at the household, not the skyline. That's where the century is actually won or lost.\n\nNow I'm passing a new question to our first-year graduates at Schneider Electric: does the African Century arrive when the cities change, or when the homes do?\n\nSwipe for the full exchange, and add your answer below.\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-10-27_My-Story",
+     "type": "My-Story",
+     "title": "My Story",
+     "date": "2026-10-27",
+     "window": "19–30 Oct",
+     "windowStart": "2026-10-19",
+     "windowEnd": "2026-10-30",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Grace-Olorunsola/2026-10-27_My-Story/2026-10-27_My-Story_Grace-Olorunsola_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Grace-Olorunsola/2026-10-27_My-Story/2026-10-27_My-Story_Grace-Olorunsola_EN.webp",
+         "name": "2026-10-27_My-Story_Grace-Olorunsola_EN.jpg"
+        }
+       ],
+       "caption": "I've sat in enough planning meetings where \"access\" meant a substation on a map, never a switch in someone's kitchen.\n\nAs Home & Distribution Offer Manager in Nigeria, the household is where I measure progress. If a family can't reach the switch, the work isn't finished, whatever the map says.\n\nSoon I'll take that view to One Young World in Cape Town.\n\nWhere do you think progress should be measured?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-11-03_Event-Post-During",
+     "type": "Event-Post-During",
+     "title": "Event Post",
+     "date": "2026-11-03",
+     "window": "Summit week, 3–6 Nov (one post)",
+     "windowStart": "2026-11-03",
+     "windowEnd": "2026-11-06",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Grace-Olorunsola/2026-11-03_Event-Post-During/2026-11-03_Event-Post-During_Grace-Olorunsola_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Grace-Olorunsola/2026-11-03_Event-Post-During/2026-11-03_Event-Post-During_Grace-Olorunsola_EN.webp",
+         "name": "2026-11-03_Event-Post-During_Grace-Olorunsola_EN.jpg"
+        }
+       ],
+       "caption": "Live from One Young World in Cape Town.\n\nI'm listening for the first plenary that measures progress at the kitchen switch, not the skyline. The conversations here are reminding me how many of us are working on the same question, from different homes across the continent.\n\nMore to share when I'm back home.\n\nWhat's the first sign that tells you a place has real access?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-11-13_Bring-It-Home",
+     "type": "Bring-It-Home",
+     "title": "Bring It Home",
+     "date": "2026-11-13",
+     "window": "9–27 Nov",
+     "windowStart": "2026-11-09",
+     "windowEnd": "2026-11-27",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Grace-Olorunsola/2026-11-13_Bring-It-Home/2026-11-13_Bring-It-Home_Grace-Olorunsola_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Grace-Olorunsola/2026-11-13_Bring-It-Home/2026-11-13_Bring-It-Home_Grace-Olorunsola_EN.webp",
+         "name": "2026-11-13_Bring-It-Home_Grace-Olorunsola_EN.jpg"
+        }
+       ],
+       "caption": "Back from One Young World with one line I'm adding to every project brief: does this reach the household, or just the neighbourhood?\n\nI went to Cape Town asking whether the African Century reaches people's homes. One session reframed infrastructure to include the home, and I want our work to do the same.\n\nThank you to every delegate who shared how energy shows up in real homes across the continent.\n\nWhat question would you add to every brief?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "rezolia-muller-potluri",
+   "name": "Rezolia Muller-Potluri",
+   "first": "Rezolia",
+   "hash": "733e6fd4b686f779e1b13d592f9389be59e1830c1f0d3cf87923e887c66815b9",
+   "language": "EN",
+   "role": "Lead Microgrid",
+   "country": "South Africa",
+   "theme": "Intelligent Jobs",
+   "posts": [
+    {
+     "id": "2026-10-09_Im-Going",
+     "type": "Im-Going",
+     "title": "I'm Going",
+     "date": "2026-10-09",
+     "window": "6–10 Oct (2 Explorers a day)",
+     "windowStart": "2026-10-06",
+     "windowEnd": "2026-10-10",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Rezolia-Muller-Potluri/2026-10-09_Im-Going/2026-10-09_Im-Going_Rezolia-Muller-Potluri_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Rezolia-Muller-Potluri/2026-10-09_Im-Going/2026-10-09_Im-Going_Rezolia-Muller-Potluri_EN.webp",
+         "name": "2026-10-09_Im-Going_Rezolia-Muller-Potluri_EN.jpg"
+        }
+       ],
+       "caption": "One Young World 2026 is coming to Cape Town, and I'm bringing a question I think about every day.\n\nI lead microgrid work from South Africa, focused on energy access. In every design there's a moment where the smartest technical choice and the best jobs outcome can pull apart. So: do AI-run microgrids grow local jobs, or just build smarter infrastructure with fewer people around it?\n\nI'm going to Cape Town to test that question with people from around the world.\n\nWhere do you land on it?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-10-19_Pass-the-Question",
+     "type": "Pass-the-Question",
+     "title": "Pass the Question",
+     "date": "2026-10-19",
+     "window": "13–21 Oct",
+     "windowStart": "2026-10-13",
+     "windowEnd": "2026-10-21",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World  + the person named in the caption",
+     "chain": "question from LaFortune Ngakam -> passes to Tshamano Khumbudzo",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Rezolia-Muller-Potluri/2026-10-19_Pass-the-Question/2026-10-19_Pass-the-Question_Rezolia-Muller-Potluri_card1_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Rezolia-Muller-Potluri/2026-10-19_Pass-the-Question/2026-10-19_Pass-the-Question_Rezolia-Muller-Potluri_card1_EN.webp",
+         "name": "2026-10-19_Pass-the-Question_Rezolia-Muller-Potluri_card1_EN.jpg"
+        },
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Rezolia-Muller-Potluri/2026-10-19_Pass-the-Question/2026-10-19_Pass-the-Question_Rezolia-Muller-Potluri_card2_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Rezolia-Muller-Potluri/2026-10-19_Pass-the-Question/2026-10-19_Pass-the-Question_Rezolia-Muller-Potluri_card2_EN.webp",
+         "name": "2026-10-19_Pass-the-Question_Rezolia-Muller-Potluri_card2_EN.jpg"
+        }
+       ],
+       "caption": "@LaFortune Ngakam passed me a question I think about in every microgrid I work on: what happens to the roles that get automated before access ever arrives?\n\nMy answer: design the human role into the system on day one. Don't defend it after the system's already live.\n\nWhich raises a new one for @Tshamano Khumbudzo: how do you promise that to a client before you've even sold them the system?\n\nSwipe for the full exchange, and add your answer below.\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-10-27_My-Story",
+     "type": "My-Story",
+     "title": "My Story",
+     "date": "2026-10-27",
+     "window": "19–30 Oct",
+     "windowStart": "2026-10-19",
+     "windowEnd": "2026-10-30",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Rezolia-Muller-Potluri/2026-10-27_My-Story/2026-10-27_My-Story_Rezolia-Muller-Potluri_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Rezolia-Muller-Potluri/2026-10-27_My-Story/2026-10-27_My-Story_Rezolia-Muller-Potluri_EN.webp",
+         "name": "2026-10-27_My-Story_Rezolia-Muller-Potluri_EN.jpg"
+        }
+       ],
+       "caption": "I once designed a microgrid so efficient it barely needed anyone to run it. Efficient isn't the same as right.\n\nLeading microgrid work from South Africa, I've learned that the best technical answer and the best outcome for a community don't always match. The jobs a system creates matter as much as the power it delivers.\n\nSoon I'll take that question to One Young World in Cape Town.\n\nWhen has \"efficient\" not been the right answer in your work?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-11-03_Event-Post-During",
+     "type": "Event-Post-During",
+     "title": "Event Post",
+     "date": "2026-11-03",
+     "window": "Summit week, 3–6 Nov (one post)",
+     "windowStart": "2026-11-03",
+     "windowEnd": "2026-11-06",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Rezolia-Muller-Potluri/2026-11-03_Event-Post-During/2026-11-03_Event-Post-During_Rezolia-Muller-Potluri_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Rezolia-Muller-Potluri/2026-11-03_Event-Post-During/2026-11-03_Event-Post-During_Rezolia-Muller-Potluri_EN.webp",
+         "name": "2026-11-03_Event-Post-During_Rezolia-Muller-Potluri_EN.jpg"
+        }
+       ],
+       "caption": "Live from One Young World in Cape Town.\n\nI'm collecting every story here about a job an algorithm almost erased, and who fought to redesign it in. Each one is a reminder that these outcomes are choices, not accidents.\n\nMore to share when I'm back home.\n\nHave a story like that? I'd like to hear it.\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-11-13_Bring-It-Home",
+     "type": "Bring-It-Home",
+     "title": "Bring It Home",
+     "date": "2026-11-13",
+     "window": "9–27 Nov",
+     "windowStart": "2026-11-09",
+     "windowEnd": "2026-11-27",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Rezolia-Muller-Potluri/2026-11-13_Bring-It-Home/2026-11-13_Bring-It-Home_Rezolia-Muller-Potluri_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Rezolia-Muller-Potluri/2026-11-13_Bring-It-Home/2026-11-13_Bring-It-Home_Rezolia-Muller-Potluri_EN.webp",
+         "name": "2026-11-13_Bring-It-Home_Rezolia-Muller-Potluri_EN.jpg"
+        }
+       ],
+       "caption": "I went to One Young World asking whether AI-run microgrids grow local jobs or just need fewer people. Here's what I'm bringing home.\n\nI'm proposing a mandatory local operations role, written into the design phase, not added after hiring. If the jobs aren't designed in from day one, they rarely show up later.\n\nThank you to the delegates who debated this with me in Cape Town, especially the ones who disagreed.\n\nShould local jobs be a design requirement?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "tshamano-khumbudzo",
+   "name": "Tshamano Khumbudzo",
+   "first": "Khumbudzo",
+   "hash": "4a23161b7bb4007a36f6154230ddaf7ecbbffd7d0486a15d758af40983108c86",
+   "language": "EN",
+   "role": "Digital Automation Sales Lead",
+   "country": "South Africa",
+   "theme": "Intelligent Jobs",
+   "posts": [
+    {
+     "id": "2026-10-10_Im-Going",
+     "type": "Im-Going",
+     "title": "I'm Going",
+     "date": "2026-10-10",
+     "window": "6–10 Oct (2 Explorers a day)",
+     "windowStart": "2026-10-06",
+     "windowEnd": "2026-10-10",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Tshamano-Khumbudzo/2026-10-10_Im-Going/2026-10-10_Im-Going_Tshamano-Khumbudzo_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Tshamano-Khumbudzo/2026-10-10_Im-Going/2026-10-10_Im-Going_Tshamano-Khumbudzo_EN.webp",
+         "name": "2026-10-10_Im-Going_Tshamano-Khumbudzo_EN.jpg"
+        }
+       ],
+       "caption": "This November, One Young World comes to Cape Town, and I'll be there with one question: what does \"intelligent jobs\" actually promise the people doing the work today?\n\nI lead Digital Automation Sales in South Africa. I've worked with teams who feared automation and teams who needed it. The technology was never the hard part. The skills it asks of people are.\n\nI'm going to listen, learn, and bring back answers worth sharing.\n\nWhat would you want automation to promise you?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-10-20_Pass-the-Question",
+     "type": "Pass-the-Question",
+     "title": "Pass the Question",
+     "date": "2026-10-20",
+     "window": "13–21 Oct",
+     "windowStart": "2026-10-13",
+     "windowEnd": "2026-10-21",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World  + the person named in the caption",
+     "chain": "question from Rezolia Muller-Potluri -> passes to First-year graduates",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Tshamano-Khumbudzo/2026-10-20_Pass-the-Question/2026-10-20_Pass-the-Question_Tshamano-Khumbudzo_card1_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Tshamano-Khumbudzo/2026-10-20_Pass-the-Question/2026-10-20_Pass-the-Question_Tshamano-Khumbudzo_card1_EN.webp",
+         "name": "2026-10-20_Pass-the-Question_Tshamano-Khumbudzo_card1_EN.jpg"
+        },
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Tshamano-Khumbudzo/2026-10-20_Pass-the-Question/2026-10-20_Pass-the-Question_Tshamano-Khumbudzo_card2_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Tshamano-Khumbudzo/2026-10-20_Pass-the-Question/2026-10-20_Pass-the-Question_Tshamano-Khumbudzo_card2_EN.webp",
+         "name": "2026-10-20_Pass-the-Question_Tshamano-Khumbudzo_card2_EN.jpg"
+        }
+       ],
+       "caption": "@Rezolia Muller-Potluri handed me a question straight from my day job: how do you promise a reskilling commitment before you've even sold the client the system?\n\nMy answer: put it in the pitch, not the fine print. Make it a commitment they can hold you to before they sign.\n\nNow I'm passing a new question to our first-year graduates at Schneider Electric: which comes first at your company, the AI or the people it's meant to serve?\n\nSwipe for the full exchange, and add your answer below.\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-10-28_My-Story",
+     "type": "My-Story",
+     "title": "My Story",
+     "date": "2026-10-28",
+     "window": "19–30 Oct",
+     "windowStart": "2026-10-19",
+     "windowEnd": "2026-10-30",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Tshamano-Khumbudzo/2026-10-28_My-Story/2026-10-28_My-Story_Tshamano-Khumbudzo_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Tshamano-Khumbudzo/2026-10-28_My-Story/2026-10-28_My-Story_Tshamano-Khumbudzo_EN.webp",
+         "name": "2026-10-28_My-Story_Tshamano-Khumbudzo_EN.jpg"
+        }
+       ],
+       "caption": "A client once thanked me for automation, then quietly asked what happens to his team. I never forgot the pause.\n\nLeading Digital Automation Sales in South Africa, I've sold to teams who feared automation and teams who needed it. The technology was never the hard part. That pause was.\n\nSoon I'll take that question to One Young World in Cape Town.\n\nWhat would you want to hear before your work gets automated?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-11-03_Event-Post-During",
+     "type": "Event-Post-During",
+     "title": "Event Post",
+     "date": "2026-11-03",
+     "window": "Summit week, 3–6 Nov (one post)",
+     "windowStart": "2026-11-03",
+     "windowEnd": "2026-11-06",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Tshamano-Khumbudzo/2026-11-03_Event-Post-During/2026-11-03_Event-Post-During_Tshamano-Khumbudzo_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Tshamano-Khumbudzo/2026-11-03_Event-Post-During/2026-11-03_Event-Post-During_Tshamano-Khumbudzo_EN.webp",
+         "name": "2026-11-03_Event-Post-During_Tshamano-Khumbudzo_EN.jpg"
+        }
+       ],
+       "caption": "Live from One Young World in Cape Town.\n\nI'm bringing that pause into every conversation here, until reskilling stops being the afterthought in the pitch. The best answers so far are coming from people who've lived both sides of it.\n\nMore to share when I'm back home.\n\nWhat should every automation pitch include?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    },
+    {
+     "id": "2026-11-16_Bring-It-Home",
+     "type": "Bring-It-Home",
+     "title": "Bring It Home",
+     "date": "2026-11-16",
+     "window": "9–27 Nov",
+     "windowStart": "2026-11-09",
+     "windowEnd": "2026-11-27",
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "chain": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider/African-Explorers/Tshamano-Khumbudzo/2026-11-16_Bring-It-Home/2026-11-16_Bring-It-Home_Tshamano-Khumbudzo_EN.jpg",
+         "thumb": "assets/posts/Schneider/African-Explorers/Tshamano-Khumbudzo/2026-11-16_Bring-It-Home/2026-11-16_Bring-It-Home_Tshamano-Khumbudzo_EN.webp",
+         "name": "2026-11-16_Bring-It-Home_Tshamano-Khumbudzo_EN.jpg"
+        }
+       ],
+       "caption": "Before One Young World, I asked what \"intelligent jobs\" actually promise the people doing the work today. Cape Town gave me my answer.\n\nFrom now on, every pitch I make comes with a reskilling commitment, not just a product spec. Automation works best when the people doing the work today are part of the plan, and one line from the Summit stuck with me: intelligent jobs should be a promise companies make, not a trend they follow.\n\nThank you, Cape Town, for a week that changed how I pitch.\n\nWhat would a real reskilling promise look like to you?\n\n#StartStrongWithSchneiderElectric #PoweredByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    }
+   ]
+  }
+ ]
+}

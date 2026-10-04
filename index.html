@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Advancing to OYW · Employee toolkit</title>
-  <meta name="description" content="Schneider Electric × One Young World 2026 employee toolkit: value profile frame, animated email signature, LinkedIn banners and ready-to-post captions.">
+  <meta name="description" content="Schneider Electric × One Young World 2026 employee toolkit: value profile frame, animated email signature, LinkedIn banners and ready-made LinkedIn posts.">
   <meta name="theme-color" content="#0a2f24">
   <meta property="og:title" content="Advancing to OYW · Employee toolkit">
-  <meta property="og:description" content="Pick your value, frame your photo, build your email signature, grab a LinkedIn banner and a caption.">
+  <meta property="og:description" content="Pick your value, frame your photo, build your email signature, grab a LinkedIn banner and your ready-made posts.">
   <meta property="og:type" content="website">
   <link rel="icon" href="assets/se-mark.svg" type="image/svg+xml">
   <link rel="preload" as="image" href="assets/frames/frame-bg-lossless.webp" type="image/webp">
-  <link rel="stylesheet" href="css/style.css?v=20260904k">
+  <link rel="stylesheet" href="css/style.css?v=20261004b">
 </head>
 <body>
 
@@ -33,8 +33,33 @@
   <section class="hero">
     <h1>Advancing to <span class="oyw-badge"><img src="assets/signature/oyw-one.png" alt="One Young World"></span></h1>
     <p class="tag">Powered <i>By</i> Each Other.</p>
-    <p class="kicker">Employee toolkit</p>
+    <p class="kicker" id="kicker">Employee toolkit</p>
   </section>
+
+  <!-- who the toolkit is for: decides which ready-made posts show, and whether the signature tab shows -->
+  <section class="gate" id="gate" hidden aria-labelledby="gateTitle">
+    <div class="gate-card">
+      <p class="gate-kicker">Before we start</p>
+      <h2 id="gateTitle">Who is this toolkit for today?</h2>
+      <p class="lead" id="gateLead"></p>
+      <p class="gate-mode" id="gateMode" hidden>Test mode: pick with the buttons. In the live version your email decides.</p>
+      <div class="gate-choice" id="gateChoice" hidden>
+        <button class="btn primary" type="button" data-kind="employee">I work at Schneider Electric</button>
+        <button class="btn ghost" type="button" data-kind="enactus">I'm with Enactus</button>
+        <span class="gate-or">or</span>
+      </div>
+      <form class="gate-form" id="gateForm" novalidate>
+        <label for="gateEmail"><span>Your email</span></label>
+        <div class="gate-row">
+          <input id="gateEmail" type="email" inputmode="email" autocomplete="email" placeholder="firstname.lastname@se.com" required>
+          <button class="btn primary" type="submit">Continue</button>
+        </div>
+        <p class="gate-error" id="gateError" hidden>That doesn't look like an email address.</p>
+      </form>
+      <p class="fine">Checked on your device only. Your email is not stored and not sent anywhere.</p>
+    </div>
+  </section>
+  <div class="who" id="who" hidden><span>Viewing as <b id="whoText"></b></span><button class="link" id="whoChange" type="button">Change</button></div>
 
   <nav class="tabs" role="tablist" aria-label="Toolkit">
     <button role="tab" id="tab-frame" data-tab="frame" aria-selected="true" aria-controls="tool-frame"><span class="tab-num">1</span>Profile frame</button>
@@ -43,7 +68,7 @@
     <span class="tab-arrow" aria-hidden="true"></span>
     <button role="tab" id="tab-banner" data-tab="banner" aria-selected="false" aria-controls="tool-banner" tabindex="-1"><span class="tab-num">3</span>LinkedIn banner</button>
     <span class="tab-arrow" aria-hidden="true"></span>
-    <button role="tab" id="tab-captions" data-tab="captions" aria-selected="false" aria-controls="tool-captions" tabindex="-1"><span class="tab-num">4</span>Captions</button>
+    <button role="tab" id="tab-posts" data-tab="posts" aria-selected="false" aria-controls="tool-posts" tabindex="-1"><span class="tab-num">4</span>Posts</button>
   </nav>
 
   <!-- ============================================================ 1. profile frame -->
@@ -257,16 +282,13 @@ Schneider Electric</pre>
           <p class="fine">On LinkedIn: open your profile → pencil icon on the banner → <b>Upload photo</b> → choose the file → <b>Apply</b>.</p>
         </li>
       </ol>
-      <a class="next" href="#captions">Next: Captions <span aria-hidden="true">→</span></a>
+      <a class="next" href="#posts">Next: Posts <span aria-hidden="true">→</span></a>
     </section>
   </section>
 
-  <!-- ============================================================ 4. captions -->
-  <section class="app tool single" id="tool-captions" role="tabpanel" aria-labelledby="tab-captions" hidden>
-    <section class="panel">
-      <p class="lead">Three ready-to-post LinkedIn captions. Edit anything, then copy.</p>
-      <div class="captions" id="captionList"></div>
-    </section>
+  <!-- ============================================================ 4. ready-made posts (rendered by js/posts.js) -->
+  <section class="app tool single posts" id="tool-posts" role="tabpanel" aria-labelledby="tab-posts" hidden>
+    <section class="panel" id="postsPanel"></section>
   </section>
 
   <footer class="foot">
@@ -275,8 +297,9 @@ Schneider Electric</pre>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-  <script src="js/app.js?v=20260904k" defer></script>
-  <script src="js/signature.js?v=20260904k" defer></script>
-  <script src="js/toolkit.js?v=20260904k" defer></script>
+  <script src="js/app.js?v=20261004b" defer></script>
+  <script src="js/signature.js?v=20261004b" defer></script>
+  <script src="js/toolkit.js?v=20261004b" defer></script>
+  <script src="js/posts.js?v=20261004b" defer></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 
 Schneider Electric × One Young World 2026 · "Powered By Each Other" employee toolkit.
 
-A static, browser-only web app with four tabs:
+A static, browser-only web app. A gate asks who the visitor is, then four tabs:
 
 1. **Profile frame** – add a photo, the face is found on-device (TensorFlow.js BlazeFace,
    self-hosted), the photo is auto-framed inside the branded frame, pick the value you stand
@@ -10,12 +10,52 @@ A static, browser-only web app with four tabs:
 2. **Email signature** – two designs (white with moving stripes, mint with the pattern reveal).
    Name, title, email and phone are typed into the design in Poppins; the designer's alpha
    animation plays on top; export an animated GIF (600×150, encoded in the browser with gifenc)
-   or a static PNG, with per-mail-client install steps.
+   or a static PNG, with per-mail-client install steps. Hidden for Enactus delegates.
 3. **LinkedIn banner** – four banners at 1584×396 with a preview of where the profile photo lands.
-4. **Captions** – the three LinkedIn templates from the client doc; the personal one pre-fills
-   the chosen value.
+4. **Posts** – the scheduled LinkedIn campaign (6 Oct to 27 Nov 2026) from the client's
+   "Toolkit Deliverables" folder: visual, caption, download, **Post on LinkedIn** (copies the
+   caption and opens LinkedIn's composer with it prefilled; no LinkedIn API), and the phone share
+   sheet with the image attached. What shows depends on the gate (below).
+
+(The earlier generic Captions tab was removed on 4 Oct 2026: the Posts tab covers it.)
 
 No photo or detail ever leaves the device. No backend.
+
+## The gate (who is this for)
+
+`js/posts.js`, constant `TEST_MODE`:
+
+- `TEST_MODE = true` (current, for testing): two buttons, *I work at Schneider Electric* and
+  *I'm with Enactus*, plus the email field for African Explorers.
+- `TEST_MODE = false` (live): the email decides. A Schneider domain (`se.com`,
+  `schneider-electric.com`, and their subdomains) makes a standard employee; if the hashed email
+  matches an Explorer, that person sees only their own folder; any other domain is Enactus.
+- Override per visit with `?gate=live` or `?gate=test`.
+
+The email is hashed on the device (SHA-256 with the salt in `data/posts.json`) and compared with
+the hashed roster; it is never stored or sent. The choice is remembered in localStorage; *Change*
+next to "Viewing as" resets it.
+
+Audience rules: employees get the First-Year-Graduates set (5 posts, voices A–D); Explorers get
+their personal posts (EN, plus FR for the five French speakers); Enactus gets the Enactus set
+(4 posts, voices A–D) and no signature tab. Instead of a shared download counter (which needs a
+server) the suggested voice is derived from the email hash, so it spreads evenly across people
+and stays stable for each person. Anyone can switch voice, globally or per post.
+
+## Updating the posts
+
+The source of truth is the client's Drive folder *Toolkit Deliverables* (manifest.json + README +
+one folder per post with caption.txt and the PNGs). It is mirrored, **not committed**, into
+`source/posts/` because the manifest and captions carry work emails.
+
+1. Mirror the Drive folder into `source/posts/` (same structure as Drive).
+2. `python3 tools/build_posts.py` → `assets/posts/**.jpg` (downloads), `**.webp` (previews) and
+   `data/posts.json` (captions, schedule, hashed roster). The script lists anything missing.
+3. Bump `?v=` in `index.html`, commit, push.
+
+The 10th Explorer (`Explorer-10-TBC`) is skipped until the manifest has their email and files.
+Captions are parsed from the `=== VARIATION A … ===` / `=== CAPTION (EN|FR) … ===` blocks; posting
+windows come from the manifest's `window` strings (table at the top of the build script).
 
 ## Structure
 
