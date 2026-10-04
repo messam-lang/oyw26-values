@@ -153,7 +153,9 @@ without the picker, and `&debug` to expose internals on `window.__oyw`.
 
 GitHub Pages from `main` (root). All paths are relative, so it works from a sub-path or a domain root.
 
-Custom domain `energizedbyeachother.com` (GoDaddy, registered 4 Oct 2026). DNS needed at GoDaddy:
+Live at **https://energizedbyeachother.com/** since 4 Oct 2026 (domain at GoDaddy; `CNAME` file in the repo
+root; HTTPS enforced; GitHub renews the certificate, which covers the apex and `www`). The old
+`messam-lang.github.io/oyw26-values/` address redirects to it. DNS records at GoDaddy:
 
 | Type | Name | Value |
 |---|---|---|
@@ -163,9 +165,6 @@ Custom domain `energizedbyeachother.com` (GoDaddy, registered 4 Oct 2026). DNS n
 | A | @ | 185.199.111.153 |
 | CNAME | www | messam-lang.github.io |
 
-Remove GoDaddy's default *Parked* A record and any domain forwarding. Only once those resolve:
-add a `CNAME` file containing the domain to the repo root, set it as the Pages custom domain
-(`gh api -X PUT repos/messam-lang/oyw26-values/pages -f cname=energizedbyeachother.com`), wait for
-the certificate, then enforce HTTPS. Doing this before DNS is ready redirects the github.io link
-to a domain that does not serve the site yet. The gate carries a plain-JS SHA-256 fallback so it
-also works over http while the certificate is being issued.
+GoDaddy asks for an emailed one-time code on every DNS change. If the domain is ever moved, change
+DNS first and the Pages custom domain second: the reverse order redirects visitors to a domain that
+does not serve the site yet. The gate carries a plain-JS SHA-256 fallback so it also works over http.
