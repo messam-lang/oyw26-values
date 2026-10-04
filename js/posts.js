@@ -44,13 +44,22 @@
   function domainOf(email) { return (email.split('@')[1] || '').toLowerCase(); }
   function isSchneider(domain) { return (DATA.schneiderDomains || []).some((d) => domain === d || domain.endsWith('.' + d)); }
   const fmtDay = (iso) => { const d = new Date(iso + 'T12:00:00'); return d.getDate() + ' ' + d.toLocaleString('en-GB', { month: 'short' }); };
-  function today() { const d = new Date(); return new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10); }
+  // "today" comes from the server's clock (Date header on the data file) so a wrong device clock does not open a post early
+  let clockOffset = 0;
+  function today() { const d = new Date(Date.now() + clockOffset); return new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10); }
+  // a post opens on its planned date (the playbook spaces people out inside a shared window) and closes with the window
+  const opensOn = (p) => (p.date > p.windowStart ? p.date : p.windowStart);
   function statusOf(p) {
-    const t = today();
-    if (t < p.windowStart) return { k: 'soon', label: 'Coming up · from ' + fmtDay(p.windowStart) };
-    if (t > p.windowEnd) return { k: 'past', label: 'Window closed · ' + (p.window || fmtDay(p.windowStart)) };
-    return { k: 'now', label: 'Post this week' + (p.window ? ' · ' + p.window : '') };
+    const t = today(), open = opensOn(p);
+    if (t < open) return { k: 'soon', label: 'Opens ' + fmtDay(open) };
+    if (t > p.windowEnd) return { k: 'past', label: 'Closed ' + fmtDay(p.windowEnd) };
+    return { k: 'now', label: 'Open now · until ' + fmtDay(p.windowEnd) };
   }
+  // Schneider employees and Explorers can post or download only inside the window, so the campaign lands in order.
+  // Enactus delegates are guests and stay open. In test mode a toggle unlocks everything so testers can try downloads.
+  const lockApplies = () => audience && audience.kind !== 'enactus';
+  const testUnlocked = () => MODE === 'test' && sessionStorage.getItem('oyw-test-unlock') === '1';
+  const isLocked = (st) => lockApplies() && st.k !== 'now' && !testUnlocked();
   async function copyText(text) {
     try { await navigator.clipboard.writeText(text); return true; }
     catch (_) {
@@ -164,8 +173,9 @@
     const head = document.createElement('div');
     head.className = 'posts-head';
     head.innerHTML = `<h2>${isEnactus ? 'Enactus posts' : 'Your LinkedIn posts'}</h2>
-      <p class="lead">${set.posts.length} posts between ${fmtDay(set.posts[0].windowStart)} and ${fmtDay(set.posts[set.posts.length - 1].windowEnd)}, in posting order. Each comes in four voices. ${isEnactus ? 'Captions are starting points: say it in your own words and language.' : 'Edit the caption until it sounds like you.'}</p>`;
+      <p class="lead">${set.posts.length} posts between ${fmtDay(set.posts[0].windowStart)} and ${fmtDay(set.posts[set.posts.length - 1].windowEnd)}, in posting order. Each comes in four voices. ${isEnactus ? 'Captions are starting points: say it in your own words and language.' : 'Each post unlocks on its date and closes when its window ends, so the campaign lands in order. Edit the caption until it sounds like you.'}</p>`;
     els.panel.appendChild(head);
+    addTestUnlock(head);
 
     const voiceBox = document.createElement('section');
     voiceBox.className = 'voice step';
@@ -207,13 +217,14 @@
     const head = document.createElement('div');
     head.className = 'posts-head';
     head.innerHTML = `<h2>Hi ${esc(ex.first)}, here are your posts</h2>
-      <p class="lead">${ex.posts.length} posts between ${fmtDay(ex.posts[0].windowStart)} and ${fmtDay(ex.posts[ex.posts.length - 1].windowEnd)}, written in your voice as an African Explorer${ex.theme ? ' on the ' + esc(ex.theme) + ' theme' : ''}. Edit anything before you post.</p>
+      <p class="lead">${ex.posts.length} posts between ${fmtDay(ex.posts[0].windowStart)} and ${fmtDay(ex.posts[ex.posts.length - 1].windowEnd)}, written in your voice as an African Explorer${ex.theme ? ' on the ' + esc(ex.theme) + ' theme' : ''}. Each post unlocks on its date and closes when its window ends. Edit anything before you post.</p>
       ${hasFR ? `<div class="lang" role="radiogroup" aria-label="Language"><span>Show</span>
         <button type="button" role="radio" data-lang="EN" aria-checked="${lang === 'EN'}">English</button>
         <button type="button" role="radio" data-lang="FR" aria-checked="${lang === 'FR'}">Français</button>
         <small>You have both. Post both, or the one your main audience reads.</small></div>` : ''}`;
     head.querySelectorAll('[data-lang]').forEach((b) => b.addEventListener('click', () => { save(LS.lang, b.dataset.lang); renderPosts(); }));
     els.panel.appendChild(head);
+    addTestUnlock(head);
 
     const list = document.createElement('section');
     list.className = 'post-list';
@@ -233,42 +244,60 @@
     els.panel.appendChild(list);
   }
 
+  function addTestUnlock(head) {
+    if (MODE !== 'test' || !lockApplies()) return;
+    const on = testUnlocked();
+    const p = document.createElement('p');
+    p.className = 'test-unlock';
+    p.innerHTML = `Test mode: posts outside their window are locked, as they will be live. <button type="button" class="link">${on ? 'Lock them again' : 'Unlock everything for testing'}</button>`;
+    p.querySelector('button').addEventListener('click', () => { sessionStorage.setItem('oyw-test-unlock', on ? '0' : '1'); renderPosts(); });
+    head.appendChild(p);
+  }
+
   function postCard({ post: p, index, cards, caption, variantKey, subline, alternatives, altTitle }) {
     const st = statusOf(p);
+    const locked = isLocked(st);
     const carousel = cards.length > 1;
     const art = document.createElement('article');
-    art.className = 'post st-' + st.k;
+    art.className = 'post st-' + st.k + (locked ? ' locked' : '');
     art.dataset.id = p.id;
     const key = p.id + '|' + variantKey;
+    const open = opensOn(p);
+    const windowText = fmtDay(open) + ' to ' + fmtDay(p.windowEnd);
+    const lockNote = !locked ? '' : st.k === 'soon'
+      ? `<b>Locked until ${fmtDay(open)}.</b> Posting and downloads are open from ${windowText}. You can read the caption now.`
+      : `<b>This window closed on ${fmtDay(p.windowEnd)}.</b> Posting and downloads were open from ${windowText}.`;
     art.innerHTML = `
       <div class="post-visual ${carousel ? 'two' : ''}">
         ${cards.map((c, i) => `<figure><img src="${c.thumb}" alt="${esc(p.title)} visual${carousel ? ', card ' + (i + 1) : ''}" width="720" height="900" loading="lazy" decoding="async">${carousel ? `<figcaption>Card ${i + 1}</figcaption>` : ''}</figure>`).join('')}
+        ${locked ? `<span class="lock-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="2"/></svg>${st.k === 'soon' ? 'Opens ' + fmtDay(open) : 'Closed'}</span>` : ''}
       </div>
       <div class="post-main">
         <div class="post-chips"><span class="chip">Post ${index + 1} · ${fmtDay(p.date)}</span><span class="chip st">${esc(st.label)}</span></div>
         <h3 class="post-title">${esc(p.title)}</h3>
         <p class="post-sub">${subline}${carousel ? ' · two cards, post them together' : ''}</p>
-        <textarea class="post-caption" rows="8" spellcheck="false" aria-label="Caption for ${esc(p.title)}">${esc(caption)}</textarea>
+        <textarea class="post-caption" rows="8" spellcheck="false" aria-label="Caption for ${esc(p.title)}" ${locked ? 'readonly' : ''}>${esc(caption)}</textarea>
         <div class="row wrap post-actions">
-          <a class="btn primary act-li" href="${composeUrl(caption)}" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 9.5v8M6.5 6.4v.1M10.5 17.5v-8m0 3.2c0-2 1.3-3.4 3.2-3.4s3.3 1.4 3.3 3.6v4.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Post on LinkedIn</a>
-          <button class="btn ghost act-dl" type="button">${carousel ? 'Download both cards' : 'Download image'}</button>
-          <button class="btn ghost small act-copy" type="button">Copy caption</button>
-          <button class="btn ghost small act-share" type="button" ${canShareFiles ? '' : 'hidden'}>Share with image…</button>
+          <a class="btn primary act-li" href="${locked ? '#' : composeUrl(caption)}" target="_blank" rel="noopener noreferrer" ${locked ? 'aria-disabled="true" tabindex="-1"' : ''}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 9.5v8M6.5 6.4v.1M10.5 17.5v-8m0 3.2c0-2 1.3-3.4 3.2-3.4s3.3 1.4 3.3 3.6v4.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Post on LinkedIn</a>
+          <button class="btn ghost act-dl" type="button" ${locked ? 'disabled' : ''}>${carousel ? 'Download both cards' : 'Download image'}</button>
+          <button class="btn ghost small act-copy" type="button" ${locked ? 'disabled' : ''}>Copy caption</button>
+          <button class="btn ghost small act-share" type="button" ${locked ? 'disabled' : ''} ${canShareFiles ? '' : 'hidden'}>Share with image…</button>
         </div>
-        <p class="fine"><b>Post on LinkedIn</b> copies the caption and opens LinkedIn with it in the box. Add the downloaded image${carousel ? 's' : ''}, ${p.tag ? 'tag ' + esc(p.tag.replace(/\s{2,}/g, ' and ')) + ', ' : ''}check the text, post.${canShareFiles ? ' On a phone, <b>Share with image</b> sends the picture straight to the LinkedIn app; paste the caption if it does not carry over.' : ''}</p>
+        <p class="fine">${locked ? lockNote : `<b>Post on LinkedIn</b> copies the caption and opens LinkedIn with it in the box. Add the downloaded image${carousel ? 's' : ''}, ${p.tag ? 'tag ' + esc(p.tag.replace(/\s{2,}/g, ' and ')) + ', ' : ''}check the text, post.${canShareFiles ? ' On a phone, <b>Share with image</b> sends the picture straight to the LinkedIn app; paste the caption if it does not carry over.' : ''}`}</p>
         ${alternatives.length ? `<details class="alt"><summary>${esc(altTitle || 'Other voices for this post')}</summary><div class="alt-grid"></div></details>` : ''}
       </div>`;
     const ta = art.querySelector('.post-caption');
     const li = art.querySelector('.act-li');
-    ta.addEventListener('input', () => { edited.set(key, true); autosize(ta); li.href = composeUrl(ta.value); });
+    ta.addEventListener('input', () => { edited.set(key, true); autosize(ta); if (!locked) li.href = composeUrl(ta.value); });
     requestAnimationFrame(() => autosize(ta));
-    li.addEventListener('click', () => onPostClick(ta.value));
-    art.querySelector('.act-dl').addEventListener('click', () => download(cards));
+    li.addEventListener('click', (e) => { if (locked) { e.preventDefault(); toast(st.k === 'soon' ? `This post opens on ${fmtDay(open)}.` : 'This posting window has closed.'); return; } onPostClick(ta.value); });
+    art.querySelector('.act-dl').addEventListener('click', () => { if (!locked) download(cards); });
     art.querySelector('.act-copy').addEventListener('click', async (e) => {
+      if (locked) return;
       const ok = await copyText(ta.value); const b = e.currentTarget; const old = b.textContent;
       b.textContent = ok ? 'Copied' : 'Copy failed'; setTimeout(() => { b.textContent = old; }, 1600);
     });
-    art.querySelector('.act-share').addEventListener('click', () => shareWithImage(cards, ta.value));
+    art.querySelector('.act-share').addEventListener('click', () => { if (!locked) shareWithImage(cards, ta.value); });
     const grid = art.querySelector('.alt-grid');
     if (grid) for (const a of alternatives) {
       const b = document.createElement('button');
@@ -288,6 +317,8 @@
     try {
       const r = await fetch('data/posts.json', { cache: 'no-cache' });
       if (!r.ok) throw new Error(r.status);
+      const served = Date.parse(r.headers.get('Date') || '');
+      if (served) clockOffset = served - Date.now();
       DATA = await r.json();
     } catch (err) {
       console.warn('posts data unavailable', err);

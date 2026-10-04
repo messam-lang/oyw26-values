@@ -38,7 +38,14 @@ next to "Viewing as" resets it.
 
 Audience rules: employees get the First-Year-Graduates set (5 posts, voices A–D); Explorers get
 their personal posts (EN, plus FR for the five French speakers); Enactus gets the Enactus set
-(4 posts, voices A–D) and no signature tab. Instead of a shared download counter (which needs a
+(4 posts, voices A–D) and no signature tab.
+
+Posting windows are enforced for employees and Explorers: a post opens on its planned date
+(`posting_date`, which spaces people out inside a shared window) and closes at the end of its
+window. Outside that range the Post on LinkedIn, Download, Copy and Share actions are disabled and
+the caption is read-only (the visual stays visible with a lock badge). "Today" is taken from the server's `Date` header on the data
+file, so a wrong device clock does not open a post early. Enactus posts are never locked. In test
+mode the Posts tab shows an "Unlock everything for testing" toggle (per browser session). Instead of a shared download counter (which needs a
 server) the suggested voice is derived from the email hash, so it spreads evenly across people
 and stays stable for each person. Anyone can switch voice, globally or per post.
 

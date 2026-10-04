@@ -476,3 +476,18 @@ body.gated .tabs, body.gated .tool, body.gated .who { display: none !important; 
 .alt-pick:hover { border-color: var(--bright); }
 .alt-pick img { display: block; width: 100%; height: auto; border-radius: 6px; }
 .alt-pick b { color: var(--bright); }
+
+/* locked posts: outside the posting window (Schneider employees and Explorers) */
+.post-visual { position: relative; }
+.post.locked .post-visual img { filter: saturate(0.55) brightness(0.62); }
+.lock-badge {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 999px;
+  background: rgba(4, 38, 29, 0.82); color: var(--mint); font-size: 12.5px; font-weight: 700; white-space: nowrap;
+  border: 1px solid var(--line-strong); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+}
+.lock-badge svg { width: 16px; height: 16px; }
+a.btn[aria-disabled="true"] { opacity: 0.45; cursor: not-allowed; }
+a.btn[aria-disabled="true"]:active { transform: none; }
+.post-caption[readonly] { opacity: 0.8; }
+.test-unlock { margin: -6px 0 16px; font-size: 12.5px; color: var(--bright); font-weight: 600; }
