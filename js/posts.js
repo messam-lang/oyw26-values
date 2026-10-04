@@ -5,16 +5,14 @@
 (() => {
   'use strict';
 
-  // true  = testers pick "Schneider Electric" or "Enactus" with buttons (email still works for Explorers)
-  // false = the email decides: Schneider domain -> employee or Explorer, anything else -> Enactus
-  // Override per visit with ?gate=test or ?gate=live
-  const TEST_MODE = true;
+  // Email reminders ("your post is open today") are sent by the Google Apps Script in tools/reminders/Code.gs.
+  // Paste its web-app URL here to switch the opt-in form on; empty = the form stays hidden (calendar reminders still work).
+  const REMINDER_ENDPOINT = '';
 
   const $ = (id) => document.getElementById(id);
   const OYW = (window.OYW = window.OYW || {});
-  const LS = { audience: 'oyw-audience', voice: 'oyw-voice', overrides: 'oyw-voice-overrides', lang: 'oyw-lang' };
-  const q = new URLSearchParams(location.search);
-  const MODE = q.get('gate') === 'live' ? 'live' : q.get('gate') === 'test' ? 'test' : (TEST_MODE ? 'test' : 'live');
+  const LS = { audience: 'oyw-audience', voice: 'oyw-voice', overrides: 'oyw-voice-overrides', lang: 'oyw-lang', reminded: 'oyw-reminder-email' };
+  const MODE = OYW.mode || 'test';            // decided in toolkit.js (TEST_MODE flag, ?gate= override)
 
   const els = {
     gate: $('gate'), gateChoice: $('gateChoice'), gateForm: $('gateForm'), gateEmail: $('gateEmail'),
@@ -149,7 +147,7 @@
     renderPosts();
     if (announce) {
       toast(a.kind === 'explorer' ? `Welcome, ${ex.first}. Your posts are ready in the Posts tab.` : a.kind === 'enactus' ? 'Welcome. The Enactus posts are in the Posts tab.' : 'Welcome. Your posts are in the Posts tab.');
-      OYW.showTab && OYW.showTab('posts', true);
+      if (MODE !== 'live' && OYW.showTab) OYW.showTab('posts', true);   // live: stay on the first tab
     }
   }
 
@@ -176,6 +174,7 @@
       <p class="lead">${set.posts.length} posts between ${fmtDay(set.posts[0].windowStart)} and ${fmtDay(set.posts[set.posts.length - 1].windowEnd)}, in posting order. Each comes in four voices. ${isEnactus ? 'Captions are starting points: say it in your own words and language.' : 'Each post unlocks on its date and closes when its window ends, so the campaign lands in order. Edit the caption until it sounds like you.'}</p>`;
     els.panel.appendChild(head);
     addTestUnlock(head);
+    if (!isEnactus) els.panel.appendChild(remindersCard(set.posts, 'graduates'));
 
     const voiceBox = document.createElement('section');
     voiceBox.className = 'voice step';
@@ -225,6 +224,7 @@
     head.querySelectorAll('[data-lang]').forEach((b) => b.addEventListener('click', () => { save(LS.lang, b.dataset.lang); renderPosts(); }));
     els.panel.appendChild(head);
     addTestUnlock(head);
+    els.panel.appendChild(remindersCard(ex.posts, ex.id, lang));
 
     const list = document.createElement('section');
     list.className = 'post-list';
@@ -242,6 +242,84 @@
       }));
     });
     els.panel.appendChild(list);
+  }
+
+  // ---------------------------------------------------------------- reminders
+  // Calendar: an .ics with one 09:00 event on the morning each post opens (no server, works in Outlook, Google, Apple).
+  // Email: opt-in form posting to the Apps Script endpoint (see tools/reminders/Code.gs); hidden until REMINDER_ENDPOINT is set.
+  const siteUrl = () => location.origin + location.pathname;
+  const icsText = (s) => String(s).replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\r?\n/g, '\\n');
+  function icsFold(line) {
+    const out = []; let s = line;
+    while (s.length > 72) { out.push(s.slice(0, 72)); s = ' ' + s.slice(72); }
+    out.push(s); return out.join('\r\n');
+  }
+  function buildIcs(posts, tag) {
+    const stamp = new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
+    const L = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//OYW26 toolkit//EN', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH', 'X-WR-CALNAME:OYW26 posting days'];
+    for (const p of posts) {
+      const d = opensOn(p).replace(/-/g, '');
+      const desc = `Your "${p.title}" post is open from ${fmtDay(opensOn(p))} to ${fmtDay(p.windowEnd)}. Open the toolkit, go to Posts and press Post on LinkedIn.\n${siteUrl()}`;
+      L.push('BEGIN:VEVENT', `UID:oyw26-${tag}-${p.id}@messam-lang.github.io`, 'DTSTAMP:' + stamp,
+        'DTSTART:' + d + 'T090000', 'DTEND:' + d + 'T093000',
+        'SUMMARY:' + icsText(`Post on LinkedIn today: ${p.title} (#OYW26)`), 'DESCRIPTION:' + icsText(desc), 'URL:' + siteUrl(),
+        'BEGIN:VALARM', 'TRIGGER:PT0M', 'ACTION:DISPLAY', 'DESCRIPTION:' + icsText('Your OYW26 post is open. Open the toolkit and post.'), 'END:VALARM', 'END:VEVENT');
+    }
+    L.push('END:VCALENDAR');
+    return L.map(icsFold).join('\r\n') + '\r\n';
+  }
+  function downloadIcs(posts, tag) {
+    const blob = new Blob([buildIcs(posts, tag)], { type: 'text/calendar;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a'); a.href = url; a.download = 'OYW26-posting-days.ics'; a.rel = 'noopener';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 5000);
+    toast(`${posts.length} reminders ready. Open the file to add them to your calendar.`);
+  }
+  async function subscribeEmail(email, extra) {
+    const payload = Object.assign({ email: email.trim().toLowerCase() }, extra);
+    try {
+      // text/plain + no-cors: Apps Script accepts the POST without a preflight; the reply cannot be read, which is fine
+      await fetch(REMINDER_ENDPOINT, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) });
+      return true;
+    } catch (_) { return false; }
+  }
+  function remindersCard(posts, tag, lang) {
+    const box = document.createElement('section');
+    box.className = 'reminders step';
+    const upcoming = posts.filter((p) => today() <= p.windowEnd);
+    const emailOn = !!REMINDER_ENDPOINT;
+    const already = load(LS.reminded);
+    box.innerHTML = `<h2><span class="num">!</span> Get a nudge when each post opens</h2>
+      <p class="fine top">Posts unlock on their own dates. Set a reminder now so you do not miss a window.</p>
+      <div class="reminder-row">
+        <div class="reminder-box">
+          <h3>Calendar</h3>
+          <p class="fine">One 09:00 reminder on the morning each post opens, with a link back here. Works with Outlook, Google and Apple Calendar.</p>
+          <div><button class="btn ghost small act-ics" type="button" ${upcoming.length ? '' : 'disabled'}>Add ${upcoming.length} posting day${upcoming.length === 1 ? '' : 's'} to my calendar</button></div>
+        </div>
+        ${emailOn ? `<div class="reminder-box">
+          <h3>Email</h3>
+          ${already ? `<p class="reminder-done">You're on the list (${esc(already)}). <button class="link act-change" type="button">Change</button></p>`
+            : `<p class="fine">An email the morning a post opens, with a link back here. One per post, unsubscribe link in each.</p>
+          <form class="act-email" novalidate><input type="email" inputmode="email" autocomplete="email" placeholder="your.name@se.com" required aria-label="Email for reminders"><button class="btn primary small" type="submit">Email me</button></form>`}
+        </div>` : ''}
+      </div>`;
+    box.querySelector('.act-ics').addEventListener('click', () => downloadIcs(upcoming, tag));
+    const form = box.querySelector('.act-email');
+    if (form) form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const input = form.querySelector('input'), email = input.value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { input.focus(); toast('Please enter a valid email address.'); return; }
+      const btn = form.querySelector('button'); btn.disabled = true;
+      const ok = await subscribeEmail(email, { kind: audience.kind, explorerId: audience.explorerId || '', lang: lang || 'EN' });
+      btn.disabled = false;
+      if (ok) { save(LS.reminded, email); toast('Done. You will get an email the morning each post opens.'); renderPosts(); }
+      else toast('That did not go through. Please try again in a moment.');
+    });
+    const change = box.querySelector('.act-change');
+    if (change) change.addEventListener('click', () => { save(LS.reminded, null); renderPosts(); });
+    return box;
   }
 
   function addTestUnlock(head) {

@@ -4,6 +4,14 @@
   const $ = (id) => document.getElementById(id);
   const OYW = (window.OYW = window.OYW || {});
 
+  // true  = testing: the gate offers "Schneider Electric" / "Enactus" buttons, deep links such as #posts work,
+  //         and the Posts tab shows an unlock toggle.
+  // false = live: the email decides the audience and every visit starts on the first tab.
+  // Override per visit with ?gate=test or ?gate=live.
+  const TEST_MODE = true;
+  const q = new URLSearchParams(location.search);
+  OYW.mode = q.get('gate') === 'live' ? 'live' : q.get('gate') === 'test' ? 'test' : (TEST_MODE ? 'test' : 'live');
+
   // ---------------------------------------------------------------- tabs
   const TABS = ['frame', 'signature', 'banner', 'posts'];
   const LABELS = { frame: 'Profile frame', signature: 'Email signature', banner: 'LinkedIn banner', posts: 'Posts' };
@@ -118,5 +126,11 @@
 
   // ---------------------------------------------------------------- boot
   buildBanners();
-  showTab(location.hash.slice(1) || 'frame', false);
+  if (OYW.mode === 'live') {
+    // live: always start on the first tab, whatever link brought the visitor here
+    if (location.hash && history.replaceState) history.replaceState(null, '', location.pathname + location.search);
+    showTab('frame', false);
+  } else {
+    showTab(location.hash.slice(1) || 'frame', false);
+  }
 })();

@@ -23,13 +23,15 @@ No photo or detail ever leaves the device. No backend.
 
 ## The gate (who is this for)
 
-`js/posts.js`, constant `TEST_MODE`:
+`js/toolkit.js`, constant `TEST_MODE`:
 
 - `TEST_MODE = true` (current, for testing): two buttons, *I work at Schneider Electric* and
-  *I'm with Enactus*, plus the email field for African Explorers.
+  *I'm with Enactus*, plus the email field for African Explorers. Deep links such as `#posts`
+  work and the gate jumps to the Posts tab.
 - `TEST_MODE = false` (live): the email decides. A Schneider domain (`se.com`,
   `schneider-electric.com`, and their subdomains) makes a standard employee; if the hashed email
   matches an Explorer, that person sees only their own folder; any other domain is Enactus.
+  Every visit starts on the first tab (Profile frame), whatever link brought the visitor.
 - Override per visit with `?gate=live` or `?gate=test`.
 
 The email is hashed on the device (SHA-256 with the salt in `data/posts.json`) and compared with
@@ -48,6 +50,26 @@ file, so a wrong device clock does not open a post early. Enactus posts are neve
 mode the Posts tab shows an "Unlock everything for testing" toggle (per browser session). Instead of a shared download counter (which needs a
 server) the suggested voice is derived from the email hash, so it spreads evenly across people
 and stays stable for each person. Anyone can switch voice, globally or per post.
+
+## Reminders (employees and Explorers)
+
+The Posts tab offers two ways to be told when a post opens:
+
+- **Calendar** (works today, no server): an `.ics` with one 09:00 event on the morning each
+  remaining post opens, each with a link back to the toolkit. Built in the browser.
+- **Email** (needs a five-minute deploy): `tools/reminders/Code.gs` is a Google Apps Script web
+  app. It stores opt-ins in a Google Sheet and, every morning at 07:00, emails everyone whose post
+  opens that day ("Your OYW26 post is open today", with the visual, the window and an *Open the
+  toolkit* button to the first tab). Unsubscribe link in every email. Deploy steps are at the top of
+  the file; the last step is pasting the web-app URL into `REMINDER_ENDPOINT` at the top of
+  `js/posts.js`. Until then the email box stays hidden.
+
+## Visual shell
+
+Brick bands along the top and bottom edges (`assets/band-top.webp`, `assets/band-bottom.webp`,
+from the designer's *Top banner* / *Bottom banner* PNGs, in flow so nothing overlaps them), the
+white OYW logo in the hero, and a background tint that darkens to the left and lifts towards
+bright green on the right, after the designer's example.
 
 ## Updating the posts
 

@@ -46,16 +46,15 @@ button, input, label { font: inherit; }
 }
 .bg-shade {
   position: fixed; inset: 0; z-index: -2; pointer-events: none;
+  /* darker on the left, lifting towards bright green on the right, as in the designer's example */
   background:
-    radial-gradient(60% 40% at 50% 0%, rgba(94, 255, 89, 0.10), transparent 70%),
-    linear-gradient(180deg, rgba(4, 38, 29, 0.35) 0%, rgba(4, 38, 29, 0.78) 55%, #03150f 100%);
+    linear-gradient(90deg, rgba(4, 38, 29, 0.55) 0%, rgba(4, 38, 29, 0.10) 62%, rgba(94, 255, 89, 0.14) 100%),
+    linear-gradient(180deg, rgba(4, 38, 29, 0.30) 0%, rgba(4, 38, 29, 0.72) 60%, #03150f 100%);
 }
-.deco {
-  position: fixed; z-index: -1; pointer-events: none; opacity: 0.55;
-  width: min(62vw, 560px); height: auto;
-}
-.deco-tr { top: -4vw; right: -16vw; width: min(50vw, 460px); opacity: 0.4; transform: rotate(180deg); }
-.deco-bl { bottom: -1vw; left: -10vw; }
+/* brick bands along the top and bottom edges (full-bleed, in flow so nothing sits on top of them) */
+.band { display: block; width: 100%; height: auto; max-height: 200px; object-fit: cover; pointer-events: none; user-select: none; }
+.band-top { object-position: center top; margin-bottom: -6px; }
+.band-bottom { object-position: center bottom; margin-top: 8px; }
 @media (prefers-reduced-motion: reduce) { .bg-video { display: none; } }
 
 /* ---------- header ---------- */
@@ -304,7 +303,24 @@ body.dragging .stage-inner { outline: 3px dashed var(--bright); }
 
 .tool.single { grid-template-columns: minmax(0, 1fr); max-width: 760px; }
 .centre { text-align: center; }
-.foot { max-width: 1180px; margin: 0 auto; padding: 8px 18px 36px; }
+.foot { max-width: 1180px; margin: 0 auto; padding: 8px 18px 20px; }
+
+/* ---------- reminders (Posts tab, employees and Explorers) ---------- */
+.reminders { margin-bottom: 18px; }
+.reminders .fine.top { margin: -4px 0 12px; }
+.reminder-row { display: grid; gap: 12px; }
+@media (min-width: 760px) { .reminder-row { grid-template-columns: 1fr 1fr; } }
+.reminder-box { border: 1px solid var(--line); border-radius: 12px; background: rgba(4, 38, 29, 0.45); padding: 12px 14px; display: grid; gap: 8px; align-content: start; }
+.reminder-box h3 { margin: 0; font-size: 14.5px; font-weight: 600; }
+.reminder-box .fine { margin: 0; }
+.reminder-box form { display: flex; gap: 8px; flex-wrap: wrap; }
+.reminder-box input {
+  flex: 1 1 200px; min-height: 42px; padding: 0 14px; border-radius: 999px; font-size: 14px; font-weight: 500;
+  border: 1px solid var(--line-strong); background: rgba(4, 38, 29, 0.6); color: var(--white);
+}
+.reminder-box input::placeholder { color: rgba(231, 255, 217, 0.4); font-weight: 400; }
+.reminder-box input:focus { outline: none; border-color: var(--bright); box-shadow: 0 0 0 3px rgba(94, 255, 89, 0.25); }
+.reminder-done { color: var(--bright); font-weight: 600; font-size: 13.5px; }
 
 /* ---------- email signature ---------- */
 .sig-stage { display: grid; gap: 8px; align-content: start; }
