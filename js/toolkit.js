@@ -7,10 +7,11 @@
   // true  = testing: the gate offers "Schneider Electric" / "Enactus" buttons, deep links such as #posts work,
   //         and the Posts tab shows an unlock toggle.
   // false = live: the email decides the audience and every visit starts on the first tab.
-  // Override per visit with ?gate=test or ?gate=live.
-  const TEST_MODE = true;
+  // On localhost only, ?gate=test or ?gate=live overrides it for one visit (a development aid; ignored on the public site).
+  const TEST_MODE = false;
   const q = new URLSearchParams(location.search);
-  OYW.mode = q.get('gate') === 'live' ? 'live' : q.get('gate') === 'test' ? 'test' : (TEST_MODE ? 'test' : 'live');
+  const forced = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname) ? q.get('gate') : null;
+  OYW.mode = forced === 'live' ? 'live' : forced === 'test' ? 'test' : (TEST_MODE ? 'test' : 'live');
 
   // ---------------------------------------------------------------- tabs
   const TABS = ['frame', 'signature', 'banner', 'posts'];

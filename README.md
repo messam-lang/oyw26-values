@@ -25,14 +25,14 @@ No photo or detail ever leaves the device. No backend.
 
 `js/toolkit.js`, constant `TEST_MODE`:
 
-- `TEST_MODE = true` (current, for testing): two buttons, *I work at Schneider Electric* and
+- `TEST_MODE = true` (testing): two buttons, *I work at Schneider Electric* and
   *I'm with Enactus*, plus the email field for African Explorers. Deep links such as `#posts`
   work and the gate jumps to the Posts tab.
-- `TEST_MODE = false` (live): the email decides. A Schneider domain (`se.com`,
+- `TEST_MODE = false` (live, current since 4 Oct 2026): the email decides. A Schneider domain (`se.com`,
   `schneider-electric.com`, and their subdomains) makes a standard employee; if the hashed email
   matches an Explorer, that person sees only their own folder; any other domain is Enactus.
   Every visit starts on the first tab (Profile frame), whatever link brought the visitor.
-- Override per visit with `?gate=live` or `?gate=test`.
+- On localhost only, `?gate=live` or `?gate=test` overrides it for one visit. The public site ignores it.
 
 The email is hashed on the device (SHA-256 with the salt in `data/posts.json`) and compared with
 the hashed roster; it is never sent anywhere. The choice is remembered in localStorage (for
@@ -151,5 +151,21 @@ without the picker, and `&debug` to expose internals on `window.__oyw`.
 
 ## Hosting
 
-Plain static hosting (GitHub Pages, Netlify, Cloudflare Pages, or the client's own
-subdomain). All paths are relative, so it works from a sub-path.
+GitHub Pages from `main` (root). All paths are relative, so it works from a sub-path or a domain root.
+
+Custom domain `energizedbyeachother.com` (GoDaddy, registered 4 Oct 2026). DNS needed at GoDaddy:
+
+| Type | Name | Value |
+|---|---|---|
+| A | @ | 185.199.108.153 |
+| A | @ | 185.199.109.153 |
+| A | @ | 185.199.110.153 |
+| A | @ | 185.199.111.153 |
+| CNAME | www | messam-lang.github.io |
+
+Remove GoDaddy's default *Parked* A record and any domain forwarding. Only once those resolve:
+add a `CNAME` file containing the domain to the repo root, set it as the Pages custom domain
+(`gh api -X PUT repos/messam-lang/oyw26-values/pages -f cname=energizedbyeachother.com`), wait for
+the certificate, then enforce HTTPS. Doing this before DNS is ready redirects the github.io link
+to a domain that does not serve the site yet. The gate carries a plain-JS SHA-256 fallback so it
+also works over http while the certificate is being issued.

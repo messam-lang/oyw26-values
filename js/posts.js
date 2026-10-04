@@ -32,8 +32,37 @@
     clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove('show'), ms);
   }
   async function sha256(s) {
+    if (!(window.crypto && crypto.subtle)) return sha256js(s);   // WebCrypto only exists on https and localhost
     const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s));
     return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, '0')).join('');
+  }
+  // Plain-JS SHA-256, so the gate still works if the page is ever reached over http (before a certificate is issued).
+  function sha256js(str) {
+    const rotr = (x, n) => (x >>> n) | (x << (32 - n));
+    const K = [], H = [];
+    const isPrime = (n) => { for (let i = 2; i * i <= n; i++) if (n % i === 0) return false; return true; };
+    for (let n = 2, i = 0; i < 64; n++) if (isPrime(n)) { if (i < 8) H[i] = (Math.pow(n, 0.5) * 4294967296) | 0; K[i++] = (Math.pow(n, 1 / 3) * 4294967296) | 0; }
+    const bytes = Array.from(new TextEncoder().encode(str)), bitLen = bytes.length * 8;
+    bytes.push(0x80);
+    while (bytes.length % 64 !== 56) bytes.push(0);
+    for (let i = 7; i >= 0; i--) bytes.push(i >= 4 ? 0 : (bitLen >>> (i * 8)) & 255);
+    const w = new Array(64);
+    for (let off = 0; off < bytes.length; off += 64) {
+      for (let i = 0; i < 16; i++) w[i] = (bytes[off + i * 4] << 24) | (bytes[off + i * 4 + 1] << 16) | (bytes[off + i * 4 + 2] << 8) | bytes[off + i * 4 + 3];
+      for (let i = 16; i < 64; i++) {
+        const s0 = rotr(w[i - 15], 7) ^ rotr(w[i - 15], 18) ^ (w[i - 15] >>> 3);
+        const s1 = rotr(w[i - 2], 17) ^ rotr(w[i - 2], 19) ^ (w[i - 2] >>> 10);
+        w[i] = (w[i - 16] + s0 + w[i - 7] + s1) | 0;
+      }
+      let [a, b, c, d, e, f, g, h] = H;
+      for (let i = 0; i < 64; i++) {
+        const t1 = (h + (rotr(e, 6) ^ rotr(e, 11) ^ rotr(e, 25)) + ((e & f) ^ (~e & g)) + K[i] + w[i]) | 0;
+        const t2 = ((rotr(a, 2) ^ rotr(a, 13) ^ rotr(a, 22)) + ((a & b) ^ (a & c) ^ (b & c))) | 0;
+        h = g; g = f; f = e; e = (d + t1) | 0; d = c; c = b; b = a; a = (t1 + t2) | 0;
+      }
+      [a, b, c, d, e, f, g, h].forEach((v, i) => { H[i] = (H[i] + v) | 0; });
+    }
+    return H.map((x) => (x >>> 0).toString(16).padStart(8, '0')).join('');
   }
   function domainOf(email) { return (email.split('@')[1] || '').toLowerCase(); }
   function isSchneider(domain) { return (DATA.schneiderDomains || []).some((d) => domain === d || domain.endsWith('.' + d)); }
@@ -305,7 +334,7 @@
     for (const p of posts) {
       const d = opensOn(p).replace(/-/g, '');
       const desc = `Your "${p.title}" post is open from ${fmtDay(opensOn(p))} to ${fmtDay(p.windowEnd)}. Open the toolkit, go to Posts and press Post on LinkedIn.\n${siteUrl()}`;
-      L.push('BEGIN:VEVENT', `UID:oyw26-${tag}-${p.id}@messam-lang.github.io`, 'DTSTAMP:' + stamp,
+      L.push('BEGIN:VEVENT', `UID:oyw26-${tag}-${p.id}@energizedbyeachother.com`, 'DTSTAMP:' + stamp,
         'DTSTART:' + d + 'T090000', 'DTEND:' + d + 'T093000',
         'SUMMARY:' + icsText(`Post on LinkedIn today: ${p.title} (#OYW26)`), 'DESCRIPTION:' + icsText(desc), 'URL:' + siteUrl(),
         'BEGIN:VALARM', 'TRIGGER:PT0M', 'ACTION:DISPLAY', 'DESCRIPTION:' + icsText('Your OYW26 post is open. Open the toolkit and post.'), 'END:VALARM', 'END:VEVENT');
@@ -417,7 +446,7 @@
     const saved = load(LS.audience);
     if (saved && saved.kind && (saved.kind !== 'explorer' || explorerOf(saved))) applyAudience(saved, false);
     else renderGate();
-    OYW.posts = { data: DATA, get audience() { return audience; }, applyAudience, classify, renderGate, mode: MODE };
+    OYW.posts = { data: DATA, get audience() { return audience; }, applyAudience, classify, renderGate, mode: MODE, sha256js };
   }
   boot();
 })();
