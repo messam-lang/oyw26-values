@@ -25,11 +25,11 @@
 
   const COPY = {
     shareTitle: 'My #OYW26 value',
-    shareText: (v) => `Powered By Each Other. For me, it's ${v}. #OYW26 #AdvancingEnergyTech`,
+    shareText: (v) => `Energized By Each Other. For me, it's ${v}. #EnergizedByEachOther #OYW26`,
     eventTitle: 'Advancing Energy Tech',
-    eventSub: 'Powered By Each Other.',
+    eventSub: 'Energized By Each Other.',
     eventWhere: 'Cape Town · 3–6 November 2026',
-    hashtags: '#AdvancingEnergyTech   #OYW26',
+    hashtags: '#EnergizedByEachOther   #OYW26',
     partners: 'Schneider Electric  ×  One Young World',
   };
 

@@ -82,13 +82,14 @@
     { id: 'banner-3', name: 'Deep green', note: 'Logos under the title' },
     { id: 'banner-4', name: 'Sage grid', note: 'Marks top centre' },
   ];
+  const BANNER_V = '20261006';   // bump when the banner files change, so cached copies are replaced
   const bannerGrid = $('bannerGrid'), bannerImg = $('bannerImg'), bannerLink = $('bannerDownload'), avatar = $('liAvatar');
   let bannerId = BANNERS[0].id;
   function selectBanner(id) {
     bannerId = id;
     for (const b of bannerGrid.children) b.setAttribute('aria-checked', String(b.dataset.id === id));
-    bannerImg.src = `assets/banners/${id}.jpg`;
-    bannerLink.href = `assets/banners/${id}.jpg`;
+    bannerImg.src = `assets/banners/${id}.jpg?v=${BANNER_V}`;
+    bannerLink.href = `assets/banners/${id}.jpg?v=${BANNER_V}`;
     bannerLink.download = `OYW26-LinkedIn-banner-${id.slice(-1)}.jpg`;
   }
   function buildBanners() {
@@ -98,7 +99,7 @@
       const el = document.createElement('button');
       el.type = 'button'; el.className = 'banner-pick'; el.role = 'radio'; el.dataset.id = b.id;
       el.setAttribute('aria-checked', 'false');
-      el.innerHTML = `<img src="assets/banners/${b.id}-thumb.jpg" alt="Banner ${i + 1}: ${b.name}, ${b.note}" width="528" height="132"><span>${i + 1} · ${b.name} <small>${b.note}</small></span>`;
+      el.innerHTML = `<img src="assets/banners/${b.id}-thumb.jpg?v=${BANNER_V}" alt="Banner ${i + 1}: ${b.name}, ${b.note}" width="528" height="132"><span>${i + 1} · ${b.name} <small>${b.note}</small></span>`;
       el.addEventListener('click', () => selectBanner(b.id));
       bannerGrid.appendChild(el);
     });

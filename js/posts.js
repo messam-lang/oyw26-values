@@ -106,14 +106,14 @@
   try { canShareFiles = !!(navigator.canShare && navigator.canShare({ files: [new File([''], 'x.jpg', { type: 'image/jpeg' })] })); } catch (_) { canShareFiles = false; }
   async function shareWithImage(cards, text) {
     try {
-      const files = await Promise.all(cards.map(async (c) => new File([await (await fetch(c.src)).blob()], c.name, { type: 'image/jpeg' })));
+      const files = await Promise.all(cards.map(async (c) => new File([await (await fetch(c.src + '?v=' + DATA.built)).blob()], c.name, { type: 'image/jpeg' })));
       await copyText(text);
       await navigator.share({ files, text });
     } catch (e) { if (!e || e.name !== 'AbortError') toast('Sharing is not available here. Download the image and use Post on LinkedIn.'); }
   }
   function download(cards) {
     cards.forEach((c, i) => setTimeout(() => {
-      const a = document.createElement('a'); a.href = c.src; a.download = c.name; a.rel = 'noopener';
+      const a = document.createElement('a'); a.href = c.src + '?v=' + DATA.built; a.download = c.name; a.rel = 'noopener';
       document.body.appendChild(a); a.click(); a.remove();
     }, i * 500));
     toast(cards.length > 1 ? 'Downloading both cards.' : 'Downloading the image.');
@@ -386,7 +386,7 @@
       : `<b>This window closed on ${fmtDay(p.windowEnd)}.</b> Posting and downloads were open from ${windowText}.`;
     art.innerHTML = `
       <div class="post-visual ${carousel ? 'two' : ''}">
-        ${cards.map((c, i) => `<figure><img src="${c.thumb}" alt="${esc(p.title)} visual${carousel ? ', card ' + (i + 1) : ''}" width="720" height="900" loading="lazy" decoding="async">${carousel ? `<figcaption>Card ${i + 1}</figcaption>` : ''}</figure>`).join('')}
+        ${cards.map((c, i) => `<figure><img src="${c.thumb}?v=${DATA.built}" alt="${esc(p.title)} visual${carousel ? ', card ' + (i + 1) : ''}" width="720" height="900" loading="lazy" decoding="async">${carousel ? `<figcaption>Card ${i + 1}</figcaption>` : ''}</figure>`).join('')}
         ${locked ? `<span class="lock-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="2"/></svg>${st.k === 'soon' ? 'Opens ' + fmtDay(open) : 'Closed'}</span>` : ''}
       </div>
       <div class="post-main">
@@ -419,7 +419,7 @@
     if (grid) for (const a of alternatives) {
       const b = document.createElement('button');
       b.type = 'button'; b.className = 'alt-pick';
-      b.innerHTML = `<img src="${a.thumb}" alt="" width="720" height="900" loading="lazy"><span><b>${esc(a.key)}</b> ${esc(a.name)}</span>`;
+      b.innerHTML = `<img src="${a.thumb}?v=${DATA.built}" alt="" width="720" height="900" loading="lazy"><span><b>${esc(a.key)}</b> ${esc(a.name)}</span>`;
       b.addEventListener('click', a.pick);
       grid.appendChild(b);
     }

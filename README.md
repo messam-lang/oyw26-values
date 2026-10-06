@@ -1,6 +1,6 @@
 # OYW26 employee toolkit
 
-Schneider Electric × One Young World 2026 · "Powered By Each Other" employee toolkit.
+Schneider Electric × One Young World 2026 · "Energized By Each Other" employee toolkit.
 
 A static, browser-only web app. A gate asks who the visitor is, then four tabs:
 
