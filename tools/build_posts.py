@@ -28,9 +28,11 @@ import time
 from PIL import Image
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SRC = os.path.join(ROOT, "source", "posts")
-OUT_IMG = os.path.join(ROOT, "assets", "posts")
-OUT_DATA = os.path.join(ROOT, "data")
+# POSTS_SRC / POSTS_OUT let a snapshot be test-built somewhere else before it replaces the live one
+SRC = os.environ.get("POSTS_SRC") or os.path.join(ROOT, "source", "posts")
+_OUT = os.environ.get("POSTS_OUT") or ROOT
+OUT_IMG = os.path.join(_OUT, "assets", "posts")
+OUT_DATA = os.path.join(_OUT, "data")
 SALT = "oyw26-powered-by-each-other"
 SCHNEIDER_DOMAINS = ["se.com", "schneider-electric.com"]
 JPG_QUALITY = 90
@@ -90,6 +92,10 @@ def window_dates(win, date):
         mo = MONTHS[m.group(2)]
         d = int(m.group(1))
         return ("2026-%02d-%02d" % (mo, d), "2026-%02d-%02d" % (mo, d + 4))
+    m = re.fullmatch(r"(\d{1,2})\s+(Oct|Nov|Sep|Dec)", win)          # a single day, e.g. "30 Oct"
+    if m:
+        day = "2026-%02d-%02d" % (MONTHS[m.group(2)], int(m.group(1)))
+        return (day, day)
     import datetime as dt
     d0 = dt.date.fromisoformat(date)
     return (date, (d0 + dt.timedelta(days=4)).isoformat())
@@ -287,6 +293,62 @@ def build_explorers(roster, warnings):
     return out
 
 
+def build_speakers(spec_path, warnings):
+    """speakers_manifest.json: Schneider speakers at the Summit, one undated 'Meet the Speakers' post each (never locked).
+    Routing (per the file): checked before the main manifest; a matching email sees only their own post."""
+    if not os.path.exists(spec_path):
+        return []
+    sm = json.load(open(spec_path, encoding="utf-8"))
+    out = []
+    for s in sm.get("speakers", []):
+        email = (s.get("email") or "").strip()
+        if "@" not in email:
+            warnings.append("speaker skipped (no email): %s" % s.get("name"))
+            continue
+        if not os.path.isdir(os.path.join(SRC, s["folder"])):
+            warnings.append("missing speaker folder: %s" % s["folder"])
+            continue
+        posts = []
+        for p in s.get("posts", []):
+            folder = os.path.join(SRC, p["folder"])
+            if not os.path.isdir(folder):
+                warnings.append("missing folder: %s" % p["folder"])
+                continue
+            cap_path = os.path.join(folder, "caption.txt")
+            header, blocks = parse_caption(read(cap_path)) if os.path.exists(cap_path) else ({}, {})
+            cards = []
+            for key in (p.get("expected_files") or p.get("file_keys") or []):
+                src = find_image(folder, key)
+                if not src:
+                    warnings.append("missing image: %s/%s" % (p["folder"], key))
+                    continue
+                jpg, webp, w, h = convert_image(src, p["folder"], os.path.splitext(key)[0] + ".png")
+                cards.append({"src": jpg, "thumb": webp, "name": os.path.splitext(key)[0] + ".jpg"})
+            caption = blocks.get("EN") or blocks.get("*") or ""
+            if not caption:
+                warnings.append("NO CAPTION: speaker %s" % s.get("name"))
+            posts.append({
+                "id": p.get("post_type") or "Meet-the-Speakers",
+                "type": p.get("post_type") or "Meet-the-Speakers",
+                "title": clean_title(p.get("title") or "Meet the Speakers"),
+                "date": None, "window": "", "windowStart": None, "windowEnd": None,   # undated: share any time
+                "format": "carousel" if len(cards) > 1 else "single",
+                "tag": header.get("Tag", ""),
+                "langs": {"EN": {"cards": cards, "caption": caption}},
+            })
+        name = s.get("name", "")
+        out.append({
+            "id": s["folder"].split("/")[-1].lower(),
+            "name": name,
+            "first": name.split()[0] if name else "",
+            "hash": sha(email),
+            "language": "EN",
+            "role": s.get("title", ""),
+            "posts": posts,
+        })
+    return out
+
+
 def main():
     man_path = os.path.join(SRC, "manifest.json")
     if not os.path.exists(man_path):
@@ -306,12 +368,13 @@ def main():
             "graduates": build_set("graduates", man["schneider"]["first_year_graduates"], "Schneider/First-Year-Graduates", warnings),
         },
         "explorers": build_explorers(man["schneider"]["african_explorers"], warnings),
+        "speakers": build_speakers(os.path.join(SRC, "speakers_manifest.json"), warnings),
     }
     with open(os.path.join(OUT_DATA, "posts.json"), "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=1)
     n_img = sum(len(files) for _, _, files in os.walk(OUT_IMG))
-    print("sets: enactus %d posts, graduates %d posts; explorers: %d" % (
-        len(data["sets"]["enactus"]["posts"]), len(data["sets"]["graduates"]["posts"]), len(data["explorers"])))
+    print("sets: enactus %d posts, graduates %d posts; explorers: %d; speakers: %d" % (
+        len(data["sets"]["enactus"]["posts"]), len(data["sets"]["graduates"]["posts"]), len(data["explorers"]), len(data["speakers"])))
     print("assets/posts: %d files, %.1f MB" % (n_img, sum(os.path.getsize(os.path.join(r, f)) for r, _, fs in os.walk(OUT_IMG) for f in fs) / 1e6))
     print("data/posts.json: %d KB" % (os.path.getsize(os.path.join(OUT_DATA, "posts.json")) // 1024))
     if warnings:

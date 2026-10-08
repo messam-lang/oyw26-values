@@ -73,6 +73,7 @@
   // a post opens on its planned date (the playbook spaces people out inside a shared window) and closes with the window
   const opensOn = (p) => (p.date > p.windowStart ? p.date : p.windowStart);
   function statusOf(p) {
+    if (!p.windowStart) return { k: 'open', label: 'Share any time' };   // undated post (speakers)
     const t = today(), open = opensOn(p);
     if (t < open) return { k: 'soon', label: 'Opens ' + fmtDay(open) };
     if (t > p.windowEnd) return { k: 'past', label: 'Closed ' + fmtDay(p.windowEnd) };
@@ -80,7 +81,7 @@
   }
   // Schneider employees and Explorers can post or download only inside the window, so the campaign lands in order.
   // Enactus delegates are guests and stay open. In test mode a toggle unlocks everything so testers can try downloads.
-  const lockApplies = () => audience && audience.kind !== 'enactus';
+  const lockApplies = () => audience && (audience.kind === 'employee' || audience.kind === 'explorer');   // speakers' posts are undated
   const testUnlocked = () => MODE === 'test' && sessionStorage.getItem('oyw-test-unlock') === '1';
   const isLocked = (st) => lockApplies() && st.k !== 'now' && !testUnlocked();
   async function copyText(text) {
@@ -150,6 +151,9 @@
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return null;
     const hash = await sha256(DATA.salt + ':' + email);
     const seed = parseInt(hash.slice(0, 8), 16);
+    // speakers are checked first (per speakers_manifest.json); they see only their own Meet the Speakers post
+    const speaker = (DATA.speakers || []).find((s) => s.hash === hash);
+    if (speaker) return { kind: 'speaker', speakerId: speaker.id, seed, email, first: speaker.first, name: speaker.name };
     const explorer = DATA.explorers.find((x) => x.hash === hash);
     if (explorer) return Object.assign({ kind: 'explorer', explorerId: explorer.id, seed, email }, nameFrom(email, explorer));
     if (isSchneider(domainOf(email))) return Object.assign({ kind: 'employee', seed, email }, nameFrom(email, null));
@@ -204,24 +208,25 @@
   });
 
   function explorerOf(a) { return a && a.kind === 'explorer' ? DATA.explorers.find((x) => x.id === a.explorerId) : null; }
+  function speakerOf(a) { return a && a.kind === 'speaker' ? (DATA.speakers || []).find((s) => s.id === a.speakerId) : null; }
   function applyAudience(a, announce) {
-    const ex = explorerOf(a);
-    if (a.kind === 'explorer' && !ex) { renderGate(); return; }
+    const ex = explorerOf(a), sp = speakerOf(a);
+    if ((a.kind === 'explorer' && !ex) || (a.kind === 'speaker' && !sp)) { renderGate(); return; }
     audience = a; save(LS.audience, a);
     document.body.classList.remove('gated');
     els.gate.hidden = true; els.who.hidden = false;
-    const first = a.kind === 'explorer' ? (a.first || ex.first) : (a.first || '');
-    const role = a.kind === 'explorer' ? 'African Explorer' : a.kind === 'enactus' ? 'Enactus delegate' : 'Schneider Electric employee';
-    const shown = a.kind === 'explorer' ? (a.name || ex.name) : (a.name || '');
+    const first = a.kind === 'explorer' ? (a.first || ex.first) : a.kind === 'speaker' ? sp.first : (a.first || '');
+    const role = a.kind === 'explorer' ? 'African Explorer' : a.kind === 'speaker' ? 'Speaker' : a.kind === 'enactus' ? 'Enactus delegate' : 'Schneider Electric employee';
+    const shown = a.kind === 'explorer' ? (a.name || ex.name) : a.kind === 'speaker' ? sp.name : (a.name || '');
     els.whoLine.innerHTML = shown ? `Welcome, <b>${esc(shown)}</b> · ${role}` : `Viewing as <b>${role}</b>`;
     const filled = prefillSignature(a);
     if (els.kicker) els.kicker.textContent = a.kind === 'enactus' ? 'Enactus toolkit' : 'Employee toolkit';
     if (OYW.setTabHidden) OYW.setTabHidden('signature', a.kind === 'enactus');
-    if (els.tabPosts) els.tabPosts.lastChild.textContent = a.kind === 'explorer' ? 'Your posts' : a.kind === 'enactus' ? 'Enactus posts' : 'Posts';
+    if (els.tabPosts) els.tabPosts.lastChild.textContent = a.kind === 'explorer' ? 'Your posts' : a.kind === 'speaker' ? 'Speakers' : a.kind === 'enactus' ? 'Enactus posts' : 'Posts';
     renderPosts();
     if (announce) {
       toast(a.kind === 'enactus' ? 'Welcome. The Enactus posts are in the Posts tab.'
-        : `Welcome${first ? ', ' + first : ''}. Your posts are in the Posts tab${filled ? `, and your ${filled} ${filled === 'name and email' ? 'are' : 'is'} already in the Email signature tab` : ''}.`, 4800);
+        : `Welcome${first ? ', ' + first : ''}. ${a.kind === 'speaker' ? 'Your Meet the Speakers post is in the Speakers tab' : 'Your posts are in the Posts tab'}${filled ? `, and your ${filled} ${filled === 'name and email' ? 'are' : 'is'} already in the Email signature tab` : ''}.`, 4800);
       if (MODE !== 'live' && OYW.showTab) OYW.showTab('posts', true);   // live: stay on the first tab
     }
   }
@@ -235,8 +240,22 @@
   function renderPosts() {
     if (!els.panel || !audience) return;
     els.panel.innerHTML = '';
-    const ex = explorerOf(audience);
-    if (ex) renderExplorer(ex); else renderSet(audience.kind === 'enactus' ? DATA.sets.enactus : DATA.sets.graduates);
+    const ex = explorerOf(audience), sp = speakerOf(audience);
+    if (sp) renderSpeaker(sp); else if (ex) renderExplorer(ex); else renderSet(audience.kind === 'enactus' ? DATA.sets.enactus : DATA.sets.graduates);
+  }
+
+  function renderSpeaker(sp) {
+    const head = document.createElement('div');
+    head.className = 'posts-head';
+    head.innerHTML = `<h2>Hi ${esc(sp.first)}, here is your Meet the Speakers post</h2>
+      <p class="lead">Made for you as a Schneider Electric speaker at the Summit${sp.role ? ', ' + esc(sp.role) : ''}. There is no posting date: share it whenever suits you. Edit the caption until it sounds like you.</p>`;
+    els.panel.appendChild(head);
+    const list = document.createElement('section');
+    list.className = 'post-list';
+    sp.posts.forEach((p, i) => {
+      list.appendChild(postCard({ post: p, index: i, cards: p.langs.EN.cards, caption: p.langs.EN.caption, variantKey: 'EN', subline: 'English', alternatives: [] }));
+    });
+    els.panel.appendChild(list);
   }
 
   function renderSet(set) {
@@ -390,7 +409,7 @@
         ${locked ? `<span class="lock-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="2"/></svg>${st.k === 'soon' ? 'Opens ' + fmtDay(open) : 'Closed'}</span>` : ''}
       </div>
       <div class="post-main">
-        <div class="post-chips"><span class="chip">Post ${index + 1} · ${fmtDay(p.date)}</span><span class="chip st">${esc(st.label)}</span></div>
+        <div class="post-chips"><span class="chip">Post ${index + 1}${p.date ? ' · ' + fmtDay(p.date) : ''}</span><span class="chip st">${esc(st.label)}</span></div>
         <h3 class="post-title">${esc(p.title)}</h3>
         <p class="post-sub">${subline}${carousel ? ' · two cards, post them together' : ''}</p>
         <textarea class="post-caption" rows="8" spellcheck="false" aria-label="Caption for ${esc(p.title)}" ${locked ? 'readonly' : ''}>${esc(caption)}</textarea>
@@ -444,7 +463,8 @@
       return;
     }
     const saved = load(LS.audience);
-    if (saved && saved.kind && (saved.kind !== 'explorer' || explorerOf(saved))) applyAudience(saved, false);
+    const savedOk = saved && saved.kind && (saved.kind === 'explorer' ? !!explorerOf(saved) : saved.kind === 'speaker' ? !!speakerOf(saved) : true);
+    if (savedOk) applyAudience(saved, false);
     else renderGate();
     OYW.posts = { data: DATA, get audience() { return audience; }, applyAudience, classify, renderGate, mode: MODE, sha256js };
   }

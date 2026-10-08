@@ -40,7 +40,10 @@ Schneider emails, with the name and email, see below); *Change* in the welcome b
 
 Audience rules: employees get the First-Year-Graduates set (5 posts, voices A–D); Explorers get
 their personal posts (EN, plus FR for the five French speakers); Enactus gets the Enactus set
-(4 posts, voices A–D) and no signature tab.
+(4 posts, voices A–D) and no signature tab. Speakers (eight Schneider leaders listed in the
+client's `speakers_manifest.json`, checked before the main manifest) get a "Speakers" tab with
+their single, undated "Meet the Speakers" post and nothing from the other sets; it is never
+locked.
 
 Posting windows are enforced for employees and Explorers: a post opens on its planned date
 (`posting_date`, which spaces people out inside a shared window) and closes at the end of its
@@ -77,14 +80,18 @@ bright green on the right, after the designer's example.
 
 ## Updating the posts
 
-The source of truth is the client's Drive folder *Toolkit Deliverables* (manifest.json + README +
-one folder per post with caption.txt and the PNGs). It is mirrored, **not committed**, into
-`source/posts/` because the manifest and captions carry work emails.
+The source of truth is the client's Drive folder *Toolkit Deliverables* (manifest.json,
+speakers_manifest.json, README, one folder per post with caption.txt and the PNGs). It is
+mirrored, **not committed**, into `source/posts/` because the manifests and captions carry work
+emails. Earlier snapshots are kept beside it as `source/posts-<date>/` (also ignored).
 
-1. Mirror the Drive folder into `source/posts/` (same structure as Drive).
-2. `python3 tools/build_posts.py` → `assets/posts/**.jpg` (downloads), `**.webp` (previews) and
-   `data/posts.json` (captions, schedule, hashed roster). The script lists anything missing.
-3. Bump `?v=` in `index.html`, commit, push.
+1. Mirror the Drive folder into `source/posts-new/` (same structure as Drive).
+2. Test-build it without touching the live data:
+   `POSTS_SRC=$PWD/source/posts-new POSTS_OUT=/tmp/testbuild python3 tools/build_posts.py`
+3. `mv source/posts source/posts-<date> && mv source/posts-new source/posts && rm -rf assets/posts`
+4. `python3 tools/build_posts.py` → `assets/posts/**.jpg` (downloads), `**.webp` (previews) and
+   `data/posts.json` (captions, schedule, hashed rosters). The script lists anything missing.
+5. Bump `?v=` in `index.html`, commit, push. Captions are published verbatim; never edit them.
 
 The 10th Explorer (`Explorer-10-TBC`) is skipped until the manifest has their email and files.
 Captions are parsed from the `=== VARIATION A … ===` / `=== CAPTION (EN|FR) … ===` blocks; posting

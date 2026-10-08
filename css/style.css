@@ -458,7 +458,7 @@ body.gated .tabs, body.gated .tool, body.gated .who { display: none !important; 
 .post-main { display: grid; gap: 10px; align-content: start; min-width: 0; }
 .post-chips { display: flex; gap: 6px; flex-wrap: wrap; }
 .chip { display: inline-flex; align-items: center; min-height: 24px; padding: 0 10px; border-radius: 999px; font-size: 12px; font-weight: 600; background: rgba(231, 255, 217, 0.12); color: var(--mint); }
-.st-now .chip.st { background: var(--bright); color: var(--deep); }
+.st-now .chip.st, .st-open .chip.st { background: var(--bright); color: var(--deep); }
 .st-past .chip.st { background: rgba(231, 255, 217, 0.08); color: rgba(231, 255, 217, 0.6); }
 .post-title { margin: 0; font-size: 19px; font-weight: 700; line-height: 1.2; }
 .post-sub { margin: -4px 0 0; font-size: 13px; color: rgba(231, 255, 217, 0.72); }
