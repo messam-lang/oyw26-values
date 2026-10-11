@@ -12,7 +12,7 @@ A static, browser-only web app. A gate asks who the visitor is, then four tabs:
    animation plays on top; export an animated GIF (600×150, encoded in the browser with gifenc)
    or a static PNG, with per-mail-client install steps. Hidden for Enactus delegates.
 3. **LinkedIn banner** – four banners at 1584×396 with a preview of where the profile photo lands.
-4. **Posts** – the scheduled LinkedIn campaign (6 Oct to 27 Nov 2026) from the client's
+4. **Posts** – the scheduled LinkedIn campaign (11 Oct to 27 Nov 2026) from the client's
    "Toolkit Deliverables" folder: visual, caption, download, **Post on LinkedIn** (copies the
    caption and opens LinkedIn's composer with it prefilled; no LinkedIn API), and the phone share
    sheet with the image attached. What shows depends on the gate (below).
@@ -93,9 +93,20 @@ emails. Earlier snapshots are kept beside it as `source/posts-<date>/` (also ign
    `data/posts.json` (captions, schedule, hashed rosters). The script lists anything missing.
 5. Bump `?v=` in `index.html`, commit, push. Captions are published verbatim; never edit them.
 
-The 10th Explorer (`Explorer-10-TBC`) is skipped until the manifest has their email and files.
+Since 11 Oct 2026 the manifest is **schema 2**: dates move, identities do not. Each post carries a
+date-free `post_key`, a `folder_pattern` (a path from the mirror root, e.g. `Enactus/*_Announcement`) and
+`file_keys` (the PNG names without their `YYYY-MM-DD_` prefix). The build resolves the folder by
+pattern and each visual by key, so a reschedule only changes the date prefixes and the schedule
+fields. If a pattern or key matches more than one folder or file (an old export left beside a new
+one), the build takes the one whose date equals the post's `posting_date`, otherwise the newest,
+and prints a warning; tidy the Drive folder rather than relying on that. Speakers come from
+`speakers_manifest.json` (routing checked before the main manifest; one undated post each).
+
+The 10th Explorer (`Explorer-10-TBC`) was removed from the manifest on 11 Oct 2026; the roster is
+final at nine. Any Explorer row with a `TBC` email is still skipped if one ever reappears.
 Captions are parsed from the `=== VARIATION A … ===` / `=== CAPTION (EN|FR) … ===` blocks; posting
-windows come from the manifest's `window` strings (table at the top of the build script).
+windows come from the manifest's `window` strings (`d–d Mon`, `w/c d Mon` or a single `d Mon`,
+table at the top of the build script).
 
 ## Structure
 

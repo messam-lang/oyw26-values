@@ -153,7 +153,7 @@ def convert_image(src_path, rel_dir, basename):
         th = rgb.copy()
         th.thumbnail((THUMB_W, THUMB_W * 2), Image.LANCZOS)
         th.save(webp, quality=THUMB_QUALITY, method=5)
-    rel = lambda p: os.path.relpath(p, ROOT).replace(os.sep, "/")
+    rel = lambda p: os.path.relpath(p, _OUT).replace(os.sep, "/")   # paths relative to the output root (site or test build)
     return rel(jpg), rel(webp), w, h
 
 
@@ -165,6 +165,40 @@ def find_image(folder, basename):
         if os.path.exists(p):
             return p
     return None
+
+
+# Manifest schema 2 (11 Oct): dates move, identities don't. A post is found by folder_pattern (any date + _<Post-Type>)
+# and a visual by its key (file name minus the leading YYYY-MM-DD_ and the extension). See replacement_rules.
+DATE_PREFIX = re.compile(r"^\d{4}-\d{2}-\d{2}_")
+key_of = lambda filename: DATE_PREFIX.sub("", os.path.splitext(os.path.basename(filename))[0])
+
+
+def resolve_folder(p, fallback_rel, warnings):
+    import glob
+    cands = [c for c in glob.glob(os.path.join(SRC, p.get("folder_pattern") or "\0")) if os.path.isdir(c)] if p.get("folder_pattern") else []
+    if not cands and os.path.isdir(os.path.join(SRC, fallback_rel)):
+        cands = [os.path.join(SRC, fallback_rel)]
+    if not cands:
+        return None
+    if len(cands) > 1:
+        date = p.get("posting_date") or ""
+        same = [c for c in cands if os.path.basename(c).startswith(date)]
+        pick = same[0] if same else max(cands, key=os.path.getmtime)
+        warnings.append("duplicate folders for %s: %s -> using %s" % (p.get("post_key") or fallback_rel, sorted(os.path.basename(c) for c in cands), os.path.basename(pick)))
+        return pick
+    return cands[0]
+
+
+def find_by_key(folder, key, posting_date, warnings):
+    hits = [f for f in os.listdir(folder) if f.lower().endswith((".png", ".jpg", ".jpeg")) and key_of(f) == key]
+    if not hits:
+        return None
+    if len(hits) > 1:
+        same = [f for f in hits if f.startswith(posting_date or "\0")]
+        pick = same[0] if same else max(hits, key=lambda f: os.path.getmtime(os.path.join(folder, f)))
+        warnings.append("duplicate files for key %s in %s -> using %s" % (key, os.path.basename(folder), pick))
+        return os.path.join(folder, pick)
+    return os.path.join(folder, hits[0])
 
 
 def post_meta(p, folder_name):
@@ -192,11 +226,11 @@ def clean_title(t):
 def build_set(key, spec, rel_base, warnings):
     posts = []
     for p in spec["posts"]:
-        folder_name = p["folder"].split("/")[-1]
-        folder = os.path.join(SRC, rel_base, folder_name)
-        if not os.path.isdir(folder):
-            warnings.append("missing folder: %s/%s" % (rel_base, folder_name))
+        folder = resolve_folder(p, os.path.join(rel_base, p["folder"].split("/")[-1]), warnings)
+        if not folder:
+            warnings.append("missing folder: %s" % (p.get("post_key") or p["folder"]))
             continue
+        folder_name = os.path.basename(folder)
         meta = post_meta(p, folder_name)
         cap_path = os.path.join(folder, p.get("caption_file", "caption.txt").split("/")[-1])
         header, blocks = parse_caption(read(cap_path)) if os.path.exists(cap_path) else ({}, {})
@@ -206,16 +240,15 @@ def build_set(key, spec, rel_base, warnings):
         meta["note"] = header.get("Note", "")
         variants = {}
         for v in p.get("variations", ["A", "B", "C", "D"]):
-            names = [f for f in p.get("expected_files", []) if re.search(r"_%s(_card\d)?(\.\w+)?$" % v, f)]
-            names.sort()
+            keys = sorted(k for k in (p.get("file_keys") or [key_of(f) for f in p.get("expected_files", [])]) if re.search(r"_%s(_card\d)?$" % v, k))
             cards = []
-            for name in names:
-                src = find_image(folder, name)
+            for k in keys:
+                src = find_by_key(folder, k, p.get("posting_date"), warnings)
                 if not src:
-                    warnings.append("missing image: %s/%s/%s" % (rel_base, folder_name, name))
+                    warnings.append("missing image: %s/%s/%s" % (rel_base, folder_name, k))
                     continue
-                jpg, webp, w, h = convert_image(src, os.path.join(rel_base, folder_name), name)
-                cards.append({"src": jpg, "thumb": webp, "name": os.path.splitext(name)[0] + ".jpg"})
+                jpg, webp, w, h = convert_image(src, os.path.join(rel_base, folder_name), os.path.basename(src))
+                cards.append({"src": jpg, "thumb": webp, "name": os.path.splitext(os.path.basename(src))[0] + ".jpg"})
             caption = blocks.get(v) or blocks.get("*") or ""
             if not caption:
                 warnings.append("no caption for variation %s: %s/%s" % (v, rel_base, folder_name))
@@ -249,11 +282,11 @@ def build_explorers(roster, warnings):
         lang = "FR" if (x.get("language") or "").lower().startswith("fr") else "EN"
         posts = []
         for p in x.get("posts", []):
-            folder_name = p["folder"].split("/")[-1]
-            folder = os.path.join(base, folder_name)
-            if not os.path.isdir(folder):
-                warnings.append("missing folder: %s/%s" % (folder_rel, folder_name))
+            folder = resolve_folder(p, os.path.join(folder_rel, p["folder"].split("/")[-1]), warnings)
+            if not folder:
+                warnings.append("missing folder: %s" % (p.get("post_key") or p["folder"]))
                 continue
+            folder_name = os.path.basename(folder)
             meta = post_meta(p, folder_name)
             cap_path = os.path.join(folder, "caption.txt")
             header, blocks = parse_caption(read(cap_path)) if os.path.exists(cap_path) else ({}, {})
@@ -261,17 +294,17 @@ def build_explorers(roster, warnings):
             meta["chain"] = header.get("Chain", "")
             langs = {}
             for L in ("EN", "FR"):
-                names = sorted(f for f in p.get("expected_files", []) if re.search(r"_%s(\.\w+)?$" % L, f))
-                if not names:
+                keys = sorted(k for k in (p.get("file_keys") or [key_of(f) for f in p.get("expected_files", [])]) if re.search(r"_%s$" % L, k))
+                if not keys:
                     continue
                 cards = []
-                for name in names:
-                    src = find_image(folder, name)
+                for k in keys:
+                    src = find_by_key(folder, k, p.get("posting_date"), warnings)
                     if not src:
-                        warnings.append("missing image: %s/%s/%s" % (folder_rel, folder_name, name))
+                        warnings.append("missing image: %s/%s/%s" % (folder_rel, folder_name, k))
                         continue
-                    jpg, webp, w, h = convert_image(src, os.path.join(folder_rel, folder_name), name)
-                    cards.append({"src": jpg, "thumb": webp, "name": os.path.splitext(name)[0] + ".jpg"})
+                    jpg, webp, w, h = convert_image(src, os.path.join(folder_rel, folder_name), os.path.basename(src))
+                    cards.append({"src": jpg, "thumb": webp, "name": os.path.splitext(os.path.basename(src))[0] + ".jpg"})
                 caption = blocks.get(L) or (blocks.get("*") if L == "EN" else "") or ""
                 if not caption:
                     warnings.append("NO %s CAPTION: %s/%s" % (L, folder_rel, folder_name))
@@ -310,20 +343,20 @@ def build_speakers(spec_path, warnings):
             continue
         posts = []
         for p in s.get("posts", []):
-            folder = os.path.join(SRC, p["folder"])
-            if not os.path.isdir(folder):
+            folder = resolve_folder(p, p["folder"], warnings)
+            if not folder:
                 warnings.append("missing folder: %s" % p["folder"])
                 continue
             cap_path = os.path.join(folder, "caption.txt")
             header, blocks = parse_caption(read(cap_path)) if os.path.exists(cap_path) else ({}, {})
             cards = []
             for key in (p.get("expected_files") or p.get("file_keys") or []):
-                src = find_image(folder, key)
+                src = find_by_key(folder, key_of(key), None, warnings)
                 if not src:
                     warnings.append("missing image: %s/%s" % (p["folder"], key))
                     continue
-                jpg, webp, w, h = convert_image(src, p["folder"], os.path.splitext(key)[0] + ".png")
-                cards.append({"src": jpg, "thumb": webp, "name": os.path.splitext(key)[0] + ".jpg"})
+                jpg, webp, w, h = convert_image(src, p["folder"], os.path.basename(src))
+                cards.append({"src": jpg, "thumb": webp, "name": os.path.splitext(os.path.basename(src))[0] + ".jpg"})
             caption = blocks.get("EN") or blocks.get("*") or ""
             if not caption:
                 warnings.append("NO CAPTION: speaker %s" % s.get("name"))
