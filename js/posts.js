@@ -170,7 +170,7 @@
   function prefillSignature(a) {
     const nameEl = $('sigName'), emailEl = $('sigEmail'), note = $('sigAutoNote');
     // no signature tab (delegates) or no email (the test-mode buttons): nothing to fill in, leave the fields alone
-    if (!nameEl || !emailEl || a.kind === 'delegate' || a.kind === 'enactus' || !a.email) { if (note) note.hidden = true; return ''; }
+    if (!nameEl || !emailEl || a.kind === 'delegate' || !a.email) { if (note) note.hidden = true; return ''; }
     const prev = load(LS.sigAuto) || {};
     let changed = false;
     // Same person coming back: only empty or previously auto-filled fields are touched, so anything they typed by hand
@@ -368,14 +368,13 @@
   function renderSet(set) {
     const voice = currentVoice(set);
     const suggested = set.archetypes[(audience.seed || 0) % set.archetypes.length].key;
-    const isEnactus = set.key === 'enactus';
     const head = document.createElement('div');
     head.className = 'posts-head';
-    head.innerHTML = `<h2>${isEnactus ? 'Enactus posts' : audience.first ? `Hi ${esc(audience.first)}, here are your LinkedIn posts` : 'Your LinkedIn posts'}</h2>
-      <p class="lead">${set.posts.length} posts between ${fmtDay(set.posts[0].windowStart)} and ${fmtDay(set.posts[set.posts.length - 1].windowEnd)}, in posting order. Each comes in four voices. ${isEnactus ? 'Captions are starting points: say it in your own words and language.' : 'Each post unlocks on its date and closes when its window ends, so the campaign lands in order. Edit the caption until it sounds like you.'}</p>`;
+    head.innerHTML = `<h2>${audience.first ? `Hi ${esc(audience.first)}, here are your LinkedIn posts` : 'Your LinkedIn posts'}</h2>
+      <p class="lead">${set.posts.length} posts between ${fmtDay(set.posts[0].windowStart)} and ${fmtDay(set.posts[set.posts.length - 1].windowEnd)}, in posting order. Each comes in four voices. Each post unlocks on its date and closes when its window ends, so the campaign lands in order. Edit the caption until it sounds like you.</p>`;
     els.panel.appendChild(head);
     addTestUnlock(head);
-    if (!isEnactus) els.panel.appendChild(remindersCard(set.posts.concat(corePosts()), 'graduates'));
+    els.panel.appendChild(remindersCard(set.posts.concat(corePosts()), 'graduates'));
 
     const voiceBox = document.createElement('section');
     voiceBox.className = 'voice step';
@@ -558,7 +557,10 @@
   async function boot() {
     if (!els.gate || !els.panel) return;
     try {
-      const r = await fetch('data/posts.json', { cache: 'no-cache' });
+      // the data file carries the scripts' version stamp, so a new deploy never pairs new code with a cached (edge or browser) copy
+      const me = document.currentScript || [...document.scripts].find((x) => /posts\.js/.test(x.src));
+      const ver = (me && (me.src.split('?v=')[1] || '').split('&')[0]) || Date.now();
+      const r = await fetch('data/posts.json?v=' + ver, { cache: 'no-cache' });
       if (!r.ok) throw new Error(r.status);
       const served = Date.parse(r.headers.get('Date') || '');
       if (served) clockOffset = served - Date.now();
