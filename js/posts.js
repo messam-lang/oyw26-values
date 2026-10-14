@@ -17,7 +17,7 @@
     panel: $('postsPanel'), tabPosts: $('tab-posts'),
   };
   let DATA = null;
-  let audience = null;            // { kind: 'employee' | 'enactus' | 'explorer', explorerId?, seed }
+  let audience = null;            // { kind: 'employee' | 'explorer' | 'speaker' | 'delegate', explorerId? | speakerId? | delegateId?, seed }
   const edited = new Map();       // postId+variant -> true once the visitor edits a caption
   let overrides = load(LS.overrides) || {};
 
@@ -127,9 +127,9 @@
     els.gateChoice.hidden = MODE !== 'test';
     els.gateMode.hidden = MODE !== 'test';
     els.gateLead.textContent = MODE === 'test'
-      ? 'Pick who you are. African Explorers: enter your work email below to see your own posts.'
-      : 'Schneider Electric employees: use your work email. Enactus delegates: any email works.';
-    els.gateError.hidden = true;
+      ? 'Pick who you are, or enter the email an African Explorer, a speaker or a Foundation delegate registered with to see their posts.'
+      : 'Schneider Electric employees: use your work email. African Explorers, speakers and Foundation delegates: the email you registered with.';
+    els.gateError.hidden = true; els.gateError.textContent = BAD_EMAIL;
     OYW.setTabHidden && OYW.setTabHidden('signature', false);
   }
   // Schneider emails are firstname.lastname@…: the name welcomes the visitor and fills in their email signature.
@@ -146,6 +146,10 @@
     if (tokens.length < 2) return { first: '', name: '' };      // no clear first.last pattern: greet without a name
     return { first: capWord(tokens[0]), name: tokens.map(capWord).join(' ') };
   }
+  const BAD_EMAIL = "That doesn't look like an email address.";
+  // the manifest (14 Oct) asks for a message and a contact when nothing matches; the contact comes from the build (HELP_CONTACT)
+  const noMatchText = () => "We can't find that email. Schneider Electric colleagues: use your work email. African Explorers, speakers and Foundation delegates: use the email you registered with for OYW26." + (DATA.help ? ' Need help? ' + DATA.help : '');
+  function showGateError(text) { els.gateError.textContent = text; els.gateError.hidden = false; els.gateEmail.focus(); }
   async function classify(emailRaw) {
     const email = emailRaw.trim().toLowerCase();
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return null;
@@ -156,14 +160,17 @@
     if (speaker) return { kind: 'speaker', speakerId: speaker.id, seed, email, first: speaker.first, name: speaker.name };
     const explorer = DATA.explorers.find((x) => x.hash === hash);
     if (explorer) return Object.assign({ kind: 'explorer', explorerId: explorer.id, seed, email }, nameFrom(email, explorer));
+    // Foundation delegates sign in with a personal email (one of them has two); the roster holds the hashes only
+    const delegate = (DATA.delegates || []).find((d) => (d.hashes || []).includes(hash));
+    if (delegate) return { kind: 'delegate', delegateId: delegate.id, seed, email, first: delegate.first, name: delegate.name };
     if (isSchneider(domainOf(email))) return Object.assign({ kind: 'employee', seed, email }, nameFrom(email, null));
-    return { kind: 'enactus', seed };
+    return { kind: 'nomatch', seed };   // nothing matched: the gate asks for the registered email (no more "anyone else is Enactus")
   }
   // The gate's name and email go into the signature step, where they stay editable. Anything typed there by hand wins.
   function prefillSignature(a) {
     const nameEl = $('sigName'), emailEl = $('sigEmail'), note = $('sigAutoNote');
-    // no email (Enactus, or the test-mode buttons): no identity to fill in, leave the fields alone
-    if (!nameEl || !emailEl || a.kind === 'enactus' || !a.email) { if (note) note.hidden = true; return ''; }
+    // no signature tab (delegates) or no email (the test-mode buttons): nothing to fill in, leave the fields alone
+    if (!nameEl || !emailEl || a.kind === 'delegate' || a.kind === 'enactus' || !a.email) { if (note) note.hidden = true; return ''; }
     const prev = load(LS.sigAuto) || {};
     let changed = false;
     // Same person coming back: only empty or previously auto-filled fields are touched, so anything they typed by hand
@@ -192,12 +199,17 @@
   els.gateForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const a = await classify(els.gateEmail.value);
-    if (!a) { els.gateError.hidden = false; els.gateEmail.focus(); return; }
-    els.gateEmail.value = '';
+    if (!a) { showGateError(BAD_EMAIL); return; }
+    if (a.kind === 'nomatch') { showGateError(noMatchText()); return; }
+    els.gateEmail.value = ''; els.gateError.hidden = true;
     applyAudience(a, true);
   });
   els.gateChoice.addEventListener('click', (e) => {
     const b = e.target.closest('[data-kind]'); if (!b) return;
+    if (b.dataset.kind === 'delegate') {   // test mode: the first Foundation delegate stands in
+      const d = (DATA.delegates || [])[0]; if (!d) return;
+      applyAudience({ kind: 'delegate', delegateId: d.id, seed: 7, first: d.first, name: d.name }, true); return;
+    }
     applyAudience({ kind: b.dataset.kind, seed: Math.floor(Math.random() * 1e9) }, true);
   });
   els.whoChange.addEventListener('click', () => {
@@ -209,24 +221,27 @@
 
   function explorerOf(a) { return a && a.kind === 'explorer' ? DATA.explorers.find((x) => x.id === a.explorerId) : null; }
   function speakerOf(a) { return a && a.kind === 'speaker' ? (DATA.speakers || []).find((s) => s.id === a.speakerId) : null; }
+  function delegateOf(a) { return a && a.kind === 'delegate' ? (DATA.delegates || []).find((d) => d.id === a.delegateId) : null; }
+  const corePosts = () => (DATA.core && DATA.core.posts) || [];
   function applyAudience(a, announce) {
-    const ex = explorerOf(a), sp = speakerOf(a);
-    if ((a.kind === 'explorer' && !ex) || (a.kind === 'speaker' && !sp)) { renderGate(); return; }
+    const ex = explorerOf(a), sp = speakerOf(a), dl = delegateOf(a);
+    const known = a.kind === 'employee' || (a.kind === 'explorer' && ex) || (a.kind === 'speaker' && sp) || (a.kind === 'delegate' && dl);
+    if (!known) { renderGate(); return; }   // includes a saved 'enactus' choice from before 14 Oct: that set no longer exists
     audience = a; save(LS.audience, a);
     document.body.classList.remove('gated');
     els.gate.hidden = true; els.who.hidden = false;
-    const first = a.kind === 'explorer' ? (a.first || ex.first) : a.kind === 'speaker' ? sp.first : (a.first || '');
-    const role = a.kind === 'explorer' ? 'African Explorer' : a.kind === 'speaker' ? 'Speaker' : a.kind === 'enactus' ? 'Enactus delegate' : 'Schneider Electric employee';
-    const shown = a.kind === 'explorer' ? (a.name || ex.name) : a.kind === 'speaker' ? sp.name : (a.name || '');
+    const first = ex ? (a.first || ex.first) : sp ? sp.first : dl ? dl.first : (a.first || '');
+    const role = ex ? 'African Explorer' : sp ? 'Speaker' : dl ? 'Schneider Electric Foundation delegate' : 'Schneider Electric employee';
+    const shown = ex ? (a.name || ex.name) : sp ? sp.name : dl ? dl.name : (a.name || '');
     els.whoLine.innerHTML = shown ? `Welcome, <b>${esc(shown)}</b> · ${role}` : `Viewing as <b>${role}</b>`;
     const filled = prefillSignature(a);
-    if (els.kicker) els.kicker.textContent = a.kind === 'enactus' ? 'Enactus toolkit' : 'Employee toolkit';
-    if (OYW.setTabHidden) OYW.setTabHidden('signature', a.kind === 'enactus');
-    if (els.tabPosts) els.tabPosts.lastChild.textContent = a.kind === 'explorer' ? 'Your posts' : a.kind === 'speaker' ? 'Speakers' : a.kind === 'enactus' ? 'Enactus posts' : 'Posts';
+    if (els.kicker) els.kicker.textContent = dl ? 'Delegate toolkit' : 'Employee toolkit';
+    if (OYW.setTabHidden) OYW.setTabHidden('signature', !!dl);   // delegates are sponsored students, not employees: no email signature
+    if (els.tabPosts) els.tabPosts.lastChild.textContent = ex || dl ? 'Your posts' : sp ? 'Speakers' : 'Posts';
     renderPosts();
     if (announce) {
-      toast(a.kind === 'enactus' ? 'Welcome. The Enactus posts are in the Posts tab.'
-        : `Welcome${first ? ', ' + first : ''}. ${a.kind === 'speaker' ? 'Your Meet the Speakers post is in the Speakers tab' : 'Your posts are in the Posts tab'}${filled ? `, and your ${filled} ${filled === 'name and email' ? 'are' : 'is'} already in the Email signature tab` : ''}.`, 4800);
+      const where = sp ? 'Your Meet the Speakers post and the campaign posts are in the Speakers tab' : dl ? 'Your six posts and the campaign posts are in the Your posts tab' : 'Your posts are in the Posts tab';
+      toast(`Welcome${first ? ', ' + first : ''}. ${where}${filled ? `, and your ${filled} ${filled === 'name and email' ? 'are' : 'is'} already in the Email signature tab` : ''}.`, 4800);
       if (MODE !== 'live' && OYW.showTab) OYW.showTab('posts', true);   // live: stay on the first tab
     }
   }
@@ -240,8 +255,100 @@
   function renderPosts() {
     if (!els.panel || !audience) return;
     els.panel.innerHTML = '';
-    const ex = explorerOf(audience), sp = speakerOf(audience);
-    if (sp) renderSpeaker(sp); else if (ex) renderExplorer(ex); else renderSet(audience.kind === 'enactus' ? DATA.sets.enactus : DATA.sets.graduates);
+    const ex = explorerOf(audience), sp = speakerOf(audience), dl = delegateOf(audience);
+    if (sp) renderSpeaker(sp); else if (ex) renderExplorer(ex); else if (dl) renderDelegate(dl); else renderSet(DATA.sets.graduates);
+    renderCore();   // the four campaign core posts go to everyone who signs in
+  }
+
+  // ---------------------------------------------------------------- campaign core posts (everyone)
+  function renderCore() {
+    const posts = corePosts();
+    if (!posts.length) return;
+    const sec = document.createElement('section');
+    sec.className = 'post-list core';
+    sec.innerHTML = `<h2 class="list-title"><span class="num">+</span> Campaign posts, for everyone</h2>
+      <p class="fine top">Four posts every signed-in person shares, ${fmtDay(posts[0].windowStart)} to ${fmtDay(posts[posts.length - 1].windowEnd)}, one a day in this order. The captions are final: post them as they are.</p>`;
+    posts.forEach((p, i) => sec.appendChild(postCard({ post: p, index: i, cards: p.langs.EN.cards, caption: p.langs.EN.caption, variantKey: 'EN', subline: 'Campaign post · everyone', alternatives: [] })));
+    els.panel.appendChild(sec);
+  }
+
+  // ---------------------------------------------------------------- Foundation delegates
+  function renderDelegate(dl) {
+    const head = document.createElement('div');
+    head.className = 'posts-head';
+    head.innerHTML = `<h2>Hi ${esc(dl.first)}, here are your posts</h2>
+      <p class="lead">${dl.posts.length} posts as a Schneider Electric Foundation delegate${dl.institution ? ', ' + esc(dl.institution) : ''}: your announcement, one post on each Summit day and a reflection after. The announcement is ready to post. The four Live cards take your photo of the day and the Reflection card takes one line from you; both are finished right here on your device, and nothing is uploaded. Captions are starters: replace everything in [square brackets] with your own words.</p>`;
+    els.panel.appendChild(head);
+    els.panel.appendChild(remindersCard(dl.posts.concat(corePosts()), dl.id));
+    const list = document.createElement('section');
+    list.className = 'post-list';
+    list.innerHTML = `<h2 class="list-title"><span class="num">1</span> Your posts, in order</h2>`;
+    dl.posts.forEach((p, i) => list.appendChild(p.editable ? editorCard(p, i) : postCard({ post: p, index: i, cards: p.langs.EN.cards, caption: p.langs.EN.caption, variantKey: 'EN', subline: 'Ready to post', alternatives: [] })));
+    els.panel.appendChild(list);
+  }
+  function saveBlob(blob, name) {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a'); a.href = url; a.download = name; a.rel = 'noopener';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 5000);
+  }
+  // A base card the delegate finishes on the device: Live takes a photo behind the transparent oval, Reflection takes one line of
+  // text in a fixed box (js/editor.js, built from the client's editable_templates spec). Download and Share export the flattened card.
+  function editorCard(p, index) {
+    const st = statusOf(p);
+    const isLive = p.editable === 'live';
+    const T = (DATA.templates || {})[p.editable] || {};
+    const art = document.createElement('article');
+    art.className = 'post editable st-' + st.k;
+    art.dataset.id = p.id;
+    art.innerHTML = `
+      <div class="post-visual editor"><div class="post-editor"></div></div>
+      <div class="post-main">
+        <div class="post-chips"><span class="chip">Post ${index + 1}${p.date ? ' · ' + fmtDay(p.date) : ''}</span><span class="chip st">${esc(st.label)}</span></div>
+        <h3 class="post-title">${esc(p.title)}</h3>
+        <p class="post-sub">${isLive ? 'Your photo of the day goes in the frame.' : 'One line from you goes on the card.'} Finished on your device.</p>
+        ${p.guide ? `<details class="alt guide"><summary>How to post</summary><div class="guide-text">${esc(p.guide).replace(/\n/g, '<br>')}</div></details>` : ''}
+        <p class="post-label">Caption starter <small>· replace everything in [square brackets] with your own words</small></p>
+        <textarea class="post-caption" rows="8" spellcheck="false" aria-label="Caption for ${esc(p.title)}">${esc(p.starter)}</textarea>
+        <div class="row wrap post-actions">
+          <a class="btn primary act-li" href="${composeUrl(p.starter)}" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 9.5v8M6.5 6.4v.1M10.5 17.5v-8m0 3.2c0-2 1.3-3.4 3.2-3.4s3.3 1.4 3.3 3.6v4.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Post on LinkedIn</a>
+          <button class="btn ghost act-dl" type="button">Download image</button>
+          <button class="btn ghost small act-copy" type="button">Copy caption</button>
+          <button class="btn ghost small act-share" type="button" ${canShareFiles ? '' : 'hidden'}>Share with image…</button>
+        </div>
+        <p class="fine"><b>Download image</b> saves your finished card (1080 × 1350). <b>Post on LinkedIn</b> copies the caption and opens LinkedIn with it in the box. Add the image, ${p.tag ? 'tag ' + esc(p.tag.replace(/\s{2,}/g, ' and ')) + ', ' : ''}check the text, post.${canShareFiles ? ' On a phone, <b>Share with image</b> sends the card straight to the LinkedIn app.' : ''}</p>
+      </div>`;
+    const host = art.querySelector('.post-editor');
+    let ed = null;
+    if (window.OYWEditor) {
+      const opts = Object.assign({}, T, { base: p.base.src + '?v=' + DATA.built });
+      ed = isLive ? OYWEditor.photo(host, opts) : OYWEditor.text(host, opts);
+    } else {
+      host.innerHTML = '<p class="fine">The card editor did not load. Refresh the page and try again.</p>';
+    }
+    const ready = () => !!ed && (isLive ? ed.hasPhoto() : ed.isValid());
+    const notReady = () => toast(isLive ? 'Add your photo first.' : 'Type your line on the card first.');
+    const ta = art.querySelector('.post-caption'), li = art.querySelector('.act-li');
+    ta.addEventListener('input', () => { autosize(ta); li.href = composeUrl(ta.value); });
+    requestAnimationFrame(() => autosize(ta));
+    li.addEventListener('click', () => onPostClick(ta.value));
+    art.querySelector('.act-dl').addEventListener('click', async () => {
+      if (!ready()) return notReady();
+      saveBlob(await ed.toBlob('image/png'), p.base.name); toast('Downloading your card.');
+    });
+    art.querySelector('.act-copy').addEventListener('click', async (e) => {
+      const ok = await copyText(ta.value); const b = e.currentTarget; const old = b.textContent;
+      b.textContent = ok ? 'Copied' : 'Copy failed'; setTimeout(() => { b.textContent = old; }, 1600);
+    });
+    art.querySelector('.act-share').addEventListener('click', async () => {
+      if (!ready()) return notReady();
+      try {
+        const blob = await ed.toBlob('image/png');
+        await copyText(ta.value);
+        await navigator.share({ files: [new File([blob], p.base.name, { type: 'image/png' })], text: ta.value });
+      } catch (e) { if (!e || e.name !== 'AbortError') toast('Sharing is not available here. Download the image and use Post on LinkedIn.'); }
+    });
+    return art;
   }
 
   function renderSpeaker(sp) {
@@ -268,7 +375,7 @@
       <p class="lead">${set.posts.length} posts between ${fmtDay(set.posts[0].windowStart)} and ${fmtDay(set.posts[set.posts.length - 1].windowEnd)}, in posting order. Each comes in four voices. ${isEnactus ? 'Captions are starting points: say it in your own words and language.' : 'Each post unlocks on its date and closes when its window ends, so the campaign lands in order. Edit the caption until it sounds like you.'}</p>`;
     els.panel.appendChild(head);
     addTestUnlock(head);
-    if (!isEnactus) els.panel.appendChild(remindersCard(set.posts, 'graduates'));
+    if (!isEnactus) els.panel.appendChild(remindersCard(set.posts.concat(corePosts()), 'graduates'));
 
     const voiceBox = document.createElement('section');
     voiceBox.className = 'voice step';
@@ -318,7 +425,7 @@
     head.querySelectorAll('[data-lang]').forEach((b) => b.addEventListener('click', () => { save(LS.lang, b.dataset.lang); renderPosts(); }));
     els.panel.appendChild(head);
     addTestUnlock(head);
-    els.panel.appendChild(remindersCard(ex.posts, ex.id));
+    els.panel.appendChild(remindersCard(ex.posts.concat(corePosts()), ex.id));
 
     const list = document.createElement('section');
     list.className = 'post-list';
@@ -463,7 +570,7 @@
       return;
     }
     const saved = load(LS.audience);
-    const savedOk = saved && saved.kind && (saved.kind === 'explorer' ? !!explorerOf(saved) : saved.kind === 'speaker' ? !!speakerOf(saved) : true);
+    const savedOk = saved && saved.kind && (saved.kind === 'explorer' ? !!explorerOf(saved) : saved.kind === 'speaker' ? !!speakerOf(saved) : saved.kind === 'delegate' ? !!delegateOf(saved) : saved.kind === 'employee');
     if (savedOk) applyAudience(saved, false);
     else renderGate();
     OYW.posts = { data: DATA, get audience() { return audience; }, applyAudience, classify, renderGate, mode: MODE, sha256js };

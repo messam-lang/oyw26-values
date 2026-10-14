@@ -15,7 +15,10 @@ A static, browser-only web app. A gate asks who the visitor is, then four tabs:
 4. **Posts** – the scheduled LinkedIn campaign (11 Oct to 27 Nov 2026) from the client's
    "Toolkit Deliverables" folder: visual, caption, download, **Post on LinkedIn** (copies the
    caption and opens LinkedIn's composer with it prefilled; no LinkedIn API), and the phone share
-   sheet with the image attached. What shows depends on the gate (below).
+   sheet with the image attached. What shows depends on the gate (below). Since 14 Oct 2026 the
+   Schneider Electric Foundation delegates also finish two kinds of card here: the Live cards take
+   their photo of the day behind a transparent oval, the Reflection card takes one line of text in
+   a fixed box (`js/editor.js`, built to the client's `editable_templates` spec).
 
 (The earlier generic Captions tab was removed on 4 Oct 2026: the Posts tab covers it.)
 
@@ -26,11 +29,15 @@ No photo or detail ever leaves the device. No backend.
 `js/toolkit.js`, constant `TEST_MODE`:
 
 - `TEST_MODE = true` (testing): two buttons, *I work at Schneider Electric* and
-  *I'm with Enactus*, plus the email field for African Explorers. Deep links such as `#posts`
-  work and the gate jumps to the Posts tab.
-- `TEST_MODE = false` (live, current since 4 Oct 2026): the email decides. A Schneider domain (`se.com`,
-  `schneider-electric.com`, and their subdomains) makes a standard employee; if the hashed email
-  matches an Explorer, that person sees only their own folder; any other domain is Enactus.
+  *I'm a Foundation delegate (sample)* (the first delegate in the roster), plus the email field for
+  everyone else. Deep links such as `#posts` work and the gate jumps to the Posts tab.
+- `TEST_MODE = false` (live, current since 4 Oct 2026): the email decides, in the client's order:
+  a speaker (speakers_manifest), an African Explorer (hashed work email), a Foundation delegate
+  (hashed personal email; one delegate has two), then any other Schneider domain (`se.com`,
+  `schneider-electric.com`, and their subdomains) is a standard employee. Anything else gets a
+  message asking for the email they registered with, plus the help contact if one is set
+  (`HELP_CONTACT` in the build script; the client's manifest asks for one but names none).
+  The "anyone else is Enactus" rule and the Enactus set went with the 14 Oct 2026 manifest.
   Every visit starts on the first tab (Profile frame), whatever link brought the visitor.
 - On localhost only, `?gate=live` or `?gate=test` overrides it for one visit. The public site ignores it.
 
@@ -39,18 +46,22 @@ the hashed roster; it is never sent anywhere. The choice is remembered in localS
 Schneider emails, with the name and email, see below); *Change* in the welcome bar resets it.
 
 Audience rules: employees get the First-Year-Graduates set (5 posts, voices A–D); Explorers get
-their personal posts (EN, plus FR for the five French speakers); Enactus gets the Enactus set
-(4 posts, voices A–D) and no signature tab. Speakers (eight Schneider leaders listed in the
-client's `speakers_manifest.json`, checked before the main manifest) get a "Speakers" tab with
-their single, undated "Meet the Speakers" post and nothing from the other sets; it is never
-locked.
+their personal posts (EN, plus FR for the five French speakers); Speakers (eight Schneider leaders
+listed in the client's `speakers_manifest.json`, checked before the main manifest) get a "Speakers"
+tab with their single, undated "Meet the Speakers" post; Foundation delegates (ten sponsored
+students, `schneider_electric_foundation.delegates`) get their six posts and no signature tab:
+a finished Announcement (19 Oct), four Live cards (3 to 6 Nov, "on the day") and a Reflection card
+(from 7 Nov). Everyone who signs in also sees the four **campaign core posts** (19 to 23 Oct) at the
+bottom of the Posts tab. Captions for the Live and Reflection cards are starters with blanks in
+square brackets, shown as delivered and never pre-filled.
 
-Posting windows are enforced for employees and Explorers: a post opens on its planned date
+Posting windows are enforced for employees and Explorers (including the core posts): a post opens on its planned date
 (`posting_date`, which spaces people out inside a shared window) and closes at the end of its
 window. Outside that range the Post on LinkedIn, Download, Copy and Share actions are disabled and
 the caption is read-only (the visual stays visible with a lock badge). "Today" is taken from the server's `Date` header on the data
 file, so a wrong device clock does not open a post early. Enactus posts are never locked. In test
-mode the Posts tab shows an "Unlock everything for testing" toggle (per browser session). Instead of a shared download counter (which needs a
+mode the Posts tab shows an "Unlock everything for testing" toggle (per browser session). Speakers and
+Foundation delegates are never locked. Instead of a shared download counter (which needs a
 server) the suggested voice is derived from the email hash, so it spreads evenly across people
 and stays stable for each person. Anyone can switch voice, globally or per post.
 
@@ -71,6 +82,19 @@ The Posts tab has an *Add posting days to my calendar* button: an `.ics` built i
 one 09:00 event on the morning each remaining post opens, each with a link back to the toolkit.
 No server. (An email-reminder backend was drafted and dropped on 4 Oct 2026.)
 
+## The delegates' card editors (`js/editor.js`)
+
+`OYWEditor.photo(container, opts)` draws the delegate's photo behind the Live base card (the base
+PNG's transparent oval does the masking; cover fit, drag, zoom 100–300%, EXIF orientation honoured,
+a warning under 1080 px on the short side, #04362A behind an empty slot) and
+`OYWEditor.text(container, opts)` sets one paragraph on the Reflection card in Poppins SemiBold
+60 px, letter spacing −2.4 px, left aligned in the client's box, wrapping on spaces only, refusing
+anything past 6 lines or 130 characters with a live counter (never shrinks, never overflows). Both
+export a flattened 1080 × 1350 PNG that Download and the phone share sheet use. The numbers come
+from `editable_templates` in the manifest and travel in `data/posts.json` as `templates`. The
+Live base cards are stored as WebP with their alpha (about 50 KB each); the client's
+`_editor-reference/` folder is for checking the editor and is not published.
+
 ## Visual shell
 
 Brick bands along the top and bottom edges (`assets/band-top.webp`, `assets/band-bottom.webp`,
@@ -81,7 +105,9 @@ bright green on the right, after the designer's example.
 ## Updating the posts
 
 The source of truth is the client's Drive folder *Toolkit Deliverables* (manifest.json,
-speakers_manifest.json, README, one folder per post with caption.txt and the PNGs). It is
+speakers_manifest.json, README, one folder per post with caption.txt and the PNGs). The folder is
+link-shared, so the fastest mirror is: list ids with gdown (`download_folder(url, skip_download=True)`),
+then `curl -L "https://drive.google.com/uc?export=download&confirm=t&id=<id>"` per file in parallel. It is
 mirrored, **not committed**, into `source/posts/` because the manifests and captions carry work
 emails. Earlier snapshots are kept beside it as `source/posts-<date>/` (also ignored).
 
@@ -104,9 +130,11 @@ and prints a warning; tidy the Drive folder rather than relying on that. Speaker
 
 The 10th Explorer (`Explorer-10-TBC`) was removed from the manifest on 11 Oct 2026; the roster is
 final at nine. Any Explorer row with a `TBC` email is still skipped if one ever reappears.
-Captions are parsed from the `=== VARIATION A … ===` / `=== CAPTION (EN|FR) … ===` blocks; posting
-windows come from the manifest's `window` strings (`d–d Mon`, `w/c d Mon` or a single `d Mon`,
-table at the top of the build script).
+Captions are parsed from the `=== VARIATION A … ===` / `=== CAPTION (EN|FR) … ===` blocks, plus
+`=== CAPTION ===` (final, single) and `=== CAPTION GUIDE ===` / `=== CAPTION STARTER ===` (the
+delegates' editable posts); posting windows come from the manifest's `window` strings (`d–d Mon`,
+`w/c d Mon`, a single `d Mon`, `d Mon, on the day`, or `From d Mon` which runs to 27 Nov; table at
+the top of the build script).
 
 ## Structure
 
@@ -116,6 +144,8 @@ css/style.css         styling (Poppins, brand palette from Colors.svg)
 js/app.js             profile frame: compositing, gestures, detection, export
 js/signature.js       email signature: layout, sprite animation, GIF/PNG export
 js/toolkit.js         tabs, LinkedIn banners, captions
+js/posts.js           gate, audiences, ready-made posts, campaign core posts, calendar reminders
+js/editor.js          the delegates' Live photo card and Reflection text card editors
 assets/frames/        shared frame background (transparent oval window) + placement config
 assets/icons/         <value>-frame.svg (mint icon in frame coordinates), <value>.svg (gradient legend icon)
 assets/fonts/         Poppins woff2 (self-hosted)

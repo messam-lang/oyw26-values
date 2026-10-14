@@ -495,3 +495,20 @@ a.btn[aria-disabled="true"] { opacity: 0.45; cursor: not-allowed; }
 a.btn[aria-disabled="true"]:active { transform: none; }
 .post-caption[readonly] { opacity: 0.8; }
 .test-unlock { margin: -6px 0 16px; font-size: 12.5px; color: var(--bright); font-weight: 600; }
+
+/* ---- 14 Oct: Foundation delegates' editable cards, campaign core posts, no-match gate ---- */
+.post-visual.editor { display: block; }
+.post-editor { --oywe-accent: var(--bright); --oywe-ink: var(--mint); --oywe-muted: rgba(231, 255, 217, 0.7); --oywe-line: var(--line-strong); --oywe-bg: var(--deep); }
+.post-editor canvas { display: block; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35); background: var(--deep); }
+.post-editor .oywe-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 38px; padding: 0 14px; border-radius: 999px; font: inherit; font-size: 13.5px; font-weight: 600; cursor: pointer; background: rgba(231, 255, 217, 0.04); color: var(--mint); border: 1px solid var(--line-strong); }
+.post-editor .oywe-btn:hover { background: rgba(231, 255, 217, 0.10); }
+.post-editor .oywe-btn:focus-visible { outline: 3px solid rgba(94, 255, 89, 0.55); outline-offset: 2px; }
+.post-editor input[type="range"] { accent-color: var(--bright); }
+.post-editor textarea, .post-editor input[type="text"] { font: inherit; }
+.post-label { margin: 0; font-size: 13px; font-weight: 600; color: var(--mint); }
+.post-label small { font-weight: 400; color: rgba(231, 255, 217, 0.7); }
+.guide-text { padding: 0 0 12px; font-size: 13.5px; line-height: 1.55; color: rgba(231, 255, 217, 0.85); }
+.post-list.core { margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--line); }
+.post-list.core .fine.top { margin: -6px 0 14px; max-width: 70ch; }
+.gate-error { max-width: 60ch; line-height: 1.45; }
+

@@ -16,7 +16,13 @@ hashes what the visitor types the same way before comparing. The hash is what th
 Caption files have a "Key: value" header, then one or more blocks opened by a line starting with "===":
   === VARIATION A · Archetype 1 — The Builder — file: X.png ===      (Enactus and graduates: one block per variation)
   === CAPTION (EN) — file: X_EN.png ===  /  === CAPTION (FR) — ... === (Explorers: one block per language)
+  === CAPTION ===                                                     (core posts, Foundation announcements: final)
+  === CAPTION GUIDE === / === CAPTION STARTER ===                     (Foundation Live and Reflection: the delegate completes it)
 A file with no "===" blocks is treated as one caption shared by every variation.
+
+14 Oct manifest: the Enactus set is gone; Schneider Electric Foundation delegates (personal emails, hashed) get six posts
+each, four of which are base cards the delegate finishes in the toolkit (editable_templates); four campaign core posts go
+to everyone. Base cards keep their alpha (WebP) so the page can composite them.
 """
 import hashlib
 import json
@@ -35,6 +41,9 @@ OUT_IMG = os.path.join(_OUT, "assets", "posts")
 OUT_DATA = os.path.join(_OUT, "data")
 SALT = "oyw26-powered-by-each-other"
 SCHNEIDER_DOMAINS = ["se.com", "schneider-electric.com"]
+CAMPAIGN_END = "2026-11-27"            # "From 7 Nov" windows run to the end of the campaign
+# Shown to an email that matches nothing (the manifest asks for "a contact for help" but names none; fill in when the client does)
+HELP_CONTACT = ""
 JPG_QUALITY = 90
 THUMB_W = 720
 THUMB_QUALITY = 82
@@ -92,7 +101,10 @@ def window_dates(win, date):
         mo = MONTHS[m.group(2)]
         d = int(m.group(1))
         return ("2026-%02d-%02d" % (mo, d), "2026-%02d-%02d" % (mo, d + 4))
-    m = re.fullmatch(r"(\d{1,2})\s+(Oct|Nov|Sep|Dec)", win)          # a single day, e.g. "30 Oct"
+    m = re.search(r"^From\s+(\d{1,2})\s+(Oct|Nov|Sep|Dec)", win)    # open-ended, e.g. "From 7 Nov"
+    if m:
+        return ("2026-%02d-%02d" % (MONTHS[m.group(2)], int(m.group(1))), CAMPAIGN_END)
+    m = re.fullmatch(r"0?(\d{1,2})\s+(Oct|Nov|Sep|Dec)(,?\s*on the day)?", win)   # a single day, e.g. "30 Oct", "3 Nov, on the day"
     if m:
         day = "2026-%02d-%02d" % (MONTHS[m.group(2)], int(m.group(1)))
         return (day, day)
@@ -114,6 +126,10 @@ def parse_caption(text):
             m = re.search(r"VARIATION\s+([A-D])\b", head, re.I)
             m2 = re.search(r"\((EN|FR)\)", head, re.I)
             cur = m.group(1).upper() if m else (m2.group(1).upper() if m2 else head)
+            hk = head.upper().strip()
+            if hk == "CAPTION": cur = "*"
+            elif hk.startswith("CAPTION GUIDE"): cur = "GUIDE"
+            elif hk.startswith("CAPTION STARTER"): cur = "STARTER"
             body = []
             in_header = False
             continue
@@ -382,6 +398,161 @@ def build_speakers(spec_path, warnings):
     return out
 
 
+BASE_EMPTY = (4, 54, 42)   # #04362A, the fill behind an empty photo slot (editable_templates.live.photo_slot.empty_state)
+
+
+def convert_base(src_path, rel_dir, basename, kind):
+    """A base card the delegate finishes in the page. Live keeps its alpha (WebP, lossless alpha) so the transparent
+    oval masks the photo; Reflection is opaque (JPG). Both get a 720px preview, the Live one composited over the empty fill."""
+    out_dir = os.path.join(OUT_IMG, rel_dir)
+    os.makedirs(out_dir, exist_ok=True)
+    stem = os.path.splitext(basename)[0]
+    im = Image.open(src_path)
+    w, h = im.size
+    if kind == "live":
+        full = os.path.join(out_dir, stem + ".webp")
+        if not (os.path.exists(full) and os.path.getmtime(full) >= os.path.getmtime(src_path)):
+            im.convert("RGBA").save(full, quality=92, alpha_quality=100, method=6)
+        flat = Image.new("RGB", im.size, BASE_EMPTY)
+        flat.paste(im.convert("RGBA"), mask=im.convert("RGBA").getchannel("A"))
+    else:
+        full = os.path.join(out_dir, stem + ".jpg")
+        flat = im.convert("RGB")
+        if not (os.path.exists(full) and os.path.getmtime(full) >= os.path.getmtime(src_path)):
+            flat.save(full, quality=92, optimize=True, progressive=True)
+    thumb = os.path.join(out_dir, stem + "-thumb.webp")
+    if not (os.path.exists(thumb) and os.path.getmtime(thumb) >= os.path.getmtime(src_path)):
+        th = flat.copy()
+        th.thumbnail((THUMB_W, THUMB_W * 2), Image.LANCZOS)
+        th.save(thumb, quality=THUMB_QUALITY, method=5)
+    rel = lambda p: os.path.relpath(p, _OUT).replace(os.sep, "/")
+    return rel(full), rel(thumb), w, h
+
+
+def single_card_post(p, folder, rel_dir, warnings, label):
+    """One finished visual + one final caption (campaign core posts, Foundation announcements)."""
+    folder_name = os.path.basename(folder)
+    meta = post_meta(p, folder_name)
+    cap_path = os.path.join(folder, "caption.txt")
+    header, blocks = parse_caption(read(cap_path)) if os.path.exists(cap_path) else ({}, {})
+    if not os.path.exists(cap_path):
+        warnings.append("missing caption: %s" % label)
+    meta["tag"] = header.get("Tag", "")
+    meta["note"] = p.get("note", "") or ""
+    cards = []
+    for k in (p.get("file_keys") or [key_of(f) for f in p.get("expected_files", [])]):
+        src = find_by_key(folder, k, p.get("posting_date"), warnings)
+        if not src:
+            warnings.append("missing image: %s/%s" % (label, k))
+            continue
+        jpg, webp, w, h = convert_image(src, os.path.join(rel_dir, folder_name), os.path.basename(src))
+        cards.append({"src": jpg, "thumb": webp, "name": os.path.splitext(os.path.basename(src))[0] + ".jpg"})
+    caption = blocks.get("*") or blocks.get("EN") or ""
+    if not caption:
+        warnings.append("NO CAPTION: %s" % label)
+    meta["langs"] = {"EN": {"cards": cards, "caption": caption}}
+    return meta
+
+
+def build_core(spec, warnings):
+    """campaign_core_posts: four finished posts every signed-in audience sees."""
+    out = []
+    for p in spec.get("posts", []):
+        folder = resolve_folder(p, p["folder"], warnings)
+        if not folder:
+            warnings.append("missing folder: %s" % (p.get("post_key") or p["folder"]))
+            continue
+        out.append(single_card_post(p, folder, "Schneider/Campaign-Core-Posts", warnings, p.get("post_key") or p["folder"]))
+    out.sort(key=lambda q: q["date"])
+    return {"key": "core", "note": spec.get("audience", ""), "posts": out}
+
+
+def build_delegates(spec, warnings):
+    """schneider_electric_foundation.delegates: ten sponsored students, personal emails (one may have two), six posts each.
+    Announcement is finished; Live-Day1..4 and Reflection are base cards (editable 'live' / 'reflection') with a guide
+    and a starter caption the delegate completes in their own words (never pre-filled)."""
+    out = []
+    for d in spec.get("delegates", []):
+        emails = [e.strip() for e in (d.get("emails") or []) if e and "@" in e]
+        if not emails:
+            warnings.append("delegate skipped (no email): %s" % d.get("name"))
+            continue
+        folder_rel = d["folder"]
+        if not os.path.isdir(os.path.join(SRC, folder_rel)):
+            warnings.append("missing delegate folder: %s" % folder_rel)
+            continue
+        posts = []
+        for p in d.get("posts", []):
+            folder = resolve_folder(p, p["folder"], warnings)
+            if not folder:
+                warnings.append("missing folder: %s" % (p.get("post_key") or p["folder"]))
+                continue
+            label = p.get("post_key") or p["folder"]
+            kind = (p.get("editable") or "").lower() or None
+            if not kind:
+                posts.append(single_card_post(p, folder, folder_rel, warnings, label))
+                continue
+            folder_name = os.path.basename(folder)
+            meta = post_meta(p, folder_name)
+            cap_path = os.path.join(folder, "caption.txt")
+            header, blocks = parse_caption(read(cap_path)) if os.path.exists(cap_path) else ({}, {})
+            meta["tag"] = header.get("Tag", "")
+            meta["editable"] = kind
+            keys = p.get("file_keys") or [key_of(f) for f in p.get("expected_files", [])]
+            src = find_by_key(folder, keys[0], p.get("posting_date"), warnings) if keys else None
+            if not src:
+                warnings.append("missing base card: %s" % label)
+                continue
+            full, thumb, w, h = convert_base(src, os.path.join(folder_rel, folder_name), os.path.basename(src), kind)
+            meta["base"] = {"src": full, "thumb": thumb, "name": os.path.splitext(os.path.basename(src))[0] + ".png"}
+            meta["guide"] = blocks.get("GUIDE", "")
+            meta["starter"] = blocks.get("STARTER", "")
+            if not meta["starter"]:
+                warnings.append("NO CAPTION STARTER: %s" % label)
+            posts.append(meta)
+        posts.sort(key=lambda q: q["date"])
+        name = d.get("name", "")
+        out.append({
+            "id": folder_rel.split("/")[-1].lower(),
+            "name": name,
+            "first": name.split()[0] if name else "",
+            "hashes": [sha(e) for e in emails],
+            "institution": d.get("institution", ""),
+            "field": d.get("field", ""),
+            "posts": posts,
+        })
+    return out
+
+
+def build_templates(et):
+    """editable_templates -> the numbers the page editors need (pixels on the 1080x1350 card)."""
+    if not et:
+        return {}
+    live, refl = et.get("live", {}), et.get("reflection", {})
+    slot, box, typ, lim = live.get("photo_slot", {}), refl.get("text_box", {}), refl.get("type", {}), refl.get("limits", {})
+    num = lambda v, d=0: float(re.match(r"-?\d+(\.\d+)?", str(v)).group(0)) if re.match(r"-?\d+(\.\d+)?", str(v)) else d
+    return {
+        "live": {
+            "width": 1080, "height": 1350,
+            "slot": {"x": num(slot.get("x"), 139), "y": num(slot.get("y"), 358), "w": num(slot.get("width"), 805), "h": num(slot.get("height"), 842)},
+            "empty": "#04362A", "minUpload": 1080, "zoom": [1, 3],
+            # the manifest's face_tip is written to the builder ("Show the user a soft guide: keep the face …"); keep the part the user reads
+            "faceTip": re.sub(r"^\s*show the user a soft guide:\s*", "", slot.get("face_tip", ""), flags=re.I).strip().capitalize() if slot.get("face_tip") else "",
+            "days": live.get("days", []),
+        },
+        "reflection": {
+            "width": 1080, "height": 1350,
+            "box": {"x": num(box.get("x"), 149.6), "y": num(box.get("y"), 558), "w": num(box.get("width"), 780), "h": num(box.get("height"), 488)},
+            "firstBaselineY": num(box.get("first_baseline_y"), 601), "lineHeight": num(box.get("line_height"), 73.3),
+            "font": {"family": typ.get("font_family", "Poppins"), "weight": int(typ.get("font_weight", 600)), "size": num(typ.get("size"), 60),
+                     "letterSpacing": -2.4, "color": typ.get("color", "#E9FFDB")},
+            "limits": {"maxLines": int(lim.get("max_lines", 6)), "maxChars": int(lim.get("max_characters", 130)), "recommended": int(lim.get("recommended_characters", 120))},
+            "prompt": refl.get("prompt_shown_to_user", ""),
+            "inputRules": refl.get("input_rules", []),
+        },
+    }
+
+
 def main():
     man_path = os.path.join(SRC, "manifest.json")
     if not os.path.exists(man_path):
@@ -396,18 +567,24 @@ def main():
         "summit": man.get("summit", ""),
         "salt": SALT,
         "schneiderDomains": SCHNEIDER_DOMAINS,
+        "help": HELP_CONTACT,
         "sets": {
-            "enactus": build_set("enactus", man["enactus"], "Enactus", warnings),
             "graduates": build_set("graduates", man["schneider"]["first_year_graduates"], "Schneider/First-Year-Graduates", warnings),
         },
+        "core": build_core(man.get("campaign_core_posts", {}), warnings),
         "explorers": build_explorers(man["schneider"]["african_explorers"], warnings),
         "speakers": build_speakers(os.path.join(SRC, "speakers_manifest.json"), warnings),
+        "delegates": build_delegates(man.get("schneider_electric_foundation", {}), warnings),
+        "templates": build_templates(man.get("editable_templates")),
     }
+    if man.get("enactus"):   # gone since the 14 Oct manifest; kept so an older snapshot still builds
+        data["sets"]["enactus"] = build_set("enactus", man["enactus"], "Enactus", warnings)
     with open(os.path.join(OUT_DATA, "posts.json"), "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=1)
     n_img = sum(len(files) for _, _, files in os.walk(OUT_IMG))
-    print("sets: enactus %d posts, graduates %d posts; explorers: %d; speakers: %d" % (
-        len(data["sets"]["enactus"]["posts"]), len(data["sets"]["graduates"]["posts"]), len(data["explorers"]), len(data["speakers"])))
+    print("graduates %d posts; core %d; explorers %d; speakers %d; delegates %d (%d posts)" % (
+        len(data["sets"]["graduates"]["posts"]), len(data["core"]["posts"]), len(data["explorers"]), len(data["speakers"]),
+        len(data["delegates"]), sum(len(d["posts"]) for d in data["delegates"])))
     print("assets/posts: %d files, %.1f MB" % (n_img, sum(os.path.getsize(os.path.join(r, f)) for r, _, fs in os.walk(OUT_IMG) for f in fs) / 1e6))
     print("data/posts.json: %d KB" % (os.path.getsize(os.path.join(OUT_DATA, "posts.json")) // 1024))
     if warnings:

@@ -1,5 +1,5 @@
 {
- "built": 1791725766,
+ "built": 1791980454,
  "campaign": "Schneider Electric x One Young World 2026 — Energized by Each Other (#OYW26)",
  "summit": "Cape Town, 3–6 Nov 2026",
  "salt": "oyw26-powered-by-each-other",
@@ -7,257 +7,8 @@
   "se.com",
   "schneider-electric.com"
  ],
+ "help": "",
  "sets": {
-  "enactus": {
-   "key": "enactus",
-   "archetypes": [
-    {
-     "key": "A",
-     "name": "The Builder",
-     "blurb": "You made something real with your team and want to see if it holds up."
-    },
-    {
-     "key": "B",
-     "name": "The Changemaker",
-     "blurb": "Your project started close to home, with one community and one problem."
-    },
-    {
-     "key": "C",
-     "name": "The Pitcher",
-     "blurb": "You are bringing an idea to pitch to a room that has heard it all."
-    },
-    {
-     "key": "D",
-     "name": "The First-Generation Delegate",
-     "blurb": "You are the first from your university or family in a room like this."
-    }
-   ],
-   "hashtags": [
-    "#EnergizedByEachOther",
-    "#Enactus",
-    "#SchneiderElectric",
-    "#OYW26"
-   ],
-   "note": "Enactus students are partner-programme guests, not employees: visuals carry the shared footer 'Energized by Each Other #OYW26' (same as every other post), and captions add #Enactus. Captions are starting points; students can edit freely in their own words and language.",
-   "posts": [
-    {
-     "id": "2026-10-11_Announcement",
-     "type": "Announcement",
-     "title": "Announcement",
-     "date": "2026-10-11",
-     "window": "11–15 Oct",
-     "windowStart": "2026-10-11",
-     "windowEnd": "2026-10-15",
-     "format": "single",
-     "tag": "@Schneider Electric Foundation (@schneiderelectricfoundation)  @One Young World  @Enactus",
-     "note": "caption is a starting point — students edit freely in their own words and language.",
-     "variants": {
-      "A": {
-       "cards": [
-        {
-         "src": "assets/posts/Enactus/2026-10-11_Announcement/2026-10-11_Announcement_Enactus_A.jpg",
-         "thumb": "assets/posts/Enactus/2026-10-11_Announcement/2026-10-11_Announcement_Enactus_A.webp",
-         "name": "2026-10-11_Announcement_Enactus_A.jpg"
-        }
-       ],
-       "caption": "I'm going to the One Young World Summit to see if something I built in a classroom can survive a conversation with Schneider Electric's engineers.\n\nOur Enactus team started with one problem and a lot of late nights. These are people who work on real grids every day. If our design has a weak spot they'll find it in about five minutes, and I'd rather hear it from them now.\n\nWhat would you ask someone who builds this for a living?\n\n#EnergizedByEachOther #Enactus #SchneiderElectric #OYW26"
-      },
-      "B": {
-       "cards": [
-        {
-         "src": "assets/posts/Enactus/2026-10-11_Announcement/2026-10-11_Announcement_Enactus_B.jpg",
-         "thumb": "assets/posts/Enactus/2026-10-11_Announcement/2026-10-11_Announcement_Enactus_B.webp",
-         "name": "2026-10-11_Announcement_Enactus_B.jpg"
-        }
-       ],
-       "caption": "I'm going to the One Young World Summit to find out if a small local project matters next to something built at Schneider Electric's scale.\n\nOurs began with one community and one problem. Theirs covers whole countries. I'm curious how an idea gets from the first size to the second, and whether it always should.\n\nI'll report back.\n\n#EnergizedByEachOther #Enactus #SchneiderElectric #OYW26"
-      },
-      "C": {
-       "cards": [
-        {
-         "src": "assets/posts/Enactus/2026-10-11_Announcement/2026-10-11_Announcement_Enactus_C.jpg",
-         "thumb": "assets/posts/Enactus/2026-10-11_Announcement/2026-10-11_Announcement_Enactus_C.webp",
-         "name": "2026-10-11_Announcement_Enactus_C.jpg"
-        }
-       ],
-       "caption": "I'm going to the One Young World Summit to pitch my idea to a room that's heard a thousand pitches, Schneider Electric's people included.\n\nMy Enactus team has heard this pitch so many times they can recite it. The feedback I'm after now is from people who do this for a living, so I'll be looking for them.\n\nAny advice for pitching to people who've heard it all?\n\n#EnergizedByEachOther #Enactus #SchneiderElectric #OYW26"
-      },
-      "D": {
-       "cards": [
-        {
-         "src": "assets/posts/Enactus/2026-10-11_Announcement/2026-10-11_Announcement_Enactus_D.jpg",
-         "thumb": "assets/posts/Enactus/2026-10-11_Announcement/2026-10-11_Announcement_Enactus_D.webp",
-         "name": "2026-10-11_Announcement_Enactus_D.jpg"
-        }
-       ],
-       "caption": "I'm going to the One Young World Summit to be the only person from my university in a room this big, and bring my whole Enactus team with me anyway.\n\nEverything I'm taking there we built together, so in a way they're coming too. Schneider Electric's team will be in that room too, and I plan to find them.\n\nWho would you bring into a room like that?\n\n#EnergizedByEachOther #Enactus #SchneiderElectric #OYW26"
-      }
-     }
-    },
-    {
-     "id": "2026-10-16_Pass-the-Question",
-     "type": "Pass-the-Question",
-     "title": "Pass the Question",
-     "date": "2026-10-16",
-     "window": "16–22 Oct",
-     "windowStart": "2026-10-16",
-     "windowEnd": "2026-10-22",
-     "format": "single",
-     "tag": "@Schneider Electric Foundation (@schneiderelectricfoundation)  @One Young World  @Enactus",
-     "note": "caption is a starting point — students edit freely in their own words and language.",
-     "variants": {
-      "A": {
-       "cards": [
-        {
-         "src": "assets/posts/Enactus/2026-10-16_Pass-the-Question/2026-10-16_Pass-the-Question_Enactus_A.jpg",
-         "thumb": "assets/posts/Enactus/2026-10-16_Pass-the-Question/2026-10-16_Pass-the-Question_Enactus_A.webp",
-         "name": "2026-10-16_Pass-the-Question_Enactus_A.jpg"
-        }
-       ],
-       "caption": "I'm opening Pass the Question for One Young World with the one I'm carrying to Cape Town: can something I built in a classroom actually survive contact with a real client?\n\nI'll ask the Schneider Electric engineers I meet how they found out themselves. They all had a first client at some point.\n\nIf you've been through it, tell me how it went.\n\n#EnergizedByEachOther #Enactus #SchneiderElectric #OYW26"
-      },
-      "B": {
-       "cards": [
-        {
-         "src": "assets/posts/Enactus/2026-10-16_Pass-the-Question/2026-10-16_Pass-the-Question_Enactus_B.jpg",
-         "thumb": "assets/posts/Enactus/2026-10-16_Pass-the-Question/2026-10-16_Pass-the-Question_Enactus_B.webp",
-         "name": "2026-10-16_Pass-the-Question_Enactus_B.jpg"
-        }
-       ],
-       "caption": "I'm opening Pass the Question for One Young World with this: does a small local project matter at all next to something built at Schneider Electric's scale?\n\nMy plan is to walk up to the Schneider Electric booth and ask the people there whether they remember their first small idea. I think most of them will.\n\nWhat was yours?\n\n#EnergizedByEachOther #Enactus #SchneiderElectric #OYW26"
-      },
-      "C": {
-       "cards": [
-        {
-         "src": "assets/posts/Enactus/2026-10-16_Pass-the-Question/2026-10-16_Pass-the-Question_Enactus_C.jpg",
-         "thumb": "assets/posts/Enactus/2026-10-16_Pass-the-Question/2026-10-16_Pass-the-Question_Enactus_C.webp",
-         "name": "2026-10-16_Pass-the-Question_Enactus_C.jpg"
-        }
-       ],
-       "caption": "My question to open Pass the Question for One Young World: how do you pitch an idea to someone who's heard a thousand pitches before?\n\nI'm pitching mine anyway, nerves and all. I've heard the Schneider Electric team likes meeting students at the Summit. I hope they catch me mid-pitch, because I'm better out loud than on paper.\n\nWhat's the best pitch advice you ever got?\n\n#EnergizedByEachOther #Enactus #SchneiderElectric #OYW26"
-      },
-      "D": {
-       "cards": [
-        {
-         "src": "assets/posts/Enactus/2026-10-16_Pass-the-Question/2026-10-16_Pass-the-Question_Enactus_D.jpg",
-         "thumb": "assets/posts/Enactus/2026-10-16_Pass-the-Question/2026-10-16_Pass-the-Question_Enactus_D.webp",
-         "name": "2026-10-16_Pass-the-Question_Enactus_D.jpg"
-        }
-       ],
-       "caption": "I'm opening Pass the Question for One Young World with the thing I keep wondering about: what does it actually feel like to be the only person from your university in a room this big?\n\nI'm bringing my whole team with me, so at least I won't find out alone. I'll also be looking for the Schneider Electric team, since they're the people there I already know I can ask.\n\nHave you ever been the only one in the room?\n\n#EnergizedByEachOther #Enactus #SchneiderElectric #OYW26"
-      }
-     }
-    },
-    {
-     "id": "2026-11-04_On-Site-Moment",
-     "type": "On-Site-Moment",
-     "title": "On-Site Moment",
-     "date": "2026-11-04",
-     "window": "3–6 Nov",
-     "windowStart": "2026-11-03",
-     "windowEnd": "2026-11-06",
-     "format": "single",
-     "tag": "@Schneider Electric Foundation (@schneiderelectricfoundation)  @One Young World  @Enactus",
-     "note": "caption is a starting point — students edit freely in their own words and language.",
-     "variants": {
-      "A": {
-       "cards": [
-        {
-         "src": "assets/posts/Enactus/2026-11-04_On-Site-Moment/2026-11-04_On-Site-Moment_Enactus_A.jpg",
-         "thumb": "assets/posts/Enactus/2026-11-04_On-Site-Moment/2026-11-04_On-Site-Moment_Enactus_A.webp",
-         "name": "2026-11-04_On-Site-Moment_Enactus_A.jpg"
-        }
-       ],
-       "caption": "The badge scanner beeped, and just like that I was in the same room as the Schneider Electric engineers who work on continental-scale grids.\n\nA few weeks ago this was a classroom project. Today I asked one of them how they'd stress-test it and got a straight answer.\n\nOne Young World, Cape Town. I'm still a bit stunned.\n\n#EnergizedByEachOther #Enactus #SchneiderElectric #OYW26"
-      },
-      "B": {
-       "cards": [
-        {
-         "src": "assets/posts/Enactus/2026-11-04_On-Site-Moment/2026-11-04_On-Site-Moment_Enactus_B.jpg",
-         "thumb": "assets/posts/Enactus/2026-11-04_On-Site-Moment/2026-11-04_On-Site-Moment_Enactus_B.webp",
-         "name": "2026-11-04_On-Site-Moment_Enactus_B.jpg"
-        }
-       ],
-       "caption": "Someone twice my age, from the Schneider Electric booth, asked me a follow-up question about my own project. I wasn't ready for that.\n\nI'd gone over to ask them things. I ended up explaining our budget. Being taken seriously before you feel ready is a strange feeling, and I recommend it.\n\nThat's my One Young World so far.\n\n#EnergizedByEachOther #Enactus #SchneiderElectric #OYW26"
-      },
-      "C": {
-       "cards": [
-        {
-         "src": "assets/posts/Enactus/2026-11-04_On-Site-Moment/2026-11-04_On-Site-Moment_Enactus_C.jpg",
-         "thumb": "assets/posts/Enactus/2026-11-04_On-Site-Moment/2026-11-04_On-Site-Moment_Enactus_C.webp",
-         "name": "2026-11-04_On-Site-Moment_Enactus_C.jpg"
-        }
-       ],
-       "caption": "I counted six languages at my lunch table before anyone switched to English for my benefit.\n\nTwo of the people at the table work at Schneider Electric. They switch languages across borders every day without thinking about it. I had to think about it a lot.\n\nLunch at One Young World is its own session.\n\n#EnergizedByEachOther #Enactus #SchneiderElectric #OYW26"
-      },
-      "D": {
-       "cards": [
-        {
-         "src": "assets/posts/Enactus/2026-11-04_On-Site-Moment/2026-11-04_On-Site-Moment_Enactus_D.jpg",
-         "thumb": "assets/posts/Enactus/2026-11-04_On-Site-Moment/2026-11-04_On-Site-Moment_Enactus_D.webp",
-         "name": "2026-11-04_On-Site-Moment_Enactus_D.jpg"
-        }
-       ],
-       "caption": "A speaker stopped her own presentation because someone in the crowd raised a hand. The question turned out better than the slide.\n\nI would have panicked and kept going. She listened and went with it. An hour later I saw the same thing at the Schneider Electric booth, where the people behind the table were asking more questions than they answered.\n\nNoted for my next pitch.\n\n#EnergizedByEachOther #Enactus #SchneiderElectric #OYW26"
-      }
-     }
-    },
-    {
-     "id": "2026-11-10_Reflection",
-     "type": "Reflection",
-     "title": "Reflection",
-     "date": "2026-11-10",
-     "window": "9–20 Nov",
-     "windowStart": "2026-11-09",
-     "windowEnd": "2026-11-20",
-     "format": "single",
-     "tag": "@Schneider Electric Foundation (@schneiderelectricfoundation)  @One Young World  @Enactus",
-     "note": "caption is a starting point — students edit freely in their own words and language.",
-     "variants": {
-      "A": {
-       "cards": [
-        {
-         "src": "assets/posts/Enactus/2026-11-10_Reflection/2026-11-10_Reflection_Enactus_A.jpg",
-         "thumb": "assets/posts/Enactus/2026-11-10_Reflection/2026-11-10_Reflection_Enactus_A.webp",
-         "name": "2026-11-10_Reflection_Enactus_A.jpg"
-        }
-       ],
-       "caption": "I came in thinking the hard part was the pitch. I left knowing the hard part is doing it again on Monday, without an audience.\n\nA Schneider Electric engineer in Cape Town told me most of the work is the part nobody watches. I'm bringing that home to my Enactus team, along with a long to-do list.\n\nWhat's your Monday commitment?\n\n#EnergizedByEachOther #Enactus #SchneiderElectric #OYW26"
-      },
-      "B": {
-       "cards": [
-        {
-         "src": "assets/posts/Enactus/2026-11-10_Reflection/2026-11-10_Reflection_Enactus_B.jpg",
-         "thumb": "assets/posts/Enactus/2026-11-10_Reflection/2026-11-10_Reflection_Enactus_B.webp",
-         "name": "2026-11-10_Reflection_Enactus_B.jpg"
-        }
-       ],
-       "caption": "One habit, starting now: ask the question in the room. A Schneider Electric engineer showed me why, in one conversation.\n\nI nearly kept my question for after the session. I asked it on the spot, got an answer in two minutes, and got three better questions back from the same engineer. My Enactus team is going to hear about this until they're tired of it.\n\nWhat question have you been saving for later?\n\n#EnergizedByEachOther #Enactus #SchneiderElectric #OYW26"
-      },
-      "C": {
-       "cards": [
-        {
-         "src": "assets/posts/Enactus/2026-11-10_Reflection/2026-11-10_Reflection_Enactus_C.jpg",
-         "thumb": "assets/posts/Enactus/2026-11-10_Reflection/2026-11-10_Reflection_Enactus_C.webp",
-         "name": "2026-11-10_Reflection_Enactus_C.jpg"
-        }
-       ],
-       "caption": "I used to think 'professional' meant polished. Now I think it means showing up prepared to be wrong in public.\n\nThe best pitch I saw at One Young World stopped halfway so the speaker could fix a number someone in the audience had corrected. Nobody minded, and the Schneider Electric people sitting near me were nodding.\n\nWhat did you have to unlearn?\n\n#EnergizedByEachOther #Enactus #SchneiderElectric #OYW26"
-      },
-      "D": {
-       "cards": [
-        {
-         "src": "assets/posts/Enactus/2026-11-10_Reflection/2026-11-10_Reflection_Enactus_D.jpg",
-         "thumb": "assets/posts/Enactus/2026-11-10_Reflection/2026-11-10_Reflection_Enactus_D.webp",
-         "name": "2026-11-10_Reflection_Enactus_D.jpg"
-        }
-       ],
-       "caption": "The idea I came with is smaller than the one I left with, and the Schneider Electric people I met are the reason.\n\nThey kept asking what it would look like at ten times the size. I had no answer at the start of the week and half of one by the end. My Enactus team and I have something to finish first.\n\n#EnergizedByEachOther #Enactus #SchneiderElectric #OYW26"
-      }
-     }
-    }
-   ]
-  },
   "graduates": {
    "key": "graduates",
    "archetypes": [
@@ -577,6 +328,108 @@
     }
    ]
   }
+ },
+ "core": {
+  "key": "core",
+  "note": "Everyone who signs in: African Explorers, first-year graduates, speakers and Foundation delegates. Show as a shared 'Campaign posts' section.",
+  "posts": [
+   {
+    "id": "2026-10-19_Core-Post-01",
+    "type": "Core-Post-01",
+    "title": "Core Post 01: The future is being built by young people",
+    "date": "2026-10-19",
+    "window": "19–23 Oct",
+    "windowStart": "2026-10-19",
+    "windowEnd": "2026-10-23",
+    "format": "single",
+    "tag": "@Schneider Electric Youth Impact Through Learning  @Schneider Electric Foundation",
+    "note": "",
+    "langs": {
+     "EN": {
+      "cards": [
+       {
+        "src": "assets/posts/Schneider/Campaign-Core-Posts/2026-10-19_Core-Post-01/2026-10-19_Core-Post-01.jpg",
+        "thumb": "assets/posts/Schneider/Campaign-Core-Posts/2026-10-19_Core-Post-01/2026-10-19_Core-Post-01.webp",
+        "name": "2026-10-19_Core-Post-01.jpg"
+       }
+      ],
+      "caption": "What happens when young people are given the skills, confidence and opportunities to shape the future?\nThey don’t just become tomorrow’s workforce.\nThey become problem-solvers, entrepreneurs, innovators and changemakers today.\n@Schneider Electric Youth Impact Through Learning and @Schneider Electric Foundation are working with partners around the world to help young people build the skills they need to thrive in a changing world.\nBecause creating a more sustainable future starts with investing in the people who will build it.\nEnergized by Each Other.\n#EnergizedByEachOther #Sustainability #OYW26"
+     }
+    }
+   },
+   {
+    "id": "2026-10-20_Core-Post-02",
+    "type": "Core-Post-02",
+    "title": "Core Post 02: Skills can change a trajectory",
+    "date": "2026-10-20",
+    "window": "19–23 Oct",
+    "windowStart": "2026-10-19",
+    "windowEnd": "2026-10-23",
+    "format": "single",
+    "tag": "@Schneider Electric Youth Impact Through Learning  @Schneider Electric Foundation",
+    "note": "",
+    "langs": {
+     "EN": {
+      "cards": [
+       {
+        "src": "assets/posts/Schneider/Campaign-Core-Posts/2026-10-20_Core-Post-02/2026-10-20_Core-Post-02.jpg",
+        "thumb": "assets/posts/Schneider/Campaign-Core-Posts/2026-10-20_Core-Post-02/2026-10-20_Core-Post-02.webp",
+        "name": "2026-10-20_Core-Post-02.jpg"
+       }
+      ],
+      "caption": "Sometimes, opportunity starts with one skill.\nOne lesson.\nOne connection.\nOne moment where someone realises: I can do this.\nAcross our @Schneider Electric Youth Impact Through Learning initiative and the @Schneider Electric Foundation, young people are gaining access to learning, technical skills and opportunities designed to help them take their next step.\nBecause impact isn't only measured in numbers.\nIt's measured in the confidence to apply for that first job.\nThe courage to start a business.\nThe skills to build something new.\nAnd the belief that your future is yours to shape.\n#EnergizedByEachOther #SkillsForTheFuture"
+     }
+    }
+   },
+   {
+    "id": "2026-10-21_Core-Post-03",
+    "type": "Core-Post-03",
+    "title": "Core Post 03: Electrification needs talent",
+    "date": "2026-10-21",
+    "window": "19–23 Oct",
+    "windowStart": "2026-10-19",
+    "windowEnd": "2026-10-23",
+    "format": "single",
+    "tag": "@Schneider Electric Youth Impact Through Learning  @Schneider Electric Foundation",
+    "note": "",
+    "langs": {
+     "EN": {
+      "cards": [
+       {
+        "src": "assets/posts/Schneider/Campaign-Core-Posts/2026-10-21_Core-Post-03/2026-10-21_Core-Post-03.jpg",
+        "thumb": "assets/posts/Schneider/Campaign-Core-Posts/2026-10-21_Core-Post-03/2026-10-21_Core-Post-03.webp",
+        "name": "2026-10-21_Core-Post-03.jpg"
+       }
+      ],
+      "caption": "As the world moves towards a more electric and sustainable future, we need a generation equipped with the skills to design, install, manage and innovate the technologies that will make it possible.\nThat's why youth skills development matters.\n@Schneider Electric Youth Impact Through Learning and @Schneider Electric Foundation are helping equip young people with skills for a changing world, including pathways into energy, entrepreneurship and employment.\nAnd that energy starts with people.\n#EnergizedByEachOther #FutureSkills #Sustainability"
+     }
+    }
+   },
+   {
+    "id": "2026-10-22_Core-Post-04",
+    "type": "Core-Post-04",
+    "title": "Core Post 04: You can be part of the impact",
+    "date": "2026-10-22",
+    "window": "19–23 Oct",
+    "windowStart": "2026-10-19",
+    "windowEnd": "2026-10-23",
+    "format": "single",
+    "tag": "@Schneider Electric Youth Impact Through Learning  @Schneider Electric Foundation",
+    "note": "",
+    "langs": {
+     "EN": {
+      "cards": [
+       {
+        "src": "assets/posts/Schneider/Campaign-Core-Posts/2026-10-22_Core-Post-04/2026-10-22_Core-Post-04.jpg",
+        "thumb": "assets/posts/Schneider/Campaign-Core-Posts/2026-10-22_Core-Post-04/2026-10-22_Core-Post-04.webp",
+        "name": "2026-10-22_Core-Post-04.jpg"
+       }
+      ],
+      "caption": "I believe impact becomes bigger when we each bring something to the table.\nA skill.\nA connection.\nA few hours of our time.\nA story worth sharing.\nThrough @Schneider Electric Youth Impact Through Learning, @Schneider Electric Foundation is working with partners and communities to expand access to learning and opportunities for young people.\nAnd every one of us can play a role in helping create that impact.\nWho is one young person who has inspired you?\nTag them below and tell us why. 👇\n#EnergizedByEachOther #OYW26 #YouthImpactThroughLearning"
+     }
+    }
+   }
+  ]
  },
  "explorers": [
   {
@@ -2353,5 +2206,1390 @@
     }
    ]
   }
- ]
+ ],
+ "delegates": [
+  {
+   "id": "sibabalwe-matshikwe",
+   "name": "Sibabalwe Matshikwe",
+   "first": "Sibabalwe",
+   "hashes": [
+    "28d88e5b7aa2fafd03fb37f518d54ca2a8e52e86bc15f303e4b22bb89f524127"
+   ],
+   "institution": "College of Cape Town",
+   "field": "Occupational Certificate: Electrician",
+   "posts": [
+    {
+     "id": "2026-10-19_Announcement",
+     "type": "Announcement",
+     "title": "Announcement",
+     "date": "2026-10-19",
+     "window": "19–23 Oct",
+     "windowStart": "2026-10-19",
+     "windowEnd": "2026-10-23",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "note": "Version without the delegate portrait. A new upload with the same key replaces it when the portrait arrives.",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider-Electric-Foundation/Sibabalwe-Matshikwe/2026-10-19_Announcement/2026-10-19_Announcement_Sibabalwe-Matshikwe.jpg",
+         "thumb": "assets/posts/Schneider-Electric-Foundation/Sibabalwe-Matshikwe/2026-10-19_Announcement/2026-10-19_Announcement_Sibabalwe-Matshikwe.webp",
+         "name": "2026-10-19_Announcement_Sibabalwe-Matshikwe.jpg"
+        }
+       ],
+       "caption": "Cape Town, here I come! 🌍\nI’m thrilled to announce that I’ll be attending One Young World 2026 as a sponsored delegate of the @Schneider Electric Foundation, @Schneider Electric Youth Impact Through Learning and @Enactus South Africa.\nCurrently training as an electrician at the College of Cape Town, I can’t wait to connect with young changemakers from around the world.\nNew perspectives. New connections. New possibilities.\nSee you at #OYW2026! 💚\n#OYW2026 #EnergizedByEachOther #YoungChangemakers"
+      }
+     }
+    },
+    {
+     "id": "2026-11-03_Live-Day1",
+     "type": "Live-Day1",
+     "title": "Live, Day 1: I'm here",
+     "date": "2026-11-03",
+     "window": "3 Nov, on the day",
+     "windowStart": "2026-11-03",
+     "windowEnd": "2026-11-03",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Sibabalwe-Matshikwe/2026-11-03_Live-Day1/2026-11-03_Live-Day1_Sibabalwe-Matshikwe.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Sibabalwe-Matshikwe/2026-11-03_Live-Day1/2026-11-03_Live-Day1_Sibabalwe-Matshikwe-thumb.webp",
+      "name": "2026-11-03_Live-Day1_Sibabalwe-Matshikwe.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "I'm here.\nAfter months of anticipation, I'm officially at One Young World 2026 in Cape Town.\n2,000+ young leaders.\n190+ countries.\nOne room.\nAnd now the real conversations begin. I'm ready to listen, learn, challenge my thinking and connect with people who are building change in completely different corners of the world.\nLet's see what happens when we're Energized by Each Other⚡\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-04_Live-Day2",
+     "type": "Live-Day2",
+     "title": "Live, Day 2: One thing I heard today",
+     "date": "2026-11-04",
+     "window": "4 Nov, on the day",
+     "windowStart": "2026-11-04",
+     "windowEnd": "2026-11-04",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Sibabalwe-Matshikwe/2026-11-04_Live-Day2/2026-11-04_Live-Day2_Sibabalwe-Matshikwe.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Sibabalwe-Matshikwe/2026-11-04_Live-Day2/2026-11-04_Live-Day2_Sibabalwe-Matshikwe-thumb.webp",
+      "name": "2026-11-04_Live-Day2_Sibabalwe-Matshikwe.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "One thing I heard today that I can't stop thinking about:\n“[INSERT QUOTE / IDEA, IN YOUR OWN WORDS]”\nIt made me think differently about [INSERT TOPIC] because…\n[2–3 sentences of personal reflection.]\nOne of the things I'm already learning at One Young World is that sometimes the most valuable part of a conversation isn't having the answer.\nIt's leaving with a better question.\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-05_Live-Day3",
+     "type": "Live-Day3",
+     "title": "Live, Day 3: The person I met",
+     "date": "2026-11-05",
+     "window": "5 Nov, on the day",
+     "windowStart": "2026-11-05",
+     "windowEnd": "2026-11-05",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Sibabalwe-Matshikwe/2026-11-05_Live-Day3/2026-11-05_Live-Day3_Sibabalwe-Matshikwe.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Sibabalwe-Matshikwe/2026-11-05_Live-Day3/2026-11-05_Live-Day3_Sibabalwe-Matshikwe-thumb.webp",
+      "name": "2026-11-05_Live-Day3_Sibabalwe-Matshikwe.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "One conversation can change the way you see a problem.\nToday I met [NAME / COUNTRY / WHAT THEY DO], who is working on [CAUSE / ISSUE].\nWe come from completely different backgrounds, but we found a surprising connection around [INSERT CONNECTION].\nThat's what I'm loving about One Young World.\nDifferent countries. Different experiences. Different challenges.\nBut so many shared ambitions for a better future.\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-06_Live-Day4",
+     "type": "Live-Day4",
+     "title": "Live, Day 4: What I didn't expect",
+     "date": "2026-11-06",
+     "window": "6 Nov, on the day",
+     "windowStart": "2026-11-06",
+     "windowEnd": "2026-11-06",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Sibabalwe-Matshikwe/2026-11-06_Live-Day4/2026-11-06_Live-Day4_Sibabalwe-Matshikwe.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Sibabalwe-Matshikwe/2026-11-06_Live-Day4/2026-11-06_Live-Day4_Sibabalwe-Matshikwe-thumb.webp",
+      "name": "2026-11-06_Live-Day4_Sibabalwe-Matshikwe.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "Something I didn't expect from One Young World…\n[INSERT SURPRISE.]\nI came to Cape Town expecting to learn about [TOPIC].\nI didn't expect to leave today's conversations thinking about [NEW IDEA].\nThat's probably my biggest takeaway so far:\nSometimes the most valuable learning is the learning you didn't know you needed.\nAnd we're only getting started.\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-07_Reflection",
+     "type": "Reflection",
+     "title": "Reflection",
+     "date": "2026-11-07",
+     "window": "From 7 Nov",
+     "windowStart": "2026-11-07",
+     "windowEnd": "2026-11-27",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "reflection",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Sibabalwe-Matshikwe/2026-11-07_Reflection/2026-11-07_Reflection_Sibabalwe-Matshikwe.jpg",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Sibabalwe-Matshikwe/2026-11-07_Reflection/2026-11-07_Reflection_Sibabalwe-Matshikwe-thumb.webp",
+      "name": "2026-11-07_Reflection_Sibabalwe-Matshikwe.png"
+     },
+     "guide": "How to post\n1. In the toolkit, type one thing you are taking home from Cape Town into the text box on your card (up to 130 characters, 6 lines). The toolkit stops you if it runs over.\n2. Download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image.\n\nCaption rules\n- The card holds one line. The caption tells the story behind it.\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- End with a question or a commitment people can respond to.",
+     "starter": "I'm back from One Young World 2026 in Cape Town, and one thing is staying with me:\n\n[The line on your card, in a sentence or two.]\n\n[Where it came from: a session, a speaker or a conversation, in 2–3 sentences.]\n\n[What you will do differently, starting this month.]\n\nThank you to the Schneider Electric Foundation, Schneider Electric Youth Impact Through Learning and Enactus South Africa for making it possible.\n\n[A question for your network, e.g. \"What is one habit you would change if you started again tomorrow?\"]\n\n@Schneider Electric Foundation @Schneider Electric Youth Impact Through Learning @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    }
+   ]
+  },
+  {
+   "id": "vhugala-hilary-thenga",
+   "name": "Vhugala Hilary Thenga",
+   "first": "Vhugala",
+   "hashes": [
+    "5be10f2d7b38ef2c0f5533eec609a3255a41508fdde2f9c120805ac680219cfb"
+   ],
+   "institution": "University of Johannesburg",
+   "field": "B Eng Tech in Electrical Engineering",
+   "posts": [
+    {
+     "id": "2026-10-19_Announcement",
+     "type": "Announcement",
+     "title": "Announcement",
+     "date": "2026-10-19",
+     "window": "19–23 Oct",
+     "windowStart": "2026-10-19",
+     "windowEnd": "2026-10-23",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "note": "Version without the delegate portrait. A new upload with the same key replaces it when the portrait arrives.",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider-Electric-Foundation/Vhugala-Hilary-Thenga/2026-10-19_Announcement/2026-10-19_Announcement_Vhugala-Hilary-Thenga.jpg",
+         "thumb": "assets/posts/Schneider-Electric-Foundation/Vhugala-Hilary-Thenga/2026-10-19_Announcement/2026-10-19_Announcement_Vhugala-Hilary-Thenga.webp",
+         "name": "2026-10-19_Announcement_Vhugala-Hilary-Thenga.jpg"
+        }
+       ],
+       "caption": "I’m incredibly excited to share that I’ll be attending One Young World 2026 in Cape Town as a sponsored delegate of the @Schneider Electric Foundation, @Schneider Electric Youth Impact Through Learning and @Enactus South Africa! 🌍💚\nAs an electrical engineering student at the University of Johannesburg, I’m looking forward to connecting with young changemakers from around the world, learning from their experiences and bringing new ideas home.\nBeing part of a global community of young leaders who are working to create a better future is an opportunity I’m truly grateful for.\nSee you in Cape Town!\n#OYW2026 #EnergizedByEachOther #YoungChangemakers"
+      }
+     }
+    },
+    {
+     "id": "2026-11-03_Live-Day1",
+     "type": "Live-Day1",
+     "title": "Live, Day 1: I'm here",
+     "date": "2026-11-03",
+     "window": "3 Nov, on the day",
+     "windowStart": "2026-11-03",
+     "windowEnd": "2026-11-03",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Vhugala-Hilary-Thenga/2026-11-03_Live-Day1/2026-11-03_Live-Day1_Vhugala-Hilary-Thenga.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Vhugala-Hilary-Thenga/2026-11-03_Live-Day1/2026-11-03_Live-Day1_Vhugala-Hilary-Thenga-thumb.webp",
+      "name": "2026-11-03_Live-Day1_Vhugala-Hilary-Thenga.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "I'm here.\nAfter months of anticipation, I'm officially at One Young World 2026 in Cape Town.\n2,000+ young leaders.\n190+ countries.\nOne room.\nAnd now the real conversations begin. I'm ready to listen, learn, challenge my thinking and connect with people who are building change in completely different corners of the world.\nLet's see what happens when we're Energized by Each Other⚡\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-04_Live-Day2",
+     "type": "Live-Day2",
+     "title": "Live, Day 2: One thing I heard today",
+     "date": "2026-11-04",
+     "window": "4 Nov, on the day",
+     "windowStart": "2026-11-04",
+     "windowEnd": "2026-11-04",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Vhugala-Hilary-Thenga/2026-11-04_Live-Day2/2026-11-04_Live-Day2_Vhugala-Hilary-Thenga.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Vhugala-Hilary-Thenga/2026-11-04_Live-Day2/2026-11-04_Live-Day2_Vhugala-Hilary-Thenga-thumb.webp",
+      "name": "2026-11-04_Live-Day2_Vhugala-Hilary-Thenga.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "One thing I heard today that I can't stop thinking about:\n“[INSERT QUOTE / IDEA, IN YOUR OWN WORDS]”\nIt made me think differently about [INSERT TOPIC] because…\n[2–3 sentences of personal reflection.]\nOne of the things I'm already learning at One Young World is that sometimes the most valuable part of a conversation isn't having the answer.\nIt's leaving with a better question.\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-05_Live-Day3",
+     "type": "Live-Day3",
+     "title": "Live, Day 3: The person I met",
+     "date": "2026-11-05",
+     "window": "5 Nov, on the day",
+     "windowStart": "2026-11-05",
+     "windowEnd": "2026-11-05",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Vhugala-Hilary-Thenga/2026-11-05_Live-Day3/2026-11-05_Live-Day3_Vhugala-Hilary-Thenga.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Vhugala-Hilary-Thenga/2026-11-05_Live-Day3/2026-11-05_Live-Day3_Vhugala-Hilary-Thenga-thumb.webp",
+      "name": "2026-11-05_Live-Day3_Vhugala-Hilary-Thenga.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "One conversation can change the way you see a problem.\nToday I met [NAME / COUNTRY / WHAT THEY DO], who is working on [CAUSE / ISSUE].\nWe come from completely different backgrounds, but we found a surprising connection around [INSERT CONNECTION].\nThat's what I'm loving about One Young World.\nDifferent countries. Different experiences. Different challenges.\nBut so many shared ambitions for a better future.\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-06_Live-Day4",
+     "type": "Live-Day4",
+     "title": "Live, Day 4: What I didn't expect",
+     "date": "2026-11-06",
+     "window": "6 Nov, on the day",
+     "windowStart": "2026-11-06",
+     "windowEnd": "2026-11-06",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Vhugala-Hilary-Thenga/2026-11-06_Live-Day4/2026-11-06_Live-Day4_Vhugala-Hilary-Thenga.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Vhugala-Hilary-Thenga/2026-11-06_Live-Day4/2026-11-06_Live-Day4_Vhugala-Hilary-Thenga-thumb.webp",
+      "name": "2026-11-06_Live-Day4_Vhugala-Hilary-Thenga.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "Something I didn't expect from One Young World…\n[INSERT SURPRISE.]\nI came to Cape Town expecting to learn about [TOPIC].\nI didn't expect to leave today's conversations thinking about [NEW IDEA].\nThat's probably my biggest takeaway so far:\nSometimes the most valuable learning is the learning you didn't know you needed.\nAnd we're only getting started.\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-07_Reflection",
+     "type": "Reflection",
+     "title": "Reflection",
+     "date": "2026-11-07",
+     "window": "From 7 Nov",
+     "windowStart": "2026-11-07",
+     "windowEnd": "2026-11-27",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "reflection",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Vhugala-Hilary-Thenga/2026-11-07_Reflection/2026-11-07_Reflection_Vhugala-Hilary-Thenga.jpg",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Vhugala-Hilary-Thenga/2026-11-07_Reflection/2026-11-07_Reflection_Vhugala-Hilary-Thenga-thumb.webp",
+      "name": "2026-11-07_Reflection_Vhugala-Hilary-Thenga.png"
+     },
+     "guide": "How to post\n1. In the toolkit, type one thing you are taking home from Cape Town into the text box on your card (up to 130 characters, 6 lines). The toolkit stops you if it runs over.\n2. Download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image.\n\nCaption rules\n- The card holds one line. The caption tells the story behind it.\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- End with a question or a commitment people can respond to.",
+     "starter": "I'm back from One Young World 2026 in Cape Town, and one thing is staying with me:\n\n[The line on your card, in a sentence or two.]\n\n[Where it came from: a session, a speaker or a conversation, in 2–3 sentences.]\n\n[What you will do differently, starting this month.]\n\nThank you to the Schneider Electric Foundation, Schneider Electric Youth Impact Through Learning and Enactus South Africa for making it possible.\n\n[A question for your network, e.g. \"What is one habit you would change if you started again tomorrow?\"]\n\n@Schneider Electric Foundation @Schneider Electric Youth Impact Through Learning @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    }
+   ]
+  },
+  {
+   "id": "tshegofatso-robin-makhado",
+   "name": "Tshegofatso Robin Makhado",
+   "first": "Tshegofatso",
+   "hashes": [
+    "e66e378bf7381aa9e6290c11697bbc9094f5efcb3ff70aa2632d8a03769d7f82"
+   ],
+   "institution": "Vaal University of Technology",
+   "field": "Electrical Engineering intern and coordinator, 2026 Eco vehicle race",
+   "posts": [
+    {
+     "id": "2026-10-19_Announcement",
+     "type": "Announcement",
+     "title": "Announcement",
+     "date": "2026-10-19",
+     "window": "19–23 Oct",
+     "windowStart": "2026-10-19",
+     "windowEnd": "2026-10-23",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "note": "Version without the delegate portrait. A new upload with the same key replaces it when the portrait arrives.",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider-Electric-Foundation/Tshegofatso-Robin-Makhado/2026-10-19_Announcement/2026-10-19_Announcement_Tshegofatso-Robin-Makhado.jpg",
+         "thumb": "assets/posts/Schneider-Electric-Foundation/Tshegofatso-Robin-Makhado/2026-10-19_Announcement/2026-10-19_Announcement_Tshegofatso-Robin-Makhado.webp",
+         "name": "2026-10-19_Announcement_Tshegofatso-Robin-Makhado.jpg"
+        }
+       ],
+       "caption": "I’m going to One Young World! 🌍\nI’m so excited to share that I’ve been selected as a sponsored delegate for One Young World 2026 in Cape Town, thanks to the @Schneider Electric Foundation, @Schneider Electric Youth Impact Through Learning and @Enactus South Africa.\nAt the Vaal University of Technology, I’m an electrical engineering intern and the coordinator of the 2026 Eco vehicle race. I can’t wait to meet young leaders from across the world, exchange ideas, challenge perspectives and learn how others are creating change in their communities.\nHere’s to new connections, bold ideas and a whole lot of impact. 💚\nSee you at #OYW2026!\n#OYW2026 #EnergizedByEachOther #YoungChangemakers"
+      }
+     }
+    },
+    {
+     "id": "2026-11-03_Live-Day1",
+     "type": "Live-Day1",
+     "title": "Live, Day 1: I'm here",
+     "date": "2026-11-03",
+     "window": "3 Nov, on the day",
+     "windowStart": "2026-11-03",
+     "windowEnd": "2026-11-03",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Tshegofatso-Robin-Makhado/2026-11-03_Live-Day1/2026-11-03_Live-Day1_Tshegofatso-Robin-Makhado.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Tshegofatso-Robin-Makhado/2026-11-03_Live-Day1/2026-11-03_Live-Day1_Tshegofatso-Robin-Makhado-thumb.webp",
+      "name": "2026-11-03_Live-Day1_Tshegofatso-Robin-Makhado.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "I'm here.\nAfter months of anticipation, I'm officially at One Young World 2026 in Cape Town.\n2,000+ young leaders.\n190+ countries.\nOne room.\nAnd now the real conversations begin. I'm ready to listen, learn, challenge my thinking and connect with people who are building change in completely different corners of the world.\nLet's see what happens when we're Energized by Each Other⚡\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-04_Live-Day2",
+     "type": "Live-Day2",
+     "title": "Live, Day 2: One thing I heard today",
+     "date": "2026-11-04",
+     "window": "4 Nov, on the day",
+     "windowStart": "2026-11-04",
+     "windowEnd": "2026-11-04",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Tshegofatso-Robin-Makhado/2026-11-04_Live-Day2/2026-11-04_Live-Day2_Tshegofatso-Robin-Makhado.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Tshegofatso-Robin-Makhado/2026-11-04_Live-Day2/2026-11-04_Live-Day2_Tshegofatso-Robin-Makhado-thumb.webp",
+      "name": "2026-11-04_Live-Day2_Tshegofatso-Robin-Makhado.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "One thing I heard today that I can't stop thinking about:\n“[INSERT QUOTE / IDEA, IN YOUR OWN WORDS]”\nIt made me think differently about [INSERT TOPIC] because…\n[2–3 sentences of personal reflection.]\nOne of the things I'm already learning at One Young World is that sometimes the most valuable part of a conversation isn't having the answer.\nIt's leaving with a better question.\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-05_Live-Day3",
+     "type": "Live-Day3",
+     "title": "Live, Day 3: The person I met",
+     "date": "2026-11-05",
+     "window": "5 Nov, on the day",
+     "windowStart": "2026-11-05",
+     "windowEnd": "2026-11-05",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Tshegofatso-Robin-Makhado/2026-11-05_Live-Day3/2026-11-05_Live-Day3_Tshegofatso-Robin-Makhado.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Tshegofatso-Robin-Makhado/2026-11-05_Live-Day3/2026-11-05_Live-Day3_Tshegofatso-Robin-Makhado-thumb.webp",
+      "name": "2026-11-05_Live-Day3_Tshegofatso-Robin-Makhado.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "One conversation can change the way you see a problem.\nToday I met [NAME / COUNTRY / WHAT THEY DO], who is working on [CAUSE / ISSUE].\nWe come from completely different backgrounds, but we found a surprising connection around [INSERT CONNECTION].\nThat's what I'm loving about One Young World.\nDifferent countries. Different experiences. Different challenges.\nBut so many shared ambitions for a better future.\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-06_Live-Day4",
+     "type": "Live-Day4",
+     "title": "Live, Day 4: What I didn't expect",
+     "date": "2026-11-06",
+     "window": "6 Nov, on the day",
+     "windowStart": "2026-11-06",
+     "windowEnd": "2026-11-06",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Tshegofatso-Robin-Makhado/2026-11-06_Live-Day4/2026-11-06_Live-Day4_Tshegofatso-Robin-Makhado.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Tshegofatso-Robin-Makhado/2026-11-06_Live-Day4/2026-11-06_Live-Day4_Tshegofatso-Robin-Makhado-thumb.webp",
+      "name": "2026-11-06_Live-Day4_Tshegofatso-Robin-Makhado.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "Something I didn't expect from One Young World…\n[INSERT SURPRISE.]\nI came to Cape Town expecting to learn about [TOPIC].\nI didn't expect to leave today's conversations thinking about [NEW IDEA].\nThat's probably my biggest takeaway so far:\nSometimes the most valuable learning is the learning you didn't know you needed.\nAnd we're only getting started.\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-07_Reflection",
+     "type": "Reflection",
+     "title": "Reflection",
+     "date": "2026-11-07",
+     "window": "From 7 Nov",
+     "windowStart": "2026-11-07",
+     "windowEnd": "2026-11-27",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "reflection",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Tshegofatso-Robin-Makhado/2026-11-07_Reflection/2026-11-07_Reflection_Tshegofatso-Robin-Makhado.jpg",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Tshegofatso-Robin-Makhado/2026-11-07_Reflection/2026-11-07_Reflection_Tshegofatso-Robin-Makhado-thumb.webp",
+      "name": "2026-11-07_Reflection_Tshegofatso-Robin-Makhado.png"
+     },
+     "guide": "How to post\n1. In the toolkit, type one thing you are taking home from Cape Town into the text box on your card (up to 130 characters, 6 lines). The toolkit stops you if it runs over.\n2. Download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image.\n\nCaption rules\n- The card holds one line. The caption tells the story behind it.\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- End with a question or a commitment people can respond to.",
+     "starter": "I'm back from One Young World 2026 in Cape Town, and one thing is staying with me:\n\n[The line on your card, in a sentence or two.]\n\n[Where it came from: a session, a speaker or a conversation, in 2–3 sentences.]\n\n[What you will do differently, starting this month.]\n\nThank you to the Schneider Electric Foundation, Schneider Electric Youth Impact Through Learning and Enactus South Africa for making it possible.\n\n[A question for your network, e.g. \"What is one habit you would change if you started again tomorrow?\"]\n\n@Schneider Electric Foundation @Schneider Electric Youth Impact Through Learning @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    }
+   ]
+  },
+  {
+   "id": "rebaone-risuna-maluleke",
+   "name": "Rebaone Risuna Maluleke",
+   "first": "Rebaone",
+   "hashes": [
+    "5b71b990f4e3aa6c4fde4a5d8ed94413c8eab296e498c129d42e3ad27bdd0d85"
+   ],
+   "institution": "Sedibeng TVET College",
+   "field": "Occupational: Electrical",
+   "posts": [
+    {
+     "id": "2026-10-19_Announcement",
+     "type": "Announcement",
+     "title": "Announcement",
+     "date": "2026-10-19",
+     "window": "19–23 Oct",
+     "windowStart": "2026-10-19",
+     "windowEnd": "2026-10-23",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "note": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider-Electric-Foundation/Rebaone-Risuna-Maluleke/2026-10-19_Announcement/2026-10-19_Announcement_Rebaone-Risuna-Maluleke.jpg",
+         "thumb": "assets/posts/Schneider-Electric-Foundation/Rebaone-Risuna-Maluleke/2026-10-19_Announcement/2026-10-19_Announcement_Rebaone-Risuna-Maluleke.webp",
+         "name": "2026-10-19_Announcement_Rebaone-Risuna-Maluleke.jpg"
+        }
+       ],
+       "caption": "Cape Town, here I come! 🌍\nI’m thrilled to announce that I’ll be attending One Young World 2026 as a sponsored delegate of the @Schneider Electric Foundation, @Schneider Electric Youth Impact Through Learning and @Enactus South Africa.\nCurrently completing my occupational electrical training at Sedibeng TVET College, I can’t wait to connect with young changemakers from around the world.\nNew perspectives. New connections. New possibilities.\nSee you at #OYW2026! 💚\n#OYW2026 #EnergizedByEachOther #YoungChangemakers"
+      }
+     }
+    },
+    {
+     "id": "2026-11-03_Live-Day1",
+     "type": "Live-Day1",
+     "title": "Live, Day 1: I'm here",
+     "date": "2026-11-03",
+     "window": "3 Nov, on the day",
+     "windowStart": "2026-11-03",
+     "windowEnd": "2026-11-03",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Rebaone-Risuna-Maluleke/2026-11-03_Live-Day1/2026-11-03_Live-Day1_Rebaone-Risuna-Maluleke.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Rebaone-Risuna-Maluleke/2026-11-03_Live-Day1/2026-11-03_Live-Day1_Rebaone-Risuna-Maluleke-thumb.webp",
+      "name": "2026-11-03_Live-Day1_Rebaone-Risuna-Maluleke.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "I'm here.\nAfter months of anticipation, I'm officially at One Young World 2026 in Cape Town.\n2,000+ young leaders.\n190+ countries.\nOne room.\nAnd now the real conversations begin. I'm ready to listen, learn, challenge my thinking and connect with people who are building change in completely different corners of the world.\nLet's see what happens when we're Energized by Each Other⚡\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-04_Live-Day2",
+     "type": "Live-Day2",
+     "title": "Live, Day 2: One thing I heard today",
+     "date": "2026-11-04",
+     "window": "4 Nov, on the day",
+     "windowStart": "2026-11-04",
+     "windowEnd": "2026-11-04",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Rebaone-Risuna-Maluleke/2026-11-04_Live-Day2/2026-11-04_Live-Day2_Rebaone-Risuna-Maluleke.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Rebaone-Risuna-Maluleke/2026-11-04_Live-Day2/2026-11-04_Live-Day2_Rebaone-Risuna-Maluleke-thumb.webp",
+      "name": "2026-11-04_Live-Day2_Rebaone-Risuna-Maluleke.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "One thing I heard today that I can't stop thinking about:\n“[INSERT QUOTE / IDEA, IN YOUR OWN WORDS]”\nIt made me think differently about [INSERT TOPIC] because…\n[2–3 sentences of personal reflection.]\nOne of the things I'm already learning at One Young World is that sometimes the most valuable part of a conversation isn't having the answer.\nIt's leaving with a better question.\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-05_Live-Day3",
+     "type": "Live-Day3",
+     "title": "Live, Day 3: The person I met",
+     "date": "2026-11-05",
+     "window": "5 Nov, on the day",
+     "windowStart": "2026-11-05",
+     "windowEnd": "2026-11-05",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Rebaone-Risuna-Maluleke/2026-11-05_Live-Day3/2026-11-05_Live-Day3_Rebaone-Risuna-Maluleke.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Rebaone-Risuna-Maluleke/2026-11-05_Live-Day3/2026-11-05_Live-Day3_Rebaone-Risuna-Maluleke-thumb.webp",
+      "name": "2026-11-05_Live-Day3_Rebaone-Risuna-Maluleke.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "One conversation can change the way you see a problem.\nToday I met [NAME / COUNTRY / WHAT THEY DO], who is working on [CAUSE / ISSUE].\nWe come from completely different backgrounds, but we found a surprising connection around [INSERT CONNECTION].\nThat's what I'm loving about One Young World.\nDifferent countries. Different experiences. Different challenges.\nBut so many shared ambitions for a better future.\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-06_Live-Day4",
+     "type": "Live-Day4",
+     "title": "Live, Day 4: What I didn't expect",
+     "date": "2026-11-06",
+     "window": "6 Nov, on the day",
+     "windowStart": "2026-11-06",
+     "windowEnd": "2026-11-06",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Rebaone-Risuna-Maluleke/2026-11-06_Live-Day4/2026-11-06_Live-Day4_Rebaone-Risuna-Maluleke.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Rebaone-Risuna-Maluleke/2026-11-06_Live-Day4/2026-11-06_Live-Day4_Rebaone-Risuna-Maluleke-thumb.webp",
+      "name": "2026-11-06_Live-Day4_Rebaone-Risuna-Maluleke.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "Something I didn't expect from One Young World…\n[INSERT SURPRISE.]\nI came to Cape Town expecting to learn about [TOPIC].\nI didn't expect to leave today's conversations thinking about [NEW IDEA].\nThat's probably my biggest takeaway so far:\nSometimes the most valuable learning is the learning you didn't know you needed.\nAnd we're only getting started.\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-07_Reflection",
+     "type": "Reflection",
+     "title": "Reflection",
+     "date": "2026-11-07",
+     "window": "From 7 Nov",
+     "windowStart": "2026-11-07",
+     "windowEnd": "2026-11-27",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "reflection",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Rebaone-Risuna-Maluleke/2026-11-07_Reflection/2026-11-07_Reflection_Rebaone-Risuna-Maluleke.jpg",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Rebaone-Risuna-Maluleke/2026-11-07_Reflection/2026-11-07_Reflection_Rebaone-Risuna-Maluleke-thumb.webp",
+      "name": "2026-11-07_Reflection_Rebaone-Risuna-Maluleke.png"
+     },
+     "guide": "How to post\n1. In the toolkit, type one thing you are taking home from Cape Town into the text box on your card (up to 130 characters, 6 lines). The toolkit stops you if it runs over.\n2. Download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image.\n\nCaption rules\n- The card holds one line. The caption tells the story behind it.\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- End with a question or a commitment people can respond to.",
+     "starter": "I'm back from One Young World 2026 in Cape Town, and one thing is staying with me:\n\n[The line on your card, in a sentence or two.]\n\n[Where it came from: a session, a speaker or a conversation, in 2–3 sentences.]\n\n[What you will do differently, starting this month.]\n\nThank you to the Schneider Electric Foundation, Schneider Electric Youth Impact Through Learning and Enactus South Africa for making it possible.\n\n[A question for your network, e.g. \"What is one habit you would change if you started again tomorrow?\"]\n\n@Schneider Electric Foundation @Schneider Electric Youth Impact Through Learning @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    }
+   ]
+  },
+  {
+   "id": "pheliwe-maluleke",
+   "name": "Pheliwe Maluleke",
+   "first": "Pheliwe",
+   "hashes": [
+    "24a93604c37058b3908ec628941433f7e14a81c9c420db821b414c9d7b2ac990"
+   ],
+   "institution": "Sedibeng TVET College",
+   "field": "Electrical Engineering",
+   "posts": [
+    {
+     "id": "2026-10-19_Announcement",
+     "type": "Announcement",
+     "title": "Announcement",
+     "date": "2026-10-19",
+     "window": "19–23 Oct",
+     "windowStart": "2026-10-19",
+     "windowEnd": "2026-10-23",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "note": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider-Electric-Foundation/Pheliwe-Maluleke/2026-10-19_Announcement/2026-10-19_Announcement_Pheliwe-Maluleke.jpg",
+         "thumb": "assets/posts/Schneider-Electric-Foundation/Pheliwe-Maluleke/2026-10-19_Announcement/2026-10-19_Announcement_Pheliwe-Maluleke.webp",
+         "name": "2026-10-19_Announcement_Pheliwe-Maluleke.jpg"
+        }
+       ],
+       "caption": "I’m incredibly excited to share that I’ll be attending One Young World 2026 in Cape Town as a sponsored delegate of the @Schneider Electric Foundation, @Schneider Electric Youth Impact Through Learning and @Enactus South Africa! 🌍💚\nAs an electrical engineering student at Sedibeng TVET College, I’m looking forward to connecting with young changemakers from around the world, learning from their experiences and bringing new ideas home.\nBeing part of a global community of young leaders who are working to create a better future is an opportunity I’m truly grateful for.\nSee you in Cape Town!\n#OYW2026 #EnergizedByEachOther #YoungChangemakers"
+      }
+     }
+    },
+    {
+     "id": "2026-11-03_Live-Day1",
+     "type": "Live-Day1",
+     "title": "Live, Day 1: I'm here",
+     "date": "2026-11-03",
+     "window": "3 Nov, on the day",
+     "windowStart": "2026-11-03",
+     "windowEnd": "2026-11-03",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Pheliwe-Maluleke/2026-11-03_Live-Day1/2026-11-03_Live-Day1_Pheliwe-Maluleke.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Pheliwe-Maluleke/2026-11-03_Live-Day1/2026-11-03_Live-Day1_Pheliwe-Maluleke-thumb.webp",
+      "name": "2026-11-03_Live-Day1_Pheliwe-Maluleke.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "I'm here.\nAfter months of anticipation, I'm officially at One Young World 2026 in Cape Town.\n2,000+ young leaders.\n190+ countries.\nOne room.\nAnd now the real conversations begin. I'm ready to listen, learn, challenge my thinking and connect with people who are building change in completely different corners of the world.\nLet's see what happens when we're Energized by Each Other⚡\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-04_Live-Day2",
+     "type": "Live-Day2",
+     "title": "Live, Day 2: One thing I heard today",
+     "date": "2026-11-04",
+     "window": "4 Nov, on the day",
+     "windowStart": "2026-11-04",
+     "windowEnd": "2026-11-04",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Pheliwe-Maluleke/2026-11-04_Live-Day2/2026-11-04_Live-Day2_Pheliwe-Maluleke.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Pheliwe-Maluleke/2026-11-04_Live-Day2/2026-11-04_Live-Day2_Pheliwe-Maluleke-thumb.webp",
+      "name": "2026-11-04_Live-Day2_Pheliwe-Maluleke.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "One thing I heard today that I can't stop thinking about:\n“[INSERT QUOTE / IDEA, IN YOUR OWN WORDS]”\nIt made me think differently about [INSERT TOPIC] because…\n[2–3 sentences of personal reflection.]\nOne of the things I'm already learning at One Young World is that sometimes the most valuable part of a conversation isn't having the answer.\nIt's leaving with a better question.\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-05_Live-Day3",
+     "type": "Live-Day3",
+     "title": "Live, Day 3: The person I met",
+     "date": "2026-11-05",
+     "window": "5 Nov, on the day",
+     "windowStart": "2026-11-05",
+     "windowEnd": "2026-11-05",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Pheliwe-Maluleke/2026-11-05_Live-Day3/2026-11-05_Live-Day3_Pheliwe-Maluleke.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Pheliwe-Maluleke/2026-11-05_Live-Day3/2026-11-05_Live-Day3_Pheliwe-Maluleke-thumb.webp",
+      "name": "2026-11-05_Live-Day3_Pheliwe-Maluleke.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "One conversation can change the way you see a problem.\nToday I met [NAME / COUNTRY / WHAT THEY DO], who is working on [CAUSE / ISSUE].\nWe come from completely different backgrounds, but we found a surprising connection around [INSERT CONNECTION].\nThat's what I'm loving about One Young World.\nDifferent countries. Different experiences. Different challenges.\nBut so many shared ambitions for a better future.\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-06_Live-Day4",
+     "type": "Live-Day4",
+     "title": "Live, Day 4: What I didn't expect",
+     "date": "2026-11-06",
+     "window": "6 Nov, on the day",
+     "windowStart": "2026-11-06",
+     "windowEnd": "2026-11-06",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Pheliwe-Maluleke/2026-11-06_Live-Day4/2026-11-06_Live-Day4_Pheliwe-Maluleke.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Pheliwe-Maluleke/2026-11-06_Live-Day4/2026-11-06_Live-Day4_Pheliwe-Maluleke-thumb.webp",
+      "name": "2026-11-06_Live-Day4_Pheliwe-Maluleke.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "Something I didn't expect from One Young World…\n[INSERT SURPRISE.]\nI came to Cape Town expecting to learn about [TOPIC].\nI didn't expect to leave today's conversations thinking about [NEW IDEA].\nThat's probably my biggest takeaway so far:\nSometimes the most valuable learning is the learning you didn't know you needed.\nAnd we're only getting started.\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-07_Reflection",
+     "type": "Reflection",
+     "title": "Reflection",
+     "date": "2026-11-07",
+     "window": "From 7 Nov",
+     "windowStart": "2026-11-07",
+     "windowEnd": "2026-11-27",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "reflection",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Pheliwe-Maluleke/2026-11-07_Reflection/2026-11-07_Reflection_Pheliwe-Maluleke.jpg",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Pheliwe-Maluleke/2026-11-07_Reflection/2026-11-07_Reflection_Pheliwe-Maluleke-thumb.webp",
+      "name": "2026-11-07_Reflection_Pheliwe-Maluleke.png"
+     },
+     "guide": "How to post\n1. In the toolkit, type one thing you are taking home from Cape Town into the text box on your card (up to 130 characters, 6 lines). The toolkit stops you if it runs over.\n2. Download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image.\n\nCaption rules\n- The card holds one line. The caption tells the story behind it.\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- End with a question or a commitment people can respond to.",
+     "starter": "I'm back from One Young World 2026 in Cape Town, and one thing is staying with me:\n\n[The line on your card, in a sentence or two.]\n\n[Where it came from: a session, a speaker or a conversation, in 2–3 sentences.]\n\n[What you will do differently, starting this month.]\n\nThank you to the Schneider Electric Foundation, Schneider Electric Youth Impact Through Learning and Enactus South Africa for making it possible.\n\n[A question for your network, e.g. \"What is one habit you would change if you started again tomorrow?\"]\n\n@Schneider Electric Foundation @Schneider Electric Youth Impact Through Learning @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    }
+   ]
+  },
+  {
+   "id": "mathias-shimwetheleni",
+   "name": "Mathias Shimwetheleni",
+   "first": "Mathias",
+   "hashes": [
+    "1080f985f3e8235a81d03a43d94fb5a090b6341a9e972a6668bbe39d2fabafe1"
+   ],
+   "institution": "Cape Peninsula University of Technology",
+   "field": "Master's in Electrical Engineering: cybersecurity of digital substations in the smart grid",
+   "posts": [
+    {
+     "id": "2026-10-19_Announcement",
+     "type": "Announcement",
+     "title": "Announcement",
+     "date": "2026-10-19",
+     "window": "19–23 Oct",
+     "windowStart": "2026-10-19",
+     "windowEnd": "2026-10-23",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "note": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider-Electric-Foundation/Mathias-Shimwetheleni/2026-10-19_Announcement/2026-10-19_Announcement_Mathias-Shimwetheleni.jpg",
+         "thumb": "assets/posts/Schneider-Electric-Foundation/Mathias-Shimwetheleni/2026-10-19_Announcement/2026-10-19_Announcement_Mathias-Shimwetheleni.webp",
+         "name": "2026-10-19_Announcement_Mathias-Shimwetheleni.jpg"
+        }
+       ],
+       "caption": "I’m going to One Young World! 🌍\nI’m so excited to share that I’ve been selected as a sponsored delegate for One Young World 2026 in Cape Town, thanks to the @Schneider Electric Foundation, @Schneider Electric Youth Impact Through Learning and @Enactus South Africa.\nI’m completing my Master’s in Electrical Engineering at the Cape Peninsula University of Technology, where my research focuses on the cybersecurity of digital substations in the smart grid. I can’t wait to meet young leaders from across the world, exchange ideas, challenge perspectives and learn how others are creating change in their communities.\nHere’s to new connections, bold ideas and a whole lot of impact. 💚\nSee you at #OYW2026!\n#OYW2026 #EnergizedByEachOther #YoungChangemakers"
+      }
+     }
+    },
+    {
+     "id": "2026-11-03_Live-Day1",
+     "type": "Live-Day1",
+     "title": "Live, Day 1: I'm here",
+     "date": "2026-11-03",
+     "window": "3 Nov, on the day",
+     "windowStart": "2026-11-03",
+     "windowEnd": "2026-11-03",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Mathias-Shimwetheleni/2026-11-03_Live-Day1/2026-11-03_Live-Day1_Mathias-Shimwetheleni.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Mathias-Shimwetheleni/2026-11-03_Live-Day1/2026-11-03_Live-Day1_Mathias-Shimwetheleni-thumb.webp",
+      "name": "2026-11-03_Live-Day1_Mathias-Shimwetheleni.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "I'm here.\nAfter months of anticipation, I'm officially at One Young World 2026 in Cape Town.\n2,000+ young leaders.\n190+ countries.\nOne room.\nAnd now the real conversations begin. I'm ready to listen, learn, challenge my thinking and connect with people who are building change in completely different corners of the world.\nLet's see what happens when we're Energized by Each Other⚡\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-04_Live-Day2",
+     "type": "Live-Day2",
+     "title": "Live, Day 2: One thing I heard today",
+     "date": "2026-11-04",
+     "window": "4 Nov, on the day",
+     "windowStart": "2026-11-04",
+     "windowEnd": "2026-11-04",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Mathias-Shimwetheleni/2026-11-04_Live-Day2/2026-11-04_Live-Day2_Mathias-Shimwetheleni.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Mathias-Shimwetheleni/2026-11-04_Live-Day2/2026-11-04_Live-Day2_Mathias-Shimwetheleni-thumb.webp",
+      "name": "2026-11-04_Live-Day2_Mathias-Shimwetheleni.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "One thing I heard today that I can't stop thinking about:\n“[INSERT QUOTE / IDEA, IN YOUR OWN WORDS]”\nIt made me think differently about [INSERT TOPIC] because…\n[2–3 sentences of personal reflection.]\nOne of the things I'm already learning at One Young World is that sometimes the most valuable part of a conversation isn't having the answer.\nIt's leaving with a better question.\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-05_Live-Day3",
+     "type": "Live-Day3",
+     "title": "Live, Day 3: The person I met",
+     "date": "2026-11-05",
+     "window": "5 Nov, on the day",
+     "windowStart": "2026-11-05",
+     "windowEnd": "2026-11-05",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Mathias-Shimwetheleni/2026-11-05_Live-Day3/2026-11-05_Live-Day3_Mathias-Shimwetheleni.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Mathias-Shimwetheleni/2026-11-05_Live-Day3/2026-11-05_Live-Day3_Mathias-Shimwetheleni-thumb.webp",
+      "name": "2026-11-05_Live-Day3_Mathias-Shimwetheleni.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "One conversation can change the way you see a problem.\nToday I met [NAME / COUNTRY / WHAT THEY DO], who is working on [CAUSE / ISSUE].\nWe come from completely different backgrounds, but we found a surprising connection around [INSERT CONNECTION].\nThat's what I'm loving about One Young World.\nDifferent countries. Different experiences. Different challenges.\nBut so many shared ambitions for a better future.\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-06_Live-Day4",
+     "type": "Live-Day4",
+     "title": "Live, Day 4: What I didn't expect",
+     "date": "2026-11-06",
+     "window": "6 Nov, on the day",
+     "windowStart": "2026-11-06",
+     "windowEnd": "2026-11-06",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Mathias-Shimwetheleni/2026-11-06_Live-Day4/2026-11-06_Live-Day4_Mathias-Shimwetheleni.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Mathias-Shimwetheleni/2026-11-06_Live-Day4/2026-11-06_Live-Day4_Mathias-Shimwetheleni-thumb.webp",
+      "name": "2026-11-06_Live-Day4_Mathias-Shimwetheleni.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "Something I didn't expect from One Young World…\n[INSERT SURPRISE.]\nI came to Cape Town expecting to learn about [TOPIC].\nI didn't expect to leave today's conversations thinking about [NEW IDEA].\nThat's probably my biggest takeaway so far:\nSometimes the most valuable learning is the learning you didn't know you needed.\nAnd we're only getting started.\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-07_Reflection",
+     "type": "Reflection",
+     "title": "Reflection",
+     "date": "2026-11-07",
+     "window": "From 7 Nov",
+     "windowStart": "2026-11-07",
+     "windowEnd": "2026-11-27",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "reflection",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Mathias-Shimwetheleni/2026-11-07_Reflection/2026-11-07_Reflection_Mathias-Shimwetheleni.jpg",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Mathias-Shimwetheleni/2026-11-07_Reflection/2026-11-07_Reflection_Mathias-Shimwetheleni-thumb.webp",
+      "name": "2026-11-07_Reflection_Mathias-Shimwetheleni.png"
+     },
+     "guide": "How to post\n1. In the toolkit, type one thing you are taking home from Cape Town into the text box on your card (up to 130 characters, 6 lines). The toolkit stops you if it runs over.\n2. Download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image.\n\nCaption rules\n- The card holds one line. The caption tells the story behind it.\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- End with a question or a commitment people can respond to.",
+     "starter": "I'm back from One Young World 2026 in Cape Town, and one thing is staying with me:\n\n[The line on your card, in a sentence or two.]\n\n[Where it came from: a session, a speaker or a conversation, in 2–3 sentences.]\n\n[What you will do differently, starting this month.]\n\nThank you to the Schneider Electric Foundation, Schneider Electric Youth Impact Through Learning and Enactus South Africa for making it possible.\n\n[A question for your network, e.g. \"What is one habit you would change if you started again tomorrow?\"]\n\n@Schneider Electric Foundation @Schneider Electric Youth Impact Through Learning @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    }
+   ]
+  },
+  {
+   "id": "luphumlo-sawuli",
+   "name": "Luphumlo Sawuli",
+   "first": "Luphumlo",
+   "hashes": [
+    "d4d656ea9a5e861a2c74841fe1d21afcd90dd2bc16db3c3cc9b90b0900b30aa7"
+   ],
+   "institution": "Eastcape Midlands College",
+   "field": "Electrician",
+   "posts": [
+    {
+     "id": "2026-10-19_Announcement",
+     "type": "Announcement",
+     "title": "Announcement",
+     "date": "2026-10-19",
+     "window": "19–23 Oct",
+     "windowStart": "2026-10-19",
+     "windowEnd": "2026-10-23",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "note": "Version without the delegate portrait. A new upload with the same key replaces it when the portrait arrives.",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider-Electric-Foundation/Luphumlo-Sawuli/2026-10-19_Announcement/2026-10-19_Announcement_Luphumlo-Sawuli.jpg",
+         "thumb": "assets/posts/Schneider-Electric-Foundation/Luphumlo-Sawuli/2026-10-19_Announcement/2026-10-19_Announcement_Luphumlo-Sawuli.webp",
+         "name": "2026-10-19_Announcement_Luphumlo-Sawuli.jpg"
+        }
+       ],
+       "caption": "Cape Town, here I come! 🌍\nI’m thrilled to announce that I’ll be attending One Young World 2026 as a sponsored delegate of the @Schneider Electric Foundation, @Schneider Electric Youth Impact Through Learning and @Enactus South Africa.\nAn electrician in training at Eastcape Midlands College, I can’t wait to connect with young changemakers from around the world.\nNew perspectives. New connections. New possibilities.\nSee you at #OYW2026! 💚\n#OYW2026 #EnergizedByEachOther #YoungChangemakers"
+      }
+     }
+    },
+    {
+     "id": "2026-11-03_Live-Day1",
+     "type": "Live-Day1",
+     "title": "Live, Day 1: I'm here",
+     "date": "2026-11-03",
+     "window": "3 Nov, on the day",
+     "windowStart": "2026-11-03",
+     "windowEnd": "2026-11-03",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Luphumlo-Sawuli/2026-11-03_Live-Day1/2026-11-03_Live-Day1_Luphumlo-Sawuli.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Luphumlo-Sawuli/2026-11-03_Live-Day1/2026-11-03_Live-Day1_Luphumlo-Sawuli-thumb.webp",
+      "name": "2026-11-03_Live-Day1_Luphumlo-Sawuli.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "I'm here.\nAfter months of anticipation, I'm officially at One Young World 2026 in Cape Town.\n2,000+ young leaders.\n190+ countries.\nOne room.\nAnd now the real conversations begin. I'm ready to listen, learn, challenge my thinking and connect with people who are building change in completely different corners of the world.\nLet's see what happens when we're Energized by Each Other⚡\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-04_Live-Day2",
+     "type": "Live-Day2",
+     "title": "Live, Day 2: One thing I heard today",
+     "date": "2026-11-04",
+     "window": "4 Nov, on the day",
+     "windowStart": "2026-11-04",
+     "windowEnd": "2026-11-04",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Luphumlo-Sawuli/2026-11-04_Live-Day2/2026-11-04_Live-Day2_Luphumlo-Sawuli.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Luphumlo-Sawuli/2026-11-04_Live-Day2/2026-11-04_Live-Day2_Luphumlo-Sawuli-thumb.webp",
+      "name": "2026-11-04_Live-Day2_Luphumlo-Sawuli.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "One thing I heard today that I can't stop thinking about:\n“[INSERT QUOTE / IDEA, IN YOUR OWN WORDS]”\nIt made me think differently about [INSERT TOPIC] because…\n[2–3 sentences of personal reflection.]\nOne of the things I'm already learning at One Young World is that sometimes the most valuable part of a conversation isn't having the answer.\nIt's leaving with a better question.\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-05_Live-Day3",
+     "type": "Live-Day3",
+     "title": "Live, Day 3: The person I met",
+     "date": "2026-11-05",
+     "window": "5 Nov, on the day",
+     "windowStart": "2026-11-05",
+     "windowEnd": "2026-11-05",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Luphumlo-Sawuli/2026-11-05_Live-Day3/2026-11-05_Live-Day3_Luphumlo-Sawuli.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Luphumlo-Sawuli/2026-11-05_Live-Day3/2026-11-05_Live-Day3_Luphumlo-Sawuli-thumb.webp",
+      "name": "2026-11-05_Live-Day3_Luphumlo-Sawuli.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "One conversation can change the way you see a problem.\nToday I met [NAME / COUNTRY / WHAT THEY DO], who is working on [CAUSE / ISSUE].\nWe come from completely different backgrounds, but we found a surprising connection around [INSERT CONNECTION].\nThat's what I'm loving about One Young World.\nDifferent countries. Different experiences. Different challenges.\nBut so many shared ambitions for a better future.\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-06_Live-Day4",
+     "type": "Live-Day4",
+     "title": "Live, Day 4: What I didn't expect",
+     "date": "2026-11-06",
+     "window": "6 Nov, on the day",
+     "windowStart": "2026-11-06",
+     "windowEnd": "2026-11-06",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Luphumlo-Sawuli/2026-11-06_Live-Day4/2026-11-06_Live-Day4_Luphumlo-Sawuli.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Luphumlo-Sawuli/2026-11-06_Live-Day4/2026-11-06_Live-Day4_Luphumlo-Sawuli-thumb.webp",
+      "name": "2026-11-06_Live-Day4_Luphumlo-Sawuli.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "Something I didn't expect from One Young World…\n[INSERT SURPRISE.]\nI came to Cape Town expecting to learn about [TOPIC].\nI didn't expect to leave today's conversations thinking about [NEW IDEA].\nThat's probably my biggest takeaway so far:\nSometimes the most valuable learning is the learning you didn't know you needed.\nAnd we're only getting started.\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-07_Reflection",
+     "type": "Reflection",
+     "title": "Reflection",
+     "date": "2026-11-07",
+     "window": "From 7 Nov",
+     "windowStart": "2026-11-07",
+     "windowEnd": "2026-11-27",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "reflection",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Luphumlo-Sawuli/2026-11-07_Reflection/2026-11-07_Reflection_Luphumlo-Sawuli.jpg",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Luphumlo-Sawuli/2026-11-07_Reflection/2026-11-07_Reflection_Luphumlo-Sawuli-thumb.webp",
+      "name": "2026-11-07_Reflection_Luphumlo-Sawuli.png"
+     },
+     "guide": "How to post\n1. In the toolkit, type one thing you are taking home from Cape Town into the text box on your card (up to 130 characters, 6 lines). The toolkit stops you if it runs over.\n2. Download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image.\n\nCaption rules\n- The card holds one line. The caption tells the story behind it.\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- End with a question or a commitment people can respond to.",
+     "starter": "I'm back from One Young World 2026 in Cape Town, and one thing is staying with me:\n\n[The line on your card, in a sentence or two.]\n\n[Where it came from: a session, a speaker or a conversation, in 2–3 sentences.]\n\n[What you will do differently, starting this month.]\n\nThank you to the Schneider Electric Foundation, Schneider Electric Youth Impact Through Learning and Enactus South Africa for making it possible.\n\n[A question for your network, e.g. \"What is one habit you would change if you started again tomorrow?\"]\n\n@Schneider Electric Foundation @Schneider Electric Youth Impact Through Learning @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    }
+   ]
+  },
+  {
+   "id": "matthew-pillay",
+   "name": "Matthew Pillay",
+   "first": "Matthew",
+   "hashes": [
+    "28104183fadea7f33b575a9e286eaa0237588929dc35e1505e30da89b319cef4"
+   ],
+   "institution": "Ukufunda Youth Development",
+   "field": "Electrical Engineering",
+   "posts": [
+    {
+     "id": "2026-10-19_Announcement",
+     "type": "Announcement",
+     "title": "Announcement",
+     "date": "2026-10-19",
+     "window": "19–23 Oct",
+     "windowStart": "2026-10-19",
+     "windowEnd": "2026-10-23",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "note": "",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider-Electric-Foundation/Matthew-Pillay/2026-10-19_Announcement/2026-10-19_Announcement_Matthew-Pillay.jpg",
+         "thumb": "assets/posts/Schneider-Electric-Foundation/Matthew-Pillay/2026-10-19_Announcement/2026-10-19_Announcement_Matthew-Pillay.webp",
+         "name": "2026-10-19_Announcement_Matthew-Pillay.jpg"
+        }
+       ],
+       "caption": "I’m incredibly excited to share that I’ll be attending One Young World 2026 in Cape Town as a sponsored delegate of the @Schneider Electric Foundation, @Schneider Electric Youth Impact Through Learning and @Enactus South Africa! 🌍💚\nAs an electrical engineering learner with Ukufunda Youth Development, I’m looking forward to connecting with young changemakers from around the world, learning from their experiences and bringing new ideas home.\nBeing part of a global community of young leaders who are working to create a better future is an opportunity I’m truly grateful for.\nSee you in Cape Town!\n#OYW2026 #EnergizedByEachOther #YoungChangemakers"
+      }
+     }
+    },
+    {
+     "id": "2026-11-03_Live-Day1",
+     "type": "Live-Day1",
+     "title": "Live, Day 1: I'm here",
+     "date": "2026-11-03",
+     "window": "3 Nov, on the day",
+     "windowStart": "2026-11-03",
+     "windowEnd": "2026-11-03",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Matthew-Pillay/2026-11-03_Live-Day1/2026-11-03_Live-Day1_Matthew-Pillay.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Matthew-Pillay/2026-11-03_Live-Day1/2026-11-03_Live-Day1_Matthew-Pillay-thumb.webp",
+      "name": "2026-11-03_Live-Day1_Matthew-Pillay.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "I'm here.\nAfter months of anticipation, I'm officially at One Young World 2026 in Cape Town.\n2,000+ young leaders.\n190+ countries.\nOne room.\nAnd now the real conversations begin. I'm ready to listen, learn, challenge my thinking and connect with people who are building change in completely different corners of the world.\nLet's see what happens when we're Energized by Each Other⚡\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-04_Live-Day2",
+     "type": "Live-Day2",
+     "title": "Live, Day 2: One thing I heard today",
+     "date": "2026-11-04",
+     "window": "4 Nov, on the day",
+     "windowStart": "2026-11-04",
+     "windowEnd": "2026-11-04",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Matthew-Pillay/2026-11-04_Live-Day2/2026-11-04_Live-Day2_Matthew-Pillay.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Matthew-Pillay/2026-11-04_Live-Day2/2026-11-04_Live-Day2_Matthew-Pillay-thumb.webp",
+      "name": "2026-11-04_Live-Day2_Matthew-Pillay.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "One thing I heard today that I can't stop thinking about:\n“[INSERT QUOTE / IDEA, IN YOUR OWN WORDS]”\nIt made me think differently about [INSERT TOPIC] because…\n[2–3 sentences of personal reflection.]\nOne of the things I'm already learning at One Young World is that sometimes the most valuable part of a conversation isn't having the answer.\nIt's leaving with a better question.\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-05_Live-Day3",
+     "type": "Live-Day3",
+     "title": "Live, Day 3: The person I met",
+     "date": "2026-11-05",
+     "window": "5 Nov, on the day",
+     "windowStart": "2026-11-05",
+     "windowEnd": "2026-11-05",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Matthew-Pillay/2026-11-05_Live-Day3/2026-11-05_Live-Day3_Matthew-Pillay.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Matthew-Pillay/2026-11-05_Live-Day3/2026-11-05_Live-Day3_Matthew-Pillay-thumb.webp",
+      "name": "2026-11-05_Live-Day3_Matthew-Pillay.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "One conversation can change the way you see a problem.\nToday I met [NAME / COUNTRY / WHAT THEY DO], who is working on [CAUSE / ISSUE].\nWe come from completely different backgrounds, but we found a surprising connection around [INSERT CONNECTION].\nThat's what I'm loving about One Young World.\nDifferent countries. Different experiences. Different challenges.\nBut so many shared ambitions for a better future.\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-06_Live-Day4",
+     "type": "Live-Day4",
+     "title": "Live, Day 4: What I didn't expect",
+     "date": "2026-11-06",
+     "window": "6 Nov, on the day",
+     "windowStart": "2026-11-06",
+     "windowEnd": "2026-11-06",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Matthew-Pillay/2026-11-06_Live-Day4/2026-11-06_Live-Day4_Matthew-Pillay.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Matthew-Pillay/2026-11-06_Live-Day4/2026-11-06_Live-Day4_Matthew-Pillay-thumb.webp",
+      "name": "2026-11-06_Live-Day4_Matthew-Pillay.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "Something I didn't expect from One Young World…\n[INSERT SURPRISE.]\nI came to Cape Town expecting to learn about [TOPIC].\nI didn't expect to leave today's conversations thinking about [NEW IDEA].\nThat's probably my biggest takeaway so far:\nSometimes the most valuable learning is the learning you didn't know you needed.\nAnd we're only getting started.\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-07_Reflection",
+     "type": "Reflection",
+     "title": "Reflection",
+     "date": "2026-11-07",
+     "window": "From 7 Nov",
+     "windowStart": "2026-11-07",
+     "windowEnd": "2026-11-27",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "reflection",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Matthew-Pillay/2026-11-07_Reflection/2026-11-07_Reflection_Matthew-Pillay.jpg",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Matthew-Pillay/2026-11-07_Reflection/2026-11-07_Reflection_Matthew-Pillay-thumb.webp",
+      "name": "2026-11-07_Reflection_Matthew-Pillay.png"
+     },
+     "guide": "How to post\n1. In the toolkit, type one thing you are taking home from Cape Town into the text box on your card (up to 130 characters, 6 lines). The toolkit stops you if it runs over.\n2. Download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image.\n\nCaption rules\n- The card holds one line. The caption tells the story behind it.\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- End with a question or a commitment people can respond to.",
+     "starter": "I'm back from One Young World 2026 in Cape Town, and one thing is staying with me:\n\n[The line on your card, in a sentence or two.]\n\n[Where it came from: a session, a speaker or a conversation, in 2–3 sentences.]\n\n[What you will do differently, starting this month.]\n\nThank you to the Schneider Electric Foundation, Schneider Electric Youth Impact Through Learning and Enactus South Africa for making it possible.\n\n[A question for your network, e.g. \"What is one habit you would change if you started again tomorrow?\"]\n\n@Schneider Electric Foundation @Schneider Electric Youth Impact Through Learning @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    }
+   ]
+  },
+  {
+   "id": "kabelo-dibakoane",
+   "name": "Kabelo Dibakoane",
+   "first": "Kabelo",
+   "hashes": [
+    "b730eee4ab1f1111b7941c1bfc9e63d834e97b041afccb400bafab0333de37a8"
+   ],
+   "institution": "Enactus South Africa",
+   "field": "Law",
+   "posts": [
+    {
+     "id": "2026-10-19_Announcement",
+     "type": "Announcement",
+     "title": "Announcement",
+     "date": "2026-10-19",
+     "window": "19–23 Oct",
+     "windowStart": "2026-10-19",
+     "windowEnd": "2026-10-23",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "note": "Version without the delegate portrait. A new upload with the same key replaces it when the portrait arrives.",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider-Electric-Foundation/Kabelo-Dibakoane/2026-10-19_Announcement/2026-10-19_Announcement_Kabelo-Dibakoane.jpg",
+         "thumb": "assets/posts/Schneider-Electric-Foundation/Kabelo-Dibakoane/2026-10-19_Announcement/2026-10-19_Announcement_Kabelo-Dibakoane.webp",
+         "name": "2026-10-19_Announcement_Kabelo-Dibakoane.jpg"
+        }
+       ],
+       "caption": "Cape Town, here I come! 🌍\nI’m thrilled to announce that I’ll be attending One Young World 2026 as a sponsored delegate of the @Schneider Electric Foundation, @Schneider Electric Youth Impact Through Learning and @Enactus South Africa.\nA law student and part of Enactus South Africa, I can’t wait to connect with young changemakers from around the world.\nNew perspectives. New connections. New possibilities.\nSee you at #OYW2026! 💚\n#OYW2026 #EnergizedByEachOther #YoungChangemakers"
+      }
+     }
+    },
+    {
+     "id": "2026-11-03_Live-Day1",
+     "type": "Live-Day1",
+     "title": "Live, Day 1: I'm here",
+     "date": "2026-11-03",
+     "window": "3 Nov, on the day",
+     "windowStart": "2026-11-03",
+     "windowEnd": "2026-11-03",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Kabelo-Dibakoane/2026-11-03_Live-Day1/2026-11-03_Live-Day1_Kabelo-Dibakoane.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Kabelo-Dibakoane/2026-11-03_Live-Day1/2026-11-03_Live-Day1_Kabelo-Dibakoane-thumb.webp",
+      "name": "2026-11-03_Live-Day1_Kabelo-Dibakoane.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "I'm here.\nAfter months of anticipation, I'm officially at One Young World 2026 in Cape Town.\n2,000+ young leaders.\n190+ countries.\nOne room.\nAnd now the real conversations begin. I'm ready to listen, learn, challenge my thinking and connect with people who are building change in completely different corners of the world.\nLet's see what happens when we're Energized by Each Other⚡\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-04_Live-Day2",
+     "type": "Live-Day2",
+     "title": "Live, Day 2: One thing I heard today",
+     "date": "2026-11-04",
+     "window": "4 Nov, on the day",
+     "windowStart": "2026-11-04",
+     "windowEnd": "2026-11-04",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Kabelo-Dibakoane/2026-11-04_Live-Day2/2026-11-04_Live-Day2_Kabelo-Dibakoane.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Kabelo-Dibakoane/2026-11-04_Live-Day2/2026-11-04_Live-Day2_Kabelo-Dibakoane-thumb.webp",
+      "name": "2026-11-04_Live-Day2_Kabelo-Dibakoane.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "One thing I heard today that I can't stop thinking about:\n“[INSERT QUOTE / IDEA, IN YOUR OWN WORDS]”\nIt made me think differently about [INSERT TOPIC] because…\n[2–3 sentences of personal reflection.]\nOne of the things I'm already learning at One Young World is that sometimes the most valuable part of a conversation isn't having the answer.\nIt's leaving with a better question.\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-05_Live-Day3",
+     "type": "Live-Day3",
+     "title": "Live, Day 3: The person I met",
+     "date": "2026-11-05",
+     "window": "5 Nov, on the day",
+     "windowStart": "2026-11-05",
+     "windowEnd": "2026-11-05",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Kabelo-Dibakoane/2026-11-05_Live-Day3/2026-11-05_Live-Day3_Kabelo-Dibakoane.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Kabelo-Dibakoane/2026-11-05_Live-Day3/2026-11-05_Live-Day3_Kabelo-Dibakoane-thumb.webp",
+      "name": "2026-11-05_Live-Day3_Kabelo-Dibakoane.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "One conversation can change the way you see a problem.\nToday I met [NAME / COUNTRY / WHAT THEY DO], who is working on [CAUSE / ISSUE].\nWe come from completely different backgrounds, but we found a surprising connection around [INSERT CONNECTION].\nThat's what I'm loving about One Young World.\nDifferent countries. Different experiences. Different challenges.\nBut so many shared ambitions for a better future.\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-06_Live-Day4",
+     "type": "Live-Day4",
+     "title": "Live, Day 4: What I didn't expect",
+     "date": "2026-11-06",
+     "window": "6 Nov, on the day",
+     "windowStart": "2026-11-06",
+     "windowEnd": "2026-11-06",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Kabelo-Dibakoane/2026-11-06_Live-Day4/2026-11-06_Live-Day4_Kabelo-Dibakoane.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Kabelo-Dibakoane/2026-11-06_Live-Day4/2026-11-06_Live-Day4_Kabelo-Dibakoane-thumb.webp",
+      "name": "2026-11-06_Live-Day4_Kabelo-Dibakoane.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "Something I didn't expect from One Young World…\n[INSERT SURPRISE.]\nI came to Cape Town expecting to learn about [TOPIC].\nI didn't expect to leave today's conversations thinking about [NEW IDEA].\nThat's probably my biggest takeaway so far:\nSometimes the most valuable learning is the learning you didn't know you needed.\nAnd we're only getting started.\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-07_Reflection",
+     "type": "Reflection",
+     "title": "Reflection",
+     "date": "2026-11-07",
+     "window": "From 7 Nov",
+     "windowStart": "2026-11-07",
+     "windowEnd": "2026-11-27",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "reflection",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Kabelo-Dibakoane/2026-11-07_Reflection/2026-11-07_Reflection_Kabelo-Dibakoane.jpg",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Kabelo-Dibakoane/2026-11-07_Reflection/2026-11-07_Reflection_Kabelo-Dibakoane-thumb.webp",
+      "name": "2026-11-07_Reflection_Kabelo-Dibakoane.png"
+     },
+     "guide": "How to post\n1. In the toolkit, type one thing you are taking home from Cape Town into the text box on your card (up to 130 characters, 6 lines). The toolkit stops you if it runs over.\n2. Download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image.\n\nCaption rules\n- The card holds one line. The caption tells the story behind it.\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- End with a question or a commitment people can respond to.",
+     "starter": "I'm back from One Young World 2026 in Cape Town, and one thing is staying with me:\n\n[The line on your card, in a sentence or two.]\n\n[Where it came from: a session, a speaker or a conversation, in 2–3 sentences.]\n\n[What you will do differently, starting this month.]\n\nThank you to the Schneider Electric Foundation, Schneider Electric Youth Impact Through Learning and Enactus South Africa for making it possible.\n\n[A question for your network, e.g. \"What is one habit you would change if you started again tomorrow?\"]\n\n@Schneider Electric Foundation @Schneider Electric Youth Impact Through Learning @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    }
+   ]
+  },
+  {
+   "id": "palesa-sephadi",
+   "name": "Palesa Sephadi",
+   "first": "Palesa",
+   "hashes": [
+    "b3c25abcfa8440cb2078faad91b4c14a550ca20913ffa4f13346ce015a49987e",
+    "80cd09b506fd443343b96cdb663a31fcf1ee0eaeb7baebea4be9f194011c2d6c"
+   ],
+   "institution": "Enactus South Africa",
+   "field": "Entrepreneurship and Business Management; founder and CEO of Renewa Fuels",
+   "posts": [
+    {
+     "id": "2026-10-19_Announcement",
+     "type": "Announcement",
+     "title": "Announcement",
+     "date": "2026-10-19",
+     "window": "19–23 Oct",
+     "windowStart": "2026-10-19",
+     "windowEnd": "2026-10-23",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "note": "Version without the delegate portrait. A new upload with the same key replaces it when the portrait arrives.",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Schneider-Electric-Foundation/Palesa-Sephadi/2026-10-19_Announcement/2026-10-19_Announcement_Palesa-Sephadi.jpg",
+         "thumb": "assets/posts/Schneider-Electric-Foundation/Palesa-Sephadi/2026-10-19_Announcement/2026-10-19_Announcement_Palesa-Sephadi.webp",
+         "name": "2026-10-19_Announcement_Palesa-Sephadi.jpg"
+        }
+       ],
+       "caption": "I’m going to One Young World! 🌍\nI’m so excited to share that I’ve been selected as a sponsored delegate for One Young World 2026 in Cape Town, thanks to the @Schneider Electric Foundation, @Schneider Electric Youth Impact Through Learning and @Enactus South Africa.\nI study Entrepreneurship and Business Management, and I’m the founder and CEO of Renewa Fuels, working on renewable fuels. I can’t wait to meet young leaders from across the world, exchange ideas, challenge perspectives and learn how others are creating change in their communities.\nHere’s to new connections, bold ideas and a whole lot of impact. 💚\nSee you at #OYW2026!\n#OYW2026 #EnergizedByEachOther #YoungChangemakers"
+      }
+     }
+    },
+    {
+     "id": "2026-11-03_Live-Day1",
+     "type": "Live-Day1",
+     "title": "Live, Day 1: I'm here",
+     "date": "2026-11-03",
+     "window": "3 Nov, on the day",
+     "windowStart": "2026-11-03",
+     "windowEnd": "2026-11-03",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Palesa-Sephadi/2026-11-03_Live-Day1/2026-11-03_Live-Day1_Palesa-Sephadi.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Palesa-Sephadi/2026-11-03_Live-Day1/2026-11-03_Live-Day1_Palesa-Sephadi-thumb.webp",
+      "name": "2026-11-03_Live-Day1_Palesa-Sephadi.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "I'm here.\nAfter months of anticipation, I'm officially at One Young World 2026 in Cape Town.\n2,000+ young leaders.\n190+ countries.\nOne room.\nAnd now the real conversations begin. I'm ready to listen, learn, challenge my thinking and connect with people who are building change in completely different corners of the world.\nLet's see what happens when we're Energized by Each Other⚡\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-04_Live-Day2",
+     "type": "Live-Day2",
+     "title": "Live, Day 2: One thing I heard today",
+     "date": "2026-11-04",
+     "window": "4 Nov, on the day",
+     "windowStart": "2026-11-04",
+     "windowEnd": "2026-11-04",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Palesa-Sephadi/2026-11-04_Live-Day2/2026-11-04_Live-Day2_Palesa-Sephadi.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Palesa-Sephadi/2026-11-04_Live-Day2/2026-11-04_Live-Day2_Palesa-Sephadi-thumb.webp",
+      "name": "2026-11-04_Live-Day2_Palesa-Sephadi.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "One thing I heard today that I can't stop thinking about:\n“[INSERT QUOTE / IDEA, IN YOUR OWN WORDS]”\nIt made me think differently about [INSERT TOPIC] because…\n[2–3 sentences of personal reflection.]\nOne of the things I'm already learning at One Young World is that sometimes the most valuable part of a conversation isn't having the answer.\nIt's leaving with a better question.\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-05_Live-Day3",
+     "type": "Live-Day3",
+     "title": "Live, Day 3: The person I met",
+     "date": "2026-11-05",
+     "window": "5 Nov, on the day",
+     "windowStart": "2026-11-05",
+     "windowEnd": "2026-11-05",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Palesa-Sephadi/2026-11-05_Live-Day3/2026-11-05_Live-Day3_Palesa-Sephadi.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Palesa-Sephadi/2026-11-05_Live-Day3/2026-11-05_Live-Day3_Palesa-Sephadi-thumb.webp",
+      "name": "2026-11-05_Live-Day3_Palesa-Sephadi.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "One conversation can change the way you see a problem.\nToday I met [NAME / COUNTRY / WHAT THEY DO], who is working on [CAUSE / ISSUE].\nWe come from completely different backgrounds, but we found a surprising connection around [INSERT CONNECTION].\nThat's what I'm loving about One Young World.\nDifferent countries. Different experiences. Different challenges.\nBut so many shared ambitions for a better future.\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-06_Live-Day4",
+     "type": "Live-Day4",
+     "title": "Live, Day 4: What I didn't expect",
+     "date": "2026-11-06",
+     "window": "6 Nov, on the day",
+     "windowStart": "2026-11-06",
+     "windowEnd": "2026-11-06",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "live",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Palesa-Sephadi/2026-11-06_Live-Day4/2026-11-06_Live-Day4_Palesa-Sephadi.webp",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Palesa-Sephadi/2026-11-06_Live-Day4/2026-11-06_Live-Day4_Palesa-Sephadi-thumb.webp",
+      "name": "2026-11-06_Live-Day4_Palesa-Sephadi.png"
+     },
+     "guide": "How to post\n1. Take your photo on the day: a selfie or a photo of you at the Summit, in portrait, in good light, with your face in the upper middle of the frame.\n2. In the toolkit, drop it into the frame. Drag and zoom until it sits well in the oval, then download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image on the same day.\n\nCaption rules\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- The first two lines are what people see before \"see more\", so make them count.\n- Name a person only if they're happy to be named, and tag them if they're on LinkedIn.\n- No photos of other people's badges, screens or documents.",
+     "starter": "Something I didn't expect from One Young World…\n[INSERT SURPRISE.]\nI came to Cape Town expecting to learn about [TOPIC].\nI didn't expect to leave today's conversations thinking about [NEW IDEA].\nThat's probably my biggest takeaway so far:\nSometimes the most valuable learning is the learning you didn't know you needed.\nAnd we're only getting started.\n@Schneider Electric Youth Impact Through Learning @Schneider Electric Foundation @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    },
+    {
+     "id": "2026-11-07_Reflection",
+     "type": "Reflection",
+     "title": "Reflection",
+     "date": "2026-11-07",
+     "window": "From 7 Nov",
+     "windowStart": "2026-11-07",
+     "windowEnd": "2026-11-27",
+     "format": "single",
+     "tag": "@Schneider Electric Foundation  @Schneider Electric Youth Impact Through Learning  @Enactus South Africa",
+     "editable": "reflection",
+     "base": {
+      "src": "assets/posts/Schneider-Electric-Foundation/Palesa-Sephadi/2026-11-07_Reflection/2026-11-07_Reflection_Palesa-Sephadi.jpg",
+      "thumb": "assets/posts/Schneider-Electric-Foundation/Palesa-Sephadi/2026-11-07_Reflection/2026-11-07_Reflection_Palesa-Sephadi-thumb.webp",
+      "name": "2026-11-07_Reflection_Palesa-Sephadi.png"
+     },
+     "guide": "How to post\n1. In the toolkit, type one thing you are taking home from Cape Town into the text box on your card (up to 130 characters, 6 lines). The toolkit stops you if it runs over.\n2. Download the finished image.\n3. Copy the caption below, replace everything in [square brackets] with your own words, and post it on LinkedIn with the image.\n\nCaption rules\n- The card holds one line. The caption tells the story behind it.\n- Write in your own voice. Short sentences, first person, no jargon.\n- Keep the tags and hashtags exactly as they are below.\n- End with a question or a commitment people can respond to.",
+     "starter": "I'm back from One Young World 2026 in Cape Town, and one thing is staying with me:\n\n[The line on your card, in a sentence or two.]\n\n[Where it came from: a session, a speaker or a conversation, in 2–3 sentences.]\n\n[What you will do differently, starting this month.]\n\nThank you to the Schneider Electric Foundation, Schneider Electric Youth Impact Through Learning and Enactus South Africa for making it possible.\n\n[A question for your network, e.g. \"What is one habit you would change if you started again tomorrow?\"]\n\n@Schneider Electric Foundation @Schneider Electric Youth Impact Through Learning @Enactus South Africa\n#OYW26 #OneYoungWorld #EnergizedByEachOther #ChangeMakers"
+    }
+   ]
+  }
+ ],
+ "templates": {
+  "live": {
+   "width": 1080,
+   "height": 1350,
+   "slot": {
+    "x": 139.0,
+    "y": 358.0,
+    "w": 805.0,
+    "h": 842.0
+   },
+   "empty": "#04362A",
+   "minUpload": 1080,
+   "zoom": [
+    1,
+    3
+   ],
+   "faceTip": "Keep the face in the upper middle of the oval, clear of the name tab bottom-left and the badge bottom-right.",
+   "days": [
+    {
+     "day": 1,
+     "date": "2026-11-03",
+     "headline": "I'm here"
+    },
+    {
+     "day": 2,
+     "date": "2026-11-04",
+     "headline": "One thing I heard today"
+    },
+    {
+     "day": 3,
+     "date": "2026-11-05",
+     "headline": "The person I met"
+    },
+    {
+     "day": 4,
+     "date": "2026-11-06",
+     "headline": "What I didn't expect"
+    }
+   ]
+  },
+  "reflection": {
+   "width": 1080,
+   "height": 1350,
+   "box": {
+    "x": 149.6,
+    "y": 558.0,
+    "w": 780.0,
+    "h": 488.0
+   },
+   "firstBaselineY": 601.0,
+   "lineHeight": 73.3,
+   "font": {
+    "family": "Poppins",
+    "weight": 600,
+    "size": 60.0,
+    "letterSpacing": -2.4,
+    "color": "#E9FFDB"
+   },
+   "limits": {
+    "maxLines": 6,
+    "maxChars": 130,
+    "recommended": 120
+   },
+   "prompt": "One thing you are taking home from Cape Town, in your own words. Up to 6 lines.",
+   "inputRules": [
+    "One paragraph. Strip line breaks and double spaces.",
+    "No emoji or symbols outside the Latin set (Poppins has no emoji).",
+    "Typographic apostrophes and quotes are fine; convert straight quotes to curly.",
+    "Trim leading and trailing spaces."
+   ]
+  }
+ }
 }
