@@ -94,9 +94,10 @@
   // ------------------------------------------------------------------ style
 
   var CSS = [
-    '.oywe{--_a:var(--oywe-accent,#3dcd58);--_i:var(--oywe-ink,#e7ffd9);--_m:var(--oywe-muted,rgba(231,255,217,.7));',
+    '.oywe,.oywe-btn{--_a:var(--oywe-accent,#3dcd58);--_i:var(--oywe-ink,#e7ffd9);--_m:var(--oywe-muted,rgba(231,255,217,.7));',
     '--_l:var(--oywe-line,rgba(231,255,217,.2));--_b:var(--oywe-bg,#0a2f24);--_w:var(--oywe-warn,#ffc24b);--_e:var(--oywe-error,#ff8a7a);',
-    'display:flex;flex-direction:column;gap:12px;min-width:0;max-width:100%;color:var(--_i);font-family:inherit;line-height:1.4;box-sizing:border-box}',
+    '}',
+    '.oywe{display:flex;flex-direction:column;gap:12px;min-width:0;max-width:100%;color:var(--_i);font-family:inherit;line-height:1.4;box-sizing:border-box}',
     '.oywe *,.oywe *::before,.oywe *::after{box-sizing:border-box}',
     '.oywe-stage{position:relative;width:100%;aspect-ratio:4/5;overflow:hidden;border-radius:8px;background:var(--_b);border:1px solid var(--_l)}',
     '.oywe-canvas{display:block;width:100%;height:auto;aspect-ratio:4/5;outline:none}',
@@ -122,14 +123,14 @@
     '.oywe-zoom input:disabled{opacity:.45}',
     '.oywe-zoomval{min-width:3.2em;text-align:right;font-variant-numeric:tabular-nums}',
     '.oywe-hint,.oywe-msg,.oywe-counter{margin:0;font-size:14px;color:var(--_m)}',
-    '.oywe-hint{padding-top:2px;border-top:1px solid var(--_l);padding-top:10px}',
+    '.oywe-hint{border-top:1px solid var(--_l);padding-top:10px}',
     '.oywe-msg:empty{display:none}',
     '.oywe-msg.is-warn{color:var(--_w)}',
     '.oywe-msg.is-error{color:var(--_e)}',
     '.oywe-file{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);border:0;white-space:nowrap}',
     '.oywe-prompt{display:block;width:100%;font-size:15px;font-weight:600;color:var(--_i)}',
     '.oywe-input{display:block;width:100%;min-height:96px;padding:10px 12px;border-radius:8px;border:1px solid var(--_l);background:var(--_b);',
-    'color:var(--_i);font:inherit;font-size:16px;line-height:1.45;resize:vertical}',
+    'color:var(--_i);font:inherit;font-size:16px;line-height:1.45;resize:none;overflow-y:hidden}',
     '.oywe-input::placeholder{color:var(--_m);opacity:.8}',
     '.oywe-input:focus{outline:2px solid var(--_a);outline-offset:1px;border-color:transparent}',
     '.oywe-input:disabled{opacity:.6}',
@@ -634,15 +635,16 @@
     invalidExport: 'The text does not fit the card yet.'
   };
 
-  // Characters the card font (Poppins, Latin subset) can draw. Anything else is stripped and reported.
+  // Characters the card font (Poppins SemiBold, Latin subset) has glyphs for, checked against the woff2.
+  // Anything else is stripped and reported. Override with options.allow(codePoint) for another font.
   function latinAllowed(cp) {
     return (cp >= 0x20 && cp <= 0x7E) ||
       (cp >= 0xA1 && cp <= 0xFF && cp !== 0xAD) ||
       cp === 0x131 || cp === 0x152 || cp === 0x153 ||
-      cp === 0x2BB || cp === 0x2BC || cp === 0x2C6 || cp === 0x2DA || cp === 0x2DC ||
+      cp === 0x2BC || cp === 0x2C6 || cp === 0x2DA || cp === 0x2DC ||
       (cp >= 0x2013 && cp <= 0x2014) || (cp >= 0x2018 && cp <= 0x201A) || (cp >= 0x201C && cp <= 0x201E) ||
-      cp === 0x2020 || cp === 0x2021 || cp === 0x2022 || cp === 0x2026 || cp === 0x2030 ||
-      cp === 0x2039 || cp === 0x203A || cp === 0x2044 || cp === 0x20AC || cp === 0x2122;
+      cp === 0x2022 || cp === 0x2026 || cp === 0x2039 || cp === 0x203A || cp === 0x2044 ||
+      cp === 0x20AC || cp === 0x2122;
   }
 
   var OPENERS = ' ([{\u2018\u201C\u2013\u2014-/';
@@ -830,11 +832,27 @@
       msg.className = 'oywe-msg' + (tone ? ' is-' + tone : '');
     }
 
+    // The field grows with the text, so the whole paragraph is always visible while editing.
+    var lastFitW = 0;
+    function fitField() {
+      if (destroyed) return;
+      ta.style.height = 'auto';
+      ta.style.height = (ta.scrollHeight + 2) + 'px';
+      lastFitW = ta.clientWidth;
+    }
+    var ro = global.ResizeObserver ? new global.ResizeObserver(function () {
+      if (ta.clientWidth !== lastFitW) fitField();
+    }) : null;
+    if (ro) ro.observe(ta);
+
     // ---- model
     var initial = sanitize(o.value || '', allowed);
     var committed = finalText(initial.value);   // canonical text (trimmed)
     var liveValue = initial.value;              // what the textarea holds (may end in one space)
     var state = null;                           // evaluation of `committed`
+    // setText() before the font loads cannot be measured yet; it is validated on load and, if it does
+    // not fit, rolled back to the text it replaced (the typing rule).
+    var preFontFallback = null;
     ta.value = liveValue;
 
     function evaluate(t) {
@@ -854,14 +872,12 @@
       c.globalAlpha = 1; c.globalCompositeOperation = 'source-over';
       c.clearRect(0, 0, W, H);
       if (base) c.drawImage(base, 0, 0, W, H);
-      if (fontOK && eng && ev && ev.lines.length) {
+      // Text is drawn only when the whole paragraph fits (spec: never cut, never overflow). A text that
+      // does not fit (reachable only through options.value) shows the bare card plus the error message.
+      if (fontOK && eng && ev && ev.valid) {
         eng.setup(c);
         c.fillStyle = font.color;
-        if (ev.wide) { // only reachable through setText()/value; never draw past the box
-          c.beginPath(); c.rect(box.x - font.size, 0, box.w + font.size + 1, H); c.clip();
-        }
-        var n = Math.min(ev.lines.length, maxLines);
-        for (var i = 0; i < n; i++) drawLine(c, ev.lines[i], firstBaselineY + baselineShift + i * lineHeight);
+        for (var i = 0; i < ev.lines.length; i++) drawLine(c, ev.lines[i], firstBaselineY + baselineShift + i * lineHeight);
       }
       c.restore();
     }
@@ -889,11 +905,14 @@
 
     function render() { if (!destroyed) paint(ctx, state); }
 
-    function updateCounter() {
-      var ev = state || evaluate(committed);
+    // Set when the last refused edit needed a line past maxLines while the text already fills maxLines;
+    // cleared by the next accepted change. Characters and lines are equal limits ("whichever comes first").
+    var lineBlocked = false;
+    function updateCounter(preview) {
+      var ev = preview || state || evaluate(committed);
       counter.textContent = L.counter.replace('{n}', ev.chars).replace('{max}', maxChars)
         .replace('{l}', ev.lineCount).replace('{maxLines}', maxLines);
-      var limit = ev.chars >= maxChars || (!ev.empty && fontOK && !ev.valid);
+      var limit = ev.chars >= maxChars || (!preview && lineBlocked) || (!ev.empty && fontOK && !ev.valid);
       counter.classList.toggle('is-limit', limit);
       counter.classList.toggle('is-warn', !limit && ev.chars > recommended);
     }
@@ -916,6 +935,7 @@
 
     function commitText(t, notify) {
       var changed = t !== committed || !state;
+      if (changed) lineBlocked = false;
       committed = t;
       state = evaluate(t);
       render();
@@ -926,6 +946,7 @@
     // ---- input handling
     var selBefore = null;
     var composing = false;
+    var compMsg = false;     // the message line currently shows a composition-preview limit
     function remember() {
       selBefore = { s: ta.selectionStart, e: ta.selectionEnd };
     }
@@ -942,9 +963,15 @@
     ta.addEventListener('compositionend', function () { composing = false; handleInput(); });
     ta.addEventListener('input', function (e) {
       if (composing || e.isComposing) {
-        // Do not rewrite the field mid-composition (mobile keyboards); preview it if it fits.
+        // Do not rewrite the field mid-composition (mobile keyboards compose every word): preview it
+        // if it fits, and keep the counter and the limit message live. Any rollback happens at
+        // compositionend, through handleInput().
+        if (!fontOK || destroyed) return;
         var pv = evaluate(finalText(sanitize(ta.value, allowed).value));
         if (pv.valid || pv.empty) { state = pv; render(); state = evaluate(committed); }
+        updateCounter(pv);
+        if (!pv.valid && !pv.empty) { compMsg = true; setMsg(reason(pv), 'error'); }
+        else if (compMsg) { compMsg = false; setMsg(''); }
         return;
       }
       handleInput();
@@ -953,7 +980,13 @@
     function handleInput() {
       if (!fontOK || destroyed) return;
       var raw = ta.value;
-      if (raw === liveValue) return;
+      var hadComp = compMsg; compMsg = false;
+      if (raw === liveValue) {
+        // e.g. a composition that was cancelled: drop its preview from the counter and message.
+        updateCounter();
+        if (hadComp) setMsg('');
+        return;
+      }
       var caret = ta.selectionEnd;
       var s = sanitize(raw, allowed);
       var t = finalText(s.value);
@@ -963,6 +996,8 @@
       if (!ok) {
         ta.value = liveValue;
         if (selBefore) { try { ta.setSelectionRange(selBefore.s, selBefore.e); } catch (err) { /* ignore */ } }
+        lineBlocked = ev.tooManyLines && prev.lineCount >= maxLines;
+        updateCounter();
         flash();
         setMsg(reason(ev), 'error');
         return;
@@ -973,6 +1008,7 @@
         try { ta.setSelectionRange(Math.min(nc, s.value.length), Math.min(nc, s.value.length)); } catch (err) { /* ignore */ }
       }
       liveValue = ta.value;
+      fitField();
       if (s.removed.length) setMsg(L.removed.replace('{chars}', s.removed.join(' ')), 'warn');
       else if (s.hadBreak) setMsg(L.oneParagraph);
       else if (!ev.valid && !ev.empty) setMsg(reason(ev), 'error');
@@ -1006,7 +1042,19 @@
         eng = new TypeEngine(font, !!o.forceGlyphSpacing, o.textRendering);
         fontOK = true;
         ta.disabled = false;
+        fitField();
         if (msg.textContent === L.loading) setMsg('');
+        var fallback = preFontFallback; preFontFallback = null;
+        var queued = fallback !== null ? evaluate(committed) : null;
+        if (queued && !queued.valid && !queued.empty) {
+          // A setText() made before the font loaded does not fit: keep the text it replaced.
+          ta.value = fallback; liveValue = fallback; fitField();
+          commitText(fallback, true);
+          lineBlocked = queued.tooManyLines && state.lineCount >= maxLines;
+          updateCounter(); flash();
+          setMsg(reason(queued), 'error');
+          return;
+        }
         commitText(committed, false);
         if (initial.removed.length) setMsg(L.removed.replace('{chars}', initial.removed.join(' ')), 'warn');
         else if (!state.valid && !state.empty) setMsg(reason(state), 'error');
@@ -1017,6 +1065,11 @@
     });
     var ready = quietly(Promise.all([baseP, fontP]).then(function () { return api; }));
 
+    function invalidError() {
+      var err = new Error(L.invalidExport);
+      err.code = 'invalid';
+      return err;
+    }
     function exportCanvas() {
       var c = makeCanvas(W, H);
       paint(c.getContext('2d'), state);
@@ -1025,28 +1078,47 @@
 
     var api = {
       ready: ready,
-      getCanvas: exportCanvas,
+      // The flattened card. Throws an Error with code 'invalid' (as toBlob rejects) while the text is
+      // empty, does not fit, or the font has not loaded: there is no finished card to hand out yet.
+      getCanvas: function () {
+        if (!state || !state.valid) throw invalidError();
+        return exportCanvas();
+      },
       getText: function () { return committed; },
       isValid: function () { return !!(state && state.valid); },
+      // Same rule as typing: text that would not fit (too many characters, a line past maxLines, or a
+      // word wider than the box) is refused, the previous text stays, and the counter flashes with the
+      // reason. Returns true when the text was taken, false when refused. Before `ready` the text is
+      // queued (returns true) and checked as soon as the font loads.
       setText: function (s) {
-        if (destroyed) return;
-        var r = sanitize(s, allowed);
+        if (destroyed) return false;
+        var r = sanitize(s == null ? '' : String(s), allowed);
         var t = finalText(r.value);
+        if (!fontOK) {
+          if (preFontFallback === null) preFontFallback = committed;
+          ta.value = t; liveValue = t; fitField();
+          committed = t; updateCounter(); events.emit(api);
+          return true;
+        }
+        var ev = evaluate(t);
+        if (!ev.valid && !ev.empty) {
+          var prev = state || evaluate(committed);
+          lineBlocked = ev.tooManyLines && prev.lineCount >= maxLines;
+          updateCounter();
+          flash();
+          setMsg(reason(ev), 'error');
+          return false;
+        }
         ta.value = t; liveValue = t;
-        if (!fontOK) { committed = t; updateCounter(); events.emit(api); return; }
+        fitField();
         commitText(t, true);
-        var ev = state;
         if (r.removed.length) setMsg(L.removed.replace('{chars}', r.removed.join(' ')), 'warn');
-        else if (!ev.valid && !ev.empty) setMsg(reason(ev), 'error');
         else setMsg('');
+        return true;
       },
       toBlob: function (type, quality) {
         return ready.then(function () {
-          if (!state || !state.valid) {
-            var err = new Error(L.invalidExport);
-            err.code = 'invalid';
-            throw err;
-          }
+          if (!state || !state.valid) throw invalidError();
           return canvasToBlob(exportCanvas(), type || 'image/png', quality);
         });
       },
@@ -1055,6 +1127,7 @@
         if (destroyed) return;
         destroyed = true;
         clearTimeout(flashTimer);
+        if (ro) ro.disconnect();
         events.clear();
         base = null;
         if (root.parentNode) root.parentNode.removeChild(root);
