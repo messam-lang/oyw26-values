@@ -689,7 +689,8 @@
 
   // Measures and draws with the exact size and letter spacing. Uses ctx.letterSpacing where the
   // browser has it, otherwise places each glyph from shaped prefix widths plus the spacing.
-  function TypeEngine(font, forceGlyph) {
+  function TypeEngine(font, forceGlyph, rendering) {
+    this.rendering = rendering || 'geometricPrecision';
     this.family = font.family;
     this.size = font.size;
     this.weight = font.weight;
@@ -712,6 +713,8 @@
     c.textAlign = 'left';
     if ('direction' in c) c.direction = 'ltr';
     if ('fontKerning' in c) c.fontKerning = 'normal';
+    // Outline-accurate glyphs: no hinting and no platform emboldening, so the stems match the design.
+    if ('textRendering' in c) c.textRendering = this.rendering;
     if ('letterSpacing' in c) c.letterSpacing = this.native ? this.ls + 'px' : '0px';
   };
   TypeEngine.prototype.raw = function (s) {
@@ -771,6 +774,11 @@
     var box = { x: num(bo.x, 149.6), y: num(bo.y, 558), w: num(bo.w, 780), h: num(bo.h, 488) };
     var firstBaselineY = num(o.firstBaselineY, 601);
     var lineHeight = num(o.lineHeight, 73.3);
+    // Photoshop set the sample text of Reflection_REFERENCE_with-body.png 1.3 px below the spec's
+    // rounded first_baseline_y (601); measured by 2-D correlation of the text coverage over all five
+    // lines. The editor matches the reference card by default. Pass 0 to sit exactly on firstBaselineY.
+    var baselineShift = num(o.baselineShift, 1.3);
+    var subpixelY = o.subpixelBaseline !== false;
     var f = o.font || {};
     var font = {
       family: f.family || 'Poppins', weight: f.weight || 600, size: num(f.size, 60),
@@ -853,9 +861,30 @@
           c.beginPath(); c.rect(box.x - font.size, 0, box.w + font.size + 1, H); c.clip();
         }
         var n = Math.min(ev.lines.length, maxLines);
-        for (var i = 0; i < n; i++) eng.draw(c, ev.lines[i], box.x, firstBaselineY + i * lineHeight);
+        for (var i = 0; i < n; i++) drawLine(c, ev.lines[i], firstBaselineY + baselineShift + i * lineHeight);
       }
       c.restore();
+    }
+
+    // Browsers snap a text baseline to whole pixels. Lines sit every 73.3 px, so each line is set on a
+    // whole-pixel baseline in a small layer and the layer is placed at the exact fractional position.
+    var LAYER_PAD = Math.ceil(font.size), LAYER_ASC = Math.ceil(font.size * 1.2);
+    var layer = null, lctx = null;
+    function drawLine(c, line, yb) {
+      var frac = yb - Math.floor(yb);
+      if (!subpixelY || frac < 0.02 || frac > 0.98) { eng.draw(c, line, box.x, Math.round(yb)); return; }
+      var lx = Math.floor(box.x) - LAYER_PAD;
+      if (!layer) {
+        layer = makeCanvas(Math.ceil(box.w) + 2 * LAYER_PAD + 2, Math.ceil(font.size * 1.7));
+        lctx = layer.getContext('2d');
+      }
+      lctx.setTransform(1, 0, 0, 1, 0, 0);
+      lctx.clearRect(0, 0, layer.width, layer.height);
+      eng.setup(lctx);
+      lctx.fillStyle = font.color;
+      eng.draw(lctx, line, box.x - lx, LAYER_ASC);
+      c.imageSmoothingEnabled = true;
+      c.drawImage(layer, lx, yb - LAYER_ASC);
     }
 
     function render() { if (!destroyed) paint(ctx, state); }
@@ -974,7 +1003,7 @@
       return doc.fonts.load(css).then(function (faces) {
         if ((!faces || !faces.length) && !fontAvailable(css)) throw new Error('Font not available: ' + css);
         if (destroyed) return;
-        eng = new TypeEngine(font, !!o.forceGlyphSpacing);
+        eng = new TypeEngine(font, !!o.forceGlyphSpacing, o.textRendering);
         fontOK = true;
         ta.disabled = false;
         if (msg.textContent === L.loading) setMsg('');
