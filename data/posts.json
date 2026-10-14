@@ -1,5 +1,5 @@
 {
- "built": 1791980454,
+ "built": 1791990952,
  "campaign": "Schneider Electric x One Young World 2026 — Energized by Each Other (#OYW26)",
  "summit": "Cape Town, 3–6 Nov 2026",
  "salt": "oyw26-powered-by-each-other",
@@ -331,7 +331,7 @@
  },
  "core": {
   "key": "core",
-  "note": "Everyone who signs in: African Explorers, first-year graduates, speakers and Foundation delegates. Show as a shared 'Campaign posts' section.",
+  "note": "Schneider Electric side only: African Explorers, first-year graduates, speakers and any other Schneider Electric employee, plus the SE YITL and SEF LinkedIn pages. NOT shown to the Schneider Electric Foundation delegates. Show as a shared 'Campaign posts' section.",
   "posts": [
    {
     "id": "2026-10-19_Core-Post-01",

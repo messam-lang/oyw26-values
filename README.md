@@ -51,8 +51,9 @@ listed in the client's `speakers_manifest.json`, checked before the main manifes
 tab with their single, undated "Meet the Speakers" post; Foundation delegates (ten sponsored
 students, `schneider_electric_foundation.delegates`) get their six posts and no signature tab:
 a finished Announcement (19 Oct), four Live cards (3 to 6 Nov, "on the day") and a Reflection card
-(from 7 Nov). Everyone who signs in also sees the four **campaign core posts** (19 to 23 Oct) at the
-bottom of the Posts tab. Captions for the Live and Reflection cards are starters with blanks in
+(from 7 Nov). Everyone on the Schneider side (employees, Explorers, speakers) also sees the four
+**campaign core posts** (19 to 23 Oct) at the bottom of the Posts tab; the Foundation delegates do
+not (manifest, 14 Oct afternoon). Captions for the Live and Reflection cards are starters with blanks in
 square brackets, shown as delivered and never pre-filled.
 
 Posting windows are enforced for employees and Explorers (including the core posts): a post opens on its planned date

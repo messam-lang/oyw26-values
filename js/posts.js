@@ -240,7 +240,7 @@
     if (els.tabPosts) els.tabPosts.lastChild.textContent = ex || dl ? 'Your posts' : sp ? 'Speakers' : 'Posts';
     renderPosts();
     if (announce) {
-      const where = sp ? 'Your Meet the Speakers post and the campaign posts are in the Speakers tab' : dl ? 'Your six posts and the campaign posts are in the Your posts tab' : 'Your posts are in the Posts tab';
+      const where = sp ? 'Your Meet the Speakers post and the campaign posts are in the Speakers tab' : dl ? 'Your six posts are in the Your posts tab' : 'Your posts are in the Posts tab';
       toast(`Welcome${first ? ', ' + first : ''}. ${where}${filled ? `, and your ${filled} ${filled === 'name and email' ? 'are' : 'is'} already in the Email signature tab` : ''}.`, 4800);
       if (MODE !== 'live' && OYW.showTab) OYW.showTab('posts', true);   // live: stay on the first tab
     }
@@ -257,7 +257,7 @@
     els.panel.innerHTML = '';
     const ex = explorerOf(audience), sp = speakerOf(audience), dl = delegateOf(audience);
     if (sp) renderSpeaker(sp); else if (ex) renderExplorer(ex); else if (dl) renderDelegate(dl); else renderSet(DATA.sets.graduates);
-    renderCore();   // the four campaign core posts go to everyone who signs in
+    if (!dl) renderCore();   // the four campaign core posts: the Schneider side only, not the Foundation delegates (manifest, 14 Oct pm)
   }
 
   // ---------------------------------------------------------------- campaign core posts (everyone)
@@ -266,8 +266,8 @@
     if (!posts.length) return;
     const sec = document.createElement('section');
     sec.className = 'post-list core';
-    sec.innerHTML = `<h2 class="list-title"><span class="num">+</span> Campaign posts, for everyone</h2>
-      <p class="fine top">Four posts every signed-in person shares, ${fmtDay(posts[0].windowStart)} to ${fmtDay(posts[posts.length - 1].windowEnd)}, one a day in this order. The captions are final: post them as they are.</p>`;
+    sec.innerHTML = `<h2 class="list-title"><span class="num">+</span> Campaign posts, for everyone at Schneider Electric</h2>
+      <p class="fine top">Four posts the whole Schneider Electric side shares, ${fmtDay(posts[0].windowStart)} to ${fmtDay(posts[posts.length - 1].windowEnd)}, one a day in this order. The captions are final: post them as they are.</p>`;
     posts.forEach((p, i) => sec.appendChild(postCard({ post: p, index: i, cards: p.langs.EN.cards, caption: p.langs.EN.caption, variantKey: 'EN', subline: 'Campaign post · everyone', alternatives: [] })));
     els.panel.appendChild(sec);
   }
@@ -279,7 +279,7 @@
     head.innerHTML = `<h2>Hi ${esc(dl.first)}, here are your posts</h2>
       <p class="lead">${dl.posts.length} posts as a Schneider Electric Foundation delegate${dl.institution ? ', ' + esc(dl.institution) : ''}: your announcement, one post on each Summit day and a reflection after. The announcement is ready to post. The four Live cards take your photo of the day and the Reflection card takes one line from you; both are finished right here on your device, and nothing is uploaded. Captions are starters: replace everything in [square brackets] with your own words.</p>`;
     els.panel.appendChild(head);
-    els.panel.appendChild(remindersCard(dl.posts.concat(corePosts()), dl.id));
+    els.panel.appendChild(remindersCard(dl.posts, dl.id));
     const list = document.createElement('section');
     list.className = 'post-list';
     list.innerHTML = `<h2 class="list-title"><span class="num">1</span> Your posts, in order</h2>`;
