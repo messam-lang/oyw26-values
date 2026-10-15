@@ -155,7 +155,7 @@
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return null;
     const hash = await sha256(DATA.salt + ':' + email);
     const seed = parseInt(hash.slice(0, 8), 16);
-    // speakers are checked first (per speakers_manifest.json); they see only their own Meet the Speakers post
+    // the mentors (ex speakers) are checked first (per mentors_manifest.json); they see their own Meet the Mentor post and the core posts
     const speaker = (DATA.speakers || []).find((s) => s.hash === hash);
     if (speaker) return { kind: 'speaker', speakerId: speaker.id, seed, email, first: speaker.first, name: speaker.name };
     const explorer = DATA.explorers.find((x) => x.hash === hash);
@@ -231,16 +231,16 @@
     document.body.classList.remove('gated');
     els.gate.hidden = true; els.who.hidden = false;
     const first = ex ? (a.first || ex.first) : sp ? sp.first : dl ? dl.first : (a.first || '');
-    const role = ex ? 'African Explorer' : sp ? 'Speaker' : dl ? 'Schneider Electric Foundation delegate' : 'Schneider Electric employee';
+    const role = ex ? 'African Explorer' : sp ? 'Mentor' : dl ? 'Schneider Electric Foundation delegate' : 'Schneider Electric employee';
     const shown = ex ? (a.name || ex.name) : sp ? sp.name : dl ? dl.name : (a.name || '');
     els.whoLine.innerHTML = shown ? `Welcome, <b>${esc(shown)}</b> · ${role}` : `Viewing as <b>${role}</b>`;
     const filled = prefillSignature(a);
     if (els.kicker) els.kicker.textContent = dl ? 'Delegate toolkit' : 'Employee toolkit';
     if (OYW.setTabHidden) OYW.setTabHidden('signature', !!dl);   // delegates are sponsored students, not employees: no email signature
-    if (els.tabPosts) els.tabPosts.lastChild.textContent = ex || dl ? 'Your posts' : sp ? 'Speakers' : 'Posts';
+    if (els.tabPosts) els.tabPosts.lastChild.textContent = ex || dl ? 'Your posts' : sp ? (DATA.speakersTab || 'Mentors') : 'Posts';
     renderPosts();
     if (announce) {
-      const where = sp ? 'Your Meet the Speakers post and the campaign posts are in the Speakers tab' : dl ? 'Your six posts are in the Your posts tab' : 'Your posts are in the Posts tab';
+      const where = sp ? `Your ${sp.posts[0] ? sp.posts[0].title : 'Meet the Mentor'} post and the campaign posts are in the ${DATA.speakersTab || 'Mentors'} tab` : dl ? 'Your six posts are in the Your posts tab' : 'Your posts are in the Posts tab';
       toast(`Welcome${first ? ', ' + first : ''}. ${where}${filled ? `, and your ${filled} ${filled === 'name and email' ? 'are' : 'is'} already in the Email signature tab` : ''}.`, 4800);
       if (MODE !== 'live' && OYW.showTab) OYW.showTab('posts', true);   // live: stay on the first tab
     }
@@ -354,8 +354,9 @@
   function renderSpeaker(sp) {
     const head = document.createElement('div');
     head.className = 'posts-head';
-    head.innerHTML = `<h2>Hi ${esc(sp.first)}, here is your Meet the Speakers post</h2>
-      <p class="lead">Made for you as a Schneider Electric speaker at the Summit${sp.role ? ', ' + esc(sp.role) : ''}. There is no posting date: share it whenever suits you. Edit the caption until it sounds like you.</p>`;
+    const what = sp.posts[0] ? sp.posts[0].title : 'Meet the Mentor';
+    head.innerHTML = `<h2>Hi ${esc(sp.first)}, here is your ${esc(what)} post</h2>
+      <p class="lead">Made for you as a Schneider Electric mentor at the Summit${sp.role ? ', ' + esc(sp.role) : ''}. There is no posting date: share it whenever suits you. Edit the caption until it sounds like you.</p>`;
     els.panel.appendChild(head);
     const list = document.createElement('section');
     list.className = 'post-list';

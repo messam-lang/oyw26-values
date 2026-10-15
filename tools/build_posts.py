@@ -343,13 +343,17 @@ def build_explorers(roster, warnings):
 
 
 def build_speakers(spec_path, warnings):
-    """speakers_manifest.json: Schneider speakers at the Summit, one undated 'Meet the Speakers' post each (never locked).
-    Routing (per the file): checked before the main manifest; a matching email sees only their own post."""
+    """mentors_manifest.json (15 Oct; before that speakers_manifest.json): the eight Schneider leaders at the Summit, one
+    undated 'Meet the Mentor' post each (never locked). Routing (per the file): checked before the main manifest; a matching
+    email sees their own post plus the campaign core posts. The list key is still `speakers` in the mentors file."""
     if not os.path.exists(spec_path):
-        return []
+        alt = os.path.join(os.path.dirname(spec_path), "speakers_manifest.json")
+        if not os.path.exists(alt):
+            return []
+        spec_path = alt
     sm = json.load(open(spec_path, encoding="utf-8"))
     out = []
-    for s in sm.get("speakers", []):
+    for s in sm.get("speakers") or sm.get("mentors") or []:
         email = (s.get("email") or "").strip()
         if "@" not in email:
             warnings.append("speaker skipped (no email): %s" % s.get("name"))
@@ -377,9 +381,9 @@ def build_speakers(spec_path, warnings):
             if not caption:
                 warnings.append("NO CAPTION: speaker %s" % s.get("name"))
             posts.append({
-                "id": p.get("post_type") or "Meet-the-Speakers",
-                "type": p.get("post_type") or "Meet-the-Speakers",
-                "title": clean_title(p.get("title") or "Meet the Speakers"),
+                "id": p.get("post_type") or "Meet-the-Mentor",
+                "type": p.get("post_type") or "Meet-the-Mentor",
+                "title": clean_title(p.get("title") or "Meet the Mentor"),
                 "date": None, "window": "", "windowStart": None, "windowEnd": None,   # undated: share any time
                 "format": "carousel" if len(cards) > 1 else "single",
                 "tag": header.get("Tag", ""),
@@ -573,7 +577,8 @@ def main():
         },
         "core": build_core(man.get("campaign_core_posts", {}), warnings),
         "explorers": build_explorers(man["schneider"]["african_explorers"], warnings),
-        "speakers": build_speakers(os.path.join(SRC, "speakers_manifest.json"), warnings),
+        "speakers": build_speakers(os.path.join(SRC, "mentors_manifest.json"), warnings),   # the mentors (ex speakers); kind stays 'speaker' in the page
+        "speakersTab": "Mentors",
         "delegates": build_delegates(man.get("schneider_electric_foundation", {}), warnings),
         "templates": build_templates(man.get("editable_templates")),
     }

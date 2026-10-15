@@ -32,7 +32,7 @@ No photo or detail ever leaves the device. No backend.
   *I'm a Foundation delegate (sample)* (the first delegate in the roster), plus the email field for
   everyone else. Deep links such as `#posts` work and the gate jumps to the Posts tab.
 - `TEST_MODE = false` (live, current since 4 Oct 2026): the email decides, in the client's order:
-  a speaker (speakers_manifest), an African Explorer (hashed work email), a Foundation delegate
+  a mentor (mentors_manifest), an African Explorer (hashed work email), a Foundation delegate
   (hashed personal email; one delegate has two), then any other Schneider domain (`se.com`,
   `schneider-electric.com`, and their subdomains) is a standard employee. Anything else gets a
   message asking for the email they registered with, plus the help contact if one is set
@@ -46,9 +46,10 @@ the hashed roster; it is never sent anywhere. The choice is remembered in localS
 Schneider emails, with the name and email, see below); *Change* in the welcome bar resets it.
 
 Audience rules: employees get the First-Year-Graduates set (5 posts, voices A–D); Explorers get
-their personal posts (EN, plus FR for the five French speakers); Speakers (eight Schneider leaders
-listed in the client's `speakers_manifest.json`, checked before the main manifest) get a "Speakers"
-tab with their single, undated "Meet the Speakers" post; Foundation delegates (ten sponsored
+their personal posts (EN, plus FR for the five French speakers); Mentors (eight Schneider leaders
+listed in the client's `mentors_manifest.json`, called speakers until 15 Oct 2026 and checked before
+the main manifest) get a "Mentors" tab with their single, undated "Meet the Mentor" post; Foundation
+delegates (ten sponsored
 students, `schneider_electric_foundation.delegates`) get their six posts and no signature tab:
 a finished Announcement (19 Oct), four Live cards (3 to 6 Nov, "on the day") and a Reflection card
 (from 7 Nov). Everyone on the Schneider side (employees, Explorers, speakers) also sees the four
@@ -61,7 +62,7 @@ Posting windows are enforced for employees and Explorers (including the core pos
 window. Outside that range the Post on LinkedIn, Download, Copy and Share actions are disabled and
 the caption is read-only (the visual stays visible with a lock badge). "Today" is taken from the server's `Date` header on the data
 file, so a wrong device clock does not open a post early. Enactus posts are never locked. In test
-mode the Posts tab shows an "Unlock everything for testing" toggle (per browser session). Speakers and
+mode the Posts tab shows an "Unlock everything for testing" toggle (per browser session). Mentors and
 Foundation delegates are never locked. Instead of a shared download counter (which needs a
 server) the suggested voice is derived from the email hash, so it spreads evenly across people
 and stays stable for each person. Anyone can switch voice, globally or per post.
@@ -106,7 +107,7 @@ bright green on the right, after the designer's example.
 ## Updating the posts
 
 The source of truth is the client's Drive folder *Toolkit Deliverables* (manifest.json,
-speakers_manifest.json, README, one folder per post with caption.txt and the PNGs). The folder is
+mentors_manifest.json, README, one folder per post with caption.txt and the PNGs). The folder is
 link-shared, so the fastest mirror is: list ids with gdown (`download_folder(url, skip_download=True)`),
 then `curl -L "https://drive.google.com/uc?export=download&confirm=t&id=<id>"` per file in parallel. It is
 mirrored, **not committed**, into `source/posts/` because the manifests and captions carry work
@@ -126,8 +127,9 @@ date-free `post_key`, a `folder_pattern` (a path from the mirror root, e.g. `Ena
 pattern and each visual by key, so a reschedule only changes the date prefixes and the schedule
 fields. If a pattern or key matches more than one folder or file (an old export left beside a new
 one), the build takes the one whose date equals the post's `posting_date`, otherwise the newest,
-and prints a warning; tidy the Drive folder rather than relying on that. Speakers come from
-`speakers_manifest.json` (routing checked before the main manifest; one undated post each).
+and prints a warning; tidy the Drive folder rather than relying on that. Mentors come from
+`mentors_manifest.json` (routing checked before the main manifest; one undated post each; the build
+falls back to the older `speakers_manifest.json` and keeps the internal audience kind `speaker`).
 
 The 10th Explorer (`Explorer-10-TBC`) was removed from the manifest on 11 Oct 2026; the roster is
 final at nine. Any Explorer row with a `TBC` email is still skipped if one ever reappears.
