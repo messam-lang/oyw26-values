@@ -7,3 +7,4 @@ source/signature/*.png
 
 # mirrored Drive deliverables: manifest and captions carry work emails; data/posts.json is the built, hashed output
 source/posts*/
+source/_review/

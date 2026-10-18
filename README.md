@@ -46,7 +46,7 @@ the hashed roster; it is never sent anywhere. The choice is remembered in localS
 Schneider emails, with the name and email, see below); *Change* in the welcome bar resets it.
 
 Audience rules: employees get the First-Year-Graduates set (5 posts, voices A–D); Explorers get
-their personal posts (EN, plus FR for the five French speakers); Mentors (eight Schneider leaders
+their personal posts (EN, plus FR for the five French speakers); Mentors (nine Schneider leaders since 18 Oct 2026
 listed in the client's `mentors_manifest.json`, called speakers until 15 Oct 2026 and checked before
 the main manifest) get a "Mentors" tab with their single, undated "Meet the Mentor" post; Foundation
 delegates (ten sponsored

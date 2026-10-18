@@ -1,5 +1,5 @@
 {
- "built": 1792083495,
+ "built": 1792338276,
  "campaign": "Schneider Electric x One Young World 2026 — Energized by Each Other (#OYW26)",
  "summit": "Cape Town, 3–6 Nov 2026",
  "salt": "oyw26-powered-by-each-other",
@@ -2201,6 +2201,39 @@
         }
        ],
        "caption": "A qualification is an important milestone. But for many young people, the real challenge begins when they try to turn it into their first job.\nAcross Africa, we have enormous talent and ambition. Yet the gap between education and employment remains a reality for too many young people.\n\nAnd as the energy sector evolves, we have an opportunity to help close that gap. At @Schneider Electric, we're investing in practical skills development, technical education and mentorship to help young people prepare for careers in energy and electrification. Our Advancing Energy Tech mentorship programme across South, East and West Africa is one example of how we can connect young talent with professionals who understand the industry.\nBecause employability isn't just about what someone knows. It's also about exposure, confidence, connections and being given the opportunity to put those skills into practice.\nI'm excited to join One Young World here in South Africa this November and hear directly from young leaders about what would help them take that next step.\nSometimes opening one door can change the direction of an entire career.\n#EnergizedByEachOther #SchneiderElectric #OYW26"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "sonali-surgeon",
+   "name": "Sonali Surgeon",
+   "first": "Sonali",
+   "hash": "18f46ef8997dc6379b9a37fd75c4e701535bcbb5769cf7bee7405474cda0d9d0",
+   "language": "EN",
+   "role": "Middle East Africa Talent Management, Learning & Development VP",
+   "posts": [
+    {
+     "id": "Meet-the-Mentor",
+     "type": "Meet-the-Mentor",
+     "title": "Meet the Mentor",
+     "date": null,
+     "window": "",
+     "windowStart": null,
+     "windowEnd": null,
+     "format": "single",
+     "tag": "@Schneider Electric  @One Young World",
+     "langs": {
+      "EN": {
+       "cards": [
+        {
+         "src": "assets/posts/Mentors/Sonali-Surgeon/Meet-the-Mentor/Meet-the-Mentor_Sonali-Surgeon.jpg",
+         "thumb": "assets/posts/Mentors/Sonali-Surgeon/Meet-the-Mentor/Meet-the-Mentor_Sonali-Surgeon.webp",
+         "name": "Meet-the-Mentor_Sonali-Surgeon.jpg"
+        }
+       ],
+       "caption": "Talent grows fastest when people can see where they are going and get the support to get there. That means learning that keeps pace with the work, and leaders who make time to develop the people around them.\n\nI’m proud to join the Schneider Electric team at One Young World in Cape Town this November. I look forward to hearing how young leaders want to learn and grow, and sharing what we have learned about building careers across the Middle East and Africa. If you’re attending, meet us at the Schneider Electric booth. Let’s talk about the skills and support you need for your next step.\n\n#EnergizedByEachOther #SchneiderElectric #OYW26"
       }
      }
     }
